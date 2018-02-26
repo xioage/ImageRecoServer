@@ -10,8 +10,8 @@ endif
 
 FLAGS = -O2 -Wall -std=c++0x -pthread -shared -fPIC
 
-INCS = -I"../include" -I../../armadillo-4.650.2/include
-LIBS = -larmadillo -L../../armadillo-4.650.2/ -L/usr/lib64
+INCS = -I"../include"
+LIBS = -larmadillo 
 SRCS = ../src/*.cpp
 
 RM = rm -f

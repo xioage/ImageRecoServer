@@ -126,7 +126,6 @@ public:
 	 * @throws std::runtime_error if the variables are to be normalized and one of the variables has zero variance
 	 */
 	void solve();
-	void solve_for_vlfeat();//Wenjing
 	/**
 	 * @brief Checks whether the eigenvectors are orthogonal. The closer
 	 *  the return value to one the more orthogonal are the eigenvectors

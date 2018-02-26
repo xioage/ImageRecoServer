@@ -1,1 +1,0 @@
-/usr/bin/gfortran    -O3 CMakeFiles/dblat2.dir/dblat2.f.o  -o dblat2  ../libeigen_blas.so -Wl,-rpath,/home/symlab/Downloads/eigen-eigen-67e894c6cd8f/build/blas 
