@@ -20,7 +20,7 @@ This project contains a Cuda version of a complete image recognition pipeline, w
 
 ### Installation
 
-Besides the libraries contained in this repo, you may first install `OpenCV`, `falconn`, `Eigen`, `Cuda`. 
+Besides the libraries contained in this repo, you may first install `OpenCV` and `Cuda`. 
 Build and run:
 
 ```sh
@@ -33,8 +33,8 @@ $ ./gpu_fv
 ### Structure and Development
 
   - `src` , source codes
+  - `lib` , libraries
   - `build` , build products
   - `params` , PCA and GMM parameters
-  - `res` , running results
 
 Modify `main.cpp` for any tests and developments. The compiling and running logic is controlled with MACRO in `main.cpp`.

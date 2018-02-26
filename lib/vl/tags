@@ -1,0 +1,1670 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.9~svn20110310	//
+Aat	covdet.c	1219;"	d	file:
+Aat	covdet.c	1316;"	d	file:
+Aat	covdet.c	1344;"	d	file:
+Aat	covdet.c	1424;"	d	file:
+Aat	mathop.c	912;"	d	file:
+BADARG	getopt_long.c	37;"	d	file:
+BADCH	getopt_long.c	36;"	d	file:
+BETA_MAX	aib.c	127;"	d	file:
+CHECK_NEIGHBORS_2	covdet.c	1159;"	d	file:
+CHECK_NEIGHBORS_3	covdet.c	1071;"	d	file:
+COMPARISONFUNCTION3_TYPE	mathop.c	285;"	d	file:
+COMPARISONFUNCTION3_TYPE	mathop.c	288;"	d	file:
+COMPARISONFUNCTION3_TYPE	mathop.c	291;"	d	file:
+COMPARISONFUNCTION_TYPE	mathop.c	284;"	d	file:
+COMPARISONFUNCTION_TYPE	mathop.c	287;"	d	file:
+COMPARISONFUNCTION_TYPE	mathop.c	290;"	d	file:
+DEFAULT_INTENSITY_THRESHOLD	liop.c	208;"	d	file:
+DEFAULT_NUM_NEIGHBOURS	liop.c	211;"	d	file:
+DEFAULT_NUM_SPATIAL_BINS	liop.c	210;"	d	file:
+DEFAULT_RADIUS	liop.c	209;"	d	file:
+DOM	rodrigues.c	196;"	d	file:
+DOM	rodrigues.c	326;"	d	file:
+DR	rodrigues.c	163;"	d	file:
+DR	rodrigues.c	55;"	d	file:
+DllMain	generic.c	/^BOOL WINAPI DllMain($/;"	f
+EEND	getopt_long.c	38;"	d	file:
+EMSG	getopt_long.c	39;"	d	file:
+FLT	fisher.c	496;"	d	file:
+FLT	fisher.c	502;"	d	file:
+FLT	fisher.c	587;"	d	file:
+FLT	gmm.c	1450;"	d	file:
+FLT	gmm.c	1456;"	d	file:
+FLT	gmm.c	1708;"	d	file:
+FLT	homkermap.c	514;"	d	file:
+FLT	homkermap.c	518;"	d	file:
+FLT	homkermap.c	577;"	d	file:
+FLT	imopv.c	1072;"	d	file:
+FLT	imopv.c	41;"	d	file:
+FLT	imopv.c	45;"	d	file:
+FLT	imopv.c	49;"	d	file:
+FLT	imopv.c	53;"	d	file:
+FLT	imopv_sse2.c	27;"	d	file:
+FLT	imopv_sse2.c	284;"	d	file:
+FLT	imopv_sse2.c	31;"	d	file:
+FLT	kmeans.c	1778;"	d	file:
+FLT	kmeans.c	1784;"	d	file:
+FLT	kmeans.c	2100;"	d	file:
+FLT	mathop.c	269;"	d	file:
+FLT	mathop.c	270;"	d	file:
+FLT	mathop.c	274;"	d	file:
+FLT	mathop.c	275;"	d	file:
+FLT	mathop_sse2.c	19;"	d	file:
+FLT	mathop_sse2.c	20;"	d	file:
+FLT	mathop_sse2.c	24;"	d	file:
+FLT	mathop_sse2.c	25;"	d	file:
+FLT	mathop_sse2.h	20;"	d
+FLT	mathop_sse2.h	21;"	d
+FLT	mathop_sse2.h	25;"	d
+FLT	mathop_sse2.h	26;"	d
+FLT	svmdataset.c	115;"	d	file:
+FLT	svmdataset.c	119;"	d	file:
+FLT	svmdataset.c	403;"	d	file:
+FLT	vlad.c	248;"	d	file:
+FLT	vlad.c	254;"	d	file:
+FLT	vlad.c	322;"	d	file:
+HAS_CPUID	host.c	401;"	d	file:
+HAS_CPUID	host.c	403;"	d	file:
+K	hikmeans.h	/^  vl_size K ; \/**< IKM: K *\/$/;"	m	struct:_VlHIKMTree
+K	ikmeans.h	/^  vl_size K ; \/**< number of centers   *\/$/;"	m	struct:_VlIKMFilt
+LL	gmm.c	/^  double LL ;                         \/**< Current solution loglikelihood *\/$/;"	m	struct:_VlGMM	file:
+LOWER_MASK	random.c	123;"	d	file:
+M	hikmeans.h	/^  vl_size M ; \/**< IKM: data dimensionality *\/$/;"	m	struct:_VlHIKMTree
+M	ikmeans.h	/^  vl_size M ; \/**< data dimensionality *\/$/;"	m	struct:_VlIKMFilt
+M	random.c	120;"	d	file:
+MATRIX_A	random.c	121;"	d	file:
+N	random.c	119;"	d	file:
+OM	rodrigues.c	161;"	d	file:
+OM	rodrigues.c	195;"	d	file:
+OM	rodrigues.c	325;"	d	file:
+OM	rodrigues.c	53;"	d	file:
+PLOGP	aib.c	354;"	d	file:
+Pc	aib.h	/^  double    *Pc;        \/**< Marginal. *\/$/;"	m	struct:_VlAIB
+Pcx	aib.h	/^  double    *Pcx;       \/**< Joint probability table *\/$/;"	m	struct:_VlAIB
+Px	aib.h	/^  double    *Px;        \/**< Marginal. *\/$/;"	m	struct:_VlAIB
+R	rodrigues.c	162;"	d	file:
+R	rodrigues.c	197;"	d	file:
+R	rodrigues.c	327;"	d	file:
+R	rodrigues.c	54;"	d	file:
+SAVE_BACK	imopv.c	892;"	d	file:
+SETLOSS	svm.c	1554;"	d	file:
+SFX	fisher.c	498;"	d	file:
+SFX	fisher.c	504;"	d	file:
+SFX	fisher.c	585;"	d	file:
+SFX	gmm.c	1452;"	d	file:
+SFX	gmm.c	1458;"	d	file:
+SFX	gmm.c	1706;"	d	file:
+SFX	kmeans.c	1780;"	d	file:
+SFX	kmeans.c	1786;"	d	file:
+SFX	kmeans.c	2098;"	d	file:
+SFX	vlad.c	250;"	d	file:
+SFX	vlad.c	256;"	d	file:
+SFX	vlad.c	320;"	d	file:
+TYPE	fisher.c	497;"	d	file:
+TYPE	fisher.c	503;"	d	file:
+TYPE	fisher.c	586;"	d	file:
+TYPE	gmm.c	1451;"	d	file:
+TYPE	gmm.c	1457;"	d	file:
+TYPE	gmm.c	1707;"	d	file:
+TYPE	kmeans.c	1779;"	d	file:
+TYPE	kmeans.c	1785;"	d	file:
+TYPE	kmeans.c	2099;"	d	file:
+TYPE	vlad.c	249;"	d	file:
+TYPE	vlad.c	255;"	d	file:
+TYPE	vlad.c	321;"	d	file:
+UPPER_MASK	random.c	122;"	d	file:
+VL_AIB_H	aib.h	16;"	d
+VL_ARCH_BIG_ENDIAN	host.h	308;"	d
+VL_ARCH_IA64	host.h	267;"	d
+VL_ARCH_IX86	host.h	242;"	d
+VL_ARCH_IX86	host.h	244;"	d
+VL_ARCH_IX86	host.h	246;"	d
+VL_ARCH_IX86	host.h	248;"	d
+VL_ARCH_IX86	host.h	250;"	d
+VL_ARCH_LITTLE_ENDIAN	host.h	303;"	d
+VL_ARCH_X64	host.h	258;"	d
+VL_ARRAY_H	array.h	15;"	d
+VL_ARRAY_MAX_NUM_DIMENSIONS	array.h	20;"	d
+VL_BIG_INT	host.h	534;"	d
+VL_BIG_UINT	host.h	540;"	d
+VL_CAT	host.h	100;"	d
+VL_COMPILER_GNUC	host.h	217;"	d
+VL_COMPILER_GNUC	host.h	221;"	d
+VL_COMPILER_ILP32	host.h	292;"	d
+VL_COMPILER_LCC	host.h	232;"	d
+VL_COMPILER_LLP64	host.h	279;"	d
+VL_COMPILER_LP64	host.h	287;"	d
+VL_COMPILER_MSC	host.h	227;"	d
+VL_COVDET_AA_ACCURATE_SMOOTHING	covdet.c	1441;"	d	file:
+VL_COVDET_AA_CONVERGENCE_THRESHOLD	covdet.c	1440;"	d	file:
+VL_COVDET_AA_MAX_ANISOTROPY	covdet.c	1439;"	d	file:
+VL_COVDET_AA_MAX_NUM_ITERATIONS	covdet.c	1435;"	d	file:
+VL_COVDET_AA_PATCH_EXTENT	covdet.c	1442;"	d	file:
+VL_COVDET_AA_PATCH_RESOLUTION	covdet.c	1434;"	d	file:
+VL_COVDET_AA_RELATIVE_DERIVATIVE_SIGMA	covdet.c	1438;"	d	file:
+VL_COVDET_AA_RELATIVE_INTEGRATION_SIGMA	covdet.c	1437;"	d	file:
+VL_COVDET_DOG_DEF_EDGE_THRESHOLD	covdet.c	1448;"	d	file:
+VL_COVDET_DOG_DEF_PEAK_THRESHOLD	covdet.c	1447;"	d	file:
+VL_COVDET_H	covdet.h	18;"	d
+VL_COVDET_HARRIS_DEF_EDGE_THRESHOLD	covdet.c	1450;"	d	file:
+VL_COVDET_HARRIS_DEF_PEAK_THRESHOLD	covdet.c	1449;"	d	file:
+VL_COVDET_HESSIAN_DEF_EDGE_THRESHOLD	covdet.c	1452;"	d	file:
+VL_COVDET_HESSIAN_DEF_PEAK_THRESHOLD	covdet.c	1451;"	d	file:
+VL_COVDET_LAP_DEF_PEAK_THRESHOLD	covdet.c	1446;"	d	file:
+VL_COVDET_LAP_NUM_LEVELS	covdet.c	1444;"	d	file:
+VL_COVDET_LAP_PATCH_RESOLUTION	covdet.c	1445;"	d	file:
+VL_COVDET_MAX_NUM_LAPLACIAN_SCALES	covdet.c	1433;"	d	file:
+VL_COVDET_MAX_NUM_ORIENTATIONS	covdet.c	1432;"	d	file:
+VL_COVDET_METHOD_DOG	covdet.h	/^  VL_COVDET_METHOD_DOG = 1,$/;"	e	enum:_VlCovDetMethod
+VL_COVDET_METHOD_HARRIS_LAPLACE	covdet.h	/^  VL_COVDET_METHOD_HARRIS_LAPLACE,$/;"	e	enum:_VlCovDetMethod
+VL_COVDET_METHOD_HESSIAN	covdet.h	/^  VL_COVDET_METHOD_HESSIAN,$/;"	e	enum:_VlCovDetMethod
+VL_COVDET_METHOD_HESSIAN_LAPLACE	covdet.h	/^  VL_COVDET_METHOD_HESSIAN_LAPLACE,$/;"	e	enum:_VlCovDetMethod
+VL_COVDET_METHOD_MULTISCALE_HARRIS	covdet.h	/^  VL_COVDET_METHOD_MULTISCALE_HARRIS,$/;"	e	enum:_VlCovDetMethod
+VL_COVDET_METHOD_MULTISCALE_HESSIAN	covdet.h	/^  VL_COVDET_METHOD_MULTISCALE_HESSIAN,$/;"	e	enum:_VlCovDetMethod
+VL_COVDET_METHOD_NUM	covdet.h	/^  VL_COVDET_METHOD_NUM$/;"	e	enum:_VlCovDetMethod
+VL_COVDET_OR_ADDITIONAL_PEAKS_RELATIVE_SIZE	covdet.c	1443;"	d	file:
+VL_COVDET_OR_NUM_ORIENTATION_HISTOGAM_BINS	covdet.c	1436;"	d	file:
+VL_DISABLE_OPENMP	host.h	25;"	d
+VL_DISABLE_SSE2	host.h	24;"	d
+VL_DISABLE_THREADS	host.h	23;"	d
+VL_E	mathop.h	22;"	d
+VL_EPSILON_D	mathop.h	45;"	d
+VL_EPSILON_F	mathop.h	37;"	d
+VL_ERR_ALLOC	generic.h	124;"	d
+VL_ERR_BAD_ARG	generic.h	125;"	d
+VL_ERR_EOF	generic.h	127;"	d
+VL_ERR_IO	generic.h	126;"	d
+VL_ERR_MSG_LEN	generic.h	30;"	d
+VL_ERR_NO_MORE	generic.h	128;"	d
+VL_ERR_OK	generic.h	122;"	d
+VL_ERR_OVERFLOW	generic.h	123;"	d
+VL_ERR_PGM_INV_DATA	pgm.h	25;"	d
+VL_ERR_PGM_INV_HEAD	pgm.h	23;"	d
+VL_ERR_PGM_INV_META	pgm.h	24;"	d
+VL_ERR_PGM_IO	pgm.h	26;"	d
+VL_EXPORT	host.h	319;"	d
+VL_EXPORT	host.h	321;"	d
+VL_EXPORT	host.h	325;"	d
+VL_EXPORT	host.h	327;"	d
+VL_EXPORT	host.h	339;"	d
+VL_EXPORT	host.h	341;"	d
+VL_EXPORT	host.h	350;"	d
+VL_EXPORT	host.h	352;"	d
+VL_EXPORT	host.h	356;"	d
+VL_EXPORT	host.h	358;"	d
+VL_EXPORT	host.h	35;"	d
+VL_FALSE	host.h	371;"	d
+VL_FAST_SQRT_UI	mathop.h	579;"	d
+VL_FISHER_FLAG_FAST	fisher.h	26;"	d
+VL_FISHER_FLAG_IMPROVED	fisher.h	25;"	d
+VL_FISHER_FLAG_NORMALIZED	fisher.h	24;"	d
+VL_FISHER_FLAG_SQUARE_ROOT	fisher.h	23;"	d
+VL_FISHER_H	fisher.h	17;"	d
+VL_FISHER_INSTANTIATING	fisher.c	499;"	d	file:
+VL_FISHER_INSTANTIATING	fisher.c	505;"	d	file:
+VL_FISHER_INSTANTIATING	fisher.c	588;"	d	file:
+VL_FL_INDEX	host.h	492;"	d
+VL_FL_INDEX	host.h	496;"	d
+VL_FL_INT16	host.h	488;"	d
+VL_FL_INT32	host.h	487;"	d
+VL_FL_INT64	host.h	483;"	d
+VL_FL_INT64	host.h	485;"	d
+VL_FL_INT8	host.h	489;"	d
+VL_FMT_INDEX	host.h	521;"	d
+VL_FMT_INTPTR	host.h	522;"	d
+VL_FMT_SIZE	host.h	524;"	d
+VL_FMT_UINDEX	host.h	523;"	d
+VL_FMT_UINTPTR	host.h	525;"	d
+VL_FRAMETYPE_DISC	covdet.h	/^  VL_FRAMETYPE_DISC = 1,         \/**< A disc. *\/$/;"	e	enum:_VlFrameType
+VL_FRAMETYPE_ELLIPSE	covdet.h	/^  VL_FRAMETYPE_ELLIPSE,          \/**< An ellipse. *\/$/;"	e	enum:_VlFrameType
+VL_FRAMETYPE_NUM	covdet.h	/^  VL_FRAMETYPE_NUM$/;"	e	enum:_VlFrameType
+VL_FRAMETYPE_ORIENTED_DISC	covdet.h	/^  VL_FRAMETYPE_ORIENTED_DISC,    \/**< An oriented disc. *\/$/;"	e	enum:_VlFrameType
+VL_FRAMETYPE_ORIENTED_ELLIPSE	covdet.h	/^  VL_FRAMETYPE_ORIENTED_ELLIPSE, \/**< An oriented ellipse. *\/$/;"	e	enum:_VlFrameType
+VL_GENERIC_H	generic.h	16;"	d
+VL_GETOPT_LONG_H	getopt_long.h	15;"	d
+VL_GMM_H	gmm.h	16;"	d
+VL_GMM_INSTANTIATING	gmm.c	1453;"	d	file:
+VL_GMM_INSTANTIATING	gmm.c	1459;"	d	file:
+VL_GMM_INSTANTIATING	gmm.c	1709;"	d	file:
+VL_GMM_MIN_POSTERIOR	gmm.c	309;"	d	file:
+VL_GMM_MIN_PRIOR	gmm.c	310;"	d	file:
+VL_GMM_MIN_VARIANCE	gmm.c	308;"	d	file:
+VL_HEAP_DEF_H	heap-def.h	182;"	d
+VL_HEAP_array	heap-def.h	164;"	d
+VL_HEAP_array	heap-def.h	175;"	d
+VL_HEAP_array	heap-def.h	176;"	d
+VL_HEAP_array	heap-def.h	463;"	d
+VL_HEAP_array_const	heap-def.h	165;"	d
+VL_HEAP_array_const	heap-def.h	169;"	d
+VL_HEAP_array_const	heap-def.h	464;"	d
+VL_HEAP_cmp	heap-def.h	/^VL_HEAP_cmp$/;"	f
+VL_HEAP_cmp	heap-def.h	224;"	d
+VL_HEAP_cmp	heap-def.h	454;"	d
+VL_HEAP_cmp	kdtree.c	101;"	d	file:
+VL_HEAP_cmp	kdtree.c	106;"	d	file:
+VL_HEAP_cmp	kdtree.c	111;"	d	file:
+VL_HEAP_down	heap-def.h	/^VL_HEAP_down$/;"	f
+VL_HEAP_down	heap-def.h	329;"	d
+VL_HEAP_down	heap-def.h	457;"	d
+VL_HEAP_pop	heap-def.h	/^VL_HEAP_pop$/;"	f
+VL_HEAP_pop	heap-def.h	382;"	d
+VL_HEAP_pop	heap-def.h	459;"	d
+VL_HEAP_prefix	heap-def.h	173;"	d
+VL_HEAP_prefix	heap-def.h	461;"	d
+VL_HEAP_prefix	kdtree.c	104;"	d	file:
+VL_HEAP_prefix	kdtree.c	109;"	d	file:
+VL_HEAP_prefix	kdtree.c	99;"	d	file:
+VL_HEAP_push	heap-def.h	/^VL_HEAP_push$/;"	f
+VL_HEAP_push	heap-def.h	358;"	d
+VL_HEAP_push	heap-def.h	458;"	d
+VL_HEAP_swap	heap-def.h	/^VL_HEAP_swap$/;"	f
+VL_HEAP_swap	heap-def.h	249;"	d
+VL_HEAP_swap	heap-def.h	455;"	d
+VL_HEAP_type	heap-def.h	174;"	d
+VL_HEAP_type	heap-def.h	462;"	d
+VL_HEAP_type	kdtree.c	100;"	d	file:
+VL_HEAP_type	kdtree.c	105;"	d	file:
+VL_HEAP_type	kdtree.c	110;"	d	file:
+VL_HEAP_up	heap-def.h	/^VL_HEAP_up$/;"	f
+VL_HEAP_up	heap-def.h	279;"	d
+VL_HEAP_up	heap-def.h	456;"	d
+VL_HEAP_update	heap-def.h	/^VL_HEAP_update$/;"	f
+VL_HEAP_update	heap-def.h	422;"	d
+VL_HEAP_update	heap-def.h	460;"	d
+VL_HIKMEANS_H	hikmeans.h	15;"	d
+VL_HOG_H	hog.h	15;"	d
+VL_HOMKERMAP_H	homkermap.h	15;"	d
+VL_HOMKERMAP_INSTANTIATING	homkermap.c	515;"	d	file:
+VL_HOMKERMAP_INSTANTIATING	homkermap.c	519;"	d	file:
+VL_HOMKERMAP_INSTANTIATING	homkermap.c	578;"	d	file:
+VL_HOST_H	host.h	16;"	d
+VL_IKMACC_MAX	ikmeans.h	27;"	d
+VL_IKMEANS_H	ikmeans.h	17;"	d
+VL_IKM_ELKAN	ikmeans.h	/^  VL_IKM_ELKAN, \/**< Elkan algorithm *\/$/;"	e	enum:VlIKMAlgorithms
+VL_IKM_LLOYD	ikmeans.h	/^  VL_IKM_LLOYD, \/**< Lloyd algorithm *\/$/;"	e	enum:VlIKMAlgorithms
+VL_IMOPV_H	imopv.h	15;"	d
+VL_IMOPV_INSTANTIATING	imopv.c	1073;"	d	file:
+VL_IMOPV_INSTANTIATING	imopv.c	42;"	d	file:
+VL_IMOPV_INSTANTIATING	imopv.c	46;"	d	file:
+VL_IMOPV_INSTANTIATING	imopv.c	50;"	d	file:
+VL_IMOPV_INSTANTIATING	imopv.c	54;"	d	file:
+VL_IMOPV_SSE2_H	imopv_sse2.h	15;"	d
+VL_IMOPV_SSE2_INSTANTIATING	imopv_sse2.c	285;"	d	file:
+VL_IMOPV_SSE2_INSTANTIATING	imopv_sse2.c	28;"	d	file:
+VL_IMOPV_SSE2_INSTANTIATING	imopv_sse2.c	32;"	d	file:
+VL_INFINITY_D	mathop.h	92;"	d
+VL_INFINITY_F	mathop.h	86;"	d
+VL_INLINE	host.h	314;"	d
+VL_INLINE	host.h	334;"	d
+VL_INLINE	host.h	347;"	d
+VL_INLINE	host.h	36;"	d
+VL_INT16_C	host.h	432;"	d
+VL_INT16_C	host.h	445;"	d
+VL_INT32_C	host.h	433;"	d
+VL_INT32_C	host.h	446;"	d
+VL_INT64_C	host.h	434;"	d
+VL_INT64_C	host.h	447;"	d
+VL_INT8_C	host.h	431;"	d
+VL_INT8_C	host.h	444;"	d
+VL_KDTREE_H	kdtree.h	15;"	d
+VL_KDTREE_MEAN	kdtree.h	/^  VL_KDTREE_MEAN$/;"	e	enum:_VlKDTreeThresholdingMethod
+VL_KDTREE_MEDIAN	kdtree.h	/^  VL_KDTREE_MEDIAN,$/;"	e	enum:_VlKDTreeThresholdingMethod
+VL_KDTREE_SPLIT_HEAP_SIZE	kdtree.h	20;"	d
+VL_KDTREE_VARIANCE_EST_NUM_SAMPLES	kdtree.h	21;"	d
+VL_KMEANS_H	kmeans.h	17;"	d
+VL_KMEANS_INSTANTIATING	kmeans.c	1781;"	d	file:
+VL_KMEANS_INSTANTIATING	kmeans.c	1787;"	d	file:
+VL_KMEANS_INSTANTIATING	kmeans.c	2101;"	d	file:
+VL_LBP_H	lbp.h	15;"	d
+VL_LIOP_H	liop.h	17;"	d
+VL_LOG_OF_2	mathop.h	25;"	d
+VL_MATHOP_H	mathop.h	15;"	d
+VL_MATHOP_INSTANTIATING	mathop.c	1032;"	d	file:
+VL_MATHOP_INSTANTIATING	mathop.c	271;"	d	file:
+VL_MATHOP_INSTANTIATING	mathop.c	276;"	d	file:
+VL_MATHOP_SSE2_H	mathop_sse2.h	18;"	d
+VL_MATHOP_SSE2_H_INSTANTIATING	mathop_sse2.h	22;"	d
+VL_MATHOP_SSE2_H_INSTANTIATING	mathop_sse2.h	27;"	d
+VL_MATHOP_SSE2_INSTANTIATING	mathop_sse2.c	21;"	d	file:
+VL_MATHOP_SSE2_INSTANTIATING	mathop_sse2.c	26;"	d	file:
+VL_MATHOP_SSE2_INSTANTIATING	mathop_sse2.c	563;"	d	file:
+VL_MATHOP_SSE2_INSTANTIATING	mathop_sse2.h	84;"	d
+VL_MAX	generic.h	188;"	d
+VL_MIN	generic.h	181;"	d
+VL_MSER	mser.h	15;"	d
+VL_MSER_PIX_MAXVAL	mser.h	30;"	d
+VL_MSER_VOID_NODE	mser.h	117;"	d
+VL_MSER_VOID_NODE	mser.h	119;"	d
+VL_NAN_D	mathop.h	89;"	d
+VL_NAN_F	mathop.h	83;"	d
+VL_OS_LINUX	host.h	180;"	d
+VL_OS_MACOSX	host.h	185;"	d
+VL_OS_WIN	host.h	191;"	d
+VL_OS_WIN64	host.h	196;"	d
+VL_PAD_BY_CONTINUITY	imopv.h	22;"	d
+VL_PAD_BY_ZERO	imopv.h	21;"	d
+VL_PAD_MASK	imopv.h	23;"	d
+VL_PGM_H	pgm.h	15;"	d
+VL_PI	mathop.h	28;"	d
+VL_PRINT	generic.h	169;"	d
+VL_PRINTF	generic.h	168;"	d
+VL_PROT_ASCII	stringop.h	/^  VL_PROT_ASCII,        \/**< ASCII protocol   *\/$/;"	e	enum:__anon8
+VL_PROT_BINARY	stringop.h	/^  VL_PROT_BINARY        \/**< Binary protocol  *\/$/;"	e	enum:__anon8
+VL_PROT_NONE	stringop.h	/^  VL_PROT_NONE    =  0, \/**< no protocol      *\/$/;"	e	enum:__anon8
+VL_PROT_UNKNOWN	stringop.h	/^  VL_PROT_UNKNOWN = -1, \/**< unknown protocol *\/$/;"	e	enum:__anon8
+VL_QSORT_array	kmeans.c	801;"	d	file:
+VL_QSORT_array	liop.c	280;"	d	file:
+VL_QSORT_array	liop.c	300;"	d	file:
+VL_QSORT_array	qsort-def.h	198;"	d
+VL_QSORT_array	qsort-def.h	49;"	d
+VL_QSORT_array	qsort-def.h	56;"	d
+VL_QSORT_array_const	qsort-def.h	50;"	d
+VL_QSORT_cmp	kmeans.c	802;"	d	file:
+VL_QSORT_cmp	liop.c	281;"	d	file:
+VL_QSORT_cmp	liop.c	301;"	d	file:
+VL_QSORT_cmp	qsort-def.h	/^VL_QSORT_cmp$/;"	f
+VL_QSORT_cmp	qsort-def.h	199;"	d
+VL_QSORT_cmp	qsort-def.h	62;"	d
+VL_QSORT_prefix	kmeans.c	800;"	d	file:
+VL_QSORT_prefix	liop.c	279;"	d	file:
+VL_QSORT_prefix	liop.c	299;"	d	file:
+VL_QSORT_prefix	qsort-def.h	193;"	d
+VL_QSORT_prefix	qsort-def.h	54;"	d
+VL_QSORT_sort	qsort-def.h	/^VL_QSORT_sort$/;"	f
+VL_QSORT_sort	qsort-def.h	173;"	d
+VL_QSORT_sort	qsort-def.h	195;"	d
+VL_QSORT_sort_recursive	qsort-def.h	/^VL_QSORT_sort_recursive$/;"	f
+VL_QSORT_sort_recursive	qsort-def.h	115;"	d
+VL_QSORT_sort_recursive	qsort-def.h	196;"	d
+VL_QSORT_swap	kmeans.c	803;"	d	file:
+VL_QSORT_swap	liop.c	282;"	d	file:
+VL_QSORT_swap	liop.c	302;"	d	file:
+VL_QSORT_swap	qsort-def.h	/^VL_QSORT_swap$/;"	f
+VL_QSORT_swap	qsort-def.h	194;"	d
+VL_QSORT_swap	qsort-def.h	87;"	d
+VL_QSORT_type	qsort-def.h	197;"	d
+VL_QSORT_type	qsort-def.h	55;"	d
+VL_QS_INF	quickshift.h	25;"	d
+VL_QUICKSHIFT_H	quickshift.h	16;"	d
+VL_RANDOM_H	random.h	16;"	d
+VL_RODRIGUES	rodrigues.h	25;"	d
+VL_SCALESPACE_H	scalespace.h	17;"	d
+VL_SHIFT_LEFT	generic.h	197;"	d
+VL_SHUFFLE_array	shuffle-def.h	101;"	d
+VL_SHUFFLE_array	shuffle-def.h	31;"	d
+VL_SHUFFLE_array	shuffle-def.h	37;"	d
+VL_SHUFFLE_prefix	gmm.c	681;"	d	file:
+VL_SHUFFLE_prefix	kmeans.c	496;"	d	file:
+VL_SHUFFLE_prefix	shuffle-def.h	35;"	d
+VL_SHUFFLE_prefix	shuffle-def.h	97;"	d
+VL_SHUFFLE_shuffle	shuffle-def.h	/^VL_SHUFFLE_shuffle$/;"	f
+VL_SHUFFLE_shuffle	shuffle-def.h	72;"	d
+VL_SHUFFLE_shuffle	shuffle-def.h	99;"	d
+VL_SHUFFLE_swap	shuffle-def.h	/^VL_SHUFFLE_swap$/;"	f
+VL_SHUFFLE_swap	shuffle-def.h	43;"	d
+VL_SHUFFLE_swap	shuffle-def.h	98;"	d
+VL_SHUFFLE_type	gmm.c	680;"	d	file:
+VL_SHUFFLE_type	kmeans.c	495;"	d	file:
+VL_SHUFFLE_type	shuffle-def.h	100;"	d
+VL_SHUFFLE_type	shuffle-def.h	36;"	d
+VL_SLIC_H	slic.h	15;"	d
+VL_SMALL_INT	host.h	537;"	d
+VL_STRINGIFY	host.h	66;"	d
+VL_STRINGOP_H	stringop.h	15;"	d
+VL_SVMDATASET_H	svmdataset.h	17;"	d
+VL_SVMDATASET_INSTANTIATING	svmdataset.c	116;"	d	file:
+VL_SVMDATASET_INSTANTIATING	svmdataset.c	120;"	d	file:
+VL_SVMDATASET_INSTANTIATING	svmdataset.c	404;"	d	file:
+VL_SVM_H	svm.h	20;"	d
+VL_THREADS_POSIX	host.h	204;"	d
+VL_THREADS_WIN	host.h	209;"	d
+VL_TRANSPOSE	imopv.h	24;"	d
+VL_TRUE	host.h	370;"	d
+VL_TYPE_DOUBLE	generic.h	36;"	d
+VL_TYPE_FLOAT	generic.h	35;"	d
+VL_TYPE_INT16	generic.h	39;"	d
+VL_TYPE_INT32	generic.h	41;"	d
+VL_TYPE_INT64	generic.h	43;"	d
+VL_TYPE_INT8	generic.h	37;"	d
+VL_TYPE_UINT16	generic.h	40;"	d
+VL_TYPE_UINT32	generic.h	42;"	d
+VL_TYPE_UINT64	generic.h	44;"	d
+VL_TYPE_UINT8	generic.h	38;"	d
+VL_UINT16_C	host.h	437;"	d
+VL_UINT16_C	host.h	450;"	d
+VL_UINT32_C	host.h	438;"	d
+VL_UINT32_C	host.h	451;"	d
+VL_UINT64_C	host.h	439;"	d
+VL_UINT64_C	host.h	452;"	d
+VL_UINT8_C	host.h	436;"	d
+VL_UINT8_C	host.h	449;"	d
+VL_UNUSED	host.h	313;"	d
+VL_UNUSED	host.h	333;"	d
+VL_UNUSED	host.h	346;"	d
+VL_VERSION_STRING	generic.h	27;"	d
+VL_VLAD_FLAG_NORMALIZE_COMPONENTS	vlad.h	23;"	d
+VL_VLAD_FLAG_NORMALIZE_MASS	vlad.h	26;"	d
+VL_VLAD_FLAG_SQUARE_ROOT	vlad.h	24;"	d
+VL_VLAD_FLAG_UNNORMALIZED	vlad.h	25;"	d
+VL_VLAD_H	vlad.h	17;"	d
+VL_VLAD_INSTANTIATING	vlad.c	251;"	d	file:
+VL_VLAD_INSTANTIATING	vlad.c	257;"	d	file:
+VL_VLAD_INSTANTIATING	vlad.c	323;"	d	file:
+VL_XCAT	fisher.c	/^VL_XCAT(_vl_fisher_encode_, SFX)$/;"	f	file:
+VL_XCAT	gmm.c	/^VL_XCAT(_vl_gmm_apply_bounds_, SFX)(VlGMM * self)$/;"	f	file:
+VL_XCAT	gmm.c	/^VL_XCAT(_vl_gmm_compute_init_sigma_, SFX)$/;"	f	file:
+VL_XCAT	gmm.c	/^VL_XCAT(_vl_gmm_em_, SFX)$/;"	f	file:
+VL_XCAT	gmm.c	/^VL_XCAT(_vl_gmm_init_with_kmeans_, SFX)$/;"	f	file:
+VL_XCAT	gmm.c	/^VL_XCAT(_vl_gmm_init_with_rand_data_, SFX)$/;"	f	file:
+VL_XCAT	gmm.c	/^VL_XCAT(_vl_gmm_maximization_, SFX)$/;"	f	file:
+VL_XCAT	gmm.c	/^VL_XCAT(_vl_gmm_restart_empty_modes_, SFX) (VlGMM * self, TYPE const * data)$/;"	f	file:
+VL_XCAT	gmm.c	/^VL_XCAT(vl_get_gmm_data_posteriors_, SFX)$/;"	f
+VL_XCAT	homkermap.c	/^VL_XCAT(vl_homogeneouskernelmap_evaluate_,SFX)$/;"	f
+VL_XCAT	host.h	112;"	d
+VL_XCAT	imopv.c	/^VL_XCAT(_vl_new_gaussian_fitler_,SFX)(vl_size *size, double sigma)$/;"	f	file:
+VL_XCAT	imopv.c	/^VL_XCAT(vl_image_distance_transform_,SFX)$/;"	f
+VL_XCAT	imopv.c	/^VL_XCAT(vl_imconvcol_v, SFX)$/;"	f
+VL_XCAT	imopv.c	/^VL_XCAT(vl_imconvcoltri_, SFX)$/;"	f
+VL_XCAT	imopv.c	/^VL_XCAT(vl_imgradient_, SFX)$/;"	f
+VL_XCAT	imopv.c	/^VL_XCAT(vl_imgradient_polar_, SFX)$/;"	f
+VL_XCAT	imopv.c	/^VL_XCAT(vl_imintegral_, SFX)$/;"	f
+VL_XCAT	imopv.c	/^VL_XCAT(vl_imsmooth_, SFX)$/;"	f
+VL_XCAT	kmeans.c	/^VL_XCAT(_vl_kmeans_init_centers_plus_plus_, SFX)$/;"	f	file:
+VL_XCAT	kmeans.c	/^VL_XCAT(_vl_kmeans_init_centers_with_rand_data_, SFX)$/;"	f	file:
+VL_XCAT	kmeans.c	/^VL_XCAT(_vl_kmeans_quantize_, SFX)$/;"	f	file:
+VL_XCAT	kmeans.c	/^VL_XCAT(_vl_kmeans_quantize_ann_, SFX)$/;"	f	file:
+VL_XCAT	kmeans.c	/^VL_XCAT(_vl_kmeans_refine_centers_, SFX)$/;"	f	file:
+VL_XCAT	kmeans.c	/^VL_XCAT(_vl_kmeans_refine_centers_ann_, SFX)$/;"	f	file:
+VL_XCAT	kmeans.c	/^VL_XCAT(_vl_kmeans_refine_centers_elkan_, SFX)$/;"	f	file:
+VL_XCAT	kmeans.c	/^VL_XCAT(_vl_kmeans_refine_centers_lloyd_, SFX)$/;"	f	file:
+VL_XCAT	kmeans.c	/^VL_XCAT(_vl_kmeans_set_centers_, SFX)$/;"	f	file:
+VL_XCAT	kmeans.c	/^VL_XCAT(_vl_kmeans_sort_data_helper_, SFX)$/;"	f	file:
+VL_XCAT	kmeans.c	/^VL_XCAT(_vl_kmeans_update_center_distances_, SFX)$/;"	f	file:
+VL_XCAT	mathop.c	/^VL_XCAT(_vl_distance_chi2_, SFX)$/;"	f
+VL_XCAT	mathop.c	/^VL_XCAT(_vl_distance_hellinger_, SFX)$/;"	f
+VL_XCAT	mathop.c	/^VL_XCAT(_vl_distance_js_, SFX)$/;"	f
+VL_XCAT	mathop.c	/^VL_XCAT(_vl_distance_l1_, SFX)$/;"	f
+VL_XCAT	mathop.c	/^VL_XCAT(_vl_distance_l2_, SFX)$/;"	f
+VL_XCAT	mathop.c	/^VL_XCAT(_vl_distance_mahalanobis_sq_, SFX)$/;"	f
+VL_XCAT	mathop.c	/^VL_XCAT(_vl_kernel_chi2_, SFX)$/;"	f
+VL_XCAT	mathop.c	/^VL_XCAT(_vl_kernel_hellinger_, SFX)$/;"	f
+VL_XCAT	mathop.c	/^VL_XCAT(_vl_kernel_js_, SFX)$/;"	f
+VL_XCAT	mathop.c	/^VL_XCAT(_vl_kernel_l1_, SFX)$/;"	f
+VL_XCAT	mathop.c	/^VL_XCAT(_vl_kernel_l2_, SFX)$/;"	f
+VL_XCAT	mathop.c	/^VL_XCAT(vl_eval_vector_comparison_on_all_pairs_, SFX)$/;"	f
+VL_XCAT	mathop.c	/^VL_XCAT(vl_get_vector_3_comparison_function_, SFX)(VlVectorComparisonType type)$/;"	f
+VL_XCAT	mathop.c	/^VL_XCAT(vl_get_vector_comparison_function_, SFX)(VlVectorComparisonType type)$/;"	f
+VL_XCAT	mathop_sse2.c	/^VL_XCAT(_vl_distance_chi2_sse2_, SFX)$/;"	f
+VL_XCAT	mathop_sse2.c	/^VL_XCAT(_vl_distance_l1_sse2_, SFX)$/;"	f
+VL_XCAT	mathop_sse2.c	/^VL_XCAT(_vl_distance_l2_sse2_, SFX)$/;"	f
+VL_XCAT	mathop_sse2.c	/^VL_XCAT(_vl_distance_mahalanobis_sq_sse2_, SFX)$/;"	f
+VL_XCAT	mathop_sse2.c	/^VL_XCAT(_vl_dot_sse2_, SFX)$/;"	f
+VL_XCAT	mathop_sse2.c	/^VL_XCAT(_vl_kernel_chi2_sse2_, SFX)$/;"	f
+VL_XCAT	mathop_sse2.c	/^VL_XCAT(_vl_kernel_l1_sse2_, SFX)$/;"	f
+VL_XCAT	mathop_sse2.c	/^VL_XCAT(_vl_kernel_l2_sse2_, SFX)$/;"	f
+VL_XCAT	mathop_sse2.c	/^VL_XCAT(_vl_vhsum_sse2_, SFX)(VTYPE x)$/;"	f
+VL_XCAT	mathop_sse2.c	/^VL_XCAT(_vl_weighted_mean_sse2_, SFX)$/;"	f
+VL_XCAT	mathop_sse2.c	/^VL_XCAT(_vl_weighted_sigma_sse2_, SFX)$/;"	f
+VL_XCAT	svmdataset.c	/^VL_XCAT(_vl_svmdataset_inner_product_,SFX) (VlSvmDataset const *self,$/;"	f
+VL_XCAT	svmdataset.c	/^VL_XCAT(_vl_svmdataset_inner_product_hom_,SFX) (VlSvmDataset const *self,$/;"	f
+VL_XCAT	svmdataset.c	/^VL_XCAT(vl_svmdataset_accumulate_,SFX)(VlSvmDataset const *self,$/;"	f
+VL_XCAT	svmdataset.c	/^VL_XCAT(vl_svmdataset_accumulate_hom_,SFX)(VlSvmDataset const *self,$/;"	f
+VL_XCAT	vlad.c	/^VL_XCAT(_vl_vlad_encode_, SFX)$/;"	f	file:
+VL_XCAT3	host.h	124;"	d
+VL_XCAT3	imopv_sse2.c	/^VL_XCAT3(_vl_imconvcol_v, SFX, _sse2)$/;"	f
+VL_XCAT3	kmeans.c	/^VL_XCAT3(_vl_kmeans_, SFX, _qsort_cmp)$/;"	f
+VL_XCAT3	kmeans.c	/^VL_XCAT3(_vl_kmeans_, SFX, _qsort_swap)$/;"	f
+VL_XCAT4	host.h	137;"	d
+VL_XCAT5	host.h	151;"	d
+VL_XSTRINGIFY	host.h	85;"	d
+VL_YESNO	host.h	165;"	d
+VlAIB	aib.h	/^} VlAIB;$/;"	t	typeref:struct:_VlAIB
+VlArray	array.h	/^} VlArray ;$/;"	t	typeref:struct:_VlArray
+VlCovDet	covdet.h	/^typedef struct _VlCovDet VlCovDet ;$/;"	t	typeref:struct:_VlCovDet
+VlCovDetExtremum2	covdet.c	/^} VlCovDetExtremum2 ;$/;"	t	typeref:struct:_VlCovDetExtremum2	file:
+VlCovDetExtremum3	covdet.c	/^} VlCovDetExtremum3 ;$/;"	t	typeref:struct:_VlCovDetExtremum3	file:
+VlCovDetFeature	covdet.h	/^} VlCovDetFeature ;$/;"	t	typeref:struct:_VlCovDetFeature
+VlCovDetFeatureLaplacianScale	covdet.h	/^} VlCovDetFeatureLaplacianScale ;$/;"	t	typeref:struct:_VlCovDetFeatureLaplacianScale
+VlCovDetFeatureOrientation	covdet.h	/^} VlCovDetFeatureOrientation ;$/;"	t	typeref:struct:_VlCovDetFeatureOrientation
+VlCovDetMethod	covdet.h	/^} VlCovDetMethod;$/;"	t	typeref:enum:_VlCovDetMethod
+VlDistanceChi2	mathop.h	/^  VlDistanceChi2,      \/**< squared Chi2 distance *\/$/;"	e	enum:_VlVectorComparisonType
+VlDistanceHellinger	mathop.h	/^  VlDistanceHellinger, \/**< squared Hellinger's distance *\/$/;"	e	enum:_VlVectorComparisonType
+VlDistanceJS	mathop.h	/^  VlDistanceJS,        \/**< squared Jensen-Shannon distance *\/$/;"	e	enum:_VlVectorComparisonType
+VlDistanceL1	mathop.h	/^  VlDistanceL1,        \/**< l1 distance (squared intersection metric) *\/$/;"	e	enum:_VlVectorComparisonType
+VlDistanceL2	mathop.h	/^  VlDistanceL2,        \/**< squared l2 distance *\/$/;"	e	enum:_VlVectorComparisonType
+VlDistanceMahalanobis	mathop.h	/^  VlDistanceMahalanobis,     \/**< squared mahalanobis distance *\/$/;"	e	enum:_VlVectorComparisonType
+VlDoubleVector3ComparisonFunction	mathop.h	/^typedef double (*VlDoubleVector3ComparisonFunction)(vl_size dimension, double const * X, double const * Y, double const * Z) ;$/;"	t
+VlDoubleVectorComparisonFunction	mathop.h	/^typedef double (*VlDoubleVectorComparisonFunction)(vl_size dimension, double const * X, double const * Y) ;$/;"	t
+VlEnumerator	stringop.h	/^} VlEnumerator ;$/;"	t	typeref:struct:_VlEnumerator
+VlFloatVector3ComparisonFunction	mathop.h	/^typedef float (*VlFloatVector3ComparisonFunction)(vl_size dimension, float const * X, float const * Y, float const * Z) ;$/;"	t
+VlFloatVectorComparisonFunction	mathop.h	/^typedef float (*VlFloatVectorComparisonFunction)(vl_size dimension, float const * X, float const * Y) ;$/;"	t
+VlFrameDisc	covdet.h	/^} VlFrameDisc ;$/;"	t	typeref:struct:_VlFrameDisc
+VlFrameEllipse	covdet.h	/^} VlFrameEllipse ;$/;"	t	typeref:struct:_VlFrameEllipse
+VlFrameOrientedDisc	covdet.h	/^} VlFrameOrientedDisc ;$/;"	t	typeref:struct:_VlFrameOrientedDisc
+VlFrameOrientedEllipse	covdet.h	/^} VlFrameOrientedEllipse;$/;"	t	typeref:struct:_VlFrameOrientedEllipse
+VlFrameType	covdet.h	/^} VlFrameType ;$/;"	t	typeref:enum:_VlFrameType
+VlGMM	gmm.h	/^typedef OPAQUE VlGMM ;$/;"	t
+VlGMM	gmm.h	/^typedef struct _VlGMM VlGMM ;$/;"	t	typeref:struct:_VlGMM
+VlGMMCustom	gmm.h	/^  VlGMMCustom  \/**< User specifies the initial GMM parameters. *\/$/;"	e	enum:_VlGMMInitialization
+VlGMMInitialization	gmm.h	/^} VlGMMInitialization ;$/;"	t	typeref:enum:_VlGMMInitialization
+VlGMMKMeans	gmm.h	/^  VlGMMKMeans, \/**< Initialize GMM from KMeans clustering. *\/$/;"	e	enum:_VlGMMInitialization
+VlGMMRand	gmm.h	/^  VlGMMRand,   \/**< Initialize GMM parameters by selecting points at random. *\/$/;"	e	enum:_VlGMMInitialization
+VlHIKMNode	hikmeans.h	/^} VlHIKMNode ;$/;"	t	typeref:struct:_VlHIKMNode
+VlHIKMTree	hikmeans.h	/^} VlHIKMTree ;$/;"	t	typeref:struct:_VlHIKMTree
+VlHog	hog.h	/^typedef struct VlHog_ VlHog ;$/;"	t	typeref:struct:VlHog_
+VlHogVariant	hog.h	/^typedef enum VlHogVariant_ VlHogVariant ;$/;"	t	typeref:enum:VlHogVariant_
+VlHogVariantDalalTriggs	hog.h	/^enum VlHogVariant_ { VlHogVariantDalalTriggs, VlHogVariantUoctti } ;$/;"	e	enum:VlHogVariant_
+VlHogVariantUoctti	hog.h	/^enum VlHogVariant_ { VlHogVariantDalalTriggs, VlHogVariantUoctti } ;$/;"	e	enum:VlHogVariant_
+VlHogVariant_	hog.h	/^enum VlHogVariant_ { VlHogVariantDalalTriggs, VlHogVariantUoctti } ;$/;"	g
+VlHog_	hog.h	/^struct VlHog_$/;"	s
+VlHomogeneousKernelChi2	homkermap.h	/^  VlHomogeneousKernelChi2, \/**< Chi2 kernel *\/$/;"	e	enum:__anon1
+VlHomogeneousKernelIntersection	homkermap.h	/^  VlHomogeneousKernelIntersection = 0, \/**< intersection kernel *\/$/;"	e	enum:__anon1
+VlHomogeneousKernelJS	homkermap.h	/^  VlHomogeneousKernelJS \/**< Jensen-Shannon kernel *\/$/;"	e	enum:__anon1
+VlHomogeneousKernelMap	homkermap.h	/^typedef OPAQUE VlHomogeneousKernelMap ;$/;"	t
+VlHomogeneousKernelMap	homkermap.h	/^typedef struct _VlHomogeneousKernelMap VlHomogeneousKernelMap ;$/;"	t	typeref:struct:_VlHomogeneousKernelMap
+VlHomogeneousKernelMapWindowRectangular	homkermap.h	/^  VlHomogeneousKernelMapWindowRectangular = 1, \/**< rectangular window *\/$/;"	e	enum:__anon2
+VlHomogeneousKernelMapWindowType	homkermap.h	/^} VlHomogeneousKernelMapWindowType ;$/;"	t	typeref:enum:__anon2
+VlHomogeneousKernelMapWindowUniform	homkermap.h	/^  VlHomogeneousKernelMapWindowUniform = 0, \/**< uniform window *\/$/;"	e	enum:__anon2
+VlHomogeneousKernelType	homkermap.h	/^} VlHomogeneousKernelType ;$/;"	t	typeref:enum:__anon1
+VlIKMAlgorithms	ikmeans.h	/^enum VlIKMAlgorithms {$/;"	g
+VlIKMFilt	ikmeans.h	/^} VlIKMFilt ;$/;"	t	typeref:struct:_VlIKMFilt
+VlKDForest	kdtree.h	/^} VlKDForest ;$/;"	t	typeref:struct:_VlKDForest
+VlKDForestNeighbor	kdtree.h	/^} VlKDForestNeighbor ;$/;"	t	typeref:struct:_VlKDForestNeighbor
+VlKDForestSearchState	kdtree.h	/^typedef struct _VlKDForestSearchState VlKDForestSearchState ;$/;"	t	typeref:struct:_VlKDForestSearchState
+VlKDForestSearcher	kdtree.h	/^} VlKDForestSearcher ;$/;"	t	typeref:struct:_VlKDForestSearcher
+VlKDTree	kdtree.h	/^} VlKDTree ;$/;"	t	typeref:struct:_VlKDTree
+VlKDTreeDataIndexEntry	kdtree.h	/^typedef struct _VlKDTreeDataIndexEntry VlKDTreeDataIndexEntry ;$/;"	t	typeref:struct:_VlKDTreeDataIndexEntry
+VlKDTreeNode	kdtree.h	/^typedef struct _VlKDTreeNode VlKDTreeNode ;$/;"	t	typeref:struct:_VlKDTreeNode
+VlKDTreeSplitDimension	kdtree.h	/^typedef struct _VlKDTreeSplitDimension VlKDTreeSplitDimension ;$/;"	t	typeref:struct:_VlKDTreeSplitDimension
+VlKDTreeThresholdingMethod	kdtree.h	/^} VlKDTreeThresholdingMethod ;$/;"	t	typeref:enum:_VlKDTreeThresholdingMethod
+VlKMeans	kmeans.h	/^} VlKMeans ;$/;"	t	typeref:struct:_VlKMeans
+VlKMeansANN	kmeans.h	/^  VlKMeansANN          \/**< Approximate nearest neighbors *\/$/;"	e	enum:_VlKMeansAlgorithm
+VlKMeansAlgorithm	kmeans.h	/^} VlKMeansAlgorithm ;$/;"	t	typeref:enum:_VlKMeansAlgorithm
+VlKMeansElkan	kmeans.h	/^  VlKMeansElkan,       \/**< Elkan algorithm *\/$/;"	e	enum:_VlKMeansAlgorithm
+VlKMeansInitialization	kmeans.h	/^} VlKMeansInitialization ;$/;"	t	typeref:enum:_VlKMeansInitialization
+VlKMeansLloyd	kmeans.h	/^  VlKMeansLloyd,       \/**< Lloyd algorithm *\/$/;"	e	enum:_VlKMeansAlgorithm
+VlKMeansPlusPlus	kmeans.h	/^  VlKMeansPlusPlus          \/**< Plus plus raondomized selection *\/$/;"	e	enum:_VlKMeansInitialization
+VlKMeansRandomSelection	kmeans.h	/^  VlKMeansRandomSelection,  \/**< Randomized selection *\/$/;"	e	enum:_VlKMeansInitialization
+VlKMeansSortWrapper	kmeans.c	/^} VlKMeansSortWrapper ;$/;"	t	typeref:struct:_VlKMeansSortWrapper	file:
+VlKernelChi2	mathop.h	/^  VlKernelChi2,        \/**< Chi2 kernel *\/$/;"	e	enum:_VlVectorComparisonType
+VlKernelHellinger	mathop.h	/^  VlKernelHellinger,   \/**< Hellinger's kernel *\/$/;"	e	enum:_VlVectorComparisonType
+VlKernelJS	mathop.h	/^  VlKernelJS           \/**< Jensen-Shannon kernel *\/$/;"	e	enum:_VlVectorComparisonType
+VlKernelL1	mathop.h	/^  VlKernelL1,          \/**< intersection kernel *\/$/;"	e	enum:_VlVectorComparisonType
+VlKernelL2	mathop.h	/^  VlKernelL2,          \/**< l2 kernel *\/$/;"	e	enum:_VlVectorComparisonType
+VlLbp	lbp.h	/^} VlLbp ;$/;"	t	typeref:struct:VlLbp_
+VlLbpMappingType	lbp.h	/^} VlLbpMappingType ;$/;"	t	typeref:enum:_VlLbpMappingType
+VlLbpUniform	lbp.h	/^  VlLbpUniform     \/**< Uniform local binary patterns. *\/$/;"	e	enum:_VlLbpMappingType
+VlLbp_	lbp.h	/^typedef struct VlLbp_$/;"	s
+VlLiopDesc	liop.h	/^} VlLiopDesc ;$/;"	t	typeref:struct:_VlLiopDesc
+VlMserExtrReg	mser.h	/^typedef struct _VlMserExtrReg VlMserExtrReg ;$/;"	t	typeref:struct:_VlMserExtrReg
+VlMserFilt	mser.h	/^typedef struct _VlMserFilt VlMserFilt ;$/;"	t	typeref:struct:_VlMserFilt
+VlMserReg	mser.h	/^typedef struct _VlMserReg VlMserReg ;$/;"	t	typeref:struct:_VlMserReg
+VlMserStats	mser.h	/^typedef struct _VlMserStats VlMserStats ;$/;"	t	typeref:struct:_VlMserStats
+VlPgmImage	pgm.h	/^} VlPgmImage ;$/;"	t	typeref:struct:_VlPgmImage
+VlQS	quickshift.h	/^} VlQS ;$/;"	t	typeref:struct:_VlQS
+VlRand	random.h	/^} VlRand ;$/;"	t	typeref:struct:_VlRand
+VlScaleSpace	scalespace.h	/^typedef struct _VlScaleSpace VlScaleSpace ;$/;"	t	typeref:struct:_VlScaleSpace
+VlScaleSpaceGeometry	scalespace.h	/^} VlScaleSpaceGeometry ;$/;"	t	typeref:struct:_VlScaleSpaceGeometry
+VlScaleSpaceOctaveGeometry	scalespace.h	/^} VlScaleSpaceOctaveGeometry ;$/;"	t	typeref:struct:_VlScaleSpaceOctaveGeometry
+VlState	generic.c	/^} VlState ;$/;"	t	typeref:struct:_VlState	file:
+VlSvm	svm.h	/^typedef OPAQUE VlSvm ;$/;"	t
+VlSvm	svm.h	/^typedef struct VlSvm_ VlSvm ;$/;"	t	typeref:struct:VlSvm_
+VlSvmAccumulateFunction	svmdataset.h	/^typedef void (*VlSvmAccumulateFunction) (const void *data, vl_uindex element, double *model, double multiplier) ;$/;"	t
+VlSvmDataset	svmdataset.h	/^typedef OPAQUE VlSvmDataset ;$/;"	t
+VlSvmDataset	svmdataset.h	/^typedef struct VlSvmDataset_ VlSvmDataset ;$/;"	t	typeref:struct:VlSvmDataset_
+VlSvmDataset_	svmdataset.c	/^struct VlSvmDataset_ {$/;"	s	file:
+VlSvmDcaUpdateFunction	svmdataset.h	/^typedef double (*VlSvmDcaUpdateFunction) (double alpha, double inner, double norm2, double label) ;$/;"	t
+VlSvmDiagnosticFunction	svmdataset.h	/^typedef void (*VlSvmDiagnosticFunction) (struct VlSvm_ *svm, void *data) ;$/;"	t
+VlSvmInnerProductFunction	svmdataset.h	/^typedef double (*VlSvmInnerProductFunction)(const void *data, vl_uindex element, double *model) ;$/;"	t
+VlSvmLossFunction	svmdataset.h	/^typedef double (*VlSvmLossFunction) (double inner, double label) ;$/;"	t
+VlSvmLossHinge	svm.h	/^  VlSvmLossHinge = 0,   \/**< Standard hinge loss. *\/$/;"	e	enum:__anon10
+VlSvmLossHinge2	svm.h	/^  VlSvmLossHinge2 = 1,  \/**< Hinge loss squared. *\/$/;"	e	enum:__anon10
+VlSvmLossL1	svm.h	/^  VlSvmLossL1,          \/**< L1 loss. *\/$/;"	e	enum:__anon10
+VlSvmLossL2	svm.h	/^  VlSvmLossL2,          \/**< L2 loss. *\/$/;"	e	enum:__anon10
+VlSvmLossLogistic	svm.h	/^  VlSvmLossLogistic     \/**< Logistic loss. *\/$/;"	e	enum:__anon10
+VlSvmLossType	svm.h	/^} VlSvmLossType ;$/;"	t	typeref:enum:__anon10
+VlSvmSolverNone	svm.h	/^  VlSvmSolverNone = 0, \/**< No solver (used to evaluate an SVM). *\/$/;"	e	enum:__anon9
+VlSvmSolverSdca	svm.h	/^  VlSvmSolverSdca      \/**< SDCA algorithm (@ref svm-sdca). *\/$/;"	e	enum:__anon9
+VlSvmSolverSgd	svm.h	/^  VlSvmSolverSgd = 1,  \/**< SGD algorithm (@ref svm-sgd). *\/$/;"	e	enum:__anon9
+VlSvmSolverStatus	svm.h	/^} VlSvmSolverStatus ;$/;"	t	typeref:enum:__anon11
+VlSvmSolverType	svm.h	/^} VlSvmSolverType ;$/;"	t	typeref:enum:__anon9
+VlSvmStatistics	svm.h	/^} VlSvmStatistics ;$/;"	t	typeref:struct:VlSvmStatistics_
+VlSvmStatistics_	svm.h	/^typedef struct VlSvmStatistics_ {$/;"	s
+VlSvmStatusConverged	svm.h	/^  VlSvmStatusConverged, \/**< Optimization finished because the convergence criterion was met. *\/$/;"	e	enum:__anon11
+VlSvmStatusMaxNumIterationsReached	svm.h	/^  VlSvmStatusMaxNumIterationsReached \/**< Optimization finished without convergence. *\/$/;"	e	enum:__anon11
+VlSvmStatusTraining	svm.h	/^  VlSvmStatusTraining = 1, \/**< Optimization in progress. *\/$/;"	e	enum:__anon11
+VlSvm_	svm.c	/^struct VlSvm_ {$/;"	s	file:
+VlThreadState	generic.c	/^} VlThreadState ;$/;"	t	typeref:struct:_VlThreadState	file:
+VlVectorComparisonType	mathop.h	/^typedef enum _VlVectorComparisonType VlVectorComparisonType ;$/;"	t	typeref:enum:_VlVectorComparisonType
+VlX86CpuInfo	host.h	/^} VlX86CpuInfo ;$/;"	t	typeref:struct:_VlX86CpuInfo
+W	rodrigues.c	198;"	d	file:
+W	rodrigues.c	328;"	d	file:
+_VlAIB	aib.h	/^typedef struct _VlAIB$/;"	s
+_VlArray	array.h	/^typedef struct _VlArray$/;"	s
+_VlCovDet	covdet.c	/^struct _VlCovDet$/;"	s	file:
+_VlCovDet	covdet.h	/^struct _VlCovDet { }$/;"	s
+_VlCovDetExtremum2	covdet.c	/^typedef struct _VlCovDetExtremum2$/;"	s	file:
+_VlCovDetExtremum3	covdet.c	/^typedef struct _VlCovDetExtremum3$/;"	s	file:
+_VlCovDetFeature	covdet.h	/^typedef struct _VlCovDetFeature$/;"	s
+_VlCovDetFeatureLaplacianScale	covdet.h	/^typedef struct _VlCovDetFeatureLaplacianScale$/;"	s
+_VlCovDetFeatureOrientation	covdet.h	/^typedef struct _VlCovDetFeatureOrientation$/;"	s
+_VlCovDetMethod	covdet.h	/^typedef enum _VlCovDetMethod$/;"	g
+_VlEnumerator	stringop.h	/^typedef struct _VlEnumerator$/;"	s
+_VlFrameDisc	covdet.h	/^typedef struct _VlFrameDisc$/;"	s
+_VlFrameEllipse	covdet.h	/^typedef struct _VlFrameEllipse {$/;"	s
+_VlFrameOrientedDisc	covdet.h	/^typedef struct _VlFrameOrientedDisc {$/;"	s
+_VlFrameOrientedEllipse	covdet.h	/^typedef struct _VlFrameOrientedEllipse {$/;"	s
+_VlFrameType	covdet.h	/^typedef enum _VlFrameType {$/;"	g
+_VlGMM	gmm.c	/^struct _VlGMM$/;"	s	file:
+_VlGMMInitialization	gmm.h	/^typedef enum _VlGMMInitialization$/;"	g
+_VlHIKMNode	hikmeans.h	/^typedef struct _VlHIKMNode$/;"	s
+_VlHIKMTree	hikmeans.h	/^typedef struct _VlHIKMTree {$/;"	s
+_VlHomogeneousKernelMap	homkermap.c	/^struct _VlHomogeneousKernelMap$/;"	s	file:
+_VlIKMFilt	ikmeans.h	/^typedef struct _VlIKMFilt$/;"	s
+_VlKDForest	kdtree.h	/^typedef struct _VlKDForest$/;"	s
+_VlKDForestNeighbor	kdtree.h	/^typedef struct _VlKDForestNeighbor {$/;"	s
+_VlKDForestSearchState	kdtree.h	/^struct _VlKDForestSearchState$/;"	s
+_VlKDForestSearcher	kdtree.h	/^typedef struct _VlKDForestSearcher$/;"	s
+_VlKDTree	kdtree.h	/^typedef struct _VlKDTree$/;"	s
+_VlKDTreeDataIndexEntry	kdtree.h	/^struct _VlKDTreeDataIndexEntry$/;"	s
+_VlKDTreeNode	kdtree.h	/^struct _VlKDTreeNode$/;"	s
+_VlKDTreeSplitDimension	kdtree.h	/^struct _VlKDTreeSplitDimension$/;"	s
+_VlKDTreeThresholdingMethod	kdtree.h	/^typedef enum _VlKDTreeThresholdingMethod$/;"	g
+_VlKMeans	kmeans.h	/^typedef struct _VlKMeans$/;"	s
+_VlKMeansAlgorithm	kmeans.h	/^typedef enum _VlKMeansAlgorithm {$/;"	g
+_VlKMeansInitialization	kmeans.h	/^typedef enum _VlKMeansInitialization {$/;"	g
+_VlKMeansSortWrapper	kmeans.c	/^typedef struct _VlKMeansSortWrapper {$/;"	s	file:
+_VlLbpMappingType	lbp.h	/^typedef enum _VlLbpMappingType$/;"	g
+_VlLiopDesc	liop.h	/^typedef struct _VlLiopDesc$/;"	s
+_VlMserExtrReg	mser.h	/^struct _VlMserExtrReg$/;"	s
+_VlMserFilt	mser.h	/^struct _VlMserFilt$/;"	s
+_VlMserReg	mser.h	/^struct _VlMserReg$/;"	s
+_VlMserStats	mser.h	/^struct _VlMserStats$/;"	s
+_VlPgmImage	pgm.h	/^typedef struct _VlPgmImage$/;"	s
+_VlQS	quickshift.h	/^typedef struct _VlQS$/;"	s
+_VlRand	random.h	/^typedef struct _VlRand {$/;"	s
+_VlScaleSpace	scalespace.c	/^struct _VlScaleSpace$/;"	s	file:
+_VlScaleSpaceGeometry	scalespace.h	/^typedef struct _VlScaleSpaceGeometry$/;"	s
+_VlScaleSpaceOctaveGeometry	scalespace.h	/^typedef struct _VlScaleSpaceOctaveGeometry$/;"	s
+_VlState	generic.c	/^typedef struct _VlState$/;"	s	file:
+_VlThreadState	generic.c	/^typedef struct _VlThreadState$/;"	s	file:
+_VlVectorComparisonType	mathop.h	/^enum _VlVectorComparisonType {$/;"	g
+_VlX86CpuInfo	host.h	/^typedef struct _VlX86CpuInfo$/;"	s
+_vl_covdet_check_frame_inside	covdet.c	/^_vl_covdet_check_frame_inside (VlCovDet * self, VlFrameOrientedEllipse frame, double margin)$/;"	f
+_vl_covdet_compare_orientations_descending	covdet.c	/^_vl_covdet_compare_orientations_descending (void const * a_,$/;"	f	file:
+_vl_cpuid	host.c	/^_vl_cpuid (vl_int32* info, int function)$/;"	f
+_vl_det_hessian_response	covdet.c	/^_vl_det_hessian_response (float * hessian,$/;"	f	file:
+_vl_dog_response	covdet.c	/^_vl_dog_response (float * dog,$/;"	f	file:
+_vl_enlarge_buffer	covdet.c	/^_vl_enlarge_buffer (void ** buffer, vl_size * bufferSize, vl_size targetSize) {$/;"	f	file:
+_vl_gmm_prepare_for_data	gmm.c	/^_vl_gmm_prepare_for_data (VlGMM* self, vl_size numData)$/;"	f	file:
+_vl_harris_response	covdet.c	/^_vl_harris_response (float * harris,$/;"	f	file:
+_vl_lbp_init_uniform	lbp.c	/^_vl_lbp_init_uniform(VlLbp * self)$/;"	f	file:
+_vl_resize_buffer	covdet.c	/^_vl_resize_buffer (void ** buffer, vl_size * bufferSize, vl_size targetSize) {$/;"	f	file:
+_vl_scalespace_fill_octave	scalespace.c	/^_vl_scalespace_fill_octave (VlScaleSpace *self, vl_index o)$/;"	f
+_vl_scalespace_start_octave_from_image	scalespace.c	/^_vl_scalespace_start_octave_from_image (VlScaleSpace *self,$/;"	f	file:
+_vl_scalespace_start_octave_from_previous_octave	scalespace.c	/^_vl_scalespace_start_octave_from_previous_octave (VlScaleSpace *self, vl_index o)$/;"	f	file:
+_vl_state	generic.c	/^VlState _vl_state ;$/;"	v
+_vl_svm_evaluate	svm.c	/^void _vl_svm_evaluate (VlSvm *self)$/;"	f
+_vl_svm_sdca_train	svm.c	/^void _vl_svm_sdca_train (VlSvm *self)$/;"	f
+_vl_svm_sgd_train	svm.c	/^void _vl_svm_sgd_train (VlSvm *self)$/;"	f
+_vl_svm_update_statistics	svm.c	/^void _vl_svm_update_statistics (VlSvm *self)$/;"	f
+_vl_x86cpu_info_init	host.c	/^_vl_x86cpu_info_init (VlX86CpuInfo *self)$/;"	f
+_vl_x86cpu_info_to_string_copy	host.c	/^_vl_x86cpu_info_to_string_copy (VlX86CpuInfo const *self)$/;"	f
+a11	covdet.h	/^  float a11 ;   \/**< *\/$/;"	m	struct:_VlFrameOrientedEllipse
+a12	covdet.h	/^  float a12 ;$/;"	m	struct:_VlFrameOrientedEllipse
+a21	covdet.h	/^  float a21 ;$/;"	m	struct:_VlFrameOrientedEllipse
+a22	covdet.h	/^  float a22 ;$/;"	m	struct:_VlFrameOrientedEllipse
+aaAccurateSmoothing	covdet.c	/^  vl_bool aaAccurateSmoothing ;$/;"	m	struct:_VlCovDet	file:
+aaMask	covdet.c	/^  float aaMask [(2*VL_COVDET_AA_PATCH_RESOLUTION+1)*(2*VL_COVDET_AA_PATCH_RESOLUTION+1)] ;$/;"	m	struct:_VlCovDet	file:
+aaPatch	covdet.c	/^  float aaPatch [(2*VL_COVDET_AA_PATCH_RESOLUTION+1)*(2*VL_COVDET_AA_PATCH_RESOLUTION+1)] ;$/;"	m	struct:_VlCovDet	file:
+aaPatchX	covdet.c	/^  float aaPatchX [(2*VL_COVDET_AA_PATCH_RESOLUTION+1)*(2*VL_COVDET_AA_PATCH_RESOLUTION+1)] ;$/;"	m	struct:_VlCovDet	file:
+aaPatchY	covdet.c	/^  float aaPatchY [(2*VL_COVDET_AA_PATCH_RESOLUTION+1)*(2*VL_COVDET_AA_PATCH_RESOLUTION+1)] ;$/;"	m	struct:_VlCovDet	file:
+acc	mser.h	/^  float             *acc ;     \/**< moment accumulator.                    *\/$/;"	m	struct:_VlMserFilt
+accumulateFn	svm.c	/^  VlSvmAccumulateFunction accumulateFn ;$/;"	m	struct:VlSvm_	file:
+adv	mser.c	/^adv(int ndims, int const *dims, int *subs)$/;"	f
+algorithm	kmeans.h	/^  VlKMeansAlgorithm algorithm ;           \/**< Clustring algorithm. *\/$/;"	m	struct:_VlKMeans
+alpha	svm.c	/^  double * alpha ;              \/**< Dual variables. *\/$/;"	m	struct:VlSvm_	file:
+angle	covdet.h	/^  double angle ;$/;"	m	struct:_VlCovDetFeatureOrientation
+angle	covdet.h	/^  float angle ; \/**< rotation angle (rad) *\/$/;"	m	struct:_VlFrameOrientedDisc
+area	mser.h	/^  vl_uint      area ;       \/**< area of the region                           *\/$/;"	m	struct:_VlMserExtrReg
+area	mser.h	/^  vl_uint area ;     \/**< area of the region.                     *\/$/;"	m	struct:_VlMserReg
+at	covdet.c	1218;"	d	file:
+at	covdet.c	1317;"	d	file:
+at	covdet.c	1343;"	d	file:
+at	covdet.c	1425;"	d	file:
+at	covdet.c	1577;"	d	file:
+at	covdet.c	1583;"	d	file:
+at	hog.c	613;"	d	file:
+at	hog.c	762;"	d	file:
+at	hog.c	862;"	d	file:
+at	lbp.c	281;"	d	file:
+atEdgeMap	slic.c	201;"	d	file:
+atNorm	hog.c	763;"	d	file:
+atNorm	hog.c	863;"	d	file:
+atglyph	hog.c	277;"	d	file:
+atimage	slic.c	200;"	d	file:
+baseScale	scalespace.h	/^  double baseScale ; \/**< Base smoothing (smoothing of octave 0, level 0) *\/$/;"	m	struct:_VlScaleSpaceGeometry
+beta	aib.h	/^  double    *beta ;     \/**< Minimum distance to an entry  *\/$/;"	m	struct:_VlAIB
+bias	svm.c	/^  double bias ;                 \/**< Bias. *\/$/;"	m	struct:VlSvm_	file:
+biasLearningRate	svm.c	/^  double  biasLearningRate ;    \/**< Bias learning rate. *\/$/;"	m	struct:VlSvm_	file:
+biasMultiplier	svm.c	/^  double biasMultiplier ;       \/**< Bias feature multiplier. *\/$/;"	m	struct:VlSvm_	file:
+bidx	aib.h	/^  vl_uint   *bidx ;     \/**< Closest entry *\/$/;"	m	struct:_VlAIB
+calloc_func	generic.c	/^  void *(*calloc_func)  (size_t, size_t) ;$/;"	m	struct:_VlState	file:
+centerDistances	kmeans.h	/^  void * centerDistances ;                \/**< Centers inter-distances. *\/$/;"	m	struct:_VlKMeans
+centers	ikmeans.h	/^  vl_ikmacc_t *centers ; \/**< centers *\/$/;"	m	struct:_VlIKMFilt
+centers	kmeans.h	/^  void * centers ;                        \/**< Centers *\/$/;"	m	struct:_VlKMeans
+channels	quickshift.h	/^  int channels;         \/**< number of channels in the image *\/$/;"	m	struct:_VlQS
+children	hikmeans.h	/^  struct _VlHIKMNode **children ; \/**< Node children (if any) *\/$/;"	m	struct:_VlHIKMNode	typeref:struct:_VlHIKMNode::_VlHIKMNode
+climb	mser.c	/^climb (VlMserReg* r, vl_uint idx)$/;"	f
+columnPointers	array.h	/^  void * columnPointers ;$/;"	m	struct:_VlArray
+conjugateLossFn	svm.c	/^  VlSvmLossFunction conjugateLossFn ;$/;"	m	struct:VlSvm_	file:
+copy_and_downsample	scalespace.c	/^copy_and_downsample$/;"	f	file:
+copy_and_upsample	scalespace.c	/^copy_and_upsample$/;"	f	file:
+costs	aib.h	/^  double    *costs;     \/**< Cost of each merge *\/$/;"	m	struct:_VlAIB
+covariances	gmm.c	/^  void *  covariances;                \/**< Diagonals of covariance matrices of Gaussian modes. *\/$/;"	m	struct:_VlGMM	file:
+cpuInfo	generic.c	/^  VlX86CpuInfo cpuInfo ;$/;"	m	struct:_VlState	file:
+css	covdet.c	/^  VlScaleSpace *css ;        \/**< Cornerness scale space. *\/$/;"	m	struct:_VlCovDet	file:
+data	array.h	/^  void * data ;$/;"	m	struct:_VlArray
+data	kdtree.h	/^  void const * data ;$/;"	m	struct:_VlKDForest
+data	kmeans.c	/^  void const * data ;$/;"	m	struct:_VlKMeansSortWrapper	file:
+data	svm.c	/^  void const * data ;$/;"	m	struct:VlSvm_	file:
+data	svmdataset.c	/^  void * data ;                     \/**< Pointer to data. *\/$/;"	m	struct:VlSvmDataset_	file:
+dataIndex	kdtree.h	/^  VlKDTreeDataIndexEntry * dataIndex ;$/;"	m	struct:_VlKDTree
+dataType	gmm.c	/^  vl_type dataType ;                  \/**< Data type. *\/$/;"	m	struct:_VlGMM	file:
+dataType	kdtree.h	/^  vl_type dataType ;$/;"	m	struct:_VlKDForest
+dataType	kmeans.h	/^  vl_type dataType ;                      \/**< Data type. *\/$/;"	m	struct:_VlKMeans
+dataType	svmdataset.c	/^  vl_type dataType ;                \/**< Data type. *\/$/;"	m	struct:VlSvmDataset_	file:
+dcaUpdateFn	svm.c	/^  VlSvmDcaUpdateFunction dcaUpdateFn ;$/;"	m	struct:VlSvm_	file:
+delta	mser.h	/^  int       delta ;            \/**< delta filter parameter                 *\/$/;"	m	struct:_VlMserFilt
+density	quickshift.h	/^  vl_qs_type *density ;$/;"	m	struct:_VlQS
+depth	hikmeans.h	/^  vl_size depth ; \/**< Depth of the tree *\/$/;"	m	struct:_VlHIKMTree
+depth	kdtree.h	/^  unsigned int depth ;$/;"	m	struct:_VlKDTree
+diagnosticFn	svm.c	/^  VlSvmDiagnosticFunction diagnosticFn ;$/;"	m	struct:VlSvm_	file:
+diagnosticFnData	svm.c	/^  void * diagnosticFnData ;$/;"	m	struct:VlSvm_	file:
+diagnosticFrequency	svm.c	/^  vl_size diagnosticFrequency ; \/**< Frequency of diagnostic. *\/$/;"	m	struct:VlSvm_	file:
+dimension	gmm.c	/^  vl_size dimension ;                 \/**< Data dimensionality. *\/$/;"	m	struct:_VlGMM	file:
+dimension	hog.h	/^  vl_size dimension ;$/;"	m	struct:VlHog_
+dimension	kdtree.h	/^  unsigned int dimension ;$/;"	m	struct:_VlKDTreeSplitDimension
+dimension	kdtree.h	/^  vl_size dimension ;$/;"	m	struct:_VlKDForest
+dimension	kmeans.h	/^  vl_size dimension ;                     \/**< Data dimensionality. *\/$/;"	m	struct:_VlKMeans
+dimension	lbp.h	/^  vl_size dimension ;$/;"	m	struct:VlLbp_
+dimension	liop.h	/^  vl_size dimension; \/**< LIOP descriptor size. *\/$/;"	m	struct:_VlLiopDesc
+dimension	svm.c	/^  vl_size dimension ;           \/**< Model dimension. *\/$/;"	m	struct:VlSvm_	file:
+dimension	svmdataset.c	/^  vl_size dimension ;               \/**< Data point dimension. *\/$/;"	m	struct:VlSvmDataset_	file:
+dimensions	array.h	/^  vl_size dimensions [VL_ARRAY_MAX_NUM_DIMENSIONS] ;$/;"	m	struct:_VlArray
+dims	mser.h	/^  int               *dims ;    \/**< dimensions                              *\/$/;"	m	struct:_VlMserFilt
+distance	kdtree.h	/^  VlVectorComparisonType distance;$/;"	m	struct:_VlKDForest
+distance	kdtree.h	/^  double distance ;   \/**< distance to the query point *\/$/;"	m	struct:_VlKDForestNeighbor
+distance	kmeans.h	/^  VlVectorComparisonType distance ;       \/**< Distance. *\/$/;"	m	struct:_VlKMeans
+distanceFunction	kdtree.h	/^  void (*distanceFunction)(void) ;$/;"	m	struct:_VlKDForest
+distanceLowerBound	kdtree.h	/^  double distanceLowerBound ;$/;"	m	struct:_VlKDForestSearchState
+dists	quickshift.h	/^  vl_qs_type *dists ;$/;"	m	struct:_VlQS
+do_nothing_printf	generic.c	/^do_nothing_printf (char const* format VL_UNUSED, ...)$/;"	f	file:
+dof	mser.h	/^  int                dof ;     \/**< number of dof of ellipsoids.           *\/$/;"	m	struct:_VlMserFilt
+doubleVectorComparisonFn	kmeans.h	/^  VlDoubleVectorComparisonFunction doubleVectorComparisonFn ;$/;"	m	struct:_VlKMeans
+dsubs	mser.h	/^  int               *dsubs ;   \/**< another subscript                       *\/$/;"	m	struct:_VlMserFilt
+dualLoss	svm.h	/^  double dualLoss ;             \/**< Dual loss value. *\/$/;"	m	struct:VlSvmStatistics_
+dualObjective	svm.h	/^  double dualObjective ;        \/**< Dual objective value. *\/$/;"	m	struct:VlSvmStatistics_
+dualityGap	svm.h	/^  double dualityGap ;           \/**< Duality gap = objective - dualObjective. *\/$/;"	m	struct:VlSvmStatistics_
+e11	covdet.h	/^  float e11 ;   \/**< *\/$/;"	m	struct:_VlFrameEllipse
+e12	covdet.h	/^  float e12 ;$/;"	m	struct:_VlFrameEllipse
+e22	covdet.h	/^  float e22 ;$/;"	m	struct:_VlFrameEllipse
+edgeScore	covdet.c	/^  float edgeScore ;$/;"	m	struct:_VlCovDetExtremum2	file:
+edgeScore	covdet.c	/^  float edgeScore ;$/;"	m	struct:_VlCovDetExtremum3	file:
+edgeScore	covdet.h	/^  float edgeScore ; \/**< edge score. *\/$/;"	m	struct:_VlCovDetFeature
+edgeThreshold	covdet.c	/^  double edgeThreshold ;     \/**< edge threshold. *\/$/;"	m	struct:_VlCovDet	file:
+elapsedTime	svm.h	/^  double elapsedTime ;          \/**< Time elapsed from the start of training. *\/$/;"	m	struct:VlSvmStatistics_
+ell	mser.h	/^  float             *ell ;     \/**< ellipsoids list.                       *\/$/;"	m	struct:_VlMserFilt
+energy	kmeans.h	/^  double energy ;                         \/**< Current solution energy. *\/$/;"	m	struct:_VlKMeans
+epoch	svm.h	/^  vl_size epoch ;               \/**< Solver epoch (iteration \/ num samples). *\/$/;"	m	struct:VlSvmStatistics_
+epsilon	svm.c	/^  double epsilon ;              \/**< Stopping threshold. *\/$/;"	m	struct:VlSvm_	file:
+er	mser.h	/^  VlMserExtrReg     *er ;      \/**< extremal tree                           *\/$/;"	m	struct:_VlMserFilt
+fabsf	host.h	/^VL_INLINE float fabsf(float x) { return (float) fabs((double) x) ; }$/;"	f
+factorial	liop.c	/^vl_int factorial(vl_int num)$/;"	f	file:
+features	covdet.c	/^  VlCovDetFeature *features ;$/;"	m	struct:_VlCovDet	file:
+filter	hikmeans.h	/^  VlIKMFilt *filter ; \/**< IKM filter for this node*\/$/;"	m	struct:_VlHIKMNode
+firstOctave	covdet.c	/^  vl_index firstOctave ;     \/**< index of the first octave. *\/$/;"	m	struct:_VlCovDet	file:
+firstOctave	scalespace.h	/^  vl_index firstOctave ; \/**< Index of the fisrt octave *\/$/;"	m	struct:_VlScaleSpaceGeometry
+flag	getopt_long.h	/^  int	     *flag ;    \/**< pointer to a variable to set (if @c NULL, the value is returned instead) *\/$/;"	m	struct:option
+floatVectorComparisonFn	kmeans.h	/^  VlFloatVectorComparisonFunction floatVectorComparisonFn ;$/;"	m	struct:_VlKMeans
+forest	kdtree.h	/^  VlKDForest * forest;$/;"	m	struct:_VlKDForestSearcher
+frame	covdet.h	/^  VlFrameOrientedEllipse frame ; \/**< feature frame. *\/$/;"	m	struct:_VlCovDetFeature
+free_func	generic.c	/^  void  (*free_func)    (void*) ;$/;"	m	struct:_VlState	file:
+gamma	homkermap.c	/^  double gamma ;$/;"	m	struct:_VlHomogeneousKernelMap	file:
+geom	scalespace.c	/^  VlScaleSpaceGeometry geom ; \/**< Geometry of the scale space *\/$/;"	m	struct:_VlScaleSpace	file:
+get_permutation_index	liop.c	/^VL_INLINE vl_index get_permutation_index(vl_uindex *permutation, vl_size size){$/;"	f
+getopt_long	getopt_long.c	/^getopt_long(int argc, char *const argv[],$/;"	f
+glyphSize	hog.h	/^  vl_size glyphSize ;$/;"	m	struct:VlHog_
+glyphs	hog.h	/^  float * glyphs ;$/;"	m	struct:VlHog_
+gss	covdet.c	/^  VlScaleSpace *gss ;        \/**< Gaussian scale space. *\/$/;"	m	struct:_VlCovDet	file:
+hasAVX	host.h	/^  vl_bool hasAVX ;$/;"	m	struct:_VlX86CpuInfo
+hasMMX	host.h	/^  vl_bool hasMMX ;$/;"	m	struct:_VlX86CpuInfo
+hasSSE	host.h	/^  vl_bool hasSSE ;$/;"	m	struct:_VlX86CpuInfo
+hasSSE2	host.h	/^  vl_bool hasSSE2 ;$/;"	m	struct:_VlX86CpuInfo
+hasSSE3	host.h	/^  vl_bool hasSSE3 ;$/;"	m	struct:_VlX86CpuInfo
+hasSSE41	host.h	/^  vl_bool hasSSE41 ;$/;"	m	struct:_VlX86CpuInfo
+hasSSE42	host.h	/^  vl_bool hasSSE42 ;$/;"	m	struct:_VlX86CpuInfo
+has_arg	getopt_long.h	/^  int	      has_arg ; \/**< flag indicating whether the option has no, required or optional argument *\/$/;"	m	struct:option
+headSearcher	kdtree.h	/^  struct _VlKDForestSearcher * headSearcher ;  \/* head of the double linked list with searchers *\/$/;"	m	struct:_VlKDForest	typeref:struct:_VlKDForest::_VlKDForestSearcher
+height	mser.h	/^  vl_uint height ;   \/**< region height in the forest.            *\/$/;"	m	struct:_VlMserReg
+height	pgm.h	/^  vl_size height ;     \/**< image height.                    *\/$/;"	m	struct:_VlPgmImage
+height	quickshift.h	/^  int height;           \/**< height of the image *\/$/;"	m	struct:_VlQS
+height	scalespace.h	/^  vl_size height ; \/**< Height (number of pixels) *\/$/;"	m	struct:_VlScaleSpaceOctaveGeometry
+height	scalespace.h	/^  vl_size height ; \/**< Image height *\/$/;"	m	struct:_VlScaleSpaceGeometry
+hog	hog.h	/^  float * hog ;$/;"	m	struct:VlHog_
+hogHeight	hog.h	/^  vl_size hogHeight ;$/;"	m	struct:VlHog_
+hogNorm	hog.h	/^  float * hogNorm ;$/;"	m	struct:VlHog_
+hogWidth	hog.h	/^  vl_size hogWidth ;$/;"	m	struct:VlHog_
+hom	svmdataset.c	/^  VlHomogeneousKernelMap * hom ;    \/**< Homogeneous kernel map (optional). *\/$/;"	m	struct:VlSvmDataset_	file:
+homBuffer	svmdataset.c	/^  void * homBuffer ;                \/**< Homogeneous kernel map buffer. *\/$/;"	m	struct:VlSvmDataset_	file:
+homDimension	svmdataset.c	/^  vl_size homDimension ;            \/**< Homogeneous kernel map dimension. *\/$/;"	m	struct:VlSvmDataset_	file:
+image	quickshift.h	/^  vl_qs_type *image ;   \/**< height x width x channels feature image *\/$/;"	m	struct:_VlQS
+index	kdtree.h	/^  vl_index index ;$/;"	m	struct:_VlKDTreeDataIndexEntry
+index	kdtree.h	/^  vl_uindex index ;   \/**< index of the neighbor in the KDTree data *\/$/;"	m	struct:_VlKDForestNeighbor
+index	mser.h	/^  int          index ;      \/**< index of pivot pixel                         *\/$/;"	m	struct:_VlMserExtrReg
+initialization	gmm.c	/^  VlGMMInitialization initialization; \/**< Initialization option *\/$/;"	m	struct:_VlGMM	file:
+initialization	kmeans.h	/^  VlKMeansInitialization initialization ; \/**< Initalization algorithm. *\/$/;"	m	struct:_VlKMeans
+innerProductFn	svm.c	/^  VlSvmInnerProductFunction innerProductFn ;$/;"	m	struct:VlSvm_	file:
+intensityThreshold	liop.h	/^  float intensityThreshold; \/**< Weight threshold. *\/$/;"	m	struct:_VlLiopDesc
+inter_dist	ikmeans.h	/^  vl_ikmacc_t *inter_dist ; \/**< centers inter-distances *\/$/;"	m	struct:_VlIKMFilt
+isEnvelope	array.h	/^  vl_bool isEnvelope ;$/;"	m	struct:_VlArray
+isSparse	array.h	/^  vl_bool isSparse ;$/;"	m	struct:_VlArray
+is_raw	pgm.h	/^  vl_bool is_raw ;     \/**< is RAW format?                   *\/$/;"	m	struct:_VlPgmImage
+is_valid_geometry	scalespace.c	323;"	d	file:
+isign	mathop.c	709;"	d	file:
+isnan	host.h	316;"	d
+isnan	host.h	336;"	d
+iteration	svm.c	/^  vl_size iteration ;           \/**< Current iterations number. *\/$/;"	m	struct:VlSvm_	file:
+iteration	svm.h	/^  vl_size iteration ;           \/**< Solver iteration. *\/$/;"	m	struct:VlSvmStatistics_
+joins	mser.h	/^  vl_uint           *joins ;   \/**< sequence of join ops                    *\/$/;"	m	struct:_VlMserFilt
+kernelType	homkermap.c	/^  VlHomogeneousKernelType kernelType ;$/;"	m	struct:_VlHomogeneousKernelMap	file:
+kmeansInit	gmm.c	/^  VlKMeans * kmeansInit;              \/**< Kmeans object for initialization of gaussians *\/$/;"	m	struct:_VlGMM	file:
+kmeansInitIsOwner	gmm.c	/^  vl_bool kmeansInitIsOwner; \/**< Indicates whether a user provided the kmeans initialization object *\/$/;"	m	struct:_VlGMM	file:
+labels	svm.c	/^  double const * labels ;       \/**< Data labels. *\/$/;"	m	struct:VlSvm_	file:
+lambda	svm.c	/^  double lambda ;               \/**< Regularizer multiplier. *\/$/;"	m	struct:VlSvm_	file:
+lapPatch	covdet.c	/^  float lapPatch [(2*VL_COVDET_LAP_PATCH_RESOLUTION+1)*(2*VL_COVDET_LAP_PATCH_RESOLUTION+1)] ;$/;"	m	struct:_VlCovDet	file:
+lapPeakThreshold	covdet.c	/^  double lapPeakThreshold;   \/**< peak threshold for Laplacian scale selection. *\/$/;"	m	struct:_VlCovDet	file:
+laplacianScaleScore	covdet.h	/^  float laplacianScaleScore ; \/**< Laplacian scale score. *\/$/;"	m	struct:_VlCovDetFeature
+laplacians	covdet.c	/^  float laplacians [(2*VL_COVDET_LAP_PATCH_RESOLUTION+1)*(2*VL_COVDET_LAP_PATCH_RESOLUTION+1)*VL_COVDET_LAP_NUM_LEVELS] ;$/;"	m	struct:_VlCovDet	file:
+lastError	generic.c	/^  int lastError ;$/;"	m	struct:_VlThreadState	file:
+lastErrorMessage	generic.c	/^  char lastErrorMessage [VL_ERR_MSG_LEN] ;$/;"	m	struct:_VlThreadState	file:
+lastOctave	scalespace.h	/^  vl_index lastOctave ; \/**< Index of the last octave *\/$/;"	m	struct:_VlScaleSpaceGeometry
+loss	svm.h	/^  double loss ;                 \/**< Loss value. *\/$/;"	m	struct:VlSvmStatistics_
+lossDerivativeFn	svm.c	/^  VlSvmLossFunction lossDerivativeFn ;$/;"	m	struct:VlSvm_	file:
+lossFn	svm.c	/^  VlSvmLossFunction lossFn ;$/;"	m	struct:VlSvm_	file:
+lowerBound	kdtree.h	/^  double lowerBound ;$/;"	m	struct:_VlKDTreeNode
+lowerChild	kdtree.h	/^  vl_index lowerChild ;$/;"	m	struct:_VlKDTreeNode
+malloc_func	generic.c	/^  void *(*malloc_func)  (size_t) ;$/;"	m	struct:_VlState	file:
+mapping	lbp.h	/^  vl_uint8 mapping [256] ;$/;"	m	struct:VlLbp_
+maxExponent	homkermap.c	/^  vl_index maxExponent ;$/;"	m	struct:_VlHomogeneousKernelMap	file:
+maxNumComparisons	kmeans.h	/^  vl_size maxNumComparisons ;             \/**< Maximum number of comparisons when using ANN-kmeans. *\/$/;"	m	struct:_VlKMeans
+maxNumIterations	gmm.c	/^  vl_size maxNumIterations ;          \/**< Maximum number of refinement iterations. *\/$/;"	m	struct:_VlGMM	file:
+maxNumIterations	kmeans.h	/^  vl_size maxNumIterations ;              \/**< Maximum number of refinement iterations. *\/$/;"	m	struct:_VlKMeans
+maxNumIterations	svm.c	/^  vl_size maxNumIterations ;    \/**< Maximum number of iterations. *\/$/;"	m	struct:VlSvm_	file:
+maxNumNodes	kdtree.h	/^  vl_size maxNumNodes;$/;"	m	struct:_VlKDForest
+max_area	mser.h	/^  double    max_area ;         \/**< badness test parameter                 *\/$/;"	m	struct:_VlMserFilt
+max_niters	hikmeans.h	/^  vl_size max_niters ;  \/**< IKM: maximum # of iterations *\/$/;"	m	struct:_VlHIKMTree
+max_niters	ikmeans.h	/^  vl_size max_niters ; \/**< Lloyd: maximum number of iterations *\/$/;"	m	struct:_VlIKMFilt
+max_stable	mser.h	/^  vl_uint      max_stable ; \/**< max stable number (=0 if not maxstable)      *\/$/;"	m	struct:_VlMserExtrReg
+max_value	pgm.h	/^  vl_size max_value ;  \/**< pixel maximum value (<= 2^16-1). *\/$/;"	m	struct:_VlPgmImage
+max_variation	mser.h	/^  double    max_variation ;    \/**< badness test parameter                 *\/$/;"	m	struct:_VlMserFilt
+mean	kdtree.h	/^  double mean ;$/;"	m	struct:_VlKDTreeSplitDimension
+means	gmm.c	/^  void *  means;                      \/**< Means of Gaussian modes. *\/$/;"	m	struct:_VlGMM	file:
+medoid	quickshift.h	/^  vl_bool medoid;$/;"	m	struct:_VlQS
+mer	mser.h	/^  vl_uint           *mer ;     \/**< maximally stable extremal regions       *\/$/;"	m	struct:_VlMserFilt
+method	covdet.c	/^  VlCovDetMethod method ;    \/**< feature extraction method. *\/$/;"	m	struct:_VlCovDet	file:
+method	hikmeans.h	/^  int method ; \/**< IKM: method *\/$/;"	m	struct:_VlHIKMTree
+method	ikmeans.h	/^  int method ; \/**< Learning method *\/$/;"	m	struct:_VlIKMFilt
+minEnergyVariation	kmeans.h	/^  double minEnergyVariation ;             \/**< Minimum energy variation. *\/$/;"	m	struct:_VlKMeans
+minExponent	homkermap.c	/^  vl_index minExponent ;$/;"	m	struct:_VlHomogeneousKernelMap	file:
+min_area	mser.h	/^  double    min_area ;         \/**< badness test parameter                 *\/$/;"	m	struct:_VlMserFilt
+min_diversity	mser.h	/^  double    min_diversity ;    \/**< minimum diversity                      *\/$/;"	m	struct:_VlMserFilt
+model	svm.c	/^  double * model ;              \/**< Model ($\\bw$ vector). *\/$/;"	m	struct:VlSvm_	file:
+mt	random.c	147;"	d	file:
+mt	random.c	160;"	d	file:
+mt	random.c	173;"	d	file:
+mt	random.c	196;"	d	file:
+mt	random.c	232;"	d	file:
+mt	random.c	265;"	d	file:
+mt	random.h	/^  vl_uint32 mt [624] ;$/;"	m	struct:_VlRand
+mti	random.c	146;"	d	file:
+mti	random.c	159;"	d	file:
+mti	random.c	172;"	d	file:
+mti	random.c	195;"	d	file:
+mti	random.c	231;"	d	file:
+mti	random.c	264;"	d	file:
+mti	random.h	/^  vl_uint32 mti ;$/;"	m	struct:_VlRand
+name	getopt_long.h	/^  const char *name ;  \/**< option long name *\/$/;"	m	struct:option
+name	stringop.h	/^  char const *name ; \/**< enumeration member name. *\/$/;"	m	struct:_VlEnumerator
+ndims	mser.h	/^  int                ndims ;   \/**< number of dimensions                    *\/$/;"	m	struct:_VlMserFilt
+neighIntensities	liop.h	/^  float * neighIntensities ;$/;"	m	struct:_VlLiopDesc
+neighPermutation	liop.h	/^  vl_uindex * neighPermutation ;$/;"	m	struct:_VlLiopDesc
+neighRadius	liop.h	/^  float neighRadius; \/**< Point to neighbour radius (distance). *\/$/;"	m	struct:_VlLiopDesc
+neighSamplesX	liop.h	/^  double * neighSamplesX ;$/;"	m	struct:_VlLiopDesc
+neighSamplesY	liop.h	/^  double * neighSamplesY ;$/;"	m	struct:_VlLiopDesc
+neigh_cmp	liop.c	/^VL_INLINE float neigh_cmp (VlLiopDesc * liop, vl_index i, vl_index j)$/;"	f
+neigh_swap	liop.c	/^VL_INLINE void neigh_swap (VlLiopDesc * liop, vl_index i, vl_index j)$/;"	f
+nel	mser.h	/^  int                nel ;     \/**< number of image elements (pixels)       *\/$/;"	m	struct:_VlMserFilt
+nell	mser.h	/^  int                nell ;    \/**< number of ellipsoids extracted         *\/$/;"	m	struct:_VlMserFilt
+nentries	aib.h	/^  vl_uint    nentries ; \/**< Total number of entries (= # active nodes) *\/$/;"	m	struct:_VlAIB
+ner	mser.h	/^  int                ner ;     \/**< number of extremal regions              *\/$/;"	m	struct:_VlMserFilt
+next	kdtree.h	/^  struct _VlKDForestSearcher * next;$/;"	m	struct:_VlKDForestSearcher	typeref:struct:_VlKDForestSearcher::_VlKDForestSearcher
+njoins	mser.h	/^  int                njoins ;  \/**< number of join ops                      *\/$/;"	m	struct:_VlMserFilt
+nlabels	aib.h	/^  vl_uint    nlabels;   \/**< Number of labels *\/$/;"	m	struct:_VlAIB
+nmer	mser.h	/^  int                nmer ;    \/**< number of maximally stable extr. reg.   *\/$/;"	m	struct:_VlMserFilt
+no_argument	getopt_long.h	34;"	d
+nodeIndex	kdtree.h	/^  vl_uindex nodeIndex ;$/;"	m	struct:_VlKDForestSearchState
+nodes	aib.h	/^  vl_uint   *nodes ;    \/**< Entires to nodes *\/$/;"	m	struct:_VlAIB
+nodes	kdtree.h	/^  VlKDTreeNode * nodes ;$/;"	m	struct:_VlKDTree
+nominalScale	scalespace.h	/^  double nominalScale ; \/**< Nominal smoothing of the original image *\/$/;"	m	struct:_VlScaleSpaceGeometry
+nonExtremaSuppression	covdet.c	/^  double nonExtremaSuppression ;$/;"	m	struct:_VlCovDet	file:
+numAllocatedNodes	kdtree.h	/^  vl_size numAllocatedNodes ;$/;"	m	struct:_VlKDTree
+numCPUs	generic.c	/^  vl_size numCPUs ;$/;"	m	struct:_VlState	file:
+numCenters	kmeans.h	/^  vl_size numCenters ;                    \/**< Number of centers. *\/$/;"	m	struct:_VlKMeans
+numClusters	gmm.c	/^  vl_size numClusters ;               \/**< Number of clusters  *\/$/;"	m	struct:_VlGMM	file:
+numData	gmm.c	/^  vl_size numData ;                   \/**< Number of last time clustered data points.  *\/$/;"	m	struct:_VlGMM	file:
+numData	kdtree.h	/^  vl_size numData ;$/;"	m	struct:_VlKDForest
+numData	svm.c	/^  vl_size numData ;$/;"	m	struct:VlSvm_	file:
+numData	svmdataset.c	/^  vl_size numData ;                 \/**< Number of wrapped data. *\/$/;"	m	struct:VlSvmDataset_	file:
+numDimensions	array.h	/^  vl_size numDimensions ;$/;"	m	struct:_VlArray
+numFeatureBufferSize	covdet.c	/^  vl_size numFeatureBufferSize ;$/;"	m	struct:_VlCovDet	file:
+numFeatures	covdet.c	/^  vl_size numFeatures ;$/;"	m	struct:_VlCovDet	file:
+numFeaturesWithNumScales	covdet.c	/^  vl_size numFeaturesWithNumScales [VL_COVDET_MAX_NUM_LAPLACIAN_SCALES + 1] ;$/;"	m	struct:_VlCovDet	file:
+numNeighbours	liop.h	/^  vl_int numNeighbours; \/**< Number of neighbours. *\/$/;"	m	struct:_VlLiopDesc
+numNonExtremaSuppressed	covdet.c	/^  vl_size numNonExtremaSuppressed ;$/;"	m	struct:_VlCovDet	file:
+numOrientations	hog.h	/^  vl_size numOrientations ;$/;"	m	struct:VlHog_
+numRepetitions	gmm.c	/^  vl_size numRepetitions   ;          \/**< Number of clustering repetitions. *\/$/;"	m	struct:_VlGMM	file:
+numRepetitions	kmeans.h	/^  vl_size numRepetitions ;                \/**< Number of clustering repetitions. *\/$/;"	m	struct:_VlKMeans
+numSearchers	kdtree.h	/^  vl_size numSearchers;$/;"	m	struct:_VlKDForest
+numSpatialBins	liop.h	/^  vl_int numSpatialBins; \/**< Number of bins. *\/$/;"	m	struct:_VlLiopDesc
+numSubdivisions	homkermap.c	/^  vl_size numSubdivisions ;$/;"	m	struct:_VlHomogeneousKernelMap	file:
+numThreads	generic.c	/^  vl_size numThreads ;$/;"	m	struct:_VlState	file:
+numTrees	kdtree.h	/^  vl_size numTrees ;$/;"	m	struct:_VlKDForest
+numTrees	kmeans.h	/^  vl_size numTrees ;                      \/**< Number of trees in forest when using ANN-kmeans. *\/$/;"	m	struct:_VlKMeans
+numUsedNodes	kdtree.h	/^  vl_size numUsedNodes ;$/;"	m	struct:_VlKDTree
+num_abs_unstable	mser.h	/^  int num_abs_unstable ;  \/**< number of regions that failed the absolute stability test *\/$/;"	m	struct:_VlMserStats
+num_duplicates	mser.h	/^  int num_duplicates ;    \/**< number of regions that failed the duplicate test          *\/$/;"	m	struct:_VlMserStats
+num_extremal	mser.h	/^  int num_extremal ;      \/**< number of extremal regions                                *\/$/;"	m	struct:_VlMserStats
+num_too_big	mser.h	/^  int num_too_big ;       \/**< number of regions that failed the maximum size test       *\/$/;"	m	struct:_VlMserStats
+num_too_small	mser.h	/^  int num_too_small ;     \/**< number of regions that failed the minimum size test       *\/$/;"	m	struct:_VlMserStats
+num_unstable	mser.h	/^  int num_unstable ;      \/**< number of unstable extremal regions                       *\/$/;"	m	struct:_VlMserStats
+nvalues	aib.h	/^  vl_uint    nvalues;   \/**< Number of feature values *\/$/;"	m	struct:_VlAIB
+nwhich	aib.h	/^  vl_uint    nwhich ;   \/**< Number of entries to update *\/$/;"	m	struct:_VlAIB
+objective	svm.h	/^  double objective ;            \/**< Objective function value. *\/$/;"	m	struct:VlSvmStatistics_
+octaveFirstSubdivision	scalespace.h	/^  vl_index octaveFirstSubdivision ; \/**< Index of the first octave subdivision *\/$/;"	m	struct:_VlScaleSpaceGeometry
+octaveLastSubdivision	scalespace.h	/^  vl_index octaveLastSubdivision ; \/**< Index of the last octave subdivision *\/$/;"	m	struct:_VlScaleSpaceGeometry
+octaveResolution	covdet.c	/^  vl_size octaveResolution ; \/**< resolution of each octave. *\/$/;"	m	struct:_VlCovDet	file:
+octaveResolution	scalespace.h	/^  vl_size octaveResolution ; \/**< Number of octave subdivisions *\/$/;"	m	struct:_VlScaleSpaceGeometry
+octaves	scalespace.c	/^  float **octaves ; \/**< Data *\/$/;"	m	struct:_VlScaleSpace	file:
+optarg	getopt_long.c	/^char * optarg ;$/;"	v
+optarg	getopt_long.h	/^VL_EXPORT char * optarg ;   \/**< argument of the current option *\/$/;"	v
+opterr	getopt_long.c	/^int    opterr = 1 ;$/;"	v
+opterr	getopt_long.h	/^VL_EXPORT int    opterr ;   \/**< code of the last error occured while parsing an option *\/$/;"	v
+optind	getopt_long.c	/^int    optind = 1 ;$/;"	v
+optind	getopt_long.h	/^VL_EXPORT int    optind ;   \/**< index of the next option to process in @c argv *\/$/;"	v
+option	getopt_long.h	/^struct option$/;"	s
+optional_argument	getopt_long.h	36;"	d
+optopt	getopt_long.c	/^int    optopt ;$/;"	v
+optopt	getopt_long.h	/^VL_EXPORT int    optopt ;   \/**< current option *\/$/;"	v
+optreset	getopt_long.c	/^int    optreset ;$/;"	v
+optreset	getopt_long.h	/^VL_EXPORT int    optreset ; \/**< reset flag *\/$/;"	v
+order	homkermap.c	/^  vl_size order ;$/;"	m	struct:_VlHomogeneousKernelMap	file:
+orientationScore	covdet.h	/^  float orientationScore ; \/**< orientation score. *\/$/;"	m	struct:_VlCovDetFeature
+orientationX	hog.h	/^  float * orientationX ;$/;"	m	struct:VlHog_
+orientationY	hog.h	/^  float * orientationY ;$/;"	m	struct:VlHog_
+orientations	covdet.c	/^  VlCovDetFeatureOrientation orientations [VL_COVDET_MAX_NUM_ORIENTATIONS] ;$/;"	m	struct:_VlCovDet	file:
+ownDataset	svm.c	/^  VlSvmDataset * ownDataset ;   \/**< Optional owned dataset. *\/$/;"	m	struct:VlSvm_	file:
+parent	kdtree.h	/^  vl_uindex parent ;$/;"	m	struct:_VlKDTreeNode
+parent	mser.h	/^  int          parent ;     \/**< index of the parent region                   *\/$/;"	m	struct:_VlMserExtrReg
+parent	mser.h	/^  vl_uint parent ;   \/**< points to the parent region.            *\/$/;"	m	struct:_VlMserReg
+parents	aib.h	/^  vl_uint   *parents;   \/**< Array of parents *\/$/;"	m	struct:_VlAIB
+parents	quickshift.h	/^  int *parents ;$/;"	m	struct:_VlQS
+patch	covdet.c	/^  float * patch ;$/;"	m	struct:_VlCovDet	file:
+patchBufferSize	covdet.c	/^  vl_size patchBufferSize ;$/;"	m	struct:_VlCovDet	file:
+patchIntensities	liop.h	/^  float * patchIntensities ;$/;"	m	struct:_VlLiopDesc
+patchPermutation	liop.h	/^  vl_uindex * patchPermutation ;$/;"	m	struct:_VlLiopDesc
+patchPixels	liop.h	/^  vl_uindex * patchPixels ;$/;"	m	struct:_VlLiopDesc
+patchSideLength	liop.h	/^  vl_size patchSideLength ;$/;"	m	struct:_VlLiopDesc
+patchSize	liop.h	/^  vl_size patchSize ; \/* only circular neighbourhood *\/$/;"	m	struct:_VlLiopDesc
+patch_cmp	liop.c	/^VL_INLINE float patch_cmp (VlLiopDesc * liop, vl_index i, vl_index j)$/;"	f
+patch_swap	liop.c	/^VL_INLINE void patch_swap (VlLiopDesc * liop, vl_index i, vl_index j)$/;"	f
+peakScore	covdet.c	/^  float peakScore ;$/;"	m	struct:_VlCovDetExtremum2	file:
+peakScore	covdet.c	/^  float peakScore ;$/;"	m	struct:_VlCovDetExtremum3	file:
+peakScore	covdet.h	/^  float peakScore ; \/**< peak score. *\/$/;"	m	struct:_VlCovDetFeature
+peakThreshold	covdet.c	/^  double peakThreshold ;     \/**< peak threshold. *\/$/;"	m	struct:_VlCovDet	file:
+period	homkermap.c	/^  double period ;$/;"	m	struct:_VlHomogeneousKernelMap	file:
+perm	mser.h	/^  vl_uint           *perm ;    \/**< pixel ordering                          *\/$/;"	m	struct:_VlMserFilt
+permutation	hog.h	/^  vl_index * permutation ;$/;"	m	struct:VlHog_
+permutation	kmeans.c	/^  vl_uint32 * permutation ;$/;"	m	struct:_VlKMeansSortWrapper	file:
+posteriors	gmm.c	/^  void *  posteriors;                 \/**< Probabilities of correspondences of points to clusters. *\/$/;"	m	struct:_VlGMM	file:
+previous	kdtree.h	/^  struct _VlKDForestSearcher * previous;$/;"	m	struct:_VlKDForestSearcher	typeref:struct:_VlKDForestSearcher::_VlKDForestSearcher
+printf_func	generic.c	/^  int   (*printf_func)  (char const * format, ...) ;$/;"	m	struct:_VlState	file:
+printf_func_t	generic.h	/^typedef int(*printf_func_t) (char const *format, ...) ;$/;"	t
+priors	gmm.c	/^  void *  priors;                     \/**< Weights of Gaussian modes. *\/$/;"	m	struct:_VlGMM	file:
+r	mser.h	/^  VlMserReg         *r ;       \/**< basic regions                           *\/$/;"	m	struct:_VlMserFilt
+rand	generic.c	/^  VlRand rand ;$/;"	m	struct:_VlThreadState	file:
+rand	kdtree.h	/^  VlRand * rand ;$/;"	m	struct:_VlKDForest
+raw	mathop.h	/^static union { vl_uint32 raw ; float value ; }$/;"	m	union:__anon4
+raw	mathop.h	/^static union { vl_uint32 raw ; float value ; }$/;"	m	union:__anon5
+raw	mathop.h	/^static union { vl_uint64 raw ; double value ; }$/;"	m	union:__anon6
+raw	mathop.h	/^static union { vl_uint64 raw ; double value ; }$/;"	m	union:__anon7
+realloc_func	generic.c	/^  void *(*realloc_func) (void*,size_t) ;$/;"	m	struct:_VlState	file:
+regularizer	svm.h	/^  double regularizer ;          \/**< Regularizer value. *\/$/;"	m	struct:VlSvmStatistics_
+rell	mser.h	/^  int                rell ;    \/**< size of ell buffer                     *\/$/;"	m	struct:_VlMserFilt
+remove_blanks	pgm.c	/^remove_blanks(FILE* f)$/;"	f	file:
+remove_line	pgm.c	/^remove_line(FILE* f)$/;"	f	file:
+required_argument	getopt_long.h	35;"	d
+rer	mser.h	/^  int                rer ;     \/**< size of er buffer                       *\/$/;"	m	struct:_VlMserFilt
+rmer	mser.h	/^  int                rmer ;    \/**< size of mer buffer                      *\/$/;"	m	struct:_VlMserFilt
+root	hikmeans.h	/^  VlHIKMNode * root; \/**< Tree root node *\/$/;"	m	struct:_VlHIKMTree
+rowPointers	array.h	/^  void * rowPointers ;$/;"	m	struct:_VlArray
+scale	covdet.h	/^  double scale ;$/;"	m	struct:_VlCovDetFeatureLaplacianScale
+scales	covdet.c	/^  VlCovDetFeatureLaplacianScale scales [VL_COVDET_MAX_NUM_LAPLACIAN_SCALES] ;$/;"	m	struct:_VlCovDet	file:
+score	covdet.h	/^  double score ;$/;"	m	struct:_VlCovDetFeatureLaplacianScale
+score	covdet.h	/^  double score ;$/;"	m	struct:_VlCovDetFeatureOrientation
+scores	svm.c	/^  double * scores ;$/;"	m	struct:VlSvm_	file:
+scoresVariation	svm.h	/^  double scoresVariation ;      \/**< Variance of the score updates. *\/$/;"	m	struct:VlSvmStatistics_
+searchHeapArray	kdtree.h	/^  VlKDForestSearchState * searchHeapArray ;$/;"	m	struct:_VlKDForestSearcher
+searchHeapNumNodes	kdtree.h	/^  vl_size searchHeapNumNodes ;$/;"	m	struct:_VlKDForestSearcher
+searchId	kdtree.h	/^  vl_uindex searchId ;$/;"	m	struct:_VlKDForestSearcher
+searchIdBook	kdtree.h	/^  vl_uindex * searchIdBook ;$/;"	m	struct:_VlKDForestSearcher
+searchMaxNumComparisons	kdtree.h	/^  vl_size searchMaxNumComparisons ;$/;"	m	struct:_VlKDForest
+searchNumComparisons	kdtree.h	/^  vl_size searchNumComparisons;$/;"	m	struct:_VlKDForestSearcher
+searchNumRecursions	kdtree.h	/^  vl_size searchNumRecursions ;$/;"	m	struct:_VlKDForestSearcher
+searchNumSimplifications	kdtree.h	/^  vl_size searchNumSimplifications ;$/;"	m	struct:_VlKDForestSearcher
+shortcut	mser.h	/^  vl_uint      shortcut ;   \/**< shortcut used when building a tree           *\/$/;"	m	struct:_VlMserExtrReg
+shortcut	mser.h	/^  vl_uint shortcut ; \/**< points to a region closer to a root.    *\/$/;"	m	struct:_VlMserReg
+sigma	covdet.h	/^  float sigma ; \/**< radius or scale *\/$/;"	m	struct:_VlFrameDisc
+sigma	covdet.h	/^  float sigma ; \/**< radius or scale *\/$/;"	m	struct:_VlFrameOrientedDisc
+sigma	quickshift.h	/^  vl_qs_type sigma;$/;"	m	struct:_VlQS
+sigmaLowBound	gmm.c	/^  double * sigmaLowBound ;            \/**< Lower bound on the diagonal covariance values. *\/$/;"	m	struct:_VlGMM	file:
+sign	mathop.c	710;"	d	file:
+simdEnabled	generic.c	/^  vl_bool simdEnabled ;$/;"	m	struct:_VlState	file:
+sinc	homkermap.c	/^VL_INLINE double sinc(double x)$/;"	f
+small	rodrigues.c	56;"	d	file:
+snprintf	host.h	315;"	d
+snprintf	host.h	335;"	d
+solver	svm.c	/^  VlSvmSolverType solver ;      \/**< SVM solver type. *\/$/;"	m	struct:VlSvm_	file:
+splitDimension	kdtree.h	/^  unsigned int splitDimension ;$/;"	m	struct:_VlKDTreeNode
+splitHeapArray	kdtree.h	/^  VlKDTreeSplitDimension splitHeapArray [VL_KDTREE_SPLIT_HEAP_SIZE] ;$/;"	m	struct:_VlKDForest
+splitHeapNumNodes	kdtree.h	/^  vl_size splitHeapNumNodes ;$/;"	m	struct:_VlKDForest
+splitHeapSize	kdtree.h	/^  vl_size splitHeapSize ;$/;"	m	struct:_VlKDForest
+splitThreshold	kdtree.h	/^  double splitThreshold ;$/;"	m	struct:_VlKDTreeNode
+statistics	svm.c	/^  VlSvmStatistics statistics ;  \/**< Statistcs. *\/$/;"	m	struct:VlSvm_	file:
+stats	mser.h	/^  VlMserStats stats ;          \/** run statistic                           *\/$/;"	m	struct:_VlMserFilt
+status	svm.h	/^  VlSvmSolverStatus status ;    \/**< Solver status. *\/$/;"	m	struct:VlSvmStatistics_
+step	scalespace.h	/^  double step ; \/**< Sampling step (size of a pixel) *\/$/;"	m	struct:_VlScaleSpaceOctaveGeometry
+stride	kmeans.c	/^  vl_size stride ;$/;"	m	struct:_VlKMeansSortWrapper	file:
+strides	mser.h	/^  int               *strides ; \/**< strides to move in image data           *\/$/;"	m	struct:_VlMserFilt
+string	host.h	/^    char string [0x20] ;$/;"	m	union:_VlX86CpuInfo::__anon3
+subdivision	homkermap.c	/^  double subdivision  ;$/;"	m	struct:_VlHomogeneousKernelMap	file:
+subs	mser.h	/^  int               *subs ;    \/**< N-dimensional subscript                 *\/$/;"	m	struct:_VlMserFilt
+table	homkermap.c	/^  double * table ;$/;"	m	struct:_VlHomogeneousKernelMap	file:
+tau	quickshift.h	/^  vl_qs_type tau;$/;"	m	struct:_VlQS
+threadState	generic.c	/^  VlThreadState * threadState ;$/;"	m	struct:_VlState	file:
+thresholdingMethod	kdtree.h	/^  VlKDTreeThresholdingMethod thresholdingMethod ;$/;"	m	struct:_VlKDForest
+ticFreq	generic.c	/^  LARGE_INTEGER ticFreq ;$/;"	m	struct:_VlThreadState	file:
+ticMark	generic.c	/^  LARGE_INTEGER ticMark ;$/;"	m	struct:_VlThreadState	file:
+ticMark	generic.c	/^  clock_t ticMark ;$/;"	m	struct:_VlThreadState	file:
+to	lbp.c	282;"	d	file:
+transposed	covdet.c	/^  vl_bool transposed ;$/;"	m	struct:_VlCovDet	file:
+transposed	hog.h	/^  vl_bool transposed ;$/;"	m	struct:VlHog_
+transposed	lbp.h	/^  vl_bool transposed ;$/;"	m	struct:VlLbp_
+tree	kdtree.h	/^  VlKDTree * tree ;$/;"	m	struct:_VlKDForestSearchState
+trees	kdtree.h	/^  VlKDTree ** trees ;$/;"	m	struct:_VlKDForest
+type	array.h	/^  vl_type type ;$/;"	m	struct:_VlArray
+upperBound	kdtree.h	/^  double upperBound ;$/;"	m	struct:_VlKDTreeNode
+upperChild	kdtree.h	/^  vl_index upperChild ;$/;"	m	struct:_VlKDTreeNode
+useBilinearOrientationAssigment	hog.h	/^  vl_bool useBilinearOrientationAssigment ;$/;"	m	struct:VlHog_
+v	host.c	548;"	d	file:
+v	host.c	552;"	d	file:
+val	getopt_long.h	/^  int	      val ;     \/**< value to set or to return *\/$/;"	m	struct:option
+value	kdtree.h	/^  double value ;$/;"	m	struct:_VlKDTreeDataIndexEntry
+value	mathop.h	/^static union { vl_uint32 raw ; float value ; }$/;"	m	union:__anon4
+value	mathop.h	/^static union { vl_uint32 raw ; float value ; }$/;"	m	union:__anon5
+value	mathop.h	/^static union { vl_uint64 raw ; double value ; }$/;"	m	union:__anon6
+value	mathop.h	/^static union { vl_uint64 raw ; double value ; }$/;"	m	union:__anon7
+value	mser.h	/^  vl_mser_pix  value ;      \/**< value of pivot pixel                         *\/$/;"	m	struct:_VlMserExtrReg
+value	stringop.h	/^  vl_index value ;   \/**< enumeration member value. *\/$/;"	m	struct:_VlEnumerator
+variance	kdtree.h	/^  double variance ;$/;"	m	struct:_VlKDTreeSplitDimension
+variant	hog.h	/^  VlHogVariant variant ;$/;"	m	struct:VlHog_
+variation	mser.h	/^  float        variation ;  \/**< rel. area variation                          *\/$/;"	m	struct:_VlMserExtrReg
+vendor	host.h	/^  } vendor ;$/;"	m	struct:_VlX86CpuInfo	typeref:union:_VlX86CpuInfo::__anon3
+verb	hikmeans.h	/^  int verb ; \/**< Verbosity level *\/$/;"	m	struct:_VlHIKMTree
+verb	ikmeans.h	/^  int verb ; \/**< verbosity level *\/$/;"	m	struct:_VlIKMFilt
+verbose	mser.h	/^  vl_bool   verbose ;          \/**< be verbose                             *\/$/;"	m	struct:_VlMserFilt
+verbosity	aib.h	/^  vl_uint verbosity ; \/** Verbosity level *\/$/;"	m	struct:_VlAIB
+verbosity	gmm.c	/^  int     verbosity ;                 \/**< Verbosity level. *\/$/;"	m	struct:_VlGMM	file:
+verbosity	kmeans.h	/^  int verbosity ;                         \/**< Verbosity level. *\/$/;"	m	struct:_VlKMeans
+vlCovdetMethods	covdet.c	/^VlEnumerator vlCovdetMethods [VL_COVDET_METHOD_NUM] = {$/;"	v
+vlCovdetMethods	covdet.h	/^VL_EXPORT VlEnumerator vlCovdetMethods [VL_COVDET_METHOD_NUM] ;$/;"	v
+vlFrameNames	covdet.h	/^VL_EXPORT const char* vlFrameNames [VL_FRAMETYPE_NUM] ;$/;"	v
+vlFrameTypes	covdet.h	/^VL_EXPORT VlEnumerator vlFrameTypes [VL_FRAMETYPE_NUM] ;$/;"	v
+vl_abs_d	mathop.h	/^vl_abs_d (double x)$/;"	f
+vl_abs_f	mathop.h	/^vl_abs_f (float x)$/;"	f
+vl_aib_calculate_information	aib.c	/^void vl_aib_calculate_information(VlAIB * aib, double * I, double * H)$/;"	f
+vl_aib_delete	aib.c	/^vl_aib_delete (VlAIB * aib)$/;"	f
+vl_aib_get_costs	aib.h	/^double * vl_aib_get_costs(VlAIB const * aib)$/;"	f
+vl_aib_get_parents	aib.h	/^vl_uint * vl_aib_get_parents(VlAIB const * aib)$/;"	f
+vl_aib_get_verbosity	aib.h	/^vl_aib_get_verbosity (VlAIB const * self)$/;"	f
+vl_aib_merge_nodes	aib.c	/^vl_aib_merge_nodes (VlAIB * aib, vl_uint i, vl_uint j, vl_uint new)$/;"	f
+vl_aib_min_beta	aib.c	/^void vl_aib_min_beta$/;"	f
+vl_aib_new	aib.c	/^VlAIB * vl_aib_new(double * Pcx, vl_uint nvalues, vl_uint nlabels)$/;"	f
+vl_aib_new_Pc	aib.c	/^double * vl_aib_new_Pc(double * Pcx, vl_uint nvalues, vl_uint nlabels)$/;"	f
+vl_aib_new_Px	aib.c	/^double * vl_aib_new_Px(double * Pcx, vl_uint nvalues, vl_uint nlabels)$/;"	f
+vl_aib_new_nodelist	aib.c	/^vl_uint *vl_aib_new_nodelist (vl_uint nentries)$/;"	f
+vl_aib_normalize_P	aib.c	/^void vl_aib_normalize_P (double * P, vl_uint nelem)$/;"	f
+vl_aib_process	aib.c	/^void vl_aib_process(VlAIB *aib)$/;"	f
+vl_aib_set_verbosity	aib.h	/^vl_aib_set_verbosity (VlAIB * self, int verbosity)$/;"	f
+vl_aib_update_beta	aib.c	/^vl_aib_update_beta (VlAIB * aib)$/;"	f
+vl_array_dealloc	array.c	/^vl_array_dealloc (VlArray * self)$/;"	f
+vl_array_delete	array.c	/^vl_array_delete (VlArray * self)$/;"	f
+vl_array_get_data	array.h	/^vl_array_get_data (VlArray const * self)$/;"	f
+vl_array_get_data_type	array.h	/^vl_array_get_data_type (VlArray const * self)$/;"	f
+vl_array_get_dimensions	array.h	/^vl_array_get_dimensions (VlArray const * self)$/;"	f
+vl_array_get_num_dimensions	array.h	/^vl_array_get_num_dimensions (VlArray const * self)$/;"	f
+vl_array_get_num_elements	array.c	/^vl_array_get_num_elements (VlArray const * self)$/;"	f
+vl_array_init	array.c	/^vl_array_init (VlArray* self, vl_type type,$/;"	f
+vl_array_init_envelope	array.c	/^vl_array_init_envelope (VlArray * self, void * data, vl_type type,$/;"	f
+vl_array_init_matrix	array.c	/^vl_array_init_matrix (VlArray * self, vl_type type, vl_size numRows, vl_size numColumns)$/;"	f
+vl_array_init_matrix_envelope	array.c	/^vl_array_init_matrix_envelope (VlArray * self, void * data,$/;"	f
+vl_array_new	array.c	/^vl_array_new (vl_type type, vl_size numDimensions, vl_size const * dimensions)$/;"	f
+vl_array_new_envelope	array.c	/^vl_array_new_envelope (void * data, vl_type type,$/;"	f
+vl_array_new_matrix	array.c	/^vl_array_new_matrix (vl_type type, vl_size numRows, vl_size numColumns)$/;"	f
+vl_array_new_matrix_envelope	array.c	/^vl_array_new_matrix_envelope (void * data, vl_type type, vl_size numRows, vl_size numColumns)$/;"	f
+vl_bool	host.h	/^typedef int                 vl_bool ;    \/**< @brief Boolean. *\/$/;"	t
+vl_bool	host.h	/^typedef int                 vl_bool ;$/;"	t
+vl_calloc	generic.c	/^vl_calloc (size_t n, size_t size)$/;"	f
+vl_ceil_d	mathop.h	/^vl_ceil_d (double x)$/;"	f
+vl_ceil_f	mathop.h	/^vl_ceil_f (float x)$/;"	f
+vl_configuration_to_string_copy	generic.c	/^vl_configuration_to_string_copy ()$/;"	f
+vl_constructor	generic.c	/^vl_constructor (void)$/;"	f	file:
+vl_covdet_append_feature	covdet.c	/^vl_covdet_append_feature (VlCovDet * self, VlCovDetFeature const * feature)$/;"	f
+vl_covdet_delete	covdet.c	/^vl_covdet_delete (VlCovDet * self)$/;"	f
+vl_covdet_detect	covdet.c	/^vl_covdet_detect (VlCovDet * self)$/;"	f
+vl_covdet_drop_features_outside	covdet.c	/^vl_covdet_drop_features_outside (VlCovDet * self, double margin)$/;"	f
+vl_covdet_extract_affine_shape	covdet.c	/^vl_covdet_extract_affine_shape (VlCovDet * self)$/;"	f
+vl_covdet_extract_affine_shape_for_frame	covdet.c	/^vl_covdet_extract_affine_shape_for_frame (VlCovDet * self,$/;"	f
+vl_covdet_extract_laplacian_scales	covdet.c	/^vl_covdet_extract_laplacian_scales (VlCovDet * self)$/;"	f
+vl_covdet_extract_laplacian_scales_for_frame	covdet.c	/^vl_covdet_extract_laplacian_scales_for_frame (VlCovDet * self,$/;"	f
+vl_covdet_extract_orientations	covdet.c	/^vl_covdet_extract_orientations (VlCovDet * self)$/;"	f
+vl_covdet_extract_orientations_for_frame	covdet.c	/^vl_covdet_extract_orientations_for_frame (VlCovDet * self,$/;"	f
+vl_covdet_extract_patch_for_frame	covdet.c	/^vl_covdet_extract_patch_for_frame (VlCovDet * self,$/;"	f
+vl_covdet_extract_patch_helper	covdet.c	/^vl_covdet_extract_patch_helper (VlCovDet * self,$/;"	f
+vl_covdet_get_aa_accurate_smoothing	covdet.c	/^vl_covdet_get_aa_accurate_smoothing (VlCovDet const * self)$/;"	f
+vl_covdet_get_css	covdet.c	/^vl_covdet_get_css (VlCovDet const * self)$/;"	f
+vl_covdet_get_edge_threshold	covdet.c	/^vl_covdet_get_edge_threshold (VlCovDet const * self)$/;"	f
+vl_covdet_get_features	covdet.c	/^vl_covdet_get_features (VlCovDet * self)$/;"	f
+vl_covdet_get_first_octave	covdet.c	/^vl_covdet_get_first_octave (VlCovDet const * self)$/;"	f
+vl_covdet_get_gss	covdet.c	/^vl_covdet_get_gss (VlCovDet const * self)$/;"	f
+vl_covdet_get_laplacian_peak_threshold	covdet.c	/^vl_covdet_get_laplacian_peak_threshold (VlCovDet const * self)$/;"	f
+vl_covdet_get_laplacian_scales_statistics	covdet.c	/^vl_covdet_get_laplacian_scales_statistics (VlCovDet const * self,$/;"	f
+vl_covdet_get_non_extrema_suppression_threshold	covdet.c	/^vl_covdet_get_non_extrema_suppression_threshold (VlCovDet const * self)$/;"	f
+vl_covdet_get_num_features	covdet.c	/^vl_covdet_get_num_features (VlCovDet const * self)$/;"	f
+vl_covdet_get_num_non_extrema_suppressed	covdet.c	/^vl_covdet_get_num_non_extrema_suppressed (VlCovDet const * self)$/;"	f
+vl_covdet_get_octave_resolution	covdet.c	/^vl_covdet_get_octave_resolution (VlCovDet const * self)$/;"	f
+vl_covdet_get_peak_threshold	covdet.c	/^vl_covdet_get_peak_threshold (VlCovDet const * self)$/;"	f
+vl_covdet_get_transposed	covdet.c	/^vl_covdet_get_transposed (VlCovDet const  * self)$/;"	f
+vl_covdet_new	covdet.c	/^vl_covdet_new (VlCovDetMethod method)$/;"	f
+vl_covdet_put_image	covdet.c	/^vl_covdet_put_image (VlCovDet * self,$/;"	f
+vl_covdet_reset	covdet.c	/^vl_covdet_reset (VlCovDet * self)$/;"	f
+vl_covdet_set_aa_accurate_smoothing	covdet.c	/^vl_covdet_set_aa_accurate_smoothing (VlCovDet * self, vl_bool x)$/;"	f
+vl_covdet_set_edge_threshold	covdet.c	/^vl_covdet_set_edge_threshold (VlCovDet * self, double edgeThreshold)$/;"	f
+vl_covdet_set_first_octave	covdet.c	/^vl_covdet_set_first_octave (VlCovDet * self, vl_index o)$/;"	f
+vl_covdet_set_laplacian_peak_threshold	covdet.c	/^vl_covdet_set_laplacian_peak_threshold (VlCovDet * self, double peakThreshold)$/;"	f
+vl_covdet_set_non_extrema_suppression_threshold	covdet.c	/^vl_covdet_set_non_extrema_suppression_threshold (VlCovDet * self, double x)$/;"	f
+vl_covdet_set_octave_resolution	covdet.c	/^vl_covdet_set_octave_resolution (VlCovDet * self, vl_size r)$/;"	f
+vl_covdet_set_peak_threshold	covdet.c	/^vl_covdet_set_peak_threshold (VlCovDet * self, double peakThreshold)$/;"	f
+vl_covdet_set_transposed	covdet.c	/^vl_covdet_set_transposed (VlCovDet * self, vl_bool t)$/;"	f
+vl_cpu_has_avx	generic.c	/^vl_cpu_has_avx (void)$/;"	f
+vl_cpu_has_sse2	generic.c	/^vl_cpu_has_sse2 (void)$/;"	f
+vl_cpu_has_sse3	generic.c	/^vl_cpu_has_sse3 (void)$/;"	f
+vl_destructor	generic.c	/^vl_destructor ()$/;"	f	file:
+vl_enumeration_get	stringop.c	/^vl_enumeration_get (VlEnumerator const *enumeration, char const *name)$/;"	f
+vl_enumeration_get_by_value	stringop.c	/^vl_enumeration_get_by_value (VlEnumerator const *enumeration, vl_index value)$/;"	f
+vl_enumeration_get_casei	stringop.c	/^vl_enumeration_get_casei (VlEnumerator const *enumeration, char const *name)$/;"	f
+vl_fast_atan2_d	mathop.h	/^vl_fast_atan2_d (double y, double x)$/;"	f
+vl_fast_atan2_f	mathop.h	/^vl_fast_atan2_f (float y, float x)$/;"	f
+vl_fast_resqrt_d	mathop.h	/^vl_fast_resqrt_d (double x)$/;"	f
+vl_fast_resqrt_f	mathop.h	/^vl_fast_resqrt_f (float x)$/;"	f
+vl_fast_sqrt_d	mathop.h	/^vl_fast_sqrt_d (float x)$/;"	f
+vl_fast_sqrt_f	mathop.h	/^vl_fast_sqrt_f (float x)$/;"	f
+vl_find_local_extrema_2	covdet.c	/^vl_find_local_extrema_2 (vl_index ** extrema, vl_size * bufferSize,$/;"	f
+vl_find_local_extrema_3	covdet.c	/^vl_find_local_extrema_3 (vl_index ** extrema, vl_size * bufferSize,$/;"	f
+vl_fisher_encode	fisher.c	/^vl_fisher_encode$/;"	f
+vl_floor_d	mathop.h	/^vl_floor_d (double x)$/;"	f
+vl_floor_f	mathop.h	/^vl_floor_f (float x)$/;"	f
+vl_free	generic.c	/^vl_free (void *ptr)$/;"	f
+vl_gaussian_elimination	mathop.c	/^vl_gaussian_elimination (double * A, vl_size numRows, vl_size numColumns)$/;"	f
+vl_get_cpu_time	generic.c	/^vl_get_cpu_time ()$/;"	f
+vl_get_frame_size	covdet.h	/^vl_get_frame_size (VlFrameType frameType) {$/;"	f
+vl_get_frame_type	covdet.h	/^vl_get_frame_type (vl_bool affineAdaptation, vl_bool orientation)$/;"	f
+vl_get_last_error	generic.c	/^vl_get_last_error (void) {$/;"	f
+vl_get_last_error_message	generic.c	/^vl_get_last_error_message (void)$/;"	f
+vl_get_max_threads	generic.c	/^vl_get_max_threads (void)$/;"	f
+vl_get_num_cpus	generic.c	/^vl_get_num_cpus (void)$/;"	f
+vl_get_printf_func	generic.c	/^vl_get_printf_func (void) {$/;"	f
+vl_get_rand	generic.c	/^vl_get_rand (void)$/;"	f
+vl_get_simd_enabled	generic.c	/^vl_get_simd_enabled (void)$/;"	f
+vl_get_state	generic.c	/^vl_get_state (void)$/;"	f
+vl_get_thread_limit	generic.c	/^vl_get_thread_limit (void)$/;"	f
+vl_get_thread_specific_state	generic.c	/^vl_get_thread_specific_state (void)$/;"	f
+vl_get_type_name	generic.h	/^vl_get_type_name (vl_type type)$/;"	f
+vl_get_type_size	generic.h	/^vl_get_type_size (vl_type type)$/;"	f
+vl_get_vector_comparison_type_name	mathop.h	/^vl_get_vector_comparison_type_name (int type)$/;"	f
+vl_get_version_string	generic.c	/^vl_get_version_string ()$/;"	f
+vl_gmm_cluster	gmm.c	/^double vl_gmm_cluster (VlGMM * self,$/;"	f
+vl_gmm_delete	gmm.c	/^vl_gmm_delete (VlGMM * self)$/;"	f
+vl_gmm_em	gmm.c	/^double vl_gmm_em (VlGMM * self, void const * data, vl_size numData)$/;"	f
+vl_gmm_get_covariance_lower_bounds	gmm.c	/^double const * vl_gmm_get_covariance_lower_bounds (VlGMM const * self)$/;"	f
+vl_gmm_get_covariances	gmm.c	/^vl_gmm_get_covariances (VlGMM const * self)$/;"	f
+vl_gmm_get_data_type	gmm.c	/^vl_gmm_get_data_type (VlGMM const * self)$/;"	f
+vl_gmm_get_dimension	gmm.c	/^vl_gmm_get_dimension (VlGMM const * self)$/;"	f
+vl_gmm_get_initialization	gmm.c	/^vl_gmm_get_initialization (VlGMM const * self)$/;"	f
+vl_gmm_get_kmeans_init_object	gmm.c	/^VlKMeans * vl_gmm_get_kmeans_init_object (VlGMM const * self)$/;"	f
+vl_gmm_get_loglikelihood	gmm.c	/^vl_gmm_get_loglikelihood (VlGMM const * self)$/;"	f
+vl_gmm_get_max_num_iterations	gmm.c	/^vl_gmm_get_max_num_iterations (VlGMM const * self)$/;"	f
+vl_gmm_get_means	gmm.c	/^vl_gmm_get_means (VlGMM const * self)$/;"	f
+vl_gmm_get_num_clusters	gmm.c	/^vl_gmm_get_num_clusters (VlGMM const * self)$/;"	f
+vl_gmm_get_num_data	gmm.c	/^vl_gmm_get_num_data (VlGMM const * self)$/;"	f
+vl_gmm_get_num_repetitions	gmm.c	/^vl_gmm_get_num_repetitions (VlGMM const * self)$/;"	f
+vl_gmm_get_posteriors	gmm.c	/^vl_gmm_get_posteriors (VlGMM const * self)$/;"	f
+vl_gmm_get_priors	gmm.c	/^vl_gmm_get_priors (VlGMM const * self)$/;"	f
+vl_gmm_get_verbosity	gmm.c	/^vl_gmm_get_verbosity (VlGMM const * self)$/;"	f
+vl_gmm_init_with_kmeans	gmm.c	/^vl_gmm_init_with_kmeans$/;"	f
+vl_gmm_init_with_rand_data	gmm.c	/^vl_gmm_init_with_rand_data$/;"	f
+vl_gmm_new	gmm.c	/^vl_gmm_new (vl_type dataType, vl_size dimension, vl_size numComponents)$/;"	f
+vl_gmm_new_copy	gmm.c	/^vl_gmm_new_copy (VlGMM const * self)$/;"	f
+vl_gmm_reset	gmm.c	/^vl_gmm_reset (VlGMM * self)$/;"	f
+vl_gmm_set_covariance_lower_bound	gmm.c	/^void vl_gmm_set_covariance_lower_bound (VlGMM * self, double bound)$/;"	f
+vl_gmm_set_covariance_lower_bounds	gmm.c	/^void vl_gmm_set_covariance_lower_bounds (VlGMM * self, double const * bounds)$/;"	f
+vl_gmm_set_covariances	gmm.c	/^void vl_gmm_set_covariances (VlGMM * self, void const * covariances)$/;"	f
+vl_gmm_set_initialization	gmm.c	/^vl_gmm_set_initialization (VlGMM * self, VlGMMInitialization init)$/;"	f
+vl_gmm_set_kmeans_init_object	gmm.c	/^void vl_gmm_set_kmeans_init_object (VlGMM * self, VlKMeans * kmeans)$/;"	f
+vl_gmm_set_max_num_iterations	gmm.c	/^vl_gmm_set_max_num_iterations (VlGMM * self, vl_size maxNumIterations)$/;"	f
+vl_gmm_set_means	gmm.c	/^vl_gmm_set_means (VlGMM * self, void const * means)$/;"	f
+vl_gmm_set_num_repetitions	gmm.c	/^vl_gmm_set_num_repetitions (VlGMM * self, vl_size numRepetitions)$/;"	f
+vl_gmm_set_priors	gmm.c	/^void vl_gmm_set_priors (VlGMM * self, void const * priors)$/;"	f
+vl_gmm_set_verbosity	gmm.c	/^vl_gmm_set_verbosity (VlGMM * self, int verbosity)$/;"	f
+vl_heap_left_child	heap-def.h	/^vl_heap_left_child (vl_uindex index)$/;"	f
+vl_heap_parent	heap-def.h	/^vl_heap_parent (vl_uindex index)$/;"	f
+vl_heap_right_child	heap-def.h	/^vl_heap_right_child (vl_uindex index)$/;"	f
+vl_hikm_copy_subset	hikmeans.c	/^vl_hikm_copy_subset (vl_uint8 const * data,$/;"	f
+vl_hikm_delete	hikmeans.c	/^vl_hikm_delete (VlHIKMTree *f)$/;"	f
+vl_hikm_get_K	hikmeans.c	/^vl_hikm_get_K (VlHIKMTree const *f)$/;"	f
+vl_hikm_get_depth	hikmeans.c	/^vl_hikm_get_depth (VlHIKMTree const *f)$/;"	f
+vl_hikm_get_max_niters	hikmeans.c	/^vl_hikm_get_max_niters (VlHIKMTree const *f)$/;"	f
+vl_hikm_get_ndims	hikmeans.c	/^vl_hikm_get_ndims (VlHIKMTree const* f)$/;"	f
+vl_hikm_get_root	hikmeans.c	/^vl_hikm_get_root (VlHIKMTree const *f)$/;"	f
+vl_hikm_get_verbosity	hikmeans.c	/^vl_hikm_get_verbosity (VlHIKMTree const *f)$/;"	f
+vl_hikm_init	hikmeans.c	/^vl_hikm_init (VlHIKMTree *f, vl_size M, vl_size K, vl_size depth)$/;"	f
+vl_hikm_new	hikmeans.c	/^vl_hikm_new (int method)$/;"	f
+vl_hikm_push	hikmeans.c	/^vl_hikm_push (VlHIKMTree *f, vl_uint32 *asgn, vl_uint8 const *data, vl_size N)$/;"	f
+vl_hikm_set_max_niters	hikmeans.c	/^vl_hikm_set_max_niters (VlHIKMTree *f, int max_niters)$/;"	f
+vl_hikm_set_verbosity	hikmeans.c	/^vl_hikm_set_verbosity (VlHIKMTree *f, int verb)$/;"	f
+vl_hikm_train	hikmeans.c	/^vl_hikm_train (VlHIKMTree *f, vl_uint8 const *data, vl_size N)$/;"	f
+vl_hog_delete	hog.c	/^vl_hog_delete (VlHog * self)$/;"	f
+vl_hog_extract	hog.c	/^vl_hog_extract (VlHog * self, float * features)$/;"	f
+vl_hog_get_dimension	hog.c	/^vl_hog_get_dimension (VlHog const * self)$/;"	f
+vl_hog_get_glyph_size	hog.c	/^vl_hog_get_glyph_size (VlHog const * self)$/;"	f
+vl_hog_get_height	hog.c	/^vl_hog_get_height (VlHog * self)$/;"	f
+vl_hog_get_permutation	hog.c	/^vl_hog_get_permutation (VlHog const * self)$/;"	f
+vl_hog_get_use_bilinear_orientation_assignments	hog.c	/^vl_hog_get_use_bilinear_orientation_assignments (VlHog const * self) {$/;"	f
+vl_hog_get_width	hog.c	/^vl_hog_get_width (VlHog * self)$/;"	f
+vl_hog_new	hog.c	/^vl_hog_new (VlHogVariant variant, vl_size numOrientations, vl_bool transposed)$/;"	f
+vl_hog_prepare_buffers	hog.c	/^vl_hog_prepare_buffers (VlHog * self, vl_size width, vl_size height, vl_size cellSize)$/;"	f	file:
+vl_hog_put_image	hog.c	/^vl_hog_put_image (VlHog * self,$/;"	f
+vl_hog_put_polar_field	hog.c	/^void vl_hog_put_polar_field (VlHog * self,$/;"	f
+vl_hog_render	hog.c	/^vl_hog_render (VlHog const * self,$/;"	f
+vl_hog_set_use_bilinear_orientation_assignments	hog.c	/^vl_hog_set_use_bilinear_orientation_assignments (VlHog * self, vl_bool x) {$/;"	f
+vl_homogeneouskernelmap_delete	homkermap.c	/^vl_homogeneouskernelmap_delete (VlHomogeneousKernelMap * self)$/;"	f
+vl_homogeneouskernelmap_get_dimension	homkermap.c	/^vl_homogeneouskernelmap_get_dimension (VlHomogeneousKernelMap const * self)$/;"	f
+vl_homogeneouskernelmap_get_kernel_type	homkermap.c	/^vl_homogeneouskernelmap_get_kernel_type (VlHomogeneousKernelMap const * self)$/;"	f
+vl_homogeneouskernelmap_get_order	homkermap.c	/^vl_homogeneouskernelmap_get_order (VlHomogeneousKernelMap const * self)$/;"	f
+vl_homogeneouskernelmap_get_smooth_spectrum	homkermap.c	/^vl_homogeneouskernelmap_get_smooth_spectrum (VlHomogeneousKernelMap const * self, double omega)$/;"	f
+vl_homogeneouskernelmap_get_spectrum	homkermap.c	/^vl_homogeneouskernelmap_get_spectrum (VlHomogeneousKernelMap const * self, double omega)$/;"	f
+vl_homogeneouskernelmap_get_window_type	homkermap.c	/^vl_homogeneouskernelmap_get_window_type (VlHomogeneousKernelMap const * self)$/;"	f
+vl_homogeneouskernelmap_new	homkermap.c	/^vl_homogeneouskernelmap_new (VlHomogeneousKernelType kernelType,$/;"	f
+vl_ikm_delete	ikmeans.c	/^vl_ikm_delete (VlIKMFilt* f)$/;"	f
+vl_ikm_get_K	ikmeans.c	/^vl_ikm_get_K (VlIKMFilt const* f)$/;"	f
+vl_ikm_get_centers	ikmeans.c	/^vl_ikm_get_centers (VlIKMFilt const* f)$/;"	f
+vl_ikm_get_max_niters	ikmeans.c	/^vl_ikm_get_max_niters (VlIKMFilt const* f)$/;"	f
+vl_ikm_get_ndims	ikmeans.c	/^vl_ikm_get_ndims (VlIKMFilt const* f)$/;"	f
+vl_ikm_get_verbosity	ikmeans.c	/^vl_ikm_get_verbosity (VlIKMFilt const* f)$/;"	f
+vl_ikm_new	ikmeans.c	/^vl_ikm_new (int method)$/;"	f
+vl_ikm_push	ikmeans.c	/^vl_ikm_push (VlIKMFilt *f, vl_uint32 *asgn, vl_uint8 const *data, vl_size N) {$/;"	f
+vl_ikm_push_one	ikmeans.c	/^vl_ikm_push_one (vl_ikmacc_t const *centers,$/;"	f
+vl_ikm_set_max_niters	ikmeans.c	/^vl_ikm_set_max_niters (VlIKMFilt *f, vl_size max_niters)$/;"	f
+vl_ikm_set_verbosity	ikmeans.c	/^vl_ikm_set_verbosity (VlIKMFilt *f, int verb)$/;"	f
+vl_ikm_train	ikmeans.c	/^vl_ikm_train (VlIKMFilt *f, vl_uint8 const *data, vl_size N)$/;"	f
+vl_ikmacc_t	ikmeans.h	/^typedef vl_int32 vl_ikmacc_t ; \/**< IKM accumulator data type *\/$/;"	t
+vl_index	host.h	/^typedef vl_int32            vl_index ;$/;"	t
+vl_index	host.h	/^typedef vl_int64            vl_index ;   \/**< @brief Signed version of ::vl_size and ::vl_uindex *\/$/;"	t
+vl_infinity_d	mathop.h	/^  const vl_infinity_d =$/;"	v
+vl_infinity_f	mathop.h	/^  const vl_infinity_f =$/;"	v
+vl_int	host.h	/^typedef int                 vl_int ;     \/**< @brief Same as @c int. *\/$/;"	t
+vl_int	host.h	/^typedef int                 vl_int ;$/;"	t
+vl_int16	host.h	/^typedef short               vl_int16 ;   \/**< @brief Signed 16-bit integer. *\/$/;"	t
+vl_int16	host.h	/^typedef short               vl_int16 ;$/;"	t
+vl_int32	host.h	/^typedef int                 vl_int32 ;   \/**< @brief Signed 32-bit integer. *\/$/;"	t
+vl_int32	host.h	/^typedef int                 vl_int32 ;$/;"	t
+vl_int64	host.h	/^typedef __int64             vl_int64 ;$/;"	t
+vl_int64	host.h	/^typedef long long           vl_int64 ;   \/**< @brief Signed 64-bit integer. *\/$/;"	t
+vl_int64	host.h	/^typedef long long           vl_int64 ;$/;"	t
+vl_int8	host.h	/^typedef char                vl_int8  ;   \/**< @brief Signed  8-bit integer. *\/$/;"	t
+vl_int8	host.h	/^typedef char                vl_int8  ;$/;"	t
+vl_intptr	host.h	/^typedef vl_int32            vl_intptr ;$/;"	t
+vl_intptr	host.h	/^typedef vl_int64            vl_intptr ;  \/**< @brief Integer holding a pointer. *\/$/;"	t
+vl_irodrigues	rodrigues.c	/^void vl_irodrigues(double* om_pt, double* dom_pt, const double* R_pt)$/;"	f
+vl_is_inf_d	mathop.h	/^vl_is_inf_d (double x)$/;"	f
+vl_is_inf_f	mathop.h	/^vl_is_inf_f (float x)$/;"	f
+vl_is_nan_d	mathop.h	/^vl_is_nan_d (double x)$/;"	f
+vl_is_nan_f	mathop.h	/^vl_is_nan_f (float x)$/;"	f
+vl_kdforest_build	kdtree.c	/^vl_kdforest_build (VlKDForest * self, vl_size numData, void const * data)$/;"	f
+vl_kdforest_delete	kdtree.c	/^vl_kdforest_delete (VlKDForest * self)$/;"	f
+vl_kdforest_get_data_dimension	kdtree.c	/^vl_kdforest_get_data_dimension (VlKDForest const * self)$/;"	f
+vl_kdforest_get_data_type	kdtree.c	/^vl_kdforest_get_data_type (VlKDForest const * self)$/;"	f
+vl_kdforest_get_depth_of_tree	kdtree.c	/^vl_kdforest_get_depth_of_tree (VlKDForest const * self, vl_uindex treeIndex)$/;"	f
+vl_kdforest_get_max_num_comparisons	kdtree.c	/^vl_kdforest_get_max_num_comparisons (VlKDForest * self)$/;"	f
+vl_kdforest_get_num_nodes_of_tree	kdtree.c	/^vl_kdforest_get_num_nodes_of_tree (VlKDForest const * self, vl_uindex treeIndex)$/;"	f
+vl_kdforest_get_num_trees	kdtree.c	/^vl_kdforest_get_num_trees (VlKDForest const * self)$/;"	f
+vl_kdforest_get_searcher	kdtree.c	/^vl_kdforest_get_searcher (VlKDForest const * self, vl_uindex pos)$/;"	f
+vl_kdforest_get_thresholding_method	kdtree.c	/^vl_kdforest_get_thresholding_method (VlKDForest const * self)$/;"	f
+vl_kdforest_new	kdtree.c	/^vl_kdforest_new (vl_type dataType,$/;"	f
+vl_kdforest_new_searcher	kdtree.c	/^vl_kdforest_new_searcher (VlKDForest * kdforest)$/;"	f
+vl_kdforest_query	kdtree.c	/^vl_kdforest_query (VlKDForest * self,$/;"	f
+vl_kdforest_query_recursively	kdtree.c	/^vl_kdforest_query_recursively (VlKDForestSearcher * searcher,$/;"	f
+vl_kdforest_query_with_array	kdtree.c	/^vl_kdforest_query_with_array (VlKDForest * self,$/;"	f
+vl_kdforest_set_max_num_comparisons	kdtree.c	/^vl_kdforest_set_max_num_comparisons (VlKDForest * self, vl_size n)$/;"	f
+vl_kdforest_set_thresholding_method	kdtree.c	/^vl_kdforest_set_thresholding_method (VlKDForest * self, VlKDTreeThresholdingMethod method)$/;"	f
+vl_kdforestsearcher_delete	kdtree.c	/^vl_kdforestsearcher_delete (VlKDForestSearcher * self)$/;"	f
+vl_kdforestsearcher_get_forest	kdtree.c	/^vl_kdforestsearcher_get_forest (VlKDForestSearcher const * self)$/;"	f
+vl_kdforestsearcher_query	kdtree.c	/^vl_kdforestsearcher_query (VlKDForestSearcher * self,$/;"	f
+vl_kdtree_build_recursively	kdtree.c	/^vl_kdtree_build_recursively$/;"	f	file:
+vl_kdtree_calc_bounds_recursively	kdtree.c	/^vl_kdtree_calc_bounds_recursively (VlKDTree * tree,$/;"	f	file:
+vl_kdtree_compare_index_entries	kdtree.c	/^vl_kdtree_compare_index_entries (void const * a,$/;"	f
+vl_kdtree_node_new	kdtree.c	/^vl_kdtree_node_new (VlKDTree * tree, vl_uindex parentIndex)$/;"	f	file:
+vl_kmeans_cluster	kmeans.c	/^vl_kmeans_cluster (VlKMeans * self,$/;"	f
+vl_kmeans_delete	kmeans.c	/^vl_kmeans_delete (VlKMeans * self)$/;"	f
+vl_kmeans_get_algorithm	kmeans.h	/^vl_kmeans_get_algorithm (VlKMeans const * self)$/;"	f
+vl_kmeans_get_centers	kmeans.h	/^vl_kmeans_get_centers (VlKMeans const * self)$/;"	f
+vl_kmeans_get_data_type	kmeans.h	/^vl_kmeans_get_data_type (VlKMeans const * self)$/;"	f
+vl_kmeans_get_dimension	kmeans.h	/^vl_kmeans_get_dimension (VlKMeans const * self)$/;"	f
+vl_kmeans_get_distance	kmeans.h	/^vl_kmeans_get_distance (VlKMeans const * self)$/;"	f
+vl_kmeans_get_energy	kmeans.h	/^vl_kmeans_get_energy (VlKMeans const * self)$/;"	f
+vl_kmeans_get_initialization	kmeans.h	/^vl_kmeans_get_initialization (VlKMeans const * self)$/;"	f
+vl_kmeans_get_max_num_comparisons	kmeans.h	/^vl_kmeans_get_max_num_comparisons (VlKMeans const * self)$/;"	f
+vl_kmeans_get_max_num_iterations	kmeans.h	/^vl_kmeans_get_max_num_iterations (VlKMeans const * self)$/;"	f
+vl_kmeans_get_min_energy_variation	kmeans.h	/^vl_kmeans_get_min_energy_variation (VlKMeans const * self)$/;"	f
+vl_kmeans_get_num_centers	kmeans.h	/^vl_kmeans_get_num_centers (VlKMeans const * self)$/;"	f
+vl_kmeans_get_num_repetitions	kmeans.h	/^vl_kmeans_get_num_repetitions (VlKMeans const * self)$/;"	f
+vl_kmeans_get_num_trees	kmeans.h	/^vl_kmeans_get_num_trees (VlKMeans const * self)$/;"	f
+vl_kmeans_get_verbosity	kmeans.h	/^vl_kmeans_get_verbosity (VlKMeans const * self)$/;"	f
+vl_kmeans_init_centers_plus_plus	kmeans.c	/^vl_kmeans_init_centers_plus_plus$/;"	f
+vl_kmeans_init_centers_with_rand_data	kmeans.c	/^vl_kmeans_init_centers_with_rand_data$/;"	f
+vl_kmeans_new	kmeans.c	/^vl_kmeans_new (vl_type dataType,$/;"	f
+vl_kmeans_new_copy	kmeans.c	/^vl_kmeans_new_copy (VlKMeans const * kmeans)$/;"	f
+vl_kmeans_quantize	kmeans.c	/^vl_kmeans_quantize$/;"	f
+vl_kmeans_quantize_ann	kmeans.c	/^vl_kmeans_quantize_ann$/;"	f
+vl_kmeans_refine_centers	kmeans.c	/^vl_kmeans_refine_centers$/;"	f
+vl_kmeans_reset	kmeans.c	/^vl_kmeans_reset (VlKMeans * self)$/;"	f
+vl_kmeans_set_algorithm	kmeans.h	/^vl_kmeans_set_algorithm (VlKMeans * self, VlKMeansAlgorithm algorithm)$/;"	f
+vl_kmeans_set_centers	kmeans.c	/^vl_kmeans_set_centers$/;"	f
+vl_kmeans_set_initialization	kmeans.h	/^vl_kmeans_set_initialization (VlKMeans * self,$/;"	f
+vl_kmeans_set_max_num_comparisons	kmeans.h	/^vl_kmeans_set_max_num_comparisons (VlKMeans * self,$/;"	f
+vl_kmeans_set_max_num_iterations	kmeans.h	/^vl_kmeans_set_max_num_iterations (VlKMeans * self, vl_size maxNumIterations)$/;"	f
+vl_kmeans_set_min_energy_variation	kmeans.h	/^vl_kmeans_set_min_energy_variation (VlKMeans * self,$/;"	f
+vl_kmeans_set_num_repetitions	kmeans.h	/^vl_kmeans_set_num_repetitions (VlKMeans * self,$/;"	f
+vl_kmeans_set_num_trees	kmeans.h	/^vl_kmeans_set_num_trees (VlKMeans * self, vl_size numTrees)$/;"	f
+vl_kmeans_set_verbosity	kmeans.h	/^vl_kmeans_set_verbosity (VlKMeans * self, int verbosity)$/;"	f
+vl_lapack_dlasv2	mathop.c	/^vl_lapack_dlasv2 (double *smin,$/;"	f
+vl_lbp_delete	lbp.c	/^vl_lbp_delete(VlLbp * self) {$/;"	f
+vl_lbp_get_dimension	lbp.c	/^VL_EXPORT vl_size vl_lbp_get_dimension(VlLbp * self)$/;"	f
+vl_lbp_new	lbp.c	/^vl_lbp_new(VlLbpMappingType type, vl_bool transposed)$/;"	f
+vl_lbp_process	lbp.c	/^vl_lbp_process (VlLbp * self,$/;"	f
+vl_liopdesc_delete	liop.c	/^vl_liopdesc_delete (VlLiopDesc * self)$/;"	f
+vl_liopdesc_get_dimension	liop.c	/^vl_liopdesc_get_dimension (VlLiopDesc const * self)$/;"	f
+vl_liopdesc_get_intensity_threshold	liop.c	/^vl_liopdesc_get_intensity_threshold (VlLiopDesc const * self)$/;"	f
+vl_liopdesc_get_neighbourhood_radius	liop.c	/^vl_liopdesc_get_neighbourhood_radius (VlLiopDesc const * self)$/;"	f
+vl_liopdesc_get_num_neighbours	liop.c	/^vl_liopdesc_get_num_neighbours (VlLiopDesc const * self)$/;"	f
+vl_liopdesc_get_num_spatial_bins	liop.c	/^vl_liopdesc_get_num_spatial_bins (VlLiopDesc const * self)$/;"	f
+vl_liopdesc_new	liop.c	/^vl_liopdesc_new (vl_int numNeighbours, vl_int numSpatialBins,$/;"	f
+vl_liopdesc_new_basic	liop.c	/^VlLiopDesc * vl_liopdesc_new_basic (vl_size sideLength)$/;"	f
+vl_liopdesc_process	liop.c	/^vl_liopdesc_process (VlLiopDesc * self, float * desc, float const * patch)$/;"	f
+vl_liopdesc_set_intensity_threshold	liop.c	/^vl_liopdesc_set_intensity_threshold (VlLiopDesc * self, float x)$/;"	f
+vl_lock_state	generic.c	/^vl_lock_state (void)$/;"	f	file:
+vl_log2_d	mathop.h	/^vl_log2_d (double x)$/;"	f
+vl_log2_f	mathop.h	/^vl_log2_f (float x)$/;"	f
+vl_malloc	generic.c	/^vl_malloc (size_t n)$/;"	f
+vl_mod_2pi_d	mathop.h	/^vl_mod_2pi_d (double x)$/;"	f
+vl_mod_2pi_f	mathop.h	/^vl_mod_2pi_f (float x)$/;"	f
+vl_mser_acc	mser.h	/^typedef float vl_mser_acc ;$/;"	t
+vl_mser_delete	mser.c	/^vl_mser_delete (VlMserFilt* f)$/;"	f
+vl_mser_ell_fit	mser.c	/^vl_mser_ell_fit (VlMserFilt* f)$/;"	f
+vl_mser_get_delta	mser.h	/^vl_mser_get_delta (VlMserFilt const *f)$/;"	f
+vl_mser_get_ell	mser.h	/^vl_mser_get_ell (VlMserFilt const* f)$/;"	f
+vl_mser_get_ell_dof	mser.h	/^vl_mser_get_ell_dof (VlMserFilt const* f)$/;"	f
+vl_mser_get_ell_num	mser.h	/^vl_mser_get_ell_num (VlMserFilt const* f)$/;"	f
+vl_mser_get_max_area	mser.h	/^vl_mser_get_max_area (VlMserFilt const *f)$/;"	f
+vl_mser_get_max_variation	mser.h	/^vl_mser_get_max_variation (VlMserFilt const *f)$/;"	f
+vl_mser_get_min_area	mser.h	/^vl_mser_get_min_area (VlMserFilt const *f)$/;"	f
+vl_mser_get_min_diversity	mser.h	/^vl_mser_get_min_diversity (VlMserFilt const *f)$/;"	f
+vl_mser_get_regions	mser.h	/^vl_mser_get_regions (VlMserFilt const* f)$/;"	f
+vl_mser_get_regions_num	mser.h	/^vl_mser_get_regions_num (VlMserFilt const* f)$/;"	f
+vl_mser_get_stats	mser.h	/^vl_mser_get_stats (VlMserFilt const *f)$/;"	f
+vl_mser_new	mser.c	/^vl_mser_new (int ndims, int const* dims)$/;"	f
+vl_mser_pix	mser.h	/^typedef vl_uint8 vl_mser_pix ;$/;"	t
+vl_mser_process	mser.c	/^vl_mser_process (VlMserFilt* f, vl_mser_pix const* im)$/;"	f
+vl_mser_set_delta	mser.h	/^vl_mser_set_delta (VlMserFilt *f, vl_mser_pix x)$/;"	f
+vl_mser_set_max_area	mser.h	/^vl_mser_set_max_area (VlMserFilt *f, double x)$/;"	f
+vl_mser_set_max_variation	mser.h	/^vl_mser_set_max_variation (VlMserFilt *f, double x)$/;"	f
+vl_mser_set_min_area	mser.h	/^vl_mser_set_min_area (VlMserFilt *f, double x)$/;"	f
+vl_mser_set_min_diversity	mser.h	/^vl_mser_set_min_diversity (VlMserFilt *f, double x)$/;"	f
+vl_nan_d	mathop.h	/^  const vl_nan_d =$/;"	v
+vl_nan_f	mathop.h	/^  const vl_nan_f =$/;"	v
+vl_pgm_extract_data	pgm.c	/^vl_pgm_extract_data (FILE* f, VlPgmImage const *im, void *data)$/;"	f
+vl_pgm_extract_head	pgm.c	/^vl_pgm_extract_head (FILE* f, VlPgmImage *im)$/;"	f
+vl_pgm_get_bpp	pgm.c	/^vl_pgm_get_bpp (VlPgmImage const *im)$/;"	f
+vl_pgm_get_npixels	pgm.c	/^vl_pgm_get_npixels (VlPgmImage const *im)$/;"	f
+vl_pgm_insert	pgm.c	/^vl_pgm_insert(FILE* f, VlPgmImage const *im, void const *data)$/;"	f
+vl_pgm_read_new	pgm.c	/^int vl_pgm_read_new (char const *name, VlPgmImage *im, vl_uint8** data)$/;"	f
+vl_pgm_read_new_f	pgm.c	/^int vl_pgm_read_new_f (char const *name,  VlPgmImage *im, float** data)$/;"	f
+vl_pgm_write	pgm.c	/^int vl_pgm_write (char const *name, vl_uint8 const* data, int width, int height)$/;"	f
+vl_pgm_write_f	pgm.c	/^int vl_pgm_write_f (char const *name, float const* data, int width, int height)$/;"	f
+vl_qs_type	quickshift.h	/^typedef double vl_qs_type ;$/;"	t
+vl_quickshift_delete	quickshift.c	/^void vl_quickshift_delete(VlQS * q)$/;"	f
+vl_quickshift_distance	quickshift.c	/^vl_quickshift_distance(vl_qs_type const * I,$/;"	f
+vl_quickshift_get_density	quickshift.h	/^vl_quickshift_get_density (VlQS const *q)$/;"	f
+vl_quickshift_get_dists	quickshift.h	/^vl_quickshift_get_dists (VlQS const *q)$/;"	f
+vl_quickshift_get_kernel_size	quickshift.h	/^vl_quickshift_get_kernel_size (VlQS const *q)$/;"	f
+vl_quickshift_get_max_dist	quickshift.h	/^vl_quickshift_get_max_dist (VlQS const *q)$/;"	f
+vl_quickshift_get_medoid	quickshift.h	/^vl_quickshift_get_medoid (VlQS const *q)$/;"	f
+vl_quickshift_get_parents	quickshift.h	/^vl_quickshift_get_parents (VlQS const *q)$/;"	f
+vl_quickshift_inner	quickshift.c	/^vl_quickshift_inner(vl_qs_type const * I,$/;"	f
+vl_quickshift_new	quickshift.c	/^vl_quickshift_new(vl_qs_type const * image, int height, int width,$/;"	f
+vl_quickshift_process	quickshift.c	/^void vl_quickshift_process(VlQS * q)$/;"	f
+vl_quickshift_set_kernel_size	quickshift.h	/^vl_quickshift_set_kernel_size (VlQS *q, vl_qs_type sigma)$/;"	f
+vl_quickshift_set_max_dist	quickshift.h	/^vl_quickshift_set_max_dist (VlQS *q, vl_qs_type tau)$/;"	f
+vl_quickshift_set_medoid	quickshift.h	/^vl_quickshift_set_medoid (VlQS *q, vl_bool medoid)$/;"	f
+vl_rand_init	random.c	/^vl_rand_init (VlRand * self)$/;"	f
+vl_rand_int31	random.h	/^vl_rand_int31 (VlRand * self)$/;"	f
+vl_rand_int63	random.h	/^vl_rand_int63 (VlRand * self)$/;"	f
+vl_rand_permute_indexes	random.c	/^vl_rand_permute_indexes (VlRand *self, vl_index *array, vl_size size)$/;"	f
+vl_rand_real1	random.h	/^vl_rand_real1 (VlRand * self)$/;"	f
+vl_rand_real2	random.h	/^vl_rand_real2 (VlRand * self)$/;"	f
+vl_rand_real3	random.h	/^vl_rand_real3 (VlRand * self)$/;"	f
+vl_rand_res53	random.h	/^vl_rand_res53 (VlRand * self)$/;"	f
+vl_rand_seed	random.c	/^vl_rand_seed (VlRand * self, vl_uint32 s)$/;"	f
+vl_rand_seed_by_array	random.c	/^vl_rand_seed_by_array (VlRand * self, vl_uint32 const key [], vl_size keySize)$/;"	f
+vl_rand_uindex	random.h	/^vl_rand_uindex (VlRand * self, vl_uindex range)$/;"	f
+vl_rand_uint32	random.c	/^vl_rand_uint32 (VlRand * self)$/;"	f
+vl_rand_uint64	random.h	/^vl_rand_uint64 (VlRand * self)$/;"	f
+vl_realloc	generic.c	/^vl_realloc (void* ptr, size_t n)$/;"	f
+vl_refine_local_extreum_2	covdet.c	/^vl_refine_local_extreum_2 (VlCovDetExtremum2 * refined,$/;"	f
+vl_refine_local_extreum_3	covdet.c	/^vl_refine_local_extreum_3 (VlCovDetExtremum3 * refined,$/;"	f
+vl_rodrigues	rodrigues.c	/^vl_rodrigues(double* R_pt, double* dR_pt, const double* om_pt)$/;"	f
+vl_round_d	mathop.h	/^vl_round_d (double x)$/;"	f
+vl_round_f	mathop.h	/^vl_round_f (float x)$/;"	f
+vl_scalespace_delete	scalespace.c	/^vl_scalespace_delete (VlScaleSpace * self)$/;"	f
+vl_scalespace_get_default_geometry	scalespace.c	/^vl_scalespace_get_default_geometry (vl_size width, vl_size height)$/;"	f
+vl_scalespace_get_geometry	scalespace.c	/^vl_scalespace_get_geometry (VlScaleSpace const * self)$/;"	f
+vl_scalespace_get_level	scalespace.c	/^vl_scalespace_get_level (VlScaleSpace *self, vl_index o, vl_index s)$/;"	f
+vl_scalespace_get_level_const	scalespace.c	/^vl_scalespace_get_level_const (VlScaleSpace const * self, vl_index o, vl_index s)$/;"	f
+vl_scalespace_get_level_sigma	scalespace.c	/^vl_scalespace_get_level_sigma (VlScaleSpace const *self, vl_index o, vl_index s)$/;"	f
+vl_scalespace_get_octave_geometry	scalespace.c	/^vl_scalespace_get_octave_geometry (VlScaleSpace const * self, vl_index o)$/;"	f
+vl_scalespace_new	scalespace.c	/^vl_scalespace_new (vl_size width, vl_size height)$/;"	f
+vl_scalespace_new_copy	scalespace.c	/^vl_scalespace_new_copy (VlScaleSpace* self)$/;"	f
+vl_scalespace_new_shallow_copy	scalespace.c	/^vl_scalespace_new_shallow_copy (VlScaleSpace* self)$/;"	f
+vl_scalespace_new_with_geometry	scalespace.c	/^vl_scalespace_new_with_geometry (VlScaleSpaceGeometry geom)$/;"	f
+vl_scalespace_put_image	scalespace.c	/^vl_scalespace_put_image (VlScaleSpace *self, float const *image)$/;"	f
+vl_scalespacegeometry_is_equal	scalespace.c	/^vl_scalespacegeometry_is_equal (VlScaleSpaceGeometry a,$/;"	f
+vl_set_alloc_func	generic.c	/^vl_set_alloc_func (void *(*malloc_func)  (size_t),$/;"	f
+vl_set_last_error	generic.c	/^vl_set_last_error (int error, char const * errorMessage, ...)$/;"	f
+vl_set_num_threads	generic.c	/^vl_set_num_threads (vl_size numThreads VL_UNUSED) { }$/;"	f
+vl_set_num_threads	generic.c	/^vl_set_num_threads (vl_size numThreads)$/;"	f
+vl_set_printf_func	generic.c	/^vl_set_printf_func (printf_func_t printf_func)$/;"	f
+vl_set_simd_enabled	generic.c	/^vl_set_simd_enabled (vl_bool x)$/;"	f
+vl_size	host.h	/^typedef vl_uint32           vl_size ;$/;"	t
+vl_size	host.h	/^typedef vl_uint64           vl_size ;    \/**< @brief Unsigned integer holding the size of a memory block. *\/$/;"	t
+vl_slic_segment	slic.c	/^vl_slic_segment (vl_uint32 * segmentation,$/;"	f
+vl_solve_linear_system_2	mathop.c	/^vl_solve_linear_system_2 (double * x, double const * A, double const *b)$/;"	f
+vl_solve_linear_system_3	mathop.c	/^vl_solve_linear_system_3 (double * x, double const * A, double const *b)$/;"	f
+vl_sqrt_d	mathop.h	/^vl_sqrt_d (double x)$/;"	f
+vl_sqrt_f	mathop.h	/^vl_sqrt_f (float x)$/;"	f
+vl_static_configuration_to_string_copy	host.c	/^vl_static_configuration_to_string_copy ()$/;"	f
+vl_string_basename	stringop.c	/^vl_string_basename (char * destination,$/;"	f
+vl_string_casei_cmp	stringop.c	/^vl_string_casei_cmp (const char * string1, const char * string2)$/;"	f
+vl_string_copy	stringop.c	/^vl_string_copy (char * destination, vl_size destinationSize,$/;"	f
+vl_string_copy_sub	stringop.c	/^vl_string_copy_sub (char * destination,$/;"	f
+vl_string_find_char_rev	stringop.c	/^vl_string_find_char_rev (char const *beginning, char const* end, char c)$/;"	f
+vl_string_length	stringop.c	/^vl_string_length (char const *string)$/;"	f
+vl_string_parse_protocol	stringop.c	/^vl_string_parse_protocol (char const *string, int *protocol)$/;"	f
+vl_string_protocol_name	stringop.c	/^vl_string_protocol_name (int protocol)$/;"	f
+vl_string_replace_wildcard	stringop.c	/^vl_string_replace_wildcard (char * destination,$/;"	f
+vl_svd2	mathop.c	/^vl_svd2 (double* S, double *U, double *V, double const *M)$/;"	f
+vl_svm_delete	svm.c	/^vl_svm_delete (VlSvm * self)$/;"	f
+vl_svm_get_bias	svm.c	/^double vl_svm_get_bias (VlSvm const *self)$/;"	f
+vl_svm_get_bias_learning_rate	svm.c	/^double vl_svm_get_bias_learning_rate (VlSvm const *self)$/;"	f
+vl_svm_get_bias_multiplier	svm.c	/^double vl_svm_get_bias_multiplier (VlSvm const * self)$/;"	f
+vl_svm_get_diagnostic_frequency	svm.c	/^vl_size vl_svm_get_diagnostic_frequency (VlSvm const *self)$/;"	f
+vl_svm_get_dimension	svm.c	/^vl_size vl_svm_get_dimension (VlSvm *self)$/;"	f
+vl_svm_get_epsilon	svm.c	/^double vl_svm_get_epsilon (VlSvm const *self)$/;"	f
+vl_svm_get_iteration_number	svm.c	/^vl_size vl_svm_get_iteration_number (VlSvm const *self)$/;"	f
+vl_svm_get_lambda	svm.c	/^double vl_svm_get_lambda (VlSvm const * self)$/;"	f
+vl_svm_get_max_num_iterations	svm.c	/^vl_size vl_svm_get_max_num_iterations (VlSvm const *self)$/;"	f
+vl_svm_get_model	svm.c	/^double const * vl_svm_get_model (VlSvm const *self)$/;"	f
+vl_svm_get_num_data	svm.c	/^vl_size vl_svm_get_num_data (VlSvm *self)$/;"	f
+vl_svm_get_scores	svm.c	/^double const * vl_svm_get_scores (VlSvm const *self)$/;"	f
+vl_svm_get_solver	svm.c	/^VlSvmSolverType vl_svm_get_solver (VlSvm const * self)$/;"	f
+vl_svm_get_statistics	svm.c	/^VlSvmStatistics const * vl_svm_get_statistics (VlSvm const *self)$/;"	f
+vl_svm_get_weights	svm.c	/^double const *vl_svm_get_weights (VlSvm const * self)$/;"	f
+vl_svm_hinge2_conjugate_loss	svm.c	/^vl_svm_hinge2_conjugate_loss (double u, double label) {$/;"	f
+vl_svm_hinge2_dca_update	svm.c	/^vl_svm_hinge2_dca_update (double alpha, double inner, double norm2, double label) {$/;"	f
+vl_svm_hinge2_loss	svm.c	/^vl_svm_hinge2_loss (double inner,double label)$/;"	f
+vl_svm_hinge2_loss_derivative	svm.c	/^vl_svm_hinge2_loss_derivative (double inner, double label)$/;"	f
+vl_svm_hinge_conjugate_loss	svm.c	/^vl_svm_hinge_conjugate_loss (double u, double label) {$/;"	f
+vl_svm_hinge_dca_update	svm.c	/^vl_svm_hinge_dca_update (double alpha, double inner, double norm2, double label) {$/;"	f
+vl_svm_hinge_loss	svm.c	/^vl_svm_hinge_loss (double inner, double label)$/;"	f
+vl_svm_hinge_loss_derivative	svm.c	/^vl_svm_hinge_loss_derivative (double inner, double label)$/;"	f
+vl_svm_l1_conjugate_loss	svm.c	/^vl_svm_l1_conjugate_loss (double u, double label) {$/;"	f
+vl_svm_l1_dca_update	svm.c	/^vl_svm_l1_dca_update (double alpha, double inner, double norm2, double label) {$/;"	f
+vl_svm_l1_loss	svm.c	/^vl_svm_l1_loss (double inner,double label)$/;"	f
+vl_svm_l1_loss_derivative	svm.c	/^vl_svm_l1_loss_derivative (double inner, double label)$/;"	f
+vl_svm_l2_conjugate_loss	svm.c	/^vl_svm_l2_conjugate_loss (double u, double label) {$/;"	f
+vl_svm_l2_dca_update	svm.c	/^vl_svm_l2_dca_update (double alpha, double inner, double norm2, double label) {$/;"	f
+vl_svm_l2_loss	svm.c	/^vl_svm_l2_loss (double inner,double label)$/;"	f
+vl_svm_l2_loss_derivative	svm.c	/^vl_svm_l2_loss_derivative (double inner, double label)$/;"	f
+vl_svm_logistic_conjugate_loss	svm.c	/^vl_svm_logistic_conjugate_loss (double u, double label) {$/;"	f
+vl_svm_logistic_dca_update	svm.c	/^vl_svm_logistic_dca_update (double alpha, double inner, double norm2, double label) {$/;"	f
+vl_svm_logistic_loss	svm.c	/^vl_svm_logistic_loss (double inner,double label)$/;"	f
+vl_svm_logistic_loss_derivative	svm.c	/^vl_svm_logistic_loss_derivative (double inner, double label)$/;"	f
+vl_svm_new	svm.c	/^vl_svm_new (VlSvmSolverType type,$/;"	f
+vl_svm_new_with_abstract_data	svm.c	/^vl_svm_new_with_abstract_data (VlSvmSolverType solver,$/;"	f
+vl_svm_new_with_dataset	svm.c	/^vl_svm_new_with_dataset (VlSvmSolverType solver,$/;"	f
+vl_svm_set_bias	svm.c	/^void vl_svm_set_bias (VlSvm *self, double b)$/;"	f
+vl_svm_set_bias_learning_rate	svm.c	/^void vl_svm_set_bias_learning_rate (VlSvm *self, double rate)$/;"	f
+vl_svm_set_bias_multiplier	svm.c	/^void vl_svm_set_bias_multiplier (VlSvm * self, double b)$/;"	f
+vl_svm_set_conjugate_loss_function	svm.c	/^void vl_svm_set_conjugate_loss_function (VlSvm *self, VlSvmLossFunction f)$/;"	f
+vl_svm_set_data_functions	svm.c	/^void vl_svm_set_data_functions (VlSvm *self, VlSvmInnerProductFunction inner, VlSvmAccumulateFunction acc)$/;"	f
+vl_svm_set_dca_update_function	svm.c	/^void vl_svm_set_dca_update_function (VlSvm *self, VlSvmDcaUpdateFunction f)$/;"	f
+vl_svm_set_diagnostic_frequency	svm.c	/^void vl_svm_set_diagnostic_frequency (VlSvm *self, vl_size f)$/;"	f
+vl_svm_set_diagnostic_function	svm.c	/^vl_svm_set_diagnostic_function (VlSvm *self, VlSvmDiagnosticFunction f, void *data) {$/;"	f
+vl_svm_set_epsilon	svm.c	/^void vl_svm_set_epsilon (VlSvm *self, double epsilon)$/;"	f
+vl_svm_set_iteration_number	svm.c	/^void vl_svm_set_iteration_number (VlSvm *self, vl_uindex n)$/;"	f
+vl_svm_set_lambda	svm.c	/^void vl_svm_set_lambda (VlSvm * self, double lambda)$/;"	f
+vl_svm_set_loss	svm.c	/^vl_svm_set_loss (VlSvm *self, VlSvmLossType loss)$/;"	f
+vl_svm_set_loss_derivative_function	svm.c	/^void vl_svm_set_loss_derivative_function (VlSvm *self, VlSvmLossFunction f)$/;"	f
+vl_svm_set_loss_function	svm.c	/^void vl_svm_set_loss_function (VlSvm *self, VlSvmLossFunction f)$/;"	f
+vl_svm_set_max_num_iterations	svm.c	/^void vl_svm_set_max_num_iterations (VlSvm *self, vl_size n)$/;"	f
+vl_svm_set_model	svm.c	/^void vl_svm_set_model (VlSvm *self, double const *model)$/;"	f
+vl_svm_set_weights	svm.c	/^void vl_svm_set_weights (VlSvm * self, double const *weights)$/;"	f
+vl_svm_train	svm.c	/^void vl_svm_train (VlSvm * self)$/;"	f
+vl_svmdataset_delete	svmdataset.c	/^void vl_svmdataset_delete (VlSvmDataset *self)$/;"	f
+vl_svmdataset_get_accumulate_function	svmdataset.c	/^vl_svmdataset_get_accumulate_function(VlSvmDataset const *self)$/;"	f
+vl_svmdataset_get_data	svmdataset.c	/^vl_svmdataset_get_data (VlSvmDataset const *self)$/;"	f
+vl_svmdataset_get_dimension	svmdataset.c	/^vl_svmdataset_get_dimension (VlSvmDataset const *self)$/;"	f
+vl_svmdataset_get_homogeneous_kernel_map	svmdataset.c	/^vl_svmdataset_get_homogeneous_kernel_map (VlSvmDataset const *self)$/;"	f
+vl_svmdataset_get_inner_product_function	svmdataset.c	/^vl_svmdataset_get_inner_product_function (VlSvmDataset const *self)$/;"	f
+vl_svmdataset_get_num_data	svmdataset.c	/^vl_svmdataset_get_num_data (VlSvmDataset const *self)$/;"	f
+vl_svmdataset_new	svmdataset.c	/^vl_svmdataset_new (vl_type dataType, void *data, vl_size dimension, vl_size numData)$/;"	f
+vl_svmdataset_set_homogeneous_kernel_map	svmdataset.c	/^vl_svmdataset_set_homogeneous_kernel_map (VlSvmDataset * self,$/;"	f
+vl_swap_host_big_endianness_2	host.h	/^vl_swap_host_big_endianness_2 (void *dst, void* src)$/;"	f
+vl_swap_host_big_endianness_4	host.h	/^vl_swap_host_big_endianness_4 (void *dst, void* src)$/;"	f
+vl_swap_host_big_endianness_8	host.h	/^vl_swap_host_big_endianness_8 (void *dst, void* src)$/;"	f
+vl_thread_specific_state_delete	generic.c	/^vl_thread_specific_state_delete (VlThreadState * self)$/;"	f	file:
+vl_thread_specific_state_new	generic.c	/^vl_thread_specific_state_new (void)$/;"	f	file:
+vl_tic	generic.c	/^vl_tic (void)$/;"	f
+vl_toc	generic.c	/^vl_toc (void)$/;"	f
+vl_type	generic.h	/^typedef vl_uint32 vl_type ;$/;"	t
+vl_uindex	host.h	/^typedef vl_uint32           vl_uindex ;$/;"	t
+vl_uindex	host.h	/^typedef vl_uint64           vl_uindex ;  \/**< @brief Same as ::vl_size *\/$/;"	t
+vl_uint	host.h	/^typedef unsigned int        vl_uint ;    \/**< @brief Same as <code>unsigned int<\/code>. *\/$/;"	t
+vl_uint	host.h	/^typedef unsigned int        vl_uint ;$/;"	t
+vl_uint16	host.h	/^typedef short     unsigned  vl_uint16 ;  \/**< @brief Unsigned 16-bit integer. *\/$/;"	t
+vl_uint16	host.h	/^typedef short     unsigned  vl_uint16 ;$/;"	t
+vl_uint32	host.h	/^typedef int       unsigned  vl_uint32 ;  \/**< @brief Unsigned 32-bit integer. *\/$/;"	t
+vl_uint32	host.h	/^typedef int       unsigned  vl_uint32 ;$/;"	t
+vl_uint64	host.h	/^typedef __int64   unsigned  vl_uint64 ;$/;"	t
+vl_uint64	host.h	/^typedef long long unsigned  vl_uint64 ;  \/**< @brief Unsigned 64-bit integer. *\/$/;"	t
+vl_uint64	host.h	/^typedef long long unsigned  vl_uint64 ;$/;"	t
+vl_uint8	host.h	/^typedef char      unsigned  vl_uint8 ;   \/**< @brief Unsigned  8-bit integer. *\/$/;"	t
+vl_uint8	host.h	/^typedef char      unsigned  vl_uint8 ;$/;"	t
+vl_uintptr	host.h	/^typedef vl_uint32           vl_uintptr ;$/;"	t
+vl_uintptr	host.h	/^typedef vl_uint64           vl_uintptr ; \/**< @brief Unsigned integer holding a pointer. *\/$/;"	t
+vl_unlock_state	generic.c	/^vl_unlock_state (void)$/;"	f	file:
+vl_vlad_encode	vlad.c	/^vl_vlad_encode (void * enc, vl_type dataType,$/;"	f
+weights	svm.c	/^  double const * weights ;      \/**< Data weights. *\/$/;"	m	struct:VlSvm_	file:
+which	aib.h	/^  vl_uint   *which ;    \/**< List of entries to update *\/$/;"	m	struct:_VlAIB
+width	pgm.h	/^  vl_size width ;      \/**< image width.                     *\/$/;"	m	struct:_VlPgmImage
+width	quickshift.h	/^  int width;            \/**< width of the image *\/$/;"	m	struct:_VlQS
+width	scalespace.h	/^  vl_size width ; \/**< Image width *\/$/;"	m	struct:_VlScaleSpaceGeometry
+width	scalespace.h	/^  vl_size width ; \/**< Width (number of pixels) *\/$/;"	m	struct:_VlScaleSpaceOctaveGeometry
+windowType	homkermap.c	/^  VlHomogeneousKernelMapWindowType windowType ;$/;"	m	struct:_VlHomogeneousKernelMap	file:
+words	host.h	/^    vl_uint32 words [0x20 \/ 4] ;$/;"	m	union:_VlX86CpuInfo::__anon3
+x	covdet.c	/^  float x ;$/;"	m	struct:_VlCovDetExtremum2	file:
+x	covdet.c	/^  float x ;$/;"	m	struct:_VlCovDetExtremum3	file:
+x	covdet.h	/^  float x ;     \/**< center x-coordinate *\/$/;"	m	struct:_VlFrameDisc
+x	covdet.h	/^  float x ;     \/**< center x-coordinate *\/$/;"	m	struct:_VlFrameEllipse
+x	covdet.h	/^  float x ;     \/**< center x-coordinate *\/$/;"	m	struct:_VlFrameOrientedDisc
+x	covdet.h	/^  float x ;     \/**< center x-coordinate *\/$/;"	m	struct:_VlFrameOrientedEllipse
+xdelete	hikmeans.c	/^xdelete (VlHIKMNode *node)$/;"	f	file:
+xi	covdet.c	/^  vl_index xi ;$/;"	m	struct:_VlCovDetExtremum2	file:
+xi	covdet.c	/^  vl_index xi ;$/;"	m	struct:_VlCovDetExtremum3	file:
+xlogx	svm.c	/^VL_INLINE double xlogx(double x)$/;"	f
+xmeans	hikmeans.c	/^xmeans (VlHIKMTree *tree,$/;"	f	file:
+y	covdet.c	/^  float y ;$/;"	m	struct:_VlCovDetExtremum2	file:
+y	covdet.c	/^  float y ;$/;"	m	struct:_VlCovDetExtremum3	file:
+y	covdet.h	/^  float y ;     \/**< center y-coordinate *\/$/;"	m	struct:_VlFrameDisc
+y	covdet.h	/^  float y ;     \/**< center y-coordinate *\/$/;"	m	struct:_VlFrameEllipse
+y	covdet.h	/^  float y ;     \/**< center y-coordinate *\/$/;"	m	struct:_VlFrameOrientedDisc
+y	covdet.h	/^  float y ;     \/**< center y-coordinate *\/$/;"	m	struct:_VlFrameOrientedEllipse
+yi	covdet.c	/^  vl_index yi ;$/;"	m	struct:_VlCovDetExtremum2	file:
+yi	covdet.c	/^  vl_index yi ;$/;"	m	struct:_VlCovDetExtremum3	file:
+z	covdet.c	/^  float z ;$/;"	m	struct:_VlCovDetExtremum3	file:
+zi	covdet.c	/^  vl_index zi ;$/;"	m	struct:_VlCovDetExtremum3	file:

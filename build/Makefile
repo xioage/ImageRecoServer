@@ -1,22 +1,23 @@
 ﻿TARGET	= main
 CXXSRCS	= $(wildcard ../src/*.cpp)
-CSRCS	= $(wildcard ../vl/*.c)
+CSRCS	= $(wildcard ../lib/vl/*.c)
 CHEADERS	= $(wildcard ../src/*.h)
-CXXHEADERS = $(wildcard ../vl/*.h)
+CXXHEADERS = $(wildcard ../lib/vl/*.h)
 CXXDIR	= $(notdir $(CXXSRCS))
 CDIR = $(notdir $(CSRCS))
 CXXOBJECTS	= $(patsubst %.cpp,%.o, $(CXXDIR)) 
 COBJECTS	= $(patsubst %.c,%.o, $(CDIR)) 
 
 CUDA_ROOT = /usr/local/cuda
-PCA_ROOT = ../libpca-1.2.11
-SIFT_ROOT = ../CudaSift
+PCA_ROOT = ../lib/libpca-1.2.11
+SIFT_ROOT = ../lib/CudaSift
+EIGEN_ROOT = ../lib/eigen-eigen-67e894c6cd8f
+FALCONN_ROOT = ../lib/FALCONN
 
-INC =-Ivl/
-INC +=-I$(PCA_ROOT)/include -I$(SIFT_ROOT)/include
+INC +=-I$(PCA_ROOT)/include -I$(SIFT_ROOT)/include -I$(EIGEN_ROOT) -I$(FALCONN_ROOT)/src/include
 
-LIB     = -lm -lrt -lpthread -ldl -pipe -L$(SIFT_ROOT) -Wl,-RCudaSift '-Wl,-R$$ORIGIN' -lcudasift -std=c++0x -pthread
-LIB     += -L$(CUDA_ROOT)/lib64/ -lcudart -lcufft -lpca
+LIB     = -lm -lrt -lpthread -ldl -pipe -L$(SIFT_ROOT) -Wl,-Rlib/CudaSift '-Wl,-R$$ORIGIN' -lcudasift -std=c++0x -pthread
+LIB     += -L$(CUDA_ROOT)/lib64/ -lcudart -lcufft 
 LIB += `pkg-config --cflags --libs opencv`
 LIB += -fopenmp -llapack -lcublas
 

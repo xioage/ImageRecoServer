@@ -21,8 +21,8 @@
 #include "cudaImage.h"
 #include "cuda_files.h"
 #include "pca.h"
-#include <falconn/lsh_nn_table.h>
-#include <Eigen/Dense>
+#include "falconn/lsh_nn_table.h"
+#include "Eigen/Dense"
 extern "C" {
 #include "vl/generic.h"
 #include "vl/gmm.h"
