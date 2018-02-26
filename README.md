@@ -11,12 +11,12 @@ This project contains a Cuda version of a complete image recognition pipeline, w
 ### Dependencies
 
   - `OpenCV` , tested with ver 3.3
+  - `Cuda` , tested with ver 8.0
   - `falconn` , cpu lsh
   - `CudaSift` , Cuda version of Sift with detection, extraction, matching
   - `libpca` , cpu pca training
   - `Eigen` , Dense data structure
   - `vlfeat` , cpu gmm training
-  - `Cuda`
 
 ### Installation
 
@@ -33,7 +33,8 @@ $ ./gpu_fv
 ### Structure and Development
 
   - `src` , source codes
-  - `lib` , libraries
+  - `lib` , dependencies
+  - `data` , data files
   - `build` , build products
   - `params` , PCA and GMM parameters
 

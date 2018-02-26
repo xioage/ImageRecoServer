@@ -272,7 +272,7 @@ void test(float* priors, float* means, float* covariances, float* projection, fl
 #endif
 
     vector<char *> test_list;
-    const char *test_path = "/home/symlab/Downloads/em-bmm/book_covers/crop";
+    const char *test_path = "data/crop";
     DIR *d = opendir(test_path);
     struct dirent *cur_dir;
     while ((cur_dir = readdir(d)) != NULL)
@@ -374,7 +374,7 @@ int main(int argc, char *argv[])
   //The list of image file names
   //TODO: separate train and test list (train and validation sets comprise the training set
   vector<char *> whole_list;
-  const char *home = "/home/symlab/Downloads/dataset/bk_train"; 
+  const char *home = "data/bk_train"; 
   DIR *d = opendir(home);
   struct dirent *cur_dir;  
   vector<char *> paths;

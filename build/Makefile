@@ -5,8 +5,8 @@ CHEADERS	= $(wildcard ../src/*.h)
 CXXHEADERS = $(wildcard ../lib/vlfeat/vl/*.h)
 CXXDIR	= $(notdir $(CXXSRCS))
 CDIR = $(notdir $(CSRCS))
-CXXOBJECTS	= $(patsubst %.cpp,%.o, $(CXXDIR)) 
-COBJECTS	= $(patsubst %.c,%.o, $(CDIR)) 
+CXXOBJECTS = $(patsubst %.cpp,%.o, $(CXXDIR)) 
+COBJECTS = $(patsubst %.c,%.o, $(CDIR)) 
 
 CUDA_ROOT = /usr/local/cuda
 PCA_ROOT = ../lib/libpca-1.2.11
