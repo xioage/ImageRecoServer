@@ -1,6 +1,0 @@
-[submodule "lib/cudasift"]
-	path = lib/cudasift
-	url = https://github.com/Celebrandil/CudaSift.git
-[submodule "lib/eigen"]
-	path = lib/eigen
-	url = https://github.com/Celebrandil/CudaSift.git
