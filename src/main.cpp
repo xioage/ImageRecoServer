@@ -266,7 +266,8 @@ void test(float* priors, float* means, float* covariances, float* projection, fl
     cout << "hash tables: " << params.l << endl;
     cout << "hash functions: " << params.k << endl;
 
-    auto table = construct_table<DenseVector<float>>(lsh, params)->construct_query_object();
+    auto tablet = construct_table<DenseVector<float>>(lsh, params);
+    auto table = tablet->construct_query_object(100);
     table->set_num_probes(100);
     cout << "lsh tables preparing done" << endl;
 #endif

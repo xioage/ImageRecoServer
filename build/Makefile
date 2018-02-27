@@ -18,6 +18,7 @@ VL_ROOT = ../lib/vlfeat
 INC +=-I$(PCA_ROOT)/include -I$(SIFT_ROOT) -I$(EIGEN_ROOT) -I$(FALCONN_ROOT)/src/include -I$(VL_ROOT)
 
 LIB     = -lm -lrt -lpthread -ldl -pipe -L$(SIFT_ROOT) -Wl,-Rlib/CudaSift '-Wl,-R$$ORIGIN' -lcudasift -std=c++0x -pthread
+#LIB     = -lm -lrt -lpthread -ldl -pipe -std=c++0x -pthread
 LIB     += -L$(CUDA_ROOT)/lib64/ -lcudart -lcufft 
 LIB += `pkg-config --cflags --libs opencv`
 LIB += -fopenmp -lcublas
