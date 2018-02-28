@@ -20,11 +20,15 @@ This project contains a Cuda version of a complete image recognition pipeline, w
 
 ### Installation
 
-Besides the libraries contained in this repo, you may first install `OpenCV` and `Cuda`. 
-Build and run:
+Besides the libraries contained in this repo, you may first install `OpenCV`, `Cuda`, and `armadillo`. 
+To build and run:
 
 ```sh
-$ cd build
+$ cd lib/cudasift 
+$ sed -i 's/executable/library/g' CMakeLists.txt
+$ cmake -G "Unix Makefiles" -DCMAKE_BUILD_TYPE=Release .
+$ make
+$ cd ../../build
 $ make
 $ cd ..
 $ ./gpu_fv
