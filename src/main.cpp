@@ -38,7 +38,6 @@ using namespace Eigen;
 #define SIZE 5248 //82 * 2 * 32
 #define ROWS 200
 #define TYPE float
-#define NN_NUM 5
 #define DST_DIM 80
 #define NUM_HASH_TABLES 20
 #define NUM_HASH_BITS 24
@@ -46,6 +45,8 @@ using namespace Eigen;
 #define LSH
 //#define TRAIN
 //#define FEATURE_CHECK
+
+int querysizefactor, nn_num;
 
 double wallclock (void)
 {
@@ -144,7 +145,7 @@ int sift_gpu(char *image, float **siftres, float **siftframe, SiftData &siftData
   double start, finish, durationgmm;
 
   img = cv::imread(image, CV_LOAD_IMAGE_COLOR);
-  if(online) cv::resize(img, img, cv::Size(), 0.5, 0.5);
+  if(online) cv::resize(img, img, cv::Size(), 1.0/querysizefactor, 1.0/querysizefactor);
   cv::cvtColor(img, img, CV_BGR2GRAY);
   img.convertTo(img, CV_32FC1);
   start = wallclock();
@@ -246,8 +247,8 @@ void test(float* priors, float* means, float* covariances, float* projection, fl
 {
     double dist, min;
     int correct = 0;
-    double values[NN_NUM];
-    int ids[NN_NUM];
+    double values[5];
+    int ids[5];
     double start, finish, duration;
     SiftData tData[100];
     vector<float> test;
@@ -299,7 +300,7 @@ void test(float* priors, float* means, float* covariances, float* projection, fl
       vector<int> result;
       DenseVector<float> t(SIZE);
       for(int j = 0; j < SIZE; j++) t[j] = test[j];
-      table->find_k_nearest_neighbors(t, NN_NUM, &result);
+      table->find_k_nearest_neighbors(t, nn_num, &result);
       for(int idx = 0; idx < result.size(); idx++) {
         cout << result[idx] << " ";
         if(result[idx] == i) {
@@ -309,17 +310,17 @@ void test(float* priors, float* means, float* covariances, float* projection, fl
         }
       } 
 #else
-      for(int j = 0; j < NN_NUM; j++) {
+      for(int j = 0; j < nn_num; j++) {
           values[j] = 100000000 - j;
           ids[j] = -1;
       }
     
       for(int j = 0; j < trainSize; j++) {
         dist = norm(test, train[j], cv::NORM_L2);
-     	topNNN(values, ids, NN_NUM, dist, j);
+     	topNNN(values, ids, nn_num, dist, j);
       }
 
-      for(int j = NN_NUM - 1; j >=0; --j) {
+      for(int j = nn_num - 1; j >=0; --j) {
 	cout << ids[j] << " ";
 	if(ids[j] == i) {
 	  correct++;
@@ -359,6 +360,18 @@ bool mycompare(char* x, char* y) {
 
 int main(int argc, char *argv[])
 {
+  if (argc < 3) {
+    cout << "Usage: " << argv[0] << " size[s/m/l] NN#[1/2/3/4/5]" << endl;
+    return 1;
+  }
+
+  if (argv[1][0] == 's') querysizefactor = 4;
+  else if (argv[1][0] == 'm') querysizefactor = 2;
+  else querysizefactor = 1;
+
+  nn_num = argv[2][0] - '0';
+  if (nn_num < 1 || nn_num > 5) nn_num = 5;
+
   clock_t start, finish;
   double duration;
   int numData, numBOV;

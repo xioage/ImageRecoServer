@@ -31,7 +31,7 @@ $ make
 $ cd ../../build
 $ make
 $ cd ..
-$ ./gpu_fv
+$ ./gpu_fv size[s/m/l] NN#[1/2/3/4/5]
 ```
 
 ### Structure and Development
