@@ -17,9 +17,9 @@ VL_ROOT = ../lib/vlfeat
 
 INC +=-I$(PCA_ROOT)/include -I$(SIFT_ROOT) -I$(EIGEN_ROOT) -I$(FALCONN_ROOT)/src/include -I$(VL_ROOT)
 
-LIB     = -lm -lrt -lpthread -ldl -pipe -L$(SIFT_ROOT) -Wl,-Rlib/CudaSift '-Wl,-R$$ORIGIN' -lcudasift -std=c++0x -pthread
-#LIB     = -lm -lrt -lpthread -ldl -pipe -std=c++0x -pthread
-LIB     += -L$(CUDA_ROOT)/lib64/ -lcudart -lcufft 
+#LIB     = -lm -lrt -lpthread -ldl -pipe -L$(SIFT_ROOT) -Wl,-Rlib/cudasift '-Wl,-R$$ORIGIN' -lcudasift -std=c++0x -pthread -L$(PCA_ROOT) -Wl,-Rlib/libpca/build '-Wl,-R$$ORIGIN' -lpca
+LIB = -lm -lrt -lpthread -ldl -pipe -L$(SIFT_ROOT) -lcudasift -std=c++0x -pthread 
+LIB += -L$(CUDA_ROOT)/lib64/ -lcudart -lcufft 
 LIB += `pkg-config --cflags --libs opencv`
 LIB += -fopenmp -lcublas
 
@@ -40,7 +40,7 @@ cuda_files.o: ../src/cuda_files.cu
 $(COBJECTS): $(CSRCS) $(CHEADERS) Makefile
 	$(CC) $(INC) $(CFLAGS) $(CSRCS) 
 
-$(CXXOBJECTS): $(CXXSRCS) $(CXXHEADERS) Makefile
+ $(CXXOBJECTS): $(CXXSRCS) $(CXXHEADERS) Makefile
 	$(CXX) $(INC) $(CXXFLAGS) $(CXXSRCS)
 
 clean:

@@ -1,23 +1,12 @@
-#include <iostream>
-#include <cstdio>
-#include <cstdlib>
-#include <vector>
+#include "reco.hpp"
 #include <fstream>
-#include <sstream>
 #include <ctime>
 #include <set>
 #include <iterator>
 #include <dirent.h>
 #include <cstring>
-#include <stddef.h>
 #include <sys/time.h>
-#include <random>
 
-#include <opencv2/core/core.hpp>
-#include <opencv2/highgui/highgui.hpp>
-#include <opencv2/imgproc/imgproc.hpp>
-
-#include "cudaSift.h"
 #include "cudaImage.h"
 #include "cuda_files.h"
 #include "pca.h"
@@ -43,29 +32,15 @@ using namespace Eigen;
 #define NUM_HASH_BITS 24
 
 #define LSH
-//#define TRAIN
 //#define FEATURE_CHECK
 
-int querysizefactor, nn_num;
+int querysizefactor = 1;
 
 double wallclock (void)
 {
   struct timeval tv;
   gettimeofday(&tv, NULL);
   return (double)tv.tv_sec + (double)tv.tv_usec / 1000000.0;
-}
-
-void topNNN(double* values, int* ids, int num, double value, int id){
-        int count = 0;
-        while (count != num && value < values[count]){
-                if(count != 0){
-                        values[count-1] = values[count];
-                        ids[count-1] = ids[count];
-                }
-                values[count] = value;
-                ids[count] = id;
-                count++;
-        }
 }
 
 int ImproveHomography(SiftData &data, float *homography, int numLoops, float minScore, float maxAmbiguity, float thresh)
@@ -243,7 +218,7 @@ void onlineProcessing(char *image, SiftData &siftData, float *priors, float *mea
   free(siftframe);
 }
 
-void test(float* priors, float* means, float* covariances, float* projection, float* projectionCenter, vector<float> train[], int trainSize)
+void test(float* priors, float* means, float* covariances, float* projection, float* projectionCenter, vector<float> train[], int trainSize, int nn_num)
 {
     double dist, min;
     int correct = 0;
@@ -296,7 +271,6 @@ void test(float* priors, float* means, float* covariances, float* projection, fl
     {
       onlineProcessing(test_list[i], tData[i], priors, means, covariances, test, projection, projectionCenter, true);
       start = wallclock();
-#ifdef LSH      
       vector<int> result;
       DenseVector<float> t(SIZE);
       for(int j = 0; j < SIZE; j++) t[j] = test[j];
@@ -309,29 +283,9 @@ void test(float* priors, float* means, float* covariances, float* projection, fl
           break;
         }
       } 
-#else
-      for(int j = 0; j < nn_num; j++) {
-          values[j] = 100000000 - j;
-          ids[j] = -1;
-      }
-    
-      for(int j = 0; j < trainSize; j++) {
-        dist = norm(test, train[j], cv::NORM_L2);
-     	topNNN(values, ids, nn_num, dist, j);
-      }
-
-      for(int j = nn_num - 1; j >=0; --j) {
-	cout << ids[j] << " ";
-	if(ids[j] == i) {
-	  correct++;
-	  cout << "==================================================>>" << endl;
-          break;
-        }
-      }
-#endif
       finish = wallclock();
       duration = (double)(finish - start);
-      cout << "NNN searching time: " << duration << endl;
+      cout << "NNN searching time: " << duration << endl <<endl;
 #if 0
       start = wallclock();
 
@@ -358,89 +312,61 @@ bool mycompare(char* x, char* y) {
   else return 0;
 }
 
-int main(int argc, char *argv[])
-{
-  if (argc < 3) {
-    cout << "Usage: " << argv[0] << " size[s/m/l] NN#[1/2/3/4/5]" << endl;
-    return 1;
-  }
-
-  if (argv[1][0] == 's') querysizefactor = 4;
-  else if (argv[1][0] == 'm') querysizefactor = 2;
-  else querysizefactor = 1;
-
-  nn_num = argv[2][0] - '0';
-  if (nn_num < 1 || nn_num > 5) nn_num = 5;
-
-  clock_t start, finish;
-  double duration;
-  int numData, numBOV;
-
-  float *means, *covariances, *priors, *posteriors;
-  vl_size dimension = 82;
-
-  gpu_init();
-  InitCuda(0);
-
-  float *sift_res;
-  float *sift_frame;
-
-  //The list of image file names
-  //TODO: separate train and test list (train and validation sets comprise the training set
-  vector<char *> whole_list;
-  const char *home = "data/bk_train"; 
-  DIR *d = opendir(home);
-  struct dirent *cur_dir;  
-  vector<char *> paths;
-  while ((cur_dir = readdir(d)) != NULL)
-  {
-    if ((strcmp(cur_dir->d_name, ".") != 0) && (strcmp(cur_dir->d_name, "..") != 0))
+vector<char *> loadImages() {
+    vector<char *> whole_list;
+    const char *home = "data/bk_train"; 
+    DIR *d = opendir(home);
+    struct dirent *cur_dir;  
+    vector<char *> paths;
+    while ((cur_dir = readdir(d)) != NULL)
     {
-      //  char szTempDir[MAX_PATHH] = { 0 };
-      //	  cout<<"This path "<<cur_dir->d_name<<endl;
-      //	  char temppath[MAX_PATHH] = { 0 };
-      char *temppath = new char[256];
-      sprintf(temppath, "%s/%s", home, cur_dir->d_name);
-      //	  cout<<"Temp "<<temppath<<", "<<strstr(temppath,"jpg")<<endl;
-
-      paths.push_back(temppath);
-    }
-  }
-  sort(paths.begin(), paths.end(), mycompare);
-
-  for (int i = 0; i < paths.size(); i++)
-  {
-    DIR *subd = opendir(paths[i]);
-    struct dirent *cur_subdir;
-    while ((cur_subdir = readdir(subd)) != NULL)
-    {
-      if ((strcmp(cur_subdir->d_name, ".") != 0) && (strcmp(cur_subdir->d_name, "..") != 0))
-      {
-        char *file = new char[256];
-        sprintf(file, "%s/%s", paths[i], cur_subdir->d_name);
-        if (strstr(file, "jpg") != NULL)
+        if ((strcmp(cur_dir->d_name, ".") != 0) && (strcmp(cur_dir->d_name, "..") != 0))
         {
-          whole_list.push_back(file);
-          if(whole_list.size() == 1000) break;
+            char *temppath = new char[256];
+            sprintf(temppath, "%s/%s", home, cur_dir->d_name);
+
+            paths.push_back(temppath);
         }
-      }
     }
-    closedir(subd);
-    //break;
-  }
+    sort(paths.begin(), paths.end(), mycompare);
+
+    for (int i = 0; i < paths.size(); i++)
+    {
+        DIR *subd = opendir(paths[i]);
+        struct dirent *cur_subdir;
+        while ((cur_subdir = readdir(subd)) != NULL)
+        {
+            if ((strcmp(cur_subdir->d_name, ".") != 0) && (strcmp(cur_subdir->d_name, "..") != 0))
+            {
+                char *file = new char[256];
+                sprintf(file, "%s/%s", paths[i], cur_subdir->d_name);
+                if (strstr(file, "jpg") != NULL)
+                {
+                    whole_list.push_back(file);
+                    if(whole_list.size() == 1000) break;
+                }
+            }
+        }
+        closedir(subd);
+    }
     cout << endl << "---------------------in total " << whole_list.size() << " images------------------------" << endl << endl;
-  closedir(d);
+    closedir(d);
 
-  float *final_res = (float *)malloc(ROWS * whole_list.size() * 128 * sizeof(float));
-  float *final_frame = (float *)malloc(ROWS * whole_list.size() * 128 * sizeof(float));
+    return whole_list;
+}
 
-  double start_time;
+#if 0
+void trainParams(vector<char*> whole_list, int dimension, float* &means, float* &covariances, float* &priors, float* &projectionCenter, float* &projection) {
+    int numData;
+    float *sift_res;
+    float *sift_frame;
 
-#ifdef TRAIN
+    float *final_res = (float *)malloc(ROWS * whole_list.size() * 128 * sizeof(float));
+    float *final_frame = (float *)malloc(ROWS * whole_list.size() * 128 * sizeof(float));
     //////////////////train encoder ////////////////
     //////// STEP 0: obtain sample image descriptors
     std::set<int>::iterator iter;
-    start_time = wallclock();
+    double start_time = wallclock();
 
     for (int i = 0; i != whole_list.size(); ++i)
     {
@@ -497,8 +423,8 @@ int main(int argc, char *argv[])
     stats::pca pca(num_variables);
     //  pca.set_do_bootstrap(true, 100);
 
-    float *projectionCenter = (float *)malloc(128 * sizeof(float));
-    float *projection = (float *)malloc(128 * 80 * sizeof(float));
+    projectionCenter = (float *)malloc(128 * sizeof(float));
+    projection = (float *)malloc(128 * 80 * sizeof(float));
 
     int j = 0;
     for (int i = 0; i < num_records; ++i)
@@ -511,7 +437,7 @@ int main(int argc, char *argv[])
       }
       pca.add_record(record);
     }
-    pca.solve_for_vlfeat();
+    pca.solve();
 
     const auto means1 = pca.get_mean_values();
     for (int i = 0; i < 128; i++)
@@ -526,8 +452,7 @@ int main(int argc, char *argv[])
         projection[i * 128 + j] = eigenv[j];
       }
     }
-///////////////////////////STEP 2  (optional): geometrically augment the features
-//////////////////////////////////////////
+    ///////STEP 2  (optional): geometrically augment the features
     int pre_size = num_records;
     float *dest = (float *)malloc(pre_size * (DST_DIM + 2) * sizeof(float));
 
@@ -543,7 +468,6 @@ int main(int argc, char *argv[])
 
     cout << "End of step 2" << endl;
     //////////////////////STEP 3  learn a GMM vocabulary
-    //////////////////////////
     numData = pre_size;
     //vl_twister
     VlRand *rand;
@@ -601,7 +525,6 @@ int main(int argc, char *argv[])
            vl_gmm_get_covariance_lower_bounds(gmm)[0],
            vl_gmm_get_covariance_lower_bounds(gmm)[1],
            vl_gmm_get_covariance_lower_bounds(gmm)[dimension - 1]);
-    //  VlGMM *gmm = vl_gmm_new(VL_TYPE_FLOAT, dimension, numComponents);
 
     double gmmres = vl_gmm_cluster(gmm, dest, numData);
     free(dest);
@@ -633,12 +556,15 @@ int main(int argc, char *argv[])
     ofstream out5("params/projectionCenter", ios::out | ios::binary);
     out5.write((char *)projectionCenter, sizeof(float) * 128);
     out5.close();
-#else
+}
+#endif
+
+void loadParams(int dimension, float* &means, float* &covariances, float* &priors, float* &projectionCenter, float* &projection) {
     priors = (TYPE *)vl_malloc(sizeof(float) * NUM_CLUSTERS);
     means = (TYPE *)vl_malloc(sizeof(float) * dimension * NUM_CLUSTERS);
     covariances = (TYPE *)vl_malloc(sizeof(float) * dimension * NUM_CLUSTERS);
-    float *projection = (float *)malloc(128 * sizeof(float) * 80);
-    float *projectionCenter = (float *)malloc(128 * sizeof(float));
+    projection = (float *)malloc(128 * sizeof(float) * 80);
+    projectionCenter = (float *)malloc(128 * sizeof(float));
 
     ifstream in1("params/priors", ios::in | ios::binary);
     in1.read((char *)priors, sizeof(float) * NUM_CLUSTERS);
@@ -659,27 +585,4 @@ int main(int argc, char *argv[])
     ifstream in5("params/projectionCenter", ios::in | ios::binary);
     in5.read((char *)projectionCenter, sizeof(float) * 128);
     in5.close();
-#endif
-    gpu_copy(covariances, priors, means, NUM_CLUSTERS, dimension);
-
-    vector<float> train[whole_list.size()];
-    //Encode train files
-    for (int i = 0; i < whole_list.size(); i++)
-    {
-      cout << i << ": ";
-      SiftData tmp;
-      onlineProcessing(whole_list[i], tmp, priors, means, covariances, train[i], projection, projectionCenter, false);
-    }
-    cout << endl << "---------------------in total " << whole_list.size() << " reference images------------------------" << endl << endl;
-
-    test(priors, means, covariances, projection, projectionCenter, train, whole_list.size());
-
-    gpu_free();
-    free(projection);
-    free(projectionCenter);
-    free(priors);
-    free(means);
-    free(covariances);
-
-  return 0;
 }

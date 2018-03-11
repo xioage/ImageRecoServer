@@ -97,8 +97,6 @@ bool gpu_gmm_1(TYPE const * covariances, TYPE const * priors, TYPE const * means
   double start = wallclock();
   int cluster_size = numClusters*sizeof(TYPE);
   int total_size = cluster_size * dimension;
-  //  int data_size = numData*numClusters*sizeof(TYPE);
-  //cout<<"size: "<<numData*numClusters*sizeof(TYPE)<<endl;
   cudaMalloc((void**)&posteriors_d, numData*numClusters*sizeof(TYPE));
 #if 1
   cudaMalloc((void**)&tmp2_d, sizeof(TYPE)*dimension*numData);
@@ -116,7 +114,6 @@ bool gpu_gmm_1(TYPE const * covariances, TYPE const * priors, TYPE const * means
   if(numClusters%threads1) {
     numblocks1 ++;
   }
-  //  size_t localThreads[3]  = {threads1, 1, 1};
 
   dim3 blocks (numblocks1,1, 1);
   dim3 localThreads (threads1, 1, 1);
@@ -135,11 +132,7 @@ bool gpu_gmm_1(TYPE const * covariances, TYPE const * priors, TYPE const * means
     numblocks3 ++;
   }
   //  cout<<"Total blocks for Kernel 2 "<<numblocks2<<endl;
-
   dim3 blocks3 (numblocks3, 1, 1);
-
-  //{ globalSizeX, globalSizeY, 1};
-
   dim3 localThreads3 (THREADS3,1,1);
 
   cudaMalloc((void**)&enc_d, 2*dimension*numClusters*numblocks3*sizeof(TYPE));
@@ -149,35 +142,13 @@ bool gpu_gmm_1(TYPE const * covariances, TYPE const * priors, TYPE const * means
 
   /*********** Set other parameters *********/
 #if 1
-  //  for(int i=0;i<100;i++)
-  //    cout<<"Then "<<data[i]<<endl;
-
-
   cudaMemcpy(tmp2_d, data, numData*dimension*sizeof(TYPE), cudaMemcpyHostToDevice);
   
   err = cudaGetLastError();
   if(err!=cudaSuccess)
     cout<<"Memcpy Err "<<cudaGetErrorString(err)<<", "<<cudaSuccess<<endl;
-
 #endif
-  
-  /*  cudaMemcpy(data, tmp2_d, numData*dimension*sizeof(TYPE), cudaMemcpyDeviceToHost);
-  for(int i=numData*dimension-100;i<numData*dimension;i++)
-    cout<<"Then "<<data[i]<<endl;
-  */
-  /*
-  cudaMemcpy(data, priors_d, 256*sizeof(TYPE), cudaMemcpyDeviceToHost);
-  for(int i=0;i<256;i++)
-    cout<<"Then "<<data[i]<<endl;
-  */
-  /*
-  for(int i=0;i<50;i++) {
-    cout<<"data "<<data[i]<<", "<<means[i]<<", "<<priors[i]<<" "<<covariances[i]<<endl;
-    }*/
-  
-  //  TYPE* temp = (TYPE*) malloc(numData*numClusters*sizeof(TYPE));
   //start = wallclock();
-  
   gmm_1<<<numblocks1, localThreads>>>(covariances_d, invCovariances_d, logCovariances_d, logWeights_d, priors_d, dimension, numClusters, infinity, sqrtInvSigma_d);
   //cudaThreadSynchronize();
   err = cudaGetLastError();
@@ -192,36 +163,17 @@ bool gpu_gmm_1(TYPE const * covariances, TYPE const * priors, TYPE const * means
   if(err!=cudaSuccess)
     cout<<"gmm2 Err "<<cudaGetErrorString(err)<<", "<<cudaSuccess<<endl;
   //cout<<"Kernel 2 "<<wallclock() - start<<endl;
-  /*
-  float* temp = (float*)malloc(numData*numClusters*sizeof(float));    
-  
-  cudaMemcpy(temp, posteriors_d, numData*numClusters * sizeof(float), cudaMemcpyDeviceToHost);
-  for(int i=0;i<20*numClusters;i++) 
-   cout<<i%numClusters<<" GPU posteriors "<<temp[i]<<endl;
-  //   free(temp);
-  */
+
   //start = wallclock();
   gmm_3<<<blocks3, localThreads3>>>(enc_d, tmp2_d, means_d, sqrtInvSigma_d, posteriors_d, dimension, numClusters, numData, priors_d);
   /*
   cudaMemcpy(data, priors_d, 100*sizeof(TYPE), cudaMemcpyDeviceToHost);
-  for(int i=0;i<100;i++) {
-    cout<<"Data "<<data[i]<<endl;
-  }
   */
   cudaThreadSynchronize();
-  /*
-  cudaMemcpy(temp, sqrtInvSigma_d, numClusters*82*sizeof(float), cudaMemcpyDeviceToHost);
-  for(int i=0;i<numClusters*82;i++) {
-    
-    cout<<"Enc "<<temp[i]<<endl;
-    }
-  */
   err = cudaGetLastError();
   if(err!=cudaSuccess)
     cout<<"gmm3 Err "<<cudaGetErrorString(err)<<", "<<cudaSuccess<<endl;
   ////cout<<"Kernel 3 "<<wallclock() - start<<endl;
-  ////////////
-  
 
   //start = wallclock();
   gmm_4<<<numClusters, 128>>>(enc_d, dimension, numClusters, numblocks3);
@@ -231,9 +183,6 @@ bool gpu_gmm_1(TYPE const * covariances, TYPE const * priors, TYPE const * means
  // cout<<"Kernel 4 "<<wallclock() - start<<endl;
 
   cudaThreadSynchronize();
-      
-  
-  //  cout<<"Kernel 4 "<<wallclock() - start<<endl;
 
 #define THREADS_P 128
   int numblocks_p = 28; //numClusters;
