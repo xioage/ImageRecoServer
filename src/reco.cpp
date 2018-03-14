@@ -10,8 +10,8 @@
 #include "cudaImage.h"
 #include "cuda_files.h"
 #include "pca.h"
-#include "falconn/lsh_nn_table.h"
 #include "Eigen/Dense"
+#include "falconn/lsh_nn_table.h"
 extern "C" {
 #include "vl/generic.h"
 #include "vl/gmm.h"
@@ -22,6 +22,7 @@ extern "C" {
 using namespace std;
 using namespace falconn;
 using namespace Eigen;
+using namespace cv;
 
 #define NUM_CLUSTERS 32 
 #define SIZE 5248 //82 * 2 * 32
@@ -30,11 +31,14 @@ using namespace Eigen;
 #define DST_DIM 80
 #define NUM_HASH_TABLES 20
 #define NUM_HASH_BITS 24
-
-#define LSH
 //#define FEATURE_CHECK
 
-int querysizefactor = 1;
+int querysizefactor, nn_num;
+float *means, *covariances, *priors, *projectionCenter, *projection;
+vector<char *> whole_list;
+vector<DenseVector<float>> lsh;
+unique_ptr<LSHNearestNeighborTable<DenseVector<float>>> tablet;
+unique_ptr<LSHNearestNeighborQuery<DenseVector<float>>> table;
 
 double wallclock (void)
 {
@@ -54,14 +58,14 @@ int ImproveHomography(SiftData &data, float *homography, int numLoops, float min
 #endif
   float limit = thresh*thresh;
   int numPts = data.numPts;
-  cv::Mat M(8, 8, CV_64FC1);
-  cv::Mat A(8, 1, CV_64FC1), X(8, 1, CV_64FC1);
+  Mat M(8, 8, CV_64FC1);
+  Mat A(8, 1, CV_64FC1), X(8, 1, CV_64FC1);
   double Y[8];
   for (int i=0;i<8;i++)
     A.at<double>(i, 0) = homography[i] / homography[8];
   for (int loop=0;loop<numLoops;loop++) {
-    M = cv::Scalar(0.0);
-    X = cv::Scalar(0.0);
+    M = Scalar(0.0);
+    X = Scalar(0.0);
     for (int i=0;i<numPts;i++) {
       SiftPoint &pt = mpts[i];
       if (pt.score<minScore || pt.ambiguity>maxAmbiguity)
@@ -80,7 +84,7 @@ int ImproveHomography(SiftData &data, float *homography, int numLoops, float min
       for (int c=0;c<8;c++)
         for (int r=0;r<8;r++)
           M.at<double>(r,c) += (Y[c] * Y[r] * wei);
-      X += (cv::Mat(8,1,CV_64FC1,Y) * pt.match_xpos * wei);
+      X += (Mat(8,1,CV_64FC1,Y) * pt.match_xpos * wei);
       Y[0] = Y[1] = Y[2] = 0.0;
       Y[3] = pt.xpos;
       Y[4] = pt.ypos;
@@ -90,9 +94,9 @@ int ImproveHomography(SiftData &data, float *homography, int numLoops, float min
       for (int c=0;c<8;c++)
         for (int r=0;r<8;r++)
           M.at<double>(r,c) += (Y[c] * Y[r] * wei);
-      X += (cv::Mat(8,1,CV_64FC1,Y) * pt.match_ypos * wei);
+      X += (Mat(8,1,CV_64FC1,Y) * pt.match_ypos * wei);
     }
-    cv::solve(M, X, A, cv::DECOMP_CHOLESKY);
+    solve(M, X, A, DECOMP_CHOLESKY);
   }
   int numfit = 0;
   for (int i=0;i<numPts;i++) {
@@ -111,22 +115,19 @@ int ImproveHomography(SiftData &data, float *homography, int numLoops, float min
   return numfit;
 }
 
-int sift_gpu(char *image, float **siftres, float **siftframe, SiftData &siftData, int &w, int &h, bool online)
+int sift_gpu(Mat img, float **siftres, float **siftframe, SiftData &siftData, int &w, int &h, bool online)
 {
-  cout << "sift gpu: " << image << endl;
-  cv::Mat img;
   CudaImage cimg;
   int numPts;
   double start, finish, durationgmm;
 
-  img = cv::imread(image, CV_LOAD_IMAGE_COLOR);
-  if(online) cv::resize(img, img, cv::Size(), 1.0/querysizefactor, 1.0/querysizefactor);
-  cv::cvtColor(img, img, CV_BGR2GRAY);
+  if(online) resize(img, img, Size(), 1.0/querysizefactor, 1.0/querysizefactor);
+  cvtColor(img, img, CV_BGR2GRAY);
   img.convertTo(img, CV_32FC1);
   start = wallclock();
   w = img.cols;
   h = img.rows;
-  std::cout << "Image size = (" << w << "," << h << ")" << std::endl;
+  cout << "Image size = (" << w << "," << h << ")" << endl;
 
   cimg.Allocate(w, h, iAlignUp(w, 128), false, NULL, (float*)img.data);
   cimg.Download();
@@ -160,7 +161,7 @@ int sift_gpu(char *image, float **siftres, float **siftframe, SiftData &siftData
   return numPts;
 }
 
-void onlineProcessing(char *image, SiftData &siftData, float *priors, float *means, float *covariances, vector<float> &enc_vec, float *projection, float *projectionCenter, bool online)
+void onlineProcessing(Mat image, SiftData &siftData, vector<float> &enc_vec, bool online)
 {
   double start, finish;
   double durationsift, durationgmm;
@@ -218,37 +219,51 @@ void onlineProcessing(char *image, SiftData &siftData, float *priors, float *mea
   free(siftframe);
 }
 
-void test(float* priors, float* means, float* covariances, float* projection, float* projectionCenter, vector<float> train[], int trainSize, int nn_num)
+void parseCMD(char *argv[]) 
 {
-    double dist, min;
-    int correct = 0;
-    double values[5];
-    int ids[5];
-    double start, finish, duration;
-    SiftData tData[100];
-    vector<float> test;
-#ifdef LSH  
-    vector<DenseVector<float>> lsh;
-    for(int i = 0; i < trainSize; i++) {
-      DenseVector<float> FV(SIZE);
-      for(int j = 0; j < SIZE; j++) FV[j] = train[i][j];
-      lsh.push_back(FV);
+    if (argv[1][0] == 's') querysizefactor = 4;
+    else if (argv[1][0] == 'm') querysizefactor = 2;
+    else querysizefactor = 1;
+    nn_num = argv[2][0] - '0';
+    if (nn_num < 1 || nn_num > 5) nn_num = 5;
+}
+
+void encodeDatabase()
+{
+    gpu_copy(covariances, priors, means, NUM_CLUSTERS, DST_DIM+2);
+
+    vector<float> train[whole_list.size()];
+    //Encode train files
+    for (int i = 0; i < whole_list.size(); i++) {
+        SiftData tmp;
+        Mat image = imread(whole_list[i], CV_LOAD_IMAGE_COLOR);
+        onlineProcessing(image, tmp, train[i], false);
+    }
+
+    for(int i = 0; i < whole_list.size(); i++) {
+        DenseVector<float> FV(SIZE);
+        for(int j = 0; j < SIZE; j++) FV[j] = train[i][j];
+        lsh.push_back(FV);
     }
 
     LSHConstructionParameters params = get_default_parameters<DenseVector<float>>((int_fast64_t)lsh.size(), (int_fast32_t)SIZE, DistanceFunction::EuclideanSquared, true);
     params.l = 32;
     params.k = 1;
-    //cout << "lsh family: " << params.lsh_family << endl;
-    cout << "hash tables: " << params.l << endl;
-    cout << "hash functions: " << params.k << endl;
 
-    auto tablet = construct_table<DenseVector<float>>(lsh, params);
-    auto table = tablet->construct_query_object(100);
-    table->set_num_probes(100);
+    tablet = construct_table<DenseVector<float>>(lsh, params);
+    table = tablet->construct_query_object(100);
     cout << "lsh tables preparing done" << endl;
-#endif
+}
 
+void test()
+{
+    double dist, min;
+    int correct = 0;
+    double start, finish, duration;
+    SiftData tData[100];
+    vector<float> test;
     vector<char *> test_list;
+
     const char *test_path = "data/crop";
     DIR *d = opendir(test_path);
     struct dirent *cur_dir;
@@ -264,12 +279,14 @@ void test(float* priors, float* means, float* covariances, float* projection, fl
         }
       }
     }
-    cout << endl << "--------------------------testing " << test_list.size() << " images----------------------" <<endl << endl;
+    cout << endl << "-------------testing " << test_list.size() << " images---------------" <<endl << endl;
     closedir(d);
 
     for (int i = 0; i < test_list.size(); i++)
     {
-      onlineProcessing(test_list[i], tData[i], priors, means, covariances, test, projection, projectionCenter, true);
+      cout << endl << test_list[i] << endl;
+      Mat image = imread(test_list[i], CV_LOAD_IMAGE_COLOR);
+      onlineProcessing(image, tData[i], test, true);
       start = wallclock();
       vector<int> result;
       DenseVector<float> t(SIZE);
@@ -288,6 +305,8 @@ void test(float* priors, float* means, float* covariances, float* projection, fl
       cout << "NNN searching time: " << duration << endl <<endl;
 #if 0
       start = wallclock();
+      cout << endl << test_list[i] << endl;
+      cout << endl << test_list[i] << endl;
 
           MatchSiftData(rData[i], tData[i]);
           float homography[9];
@@ -295,7 +314,7 @@ void test(float* priors, float* means, float* covariances, float* projection, fl
           FindHomography(rData[i], homography, &numMatches, 10000, 0.00f, 0.80f, 5.0);
           int numFit = ImproveHomography(rData[i], homography, 5, 0.00f, 0.80f, 3.0);
           cout << "Number of original features: " <<  rData[i].numPts << " " << tData[i].numPts << endl;
-          cout << "Matching features: " << numFit << " " << numMatches << " " << 100.0f*numFit/std::min(rData[i].numPts, tData[i].numPts) << "% " << endl;
+          cout << "Matching features: " << numFit << " " << numMatches << " " << 100.0f*numFit/min(rData[i].numPts, tData[i].numPts) << "% " << endl;
 
       finish = wallclock();
       duration = (double)(finish - start);
@@ -306,14 +325,81 @@ void test(float* priors, float* means, float* covariances, float* projection, fl
     cout << "correct: " <<correct <<endl;
 }
 
-bool mycompare(char* x, char* y) {
-  //  cout<<"Compare "<<x<<", "<<y<<endl;
+bool query(Mat image, recognizedMarker &marker)
+{
+    SiftData tData;
+    vector<float> test;
+    vector<int> result;
+    DenseVector<float> t(SIZE);
+    float homography[9];
+    int numMatches;
+
+    cout << endl << "processing current query"  << endl;
+    onlineProcessing(image, tData, test, true);
+
+    for(int j = 0; j < SIZE; j++) t[j] = test[j];
+    table->find_k_nearest_neighbors(t, nn_num, &result);
+    for(int idx = 0; idx < result.size(); idx++) {
+        cout << "testing " << result[idx] << endl;
+
+        Mat image = imread(whole_list[result[idx]], CV_LOAD_IMAGE_COLOR);
+        SiftData sData;
+        int w, h;
+        sift_gpu(image, NULL, NULL, sData, w, h, true);
+        
+        MatchSiftData(sData, tData);
+        FindHomography(sData, homography, &numMatches, 10000, 0.00f, 0.80f, 5.0);
+        int numFit = ImproveHomography(sData, homography, 5, 0.00f, 0.80f, 3.0);
+        double ratio = 100.0f*numFit/min(sData.numPts, tData.numPts);
+        cout << "Number of features: " << sData.numPts << " " << tData.numPts << endl;
+        cout << "Matching features: " << numFit << " " << numMatches << " " << ratio << "% " << endl;
+        FreeSiftData(sData);
+        FreeSiftData(tData);
+       
+        if(ratio > 0.2) {
+            cout << "Match found!" << endl;
+            Mat H(3, 3, CV_32FC1, homography);
+
+            vector<Point2f> obj_corners(4), scene_corners(4);
+            obj_corners[0] = cvPoint(0, 0); 
+            obj_corners[1] = cvPoint(image.cols, 0);
+            obj_corners[2] = cvPoint(image.cols, image.rows); 
+            obj_corners[3] = cvPoint(0, image.rows);
+
+            try {
+                perspectiveTransform(obj_corners, scene_corners, H);
+            } catch (Exception) {
+                cout << "cv exception" << endl;
+                continue;
+            }
+
+            marker.markerID.i = 1;
+            marker.height.i = image.rows;
+            marker.width.i = image.cols;
+            for (int i = 0; i < 4; i++) {
+                marker.corners[i].x = scene_corners[i].x;
+                marker.corners[i].y = scene_corners[i].y;
+            }
+            marker.markername = "gpu_recognized_image.";
+
+            return true; 
+        }
+    }
+
+    cout << "no match found" << endl;
+    return false;
+}
+
+bool mycompare(char* x, char* y) 
+{
   if(strcmp(x, y)<=0) return 1;
   else return 0;
 }
 
-vector<char *> loadImages() {
-    vector<char *> whole_list;
+void loadImages() 
+{
+    gpu_init();
+
     const char *home = "data/bk_train"; 
     DIR *d = opendir(home);
     struct dirent *cur_dir;  
@@ -351,13 +437,12 @@ vector<char *> loadImages() {
     }
     cout << endl << "---------------------in total " << whole_list.size() << " images------------------------" << endl << endl;
     closedir(d);
-
-    return whole_list;
 }
 
 #if 0
-void trainParams(vector<char*> whole_list, int dimension, float* &means, float* &covariances, float* &priors, float* &projectionCenter, float* &projection) {
+void trainParams() {
     int numData;
+    int dimension = DST_DIM + 2;
     float *sift_res;
     float *sift_frame;
 
@@ -365,7 +450,7 @@ void trainParams(vector<char*> whole_list, int dimension, float* &means, float* 
     float *final_frame = (float *)malloc(ROWS * whole_list.size() * 128 * sizeof(float));
     //////////////////train encoder ////////////////
     //////// STEP 0: obtain sample image descriptors
-    std::set<int>::iterator iter;
+    set<int>::iterator iter;
     double start_time = wallclock();
 
     for (int i = 0; i != whole_list.size(); ++i)
@@ -386,18 +471,18 @@ void trainParams(vector<char*> whole_list, int dimension, float* &means, float* 
 #endif
 
       srand(1);
-      std::set<int> indices;
+      set<int> indices;
       for (int it = 0; it < ROWS; it++)
       {
         int rand_t = rand() % pre_size;
-        std::pair<std::set<int>::iterator, bool> ret = indices.insert(rand_t);
+        pair<set<int>::iterator, bool> ret = indices.insert(rand_t);
         while (ret.second == false)
         {
           rand_t = rand() % pre_size;
           ret = indices.insert(rand_t);
         }
       }
-      std::set<int>::iterator iter;
+      set<int>::iterator iter;
       int it = 0;
       for (iter = indices.begin(); iter != indices.end(); iter++)
       {
@@ -559,7 +644,9 @@ void trainParams(vector<char*> whole_list, int dimension, float* &means, float* 
 }
 #endif
 
-void loadParams(int dimension, float* &means, float* &covariances, float* &priors, float* &projectionCenter, float* &projection) {
+void loadParams() 
+{
+    int dimension = DST_DIM + 2;
     priors = (TYPE *)vl_malloc(sizeof(float) * NUM_CLUSTERS);
     means = (TYPE *)vl_malloc(sizeof(float) * dimension * NUM_CLUSTERS);
     covariances = (TYPE *)vl_malloc(sizeof(float) * dimension * NUM_CLUSTERS);
@@ -585,4 +672,14 @@ void loadParams(int dimension, float* &means, float* &covariances, float* &prior
     ifstream in5("params/projectionCenter", ios::in | ios::binary);
     in5.read((char *)projectionCenter, sizeof(float) * 128);
     in5.close();
+}
+
+void freeParams() 
+{
+    gpu_free();
+    free(projection);
+    free(projectionCenter);
+    free(priors);
+    free(means);
+    free(covariances);
 }

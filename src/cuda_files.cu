@@ -40,7 +40,7 @@ using namespace std;
 #define VL_INFINITY_D (vl_infinity_d.value)
 TYPE infinity = -(TYPE)VL_INFINITY_D;
 
-#define NOSIFT 0
+#define NOSIFT 1
 
 void gpu_init(){
   int num;
@@ -98,12 +98,9 @@ bool gpu_gmm_1(TYPE const * covariances, TYPE const * priors, TYPE const * means
   int cluster_size = numClusters*sizeof(TYPE);
   int total_size = cluster_size * dimension;
   cudaMalloc((void**)&posteriors_d, numData*numClusters*sizeof(TYPE));
-#if 1
+#if NOSIFT
   cudaMalloc((void**)&tmp2_d, sizeof(TYPE)*dimension*numData);
 #endif
-  cudaError_t err = cudaGetLastError();
-  if(err!=cudaSuccess)
-    cout<<"Malloc Err at beginning"<<cudaGetErrorString(err)<<", "<<cudaSuccess<<endl;
 
   /********* Set grid and block ***********/
   int threads1 = THREADS;
@@ -136,18 +133,19 @@ bool gpu_gmm_1(TYPE const * covariances, TYPE const * priors, TYPE const * means
   dim3 localThreads3 (THREADS3,1,1);
 
   cudaMalloc((void**)&enc_d, 2*dimension*numClusters*numblocks3*sizeof(TYPE));
-  err = cudaGetLastError();
+  cudaError_t err = cudaGetLastError();
   if(err!=cudaSuccess)
     cout<<"Malloc Err "<<cudaGetErrorString(err)<<", "<<cudaSuccess<<endl;
 
   /*********** Set other parameters *********/
-#if 1
+#if NOSIFT
   cudaMemcpy(tmp2_d, data, numData*dimension*sizeof(TYPE), cudaMemcpyHostToDevice);
   
   err = cudaGetLastError();
   if(err!=cudaSuccess)
     cout<<"Memcpy Err "<<cudaGetErrorString(err)<<", "<<cudaSuccess<<endl;
 #endif
+
   //start = wallclock();
   gmm_1<<<numblocks1, localThreads>>>(covariances_d, invCovariances_d, logCovariances_d, logWeights_d, priors_d, dimension, numClusters, infinity, sqrtInvSigma_d);
   //cudaThreadSynchronize();
@@ -173,7 +171,7 @@ bool gpu_gmm_1(TYPE const * covariances, TYPE const * priors, TYPE const * means
   err = cudaGetLastError();
   if(err!=cudaSuccess)
     cout<<"gmm3 Err "<<cudaGetErrorString(err)<<", "<<cudaSuccess<<endl;
-  ////cout<<"Kernel 3 "<<wallclock() - start<<endl;
+  //cout<<"Kernel 3 "<<wallclock() - start<<endl;
 
   //start = wallclock();
   gmm_4<<<numClusters, 128>>>(enc_d, dimension, numClusters, numblocks3);

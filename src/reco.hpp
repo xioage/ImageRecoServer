@@ -51,15 +51,12 @@ struct recognizedMarker {
         std::string markername;
 };
 
-void onlineProcessing(char *image, SiftData &siftData, float *priors, float *means, float *covariances, std::vector<float> &enc_vec, float *projection, float *projectionCenter, bool online);
-
-void test(float* priors, float* means, float* covariances, float* projection, float* projectionCenter, std::vector<float> train[], int trainSize, int nn_num);
-
-std::vector<char *> loadImages(); 
-
-#if 0
-void trainParams(std::vector<char*> whole_list, int dimension, float* &means, float* &covariances, float* &priors, float* &projectionCenter, float* &projection); 
-#endif
-
-void loadParams(int dimension, float* &means, float* &covariances, float* &priors, float* &projectionCenter, float* &projection);
+void parseCMD(char *argv[]);
+void loadImages(); 
+//void trainParams(); 
+void loadParams();
+void encodeDatabase();
+void test();
+bool query(cv::Mat image, recognizedMarker &marker);
+void freeParams();
 #endif
