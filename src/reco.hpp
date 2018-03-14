@@ -51,6 +51,7 @@ struct recognizedMarker {
         std::string markername;
 };
 
+double wallclock();
 void parseCMD(char *argv[]);
 void loadImages(); 
 //void trainParams(); 

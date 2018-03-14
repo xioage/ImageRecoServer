@@ -6,6 +6,7 @@
 #include <pthread.h>
 #include <chrono>
 #include <thread>
+#include <iomanip>
 
 #define MESSAGE_ECHO 0
 #define FEATURES 1
@@ -17,7 +18,6 @@
 
 using namespace std;
 using namespace cv;
-using namespace std::chrono;
 
 bool client_alive;
 struct sockaddr_in localAddr;
@@ -75,7 +75,8 @@ void *ThreadReceiverFunction(void *socket) {
 
         memcpy(tmp, &(buffer[8]), 4);
         curFrame->bufferSize = *(int*)tmp;
-        cout<<"frame "<<curFrame->frmID<<" received, filesize: "<<curFrame->bufferSize<<endl;
+        cout<<"frame "<<curFrame->frmID<<" received, filesize: "<<curFrame->bufferSize;
+        cout<<" at "<<setprecision(15)<<wallclock()<<endl;
 
         curFrame->buffer = new char[curFrame->bufferSize];
         memset(curFrame->buffer, 0, curFrame->bufferSize);
@@ -130,7 +131,8 @@ void *ThreadSenderFunction(void *socket) {
                 memcpy(&(buffer[12]), curRes->buffer, 100 * curRes->markerNum.i);
             sendto(sock, buffer, sizeof(buffer), 0, (struct sockaddr *)&remoteAddr, addrlen);
 
-            cout<<"frame "<<curRes->resID.i<<" res sent, "<<"marker#: "<<curRes->markerNum.i<<endl;
+            cout<<"frame "<<curRes->resID.i<<" res sent, "<<"marker#: "<<curRes->markerNum.i;
+            cout<<" at "<<setprecision(15)<<wallclock()<<endl<<endl;
 
             pthread_mutex_lock(&rbhMutex);
             if(curRes->markerNum.i != 0)

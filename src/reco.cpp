@@ -115,14 +115,14 @@ int ImproveHomography(SiftData &data, float *homography, int numLoops, float min
   return numfit;
 }
 
-int sift_gpu(Mat img, float **siftres, float **siftframe, SiftData &siftData, int &w, int &h, bool online)
+int sift_gpu(Mat img, float **siftres, float **siftframe, SiftData &siftData, int &w, int &h, bool online, bool isColorImage)
 {
   CudaImage cimg;
   int numPts;
   double start, finish, durationgmm;
 
   if(online) resize(img, img, Size(), 1.0/querysizefactor, 1.0/querysizefactor);
-  cvtColor(img, img, CV_BGR2GRAY);
+  if(isColorImage) cvtColor(img, img, CV_BGR2GRAY);
   img.convertTo(img, CV_32FC1);
   start = wallclock();
   w = img.cols;
@@ -161,7 +161,7 @@ int sift_gpu(Mat img, float **siftres, float **siftframe, SiftData &siftData, in
   return numPts;
 }
 
-void onlineProcessing(Mat image, SiftData &siftData, vector<float> &enc_vec, bool online)
+void onlineProcessing(Mat image, SiftData &siftData, vector<float> &enc_vec, bool online, bool isColorImage)
 {
   double start, finish;
   double durationsift, durationgmm;
@@ -171,7 +171,7 @@ void onlineProcessing(Mat image, SiftData &siftData, vector<float> &enc_vec, boo
   float *siftframe;
   int height, width;
 
-  siftResult = sift_gpu(image, &siftresg, &siftframe, siftData, width, height, online);
+  siftResult = sift_gpu(image, &siftresg, &siftframe, siftData, width, height, online, isColorImage);
 
   start = wallclock();
 
@@ -237,7 +237,7 @@ void encodeDatabase()
     for (int i = 0; i < whole_list.size(); i++) {
         SiftData tmp;
         Mat image = imread(whole_list[i], CV_LOAD_IMAGE_COLOR);
-        onlineProcessing(image, tmp, train[i], false);
+        onlineProcessing(image, tmp, train[i], false, true);
     }
 
     for(int i = 0; i < whole_list.size(); i++) {
@@ -286,7 +286,7 @@ void test()
     {
       cout << endl << test_list[i] << endl;
       Mat image = imread(test_list[i], CV_LOAD_IMAGE_COLOR);
-      onlineProcessing(image, tData[i], test, true);
+      onlineProcessing(image, tData[i], test, true, true);
       start = wallclock();
       vector<int> result;
       DenseVector<float> t(SIZE);
@@ -334,8 +334,7 @@ bool query(Mat image, recognizedMarker &marker)
     float homography[9];
     int numMatches;
 
-    cout << endl << "processing current query"  << endl;
-    onlineProcessing(image, tData, test, true);
+    onlineProcessing(image, tData, test, true, false);
 
     for(int j = 0; j < SIZE; j++) t[j] = test[j];
     table->find_k_nearest_neighbors(t, nn_num, &result);
@@ -345,7 +344,8 @@ bool query(Mat image, recognizedMarker &marker)
         Mat image = imread(whole_list[result[idx]], CV_LOAD_IMAGE_COLOR);
         SiftData sData;
         int w, h;
-        sift_gpu(image, NULL, NULL, sData, w, h, true);
+        float *a, *b;
+        sift_gpu(image, &a, &b, sData, w, h, true, false);
         
         MatchSiftData(sData, tData);
         FindHomography(sData, homography, &numMatches, 10000, 0.00f, 0.80f, 5.0);
@@ -354,7 +354,6 @@ bool query(Mat image, recognizedMarker &marker)
         cout << "Number of features: " << sData.numPts << " " << tData.numPts << endl;
         cout << "Matching features: " << numFit << " " << numMatches << " " << ratio << "% " << endl;
         FreeSiftData(sData);
-        FreeSiftData(tData);
        
         if(ratio > 0.2) {
             cout << "Match found!" << endl;
@@ -382,9 +381,11 @@ bool query(Mat image, recognizedMarker &marker)
             }
             marker.markername = "gpu_recognized_image.";
 
+            FreeSiftData(tData);
             return true; 
         }
     }
+    FreeSiftData(tData);
 
     cout << "no match found" << endl;
     return false;
@@ -429,7 +430,7 @@ void loadImages()
                 if (strstr(file, "jpg") != NULL)
                 {
                     whole_list.push_back(file);
-                    if(whole_list.size() == 1000) break;
+                    if(whole_list.size() == 101) break;
                 }
             }
         }
@@ -462,7 +463,7 @@ void trainParams() {
       cout << "Train file " << i << ": " << whole_list[i] << endl;
       //    if(count == 2)
       SiftData siftData;
-      int pre_size = sift_gpu(whole_list[i], &sift_res, &sift_frame, siftData, width, height, false);
+      int pre_size = sift_gpu(whole_list[i], &sift_res, &sift_frame, siftData, width, height, false, true);
       cout << "pre size: " << pre_size <<endl;
 
 #ifdef FEATURE_CHECK
