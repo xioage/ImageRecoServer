@@ -303,8 +303,8 @@ int main(int argc, char *argv[])
     loadParams();
 #endif
     encodeDatabase(); 
-    //test();
-    runServer();
+    test();
+    //runServer();
 
     freeParams();
     return 0;

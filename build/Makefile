@@ -35,7 +35,7 @@ gpu_fv: $(COBJECTS) $(CXXOBJECTS) cuda_files.o
 	$(CXX) $(LINK) -o ../$@ $(COBJECTS) $(CXXOBJECTS) cuda_files.o $(LIB) 
 
 cuda_files.o: ../src/cuda_files.cu 
-	$(NVCC) -I$(CUDA_ROOT)/include/  -O3 -g -G -c ../src/cuda_files.cu -lcublas 
+	$(NVCC) -I$(CUDA_ROOT)/include/  -O3 -c ../src/cuda_files.cu -lcublas 
 
 $(COBJECTS): $(CSRCS) $(CHEADERS) Makefile
 	$(CC) $(INC) $(CFLAGS) $(CSRCS) 

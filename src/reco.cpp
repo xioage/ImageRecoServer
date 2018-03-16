@@ -430,7 +430,7 @@ void loadImages()
                 if (strstr(file, "jpg") != NULL)
                 {
                     whole_list.push_back(file);
-                    if(whole_list.size() == 101) break;
+                    if(whole_list.size() == 1000) break;
                 }
             }
         }

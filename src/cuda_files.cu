@@ -1,5 +1,3 @@
-//#include "cutil_inline.h"
-//#include "cutil_inline_runtime.h"
 #include <iostream>
 #include <cstdio>
 #include <cstdlib>
@@ -94,7 +92,6 @@ void gpu_free() {
 }
 
 bool gpu_gmm_1(TYPE const * covariances, TYPE const * priors, TYPE const * means, TYPE* posteriors, int numClusters, int dimension, int numData, float halfDimLog2Pi, TYPE* enc_g, TYPE* sqrtInvSigma, TYPE* data) {
-  double start = wallclock();
   int cluster_size = numClusters*sizeof(TYPE);
   int total_size = cluster_size * dimension;
   cudaMalloc((void**)&posteriors_d, numData*numClusters*sizeof(TYPE));
@@ -128,57 +125,20 @@ bool gpu_gmm_1(TYPE const * covariances, TYPE const * priors, TYPE const * means
   if(numData%ITEMS3) {
     numblocks3 ++;
   }
-  //  cout<<"Total blocks for Kernel 2 "<<numblocks2<<endl;
   dim3 blocks3 (numblocks3, 1, 1);
   dim3 localThreads3 (THREADS3,1,1);
 
   cudaMalloc((void**)&enc_d, 2*dimension*numClusters*numblocks3*sizeof(TYPE));
-  cudaError_t err = cudaGetLastError();
-  if(err!=cudaSuccess)
-    cout<<"Malloc Err "<<cudaGetErrorString(err)<<", "<<cudaSuccess<<endl;
 
   /*********** Set other parameters *********/
 #if NOSIFT
   cudaMemcpy(tmp2_d, data, numData*dimension*sizeof(TYPE), cudaMemcpyHostToDevice);
-  
-  err = cudaGetLastError();
-  if(err!=cudaSuccess)
-    cout<<"Memcpy Err "<<cudaGetErrorString(err)<<", "<<cudaSuccess<<endl;
 #endif
 
-  //start = wallclock();
   gmm_1<<<numblocks1, localThreads>>>(covariances_d, invCovariances_d, logCovariances_d, logWeights_d, priors_d, dimension, numClusters, infinity, sqrtInvSigma_d);
-  //cudaThreadSynchronize();
-  err = cudaGetLastError();
-  if(err!=cudaSuccess)
-    cout<<"gmm1 Err "<<cudaGetErrorString(err)<<", "<<cudaSuccess<<endl;
-  //cout<<"Kernel 1 "<<wallclock() - start<<endl;
-
-  //start = wallclock();
   gmm_2<<<blocks2, localThreads2>>>(invCovariances_d, logCovariances_d, logWeights_d, posteriors_d, numClusters, halfDimLog2Pi, tmp2_d, means_d, infinity, numData);
-  cudaThreadSynchronize();
-  err = cudaGetLastError();
-  if(err!=cudaSuccess)
-    cout<<"gmm2 Err "<<cudaGetErrorString(err)<<", "<<cudaSuccess<<endl;
-  //cout<<"Kernel 2 "<<wallclock() - start<<endl;
-
-  //start = wallclock();
   gmm_3<<<blocks3, localThreads3>>>(enc_d, tmp2_d, means_d, sqrtInvSigma_d, posteriors_d, dimension, numClusters, numData, priors_d);
-  /*
-  cudaMemcpy(data, priors_d, 100*sizeof(TYPE), cudaMemcpyDeviceToHost);
-  */
-  cudaThreadSynchronize();
-  err = cudaGetLastError();
-  if(err!=cudaSuccess)
-    cout<<"gmm3 Err "<<cudaGetErrorString(err)<<", "<<cudaSuccess<<endl;
-  //cout<<"Kernel 3 "<<wallclock() - start<<endl;
-
-  //start = wallclock();
   gmm_4<<<numClusters, 128>>>(enc_d, dimension, numClusters, numblocks3);
-  err = cudaGetLastError();
-  if(err!=cudaSuccess)
-    cout<<"gmm4 Err "<<cudaGetErrorString(err)<<", "<<cudaSuccess<<endl;
- // cout<<"Kernel 4 "<<wallclock() - start<<endl;
 
   cudaThreadSynchronize();
 
