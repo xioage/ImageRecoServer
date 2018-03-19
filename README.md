@@ -14,13 +14,12 @@ This project contains a Cuda version of a complete image recognition pipeline, w
   - `Cuda` , tested with ver 8.0
   - `falconn` , cpu lsh
   - `CudaSift` , Cuda version of Sift with detection, extraction, matching
-  - `libpca` , cpu pca training
   - `Eigen` , Dense data structure
   - `vlfeat` , cpu gmm training
 
 ### Installation
 
-Besides the libraries contained in this repo, you may first install `OpenCV`, `Cuda`, and `armadillo`. 
+Besides the libraries contained in this repo, you may first install `OpenCV` and `Cuda`. 
 To build and run:
 
 ```sh

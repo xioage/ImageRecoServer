@@ -9,7 +9,6 @@
 
 #include "cudaImage.h"
 #include "cuda_files.h"
-#include "pca.h"
 #include "Eigen/Dense"
 #include "falconn/lsh_nn_table.h"
 extern "C" {
@@ -440,7 +439,7 @@ void loadImages()
     closedir(d);
 }
 
-#if 0
+#if 1
 void trainParams() {
     int numData;
     int dimension = DST_DIM + 2;
@@ -449,6 +448,7 @@ void trainParams() {
 
     float *final_res = (float *)malloc(ROWS * whole_list.size() * 128 * sizeof(float));
     float *final_frame = (float *)malloc(ROWS * whole_list.size() * 128 * sizeof(float));
+    Mat training_descriptors(0, 128, CV_32FC1);
     //////////////////train encoder ////////////////
     //////// STEP 0: obtain sample image descriptors
     set<int>::iterator iter;
@@ -463,8 +463,8 @@ void trainParams() {
       cout << "Train file " << i << ": " << whole_list[i] << endl;
       //    if(count == 2)
       SiftData siftData;
-      int pre_size = sift_gpu(whole_list[i], &sift_res, &sift_frame, siftData, width, height, false, true);
-      cout << "pre size: " << pre_size <<endl;
+      Mat image = imread(whole_list[i], CV_LOAD_IMAGE_COLOR);
+      int pre_size = sift_gpu(image, &sift_res, &sift_frame, siftData, width, height, false, true);
 
 #ifdef FEATURE_CHECK
       if(pre_size < ROWS) remove(whole_list[i]);
@@ -487,9 +487,11 @@ void trainParams() {
       int it = 0;
       for (iter = indices.begin(); iter != indices.end(); iter++)
       {
+        Mat descriptor = Mat(1, 128, CV_32FC1, sift_res+(*iter)*128);
+        training_descriptors.push_back(descriptor);
+
         for (int k = 0; k < 128; k++)
         {
-          //	cout<<"It is "<<*iter<<endl;
           final_res[(ROWS * i + it) * 128 + k] = sift_res[(*iter) * 128 + k];
         }
         for (int k = 0; k < 2; k++)
@@ -503,56 +505,36 @@ void trainParams() {
       free(sift_frame);
     }
     /////////////STEP 1: PCA
-    const int num_variables = 128;
-    const int num_records = ROWS * whole_list.size();
-
-    stats::pca pca(num_variables);
-    //  pca.set_do_bootstrap(true, 100);
-
     projectionCenter = (float *)malloc(128 * sizeof(float));
     projection = (float *)malloc(128 * 80 * sizeof(float));
 
-    int j = 0;
-    for (int i = 0; i < num_records; ++i)
-    {
-      vector<double> record(num_variables);
-      for (auto value = record.begin(); value != record.end(); ++value)
-      {
-        *value = final_res[j];
-        j++;
-      }
-      pca.add_record(record);
-    }
-    pca.solve();
-
-    const auto means1 = pca.get_mean_values();
+    PCA pca(training_descriptors, Mat(), CV_PCA_DATA_AS_ROW, 80);
     for (int i = 0; i < 128; i++)
     {
-      projectionCenter[i] = means1[i];
+      projectionCenter[i] = pca.mean.at<float>(0,i);
     }
     for (int i = 0; i < 80; i++)
     {
-      const auto eigenv = pca.get_eigenvector(i);
-      for (j = 0; j < 128; j++)
+      for (int j = 0; j < 128; j++)
       {
-        projection[i * 128 + j] = eigenv[j];
+        projection[i * 128 + j] = pca.eigenvectors.at<float>(i,j);
       }
     }
+    cout<<"================pca training finished==================="<<endl;
+
     ///////STEP 2  (optional): geometrically augment the features
-    int pre_size = num_records;
+    int pre_size = training_descriptors.rows;
     float *dest = (float *)malloc(pre_size * (DST_DIM + 2) * sizeof(float));
 
     gpu_pca_mm(projection, projectionCenter, final_res, dest, pre_size, DST_DIM);
     for (int i = 0; i < pre_size; i++)
     {
-      //    float halfwidth = ((float)width)/2;
       dest[i * (DST_DIM + 2) + DST_DIM] = final_frame[i * 2];
       dest[i * (DST_DIM + 2) + DST_DIM + 1] = final_frame[i * 2 + 1];
     }
     free(final_frame);
     free(final_res);
 
-    cout << "End of step 2" << endl;
     //////////////////////STEP 3  learn a GMM vocabulary
     numData = pre_size;
     //vl_twister
@@ -600,8 +582,6 @@ void trainParams() {
     cout << "Lower bound " << maxNum << endl;
     vl_gmm_set_verbosity(gmm, 1);
     vl_gmm_set_max_num_iterations(gmm, 100);
-    printf("vl_gmm: maxNumIterations = %d\n", vl_gmm_get_max_num_iterations(gmm));
-    printf("vl_gmm: numRepetitions = %d\n", vl_gmm_get_num_repetitions(gmm));
     printf("vl_gmm: data type = %s\n", vl_get_type_name(vl_gmm_get_data_type(gmm)));
     printf("vl_gmm: data dimension = %d\n", dimension);
     printf("vl_gmm: num. data points = %d\n", numData);

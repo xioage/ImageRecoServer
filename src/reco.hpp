@@ -54,7 +54,7 @@ struct recognizedMarker {
 double wallclock();
 void parseCMD(char *argv[]);
 void loadImages(); 
-//void trainParams(); 
+void trainParams(); 
 void loadParams();
 void encodeDatabase();
 void test();

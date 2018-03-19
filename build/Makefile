@@ -9,15 +9,13 @@ CXXOBJECTS = $(patsubst %.cpp,%.o, $(CXXDIR))
 COBJECTS = $(patsubst %.c,%.o, $(CDIR)) 
 
 CUDA_ROOT = /usr/local/cuda
-PCA_ROOT = ../lib/libpca
 SIFT_ROOT = ../lib/cudasift
 EIGEN_ROOT = ../lib/eigen
 FALCONN_ROOT = ../lib/falconn
 VL_ROOT = ../lib/vlfeat
 
-INC +=-I$(PCA_ROOT)/include -I$(SIFT_ROOT) -I$(EIGEN_ROOT) -I$(FALCONN_ROOT)/src/include -I$(VL_ROOT)
+INC += -I$(SIFT_ROOT) -I$(EIGEN_ROOT) -I$(FALCONN_ROOT)/src/include -I$(VL_ROOT)
 
-#LIB     = -lm -lrt -lpthread -ldl -pipe -L$(SIFT_ROOT) -Wl,-Rlib/cudasift '-Wl,-R$$ORIGIN' -lcudasift -std=c++0x -pthread -L$(PCA_ROOT) -Wl,-Rlib/libpca/build '-Wl,-R$$ORIGIN' -lpca
 LIB = -lm -lrt -lpthread -ldl -pipe -L$(SIFT_ROOT) -lcudasift -std=c++0x -pthread 
 LIB += -L$(CUDA_ROOT)/lib64/ -lcudart -lcufft 
 LIB += `pkg-config --cflags --libs opencv`
