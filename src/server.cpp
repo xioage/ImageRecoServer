@@ -144,7 +144,7 @@ void *ThreadSenderFunction(void *socket) {
         }
         else {
             pthread_mutex_unlock(&rbhMutex);
-            this_thread::sleep_for(chrono::milliseconds(5));
+            this_thread::sleep_for(chrono::milliseconds(1));
             continue;
         }
     }    
@@ -173,7 +173,7 @@ void *ThreadProcessFunction(void *param) {
         pthread_mutex_lock(&fbhMutex);
         if(frameBufferHead == NULL) {
             pthread_mutex_unlock(&fbhMutex);
-            this_thread::sleep_for(chrono::milliseconds(5));
+            this_thread::sleep_for(chrono::milliseconds(1));
             continue;
         }
         pthread_mutex_unlock(&fbhMutex);
@@ -189,7 +189,8 @@ void *ThreadProcessFunction(void *param) {
         if(frmDataType == IMAGE_DETECT) {
             vector<uchar> imgdata(frmdata, frmdata + frmSize);
             Mat img_scene = imdecode(imgdata, CV_LOAD_IMAGE_GRAYSCALE);
-            markerDetected = query(img_scene, marker);
+            Mat detect = img_scene(Rect(50, 20, 380, 230));
+            markerDetected = query(detect, marker);
         }
 
         pthread_mutex_lock(&fbhMutex);
@@ -303,8 +304,8 @@ int main(int argc, char *argv[])
     loadParams();
 #endif
     encodeDatabase(); 
-    test();
-    //runServer();
+    //test();
+    runServer();
 
     freeParams();
     return 0;

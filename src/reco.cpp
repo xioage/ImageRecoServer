@@ -31,10 +31,13 @@ using namespace cv;
 #define NUM_HASH_TABLES 20
 #define NUM_HASH_BITS 24
 //#define FEATURE_CHECK
+#define MATCH_ONE_ONLY
+#define TEST
 
 int querysizefactor, nn_num;
 float *means, *covariances, *priors, *projectionCenter, *projection;
 vector<char *> whole_list;
+vector<SiftData> trainData;
 vector<DenseVector<float>> lsh;
 unique_ptr<LSHNearestNeighborTable<DenseVector<float>>> tablet;
 unique_ptr<LSHNearestNeighborQuery<DenseVector<float>>> table;
@@ -46,73 +49,7 @@ double wallclock (void)
   return (double)tv.tv_sec + (double)tv.tv_usec / 1000000.0;
 }
 
-int ImproveHomography(SiftData &data, float *homography, int numLoops, float minScore, float maxAmbiguity, float thresh)
-{
-#ifdef MANAGEDMEM
-  SiftPoint *mpts = data.m_data;
-#else
-  if (data.h_data==NULL)
-    return 0;
-  SiftPoint *mpts = data.h_data;
-#endif
-  float limit = thresh*thresh;
-  int numPts = data.numPts;
-  Mat M(8, 8, CV_64FC1);
-  Mat A(8, 1, CV_64FC1), X(8, 1, CV_64FC1);
-  double Y[8];
-  for (int i=0;i<8;i++)
-    A.at<double>(i, 0) = homography[i] / homography[8];
-  for (int loop=0;loop<numLoops;loop++) {
-    M = Scalar(0.0);
-    X = Scalar(0.0);
-    for (int i=0;i<numPts;i++) {
-      SiftPoint &pt = mpts[i];
-      if (pt.score<minScore || pt.ambiguity>maxAmbiguity)
-        continue;
-      float den = A.at<double>(6)*pt.xpos + A.at<double>(7)*pt.ypos + 1.0f;
-      float dx = (A.at<double>(0)*pt.xpos + A.at<double>(1)*pt.ypos + A.at<double>(2)) / den - pt.match_xpos;
-      float dy = (A.at<double>(3)*pt.xpos + A.at<double>(4)*pt.ypos + A.at<double>(5)) / den - pt.match_ypos;
-      float err = dx*dx + dy*dy;
-      float wei = limit / (err + limit);
-      Y[0] = pt.xpos;
-      Y[1] = pt.ypos;
-      Y[2] = 1.0;
-      Y[3] = Y[4] = Y[5] = 0.0;
-      Y[6] = - pt.xpos * pt.match_xpos;
-      Y[7] = - pt.ypos * pt.match_xpos;
-      for (int c=0;c<8;c++)
-        for (int r=0;r<8;r++)
-          M.at<double>(r,c) += (Y[c] * Y[r] * wei);
-      X += (Mat(8,1,CV_64FC1,Y) * pt.match_xpos * wei);
-      Y[0] = Y[1] = Y[2] = 0.0;
-      Y[3] = pt.xpos;
-      Y[4] = pt.ypos;
-      Y[5] = 1.0;
-      Y[6] = - pt.xpos * pt.match_ypos;
-      Y[7] = - pt.ypos * pt.match_ypos;
-      for (int c=0;c<8;c++)
-        for (int r=0;r<8;r++)
-          M.at<double>(r,c) += (Y[c] * Y[r] * wei);
-      X += (Mat(8,1,CV_64FC1,Y) * pt.match_ypos * wei);
-    }
-    solve(M, X, A, DECOMP_CHOLESKY);
-  }
-  int numfit = 0;
-  for (int i=0;i<numPts;i++) {
-    SiftPoint &pt = mpts[i];
-    float den = A.at<double>(6)*pt.xpos + A.at<double>(7)*pt.ypos + 1.0;
-    float dx = (A.at<double>(0)*pt.xpos + A.at<double>(1)*pt.ypos + A.at<double>(2)) / den - pt.match_xpos;
-    float dy = (A.at<double>(3)*pt.xpos + A.at<double>(4)*pt.ypos + A.at<double>(5)) / den - pt.match_ypos;
-    float err = dx*dx + dy*dy;
-    if (err<limit)
-      numfit++;
-    pt.match_error = sqrt(err);
-  }
-  for (int i=0;i<8;i++)
-    homography[i] = A.at<double>(i);
-  homography[8] = 1.0f;
-  return numfit;
-}
+int ImproveHomography(SiftData &data, float *homography, int numLoops, float minScore, float maxAmbiguity, float thresh);
 
 int sift_gpu(Mat img, float **siftres, float **siftframe, SiftData &siftData, int &w, int &h, bool online, bool isColorImage)
 {
@@ -120,7 +57,7 @@ int sift_gpu(Mat img, float **siftres, float **siftframe, SiftData &siftData, in
   int numPts;
   double start, finish, durationgmm;
 
-  if(online) resize(img, img, Size(), 1.0/querysizefactor, 1.0/querysizefactor);
+  //if(online) resize(img, img, Size(), 1.0/querysizefactor, 1.0/querysizefactor);
   if(isColorImage) cvtColor(img, img, CV_BGR2GRAY);
   img.convertTo(img, CV_32FC1);
   start = wallclock();
@@ -234,9 +171,15 @@ void encodeDatabase()
     vector<float> train[whole_list.size()];
     //Encode train files
     for (int i = 0; i < whole_list.size(); i++) {
-        SiftData tmp;
+        SiftData sData;
         Mat image = imread(whole_list[i], CV_LOAD_IMAGE_COLOR);
-        onlineProcessing(image, tmp, train[i], false, true);
+#ifdef TEST
+        onlineProcessing(image, sData, train[i], true, true);
+        if (i < 100) trainData.push_back(sData);
+        else FreeSiftData(sData);
+#else 
+        onlineProcessing(image, sData, train[i], false, true);
+#endif         
     }
 
     for(int i = 0; i < whole_list.size(); i++) {
@@ -324,7 +267,7 @@ void test()
     cout << "correct: " <<correct <<endl;
 }
 
-bool query(Mat image, recognizedMarker &marker)
+bool query(Mat queryImage, recognizedMarker &marker)
 {
     SiftData tData;
     vector<float> test;
@@ -333,36 +276,50 @@ bool query(Mat image, recognizedMarker &marker)
     float homography[9];
     int numMatches;
 
-    onlineProcessing(image, tData, test, true, false);
+    onlineProcessing(queryImage, tData, test, true, false);
 
     for(int j = 0; j < SIZE; j++) t[j] = test[j];
     table->find_k_nearest_neighbors(t, nn_num, &result);
+    cout << "=====================time before matching: " << wallclock() << endl;
+
     for(int idx = 0; idx < result.size(); idx++) {
         cout << "testing " << result[idx] << endl;
 
+#ifdef TEST
+        if(result[idx] >= 100) break;
+        SiftData sData = trainData[result[idx]];
+#else
         Mat image = imread(whole_list[result[idx]], CV_LOAD_IMAGE_COLOR);
         SiftData sData;
         int w, h;
         float *a, *b;
-        sift_gpu(image, &a, &b, sData, w, h, true, false);
-        
+        sift_gpu(image, &a, &b, sData, w, h, true, true);
+#endif
+    
         MatchSiftData(sData, tData);
         FindHomography(sData, homography, &numMatches, 10000, 0.00f, 0.80f, 5.0);
         int numFit = ImproveHomography(sData, homography, 5, 0.00f, 0.80f, 3.0);
         double ratio = 100.0f*numFit/min(sData.numPts, tData.numPts);
-        cout << "Number of features: " << sData.numPts << " " << tData.numPts << endl;
         cout << "Matching features: " << numFit << " " << numMatches << " " << ratio << "% " << endl;
+#ifndef TEST
         FreeSiftData(sData);
+#endif
        
-        if(ratio > 0.2) {
-            cout << "Match found!" << endl;
+        if(ratio > 10) {
             Mat H(3, 3, CV_32FC1, homography);
 
             vector<Point2f> obj_corners(4), scene_corners(4);
+#ifdef TEST
+            obj_corners[0] = cvPoint(0, 0); 
+            obj_corners[1] = cvPoint(350, 0);
+            obj_corners[2] = cvPoint(350, 500); 
+            obj_corners[3] = cvPoint(0, 500);
+#else
             obj_corners[0] = cvPoint(0, 0); 
             obj_corners[1] = cvPoint(image.cols, 0);
             obj_corners[2] = cvPoint(image.cols, image.rows); 
             obj_corners[3] = cvPoint(0, image.rows);
+#endif
 
             try {
                 perspectiveTransform(obj_corners, scene_corners, H);
@@ -372,21 +329,28 @@ bool query(Mat image, recognizedMarker &marker)
             }
 
             marker.markerID.i = 1;
+#ifdef TEST
+            marker.height.i = 500;
+            marker.width.i = 350;
+#else
             marker.height.i = image.rows;
             marker.width.i = image.cols;
+#endif
             for (int i = 0; i < 4; i++) {
-                marker.corners[i].x = scene_corners[i].x;
-                marker.corners[i].y = scene_corners[i].y;
+                marker.corners[i].x = scene_corners[i].x + 50;
+                marker.corners[i].y = scene_corners[i].y + 20;
             }
             marker.markername = "gpu_recognized_image.";
 
             FreeSiftData(tData);
             return true; 
         }
+#ifdef MATCH_ONE_ONLY
+        break;
+#endif
     }
     FreeSiftData(tData);
 
-    cout << "no match found" << endl;
     return false;
 }
 
