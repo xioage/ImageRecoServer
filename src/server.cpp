@@ -96,7 +96,6 @@ void *ThreadProcessFunction(void *param) {
     cout<<"Process Thread Created!"<<endl;
     recognizedMarker marker;
     bool markerDetected = false;
-    bool returnRes = true;
 
     while (1) {
         if(frames.empty()) {
@@ -178,12 +177,11 @@ void runServer() {
     cout << endl << "========server started, waiting for clients==========" << endl;
 
     ret1 = pthread_create(&receiverThread, NULL, ThreadReceiverFunction, (void *)&sock);
-    //ret2 = pthread_create(&processThread, NULL, ThreadProcessFunction, NULL);
+    ret2 = pthread_create(&processThread, NULL, ThreadProcessFunction, NULL);
     ret3 = pthread_create(&senderThread, NULL, ThreadSenderFunction, (void *)&sock);
-    ThreadProcessFunction(NULL);
 
     pthread_join(receiverThread, NULL);
-    //pthread_join(processThread, NULL);
+    pthread_join(processThread, NULL);
     pthread_join(senderThread, NULL);
 }
 

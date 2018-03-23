@@ -21,7 +21,7 @@ LIB += -L$(CUDA_ROOT)/lib64/ -lcudart -lcufft
 LIB += `pkg-config --cflags --libs opencv`
 LIB += -fopenmp -lcublas
 
-NVCC	= $(CUDA_ROOT)/bin/nvcc -arch=sm_61 -m 64 $(INC)
+NVCC	= $(CUDA_ROOT)/bin/nvcc -arch=sm_35 -m 64 $(INC)
 
 CXX = g++ -pipe
 CC = gcc -pipe
