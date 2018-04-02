@@ -38,7 +38,7 @@ cuda_files.o: ../src/cuda_files.cu
 $(COBJECTS): $(CSRCS) $(CHEADERS) Makefile
 	$(CC) $(INC) $(CFLAGS) $(CSRCS) 
 
- $(CXXOBJECTS): $(CXXSRCS) $(CXXHEADERS) Makefile
+$(CXXOBJECTS): $(CXXSRCS) $(CXXHEADERS) Makefile
 	$(CXX) $(INC) $(CXXFLAGS) $(CXXSRCS)
 
 clean:
