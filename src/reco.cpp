@@ -202,6 +202,7 @@ void test()
     double dist, min;
     int correct = 0;
     double start, finish, duration;
+    double t_s, t_f, t_d;
     SiftData tData[100];
     vector<float> test;
     vector<char *> test_list;
@@ -209,62 +210,59 @@ void test()
     const char *test_path = "data/crop";
     DIR *d = opendir(test_path);
     struct dirent *cur_dir;
-    while ((cur_dir = readdir(d)) != NULL)
-    {
-      if ((strcmp(cur_dir->d_name, ".") != 0) && (strcmp(cur_dir->d_name, "..") != 0))
-      {
-        char *file = new char[256];
-        sprintf(file, "%s/%s", test_path, cur_dir->d_name);
-        if (strstr(file, "jpg") != NULL)
-        {
-          test_list.push_back(file);
+    while ((cur_dir = readdir(d)) != NULL) {
+        if ((strcmp(cur_dir->d_name, ".") != 0) && (strcmp(cur_dir->d_name, "..") != 0)) {
+            char *file = new char[256];
+            sprintf(file, "%s/%s", test_path, cur_dir->d_name);
+            if (strstr(file, "jpg") != NULL)
+                test_list.push_back(file);
         }
-      }
     }
     cout << endl << "-------------testing " << test_list.size() << " images---------------" <<endl << endl;
     closedir(d);
 
-    for (int i = 0; i < test_list.size(); i++)
-    {
-      cout << endl << test_list[i] << endl;
-      Mat image = imread(test_list[i], CV_LOAD_IMAGE_COLOR);
-      onlineProcessing(image, tData[i], test, true, true);
-      start = wallclock();
-      vector<int> result;
-      DenseVector<float> t(SIZE);
-      for(int j = 0; j < SIZE; j++) t[j] = test[j];
-      table->find_k_nearest_neighbors(t, nn_num, &result);
-      for(int idx = 0; idx < result.size(); idx++) {
-        cout << result[idx] << " ";
-        if(result[idx] == i) {
-          correct++;
-          cout << "!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!>>" << endl;
-          break;
-        }
-      } 
-      finish = wallclock();
-      duration = (double)(finish - start);
-      cout << "NNN searching time: " << duration << endl <<endl;
-#if 0
-      start = wallclock();
-      cout << endl << test_list[i] << endl;
-      cout << endl << test_list[i] << endl;
+    t_s = wallclock();
+    for (int i = 0; i < test_list.size(); i++) {
+        cout << endl << test_list[i] << endl;
+        Mat image = imread(test_list[i], CV_LOAD_IMAGE_COLOR);
+        onlineProcessing(image, tData[i], test, true, true);
+        start = wallclock();
+        vector<int> result;
+        DenseVector<float> t(SIZE);
+        for(int j = 0; j < SIZE; j++) t[j] = test[j];
+        table->find_k_nearest_neighbors(t, nn_num, &result);
 
-          MatchSiftData(rData[i], tData[i]);
-          float homography[9];
-          int numMatches;
-          FindHomography(rData[i], homography, &numMatches, 10000, 0.00f, 0.80f, 5.0);
-          int numFit = ImproveHomography(rData[i], homography, 5, 0.00f, 0.80f, 3.0);
-          cout << "Number of original features: " <<  rData[i].numPts << " " << tData[i].numPts << endl;
-          cout << "Matching features: " << numFit << " " << numMatches << " " << 100.0f*numFit/min(rData[i].numPts, tData[i].numPts) << "% " << endl;
+        for(int idx = 0; idx < result.size(); idx++) {
+            cout << result[idx] << " ";
+            if(result[idx] == i) {
+                correct++;
+                cout << "!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!>>" << endl;
+                break;
+            }
+        } 
+        finish = wallclock();
+        duration = (double)(finish - start);
+        cout << "NNN searching time: " << duration << endl;
 
-      finish = wallclock();
-      duration = (double)(finish - start);
-      cout << "postprocessing time: " << duration << endl << endl;
+#ifdef TEST 
+        start = wallclock();
+
+        MatchSiftData(trainData[i], tData[i]);
+        float homography[9];
+        int numMatches;
+        FindHomography(trainData[i], homography, &numMatches, 10000, 0.00f, 0.80f, 5.0);
+        int numFit = ImproveHomography(trainData[i], homography, 5, 0.00f, 0.80f, 3.0);
+        //cout << "Matching features: " << numFit << " " << numMatches << endl;
+
+        finish = wallclock();
+        duration = (double)(finish - start);
+        cout << "matching time: " << duration << endl << endl;
 #endif
-      FreeSiftData(tData[i]);
+        FreeSiftData(tData[i]);
     }
-    cout << "correct: " <<correct <<endl;
+    t_f = wallclock();
+    t_d = (double)(t_f - t_s)/100.0;
+    cout << "correct: " <<correct << " in average time: " << t_d << endl;
 }
 
 bool query(Mat queryImage, recognizedMarker &marker)
