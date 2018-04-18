@@ -3,11 +3,13 @@
 
 #include <sys/socket.h>
 #include <netinet/in.h>
+#include <unistd.h>
 #include <pthread.h>
 #include <chrono>
 #include <thread>
 #include <iomanip>
 #include <queue>
+#include <fstream>
 
 #define MESSAGE_ECHO 0
 #define FEATURES 1
@@ -16,6 +18,7 @@
 #define PORT 51717
 #define PACKET_SIZE 60000
 #define RES_SIZE 512
+#define TRAIN
 
 using namespace std;
 using namespace cv;
@@ -26,6 +29,10 @@ socklen_t addrlen = sizeof(remoteAddr);
 
 queue<frameBuffer> frames;
 queue<resBuffer> results;
+int recognizedMarkerID;
+
+vector<char *> onlineImages;
+vector<char *> onlineAnnotations;
 
 void *ThreadReceiverFunction(void *socket) {
     cout<<"Receiver Thread Created!"<<endl;
@@ -114,7 +121,8 @@ void *ThreadProcessFunction(void *param) {
         if(frmDataType == IMAGE_DETECT) {
             vector<uchar> imgdata(frmdata, frmdata + frmSize);
             Mat img_scene = imdecode(imgdata, CV_LOAD_IMAGE_GRAYSCALE);
-            Mat detect = img_scene(Rect(50, 20, 380, 230));
+            //Mat detect = img_scene(Rect(50, 20, 380, 230));
+            Mat detect = img_scene(Rect(80, 20, 800, 500));
             markerDetected = query(detect, marker);
         }
 
@@ -144,6 +152,8 @@ void *ThreadProcessFunction(void *param) {
             }
 
             memcpy(&(curRes.buffer[pointer]), marker.markername.data(), marker.markername.length());
+
+            recognizedMarkerID = marker.markerID.i;
         }
         else {
             curRes.resID.i = frmID;
@@ -154,35 +164,101 @@ void *ThreadProcessFunction(void *param) {
     }
 }
 
+void *ThreadAnnotationFunction(void *socket) {
+    cout<<"Annotation Thread Created!"<<endl;
+    int sockfd = *((int*)socket);
+    int newsockfd;
+    struct sockaddr_in cli_addr;
+    socklen_t clilen = sizeof(cli_addr);
+    int n; 
+    
+    while(1) {
+        listen(sockfd,5);
+        if ((newsockfd = accept(sockfd, (struct sockaddr *) &cli_addr, &clilen)) < 0) 
+            cout<<"ERROR on accept"<<endl;
+
+        char* annotation = 0;
+        int length;
+        char *fileName;
+        if(recognizedMarkerID < onlineAnnotations.size())
+            fileName = onlineAnnotations[recognizedMarkerID];
+        else
+            fileName = "data/annotation/default.mp4";
+        FILE* file = fopen(fileName, "rb");
+
+        if(file) {
+            fseek(file, 0, SEEK_END);
+            length = ftell(file);
+            cout<<"annotation file size: "<<length<<endl;
+            fseek(file, 0, SEEK_SET);
+            annotation = (char*)malloc(length);
+            if(annotation) n = fread(annotation, 1, length, file);
+            fclose(file);
+        }
+        n = write(newsockfd,annotation,length);
+        cout<<"annotation sent"<<endl;
+        delete[] annotation;
+        if (n < 0) cout<<"ERROR writing to socket"<<endl;
+        close(newsockfd);
+    }
+}
+
 void runServer() {
-    pthread_t senderThread, receiverThread, processThread;
-    int ret1, ret2, ret3;
+    pthread_t senderThread, receiverThread, processThread, annotationThread;
+    int ret1, ret2, ret3, ret4;
     char buffer[PACKET_SIZE];
     char fileid[4];
     int status = 0;
-    int sock;
-    
-    if((sock = socket(AF_INET, SOCK_DGRAM, 0)) < 0) {
-        cout << "cannot create socket" << endl;
-                exit(1);
-    }
+    int sockTCP, sockUDP;
+
     memset((char*)&localAddr, 0, sizeof(localAddr));
     localAddr.sin_family = AF_INET;
     localAddr.sin_addr.s_addr = htonl(INADDR_ANY);
     localAddr.sin_port = htons(PORT);
-    if(bind(sock, (struct sockaddr *)&localAddr, sizeof(localAddr)) < 0) {
-        cout << "bind failed" << endl;
-                exit(1);
+
+    if ((sockTCP = socket(AF_INET, SOCK_STREAM, 0)) < 0) {
+        cout<<"ERROR opening tcp socket"<<endl;
+        exit(1);
+    }
+    if (bind(sockTCP, (struct sockaddr *) &localAddr, sizeof(localAddr)) < 0) {
+        cout<<"ERROR on tcp binding"<<endl;
+        exit(1);
+    }
+    if((sockUDP = socket(AF_INET, SOCK_DGRAM, 0)) < 0) {
+        cout<<"ERROR opening udp socket"<<endl;
+        exit(1);
+    }
+    if(bind(sockUDP, (struct sockaddr *)&localAddr, sizeof(localAddr)) < 0) {
+        cout<<"ERROR on udp binding"<<endl;
+        exit(1);
     }
     cout << endl << "========server started, waiting for clients==========" << endl;
 
-    ret1 = pthread_create(&receiverThread, NULL, ThreadReceiverFunction, (void *)&sock);
+    ret1 = pthread_create(&receiverThread, NULL, ThreadReceiverFunction, (void *)&sockUDP);
     ret2 = pthread_create(&processThread, NULL, ThreadProcessFunction, NULL);
-    ret3 = pthread_create(&senderThread, NULL, ThreadSenderFunction, (void *)&sock);
+    ret3 = pthread_create(&senderThread, NULL, ThreadSenderFunction, (void *)&sockUDP);
+    ret3 = pthread_create(&annotationThread, NULL, ThreadAnnotationFunction, (void *)&sockTCP);
 
     pthread_join(receiverThread, NULL);
     pthread_join(processThread, NULL);
     pthread_join(senderThread, NULL);
+    pthread_join(annotationThread, NULL);
+}
+
+void loadOnline() 
+{
+    ifstream file("data/onlineData.dat");
+    string line;
+    int i = 0;
+    while(getline(file, line)) {
+        char* fileName = new char[256];
+        strcpy(fileName, line.c_str());
+
+        if(i%2 == 0) onlineImages.push_back(fileName);
+        else onlineAnnotations.push_back(fileName);
+        ++i;
+    }
+    file.close();
 }
 
 int main(int argc, char *argv[])
@@ -193,7 +269,8 @@ int main(int argc, char *argv[])
     }
 
     parseCMD(argv);
-    loadImages();
+    loadOnline();
+    loadImages(onlineImages);
 #ifdef TRAIN
     trainParams();
 #else
@@ -201,7 +278,7 @@ int main(int argc, char *argv[])
 #endif
     encodeDatabase(); 
     test();
-    //runServer();
+    runServer();
 
     freeParams();
     return 0;

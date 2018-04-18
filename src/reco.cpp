@@ -30,9 +30,10 @@ using namespace cv;
 #define DST_DIM 80
 #define NUM_HASH_TABLES 20
 #define NUM_HASH_BITS 24
+#define SUB_DATASET 110
 //#define FEATURE_CHECK
-#define MATCH_ONE_ONLY
-#define TEST
+//#define MATCH_ONE_ONLY
+//#define TEST
 
 int querysizefactor, nn_num;
 float *means, *covariances, *priors, *projectionCenter, *projection;
@@ -307,17 +308,10 @@ bool query(Mat queryImage, recognizedMarker &marker)
             Mat H(3, 3, CV_32FC1, homography);
 
             vector<Point2f> obj_corners(4), scene_corners(4);
-#ifdef TEST
-            obj_corners[0] = cvPoint(0, 0); 
-            obj_corners[1] = cvPoint(350, 0);
-            obj_corners[2] = cvPoint(350, 500); 
-            obj_corners[3] = cvPoint(0, 500);
-#else
             obj_corners[0] = cvPoint(0, 0); 
             obj_corners[1] = cvPoint(image.cols, 0);
             obj_corners[2] = cvPoint(image.cols, image.rows); 
             obj_corners[3] = cvPoint(0, image.rows);
-#endif
 
             try {
                 perspectiveTransform(obj_corners, scene_corners, H);
@@ -326,14 +320,10 @@ bool query(Mat queryImage, recognizedMarker &marker)
                 continue;
             }
 
-            marker.markerID.i = 1;
-#ifdef TEST
-            marker.height.i = 500;
-            marker.width.i = 350;
-#else
+            marker.markerID.i = result[idx];
             marker.height.i = image.rows;
             marker.width.i = image.cols;
-#endif
+
             for (int i = 0; i < 4; i++) {
                 marker.corners[i].x = scene_corners[i].x + 50;
                 marker.corners[i].y = scene_corners[i].y + 20;
@@ -358,7 +348,7 @@ bool mycompare(char* x, char* y)
   else return 0;
 }
 
-void loadImages() 
+void loadImages(vector<char *> onlineImages) 
 {
     gpu_init();
 
@@ -378,6 +368,11 @@ void loadImages()
     }
     sort(paths.begin(), paths.end(), mycompare);
 
+    for (int i = 0; i < onlineImages.size(); i++) {
+        cout<<"online image: "<<onlineImages[i]<<endl;
+        whole_list.push_back(onlineImages[i]);
+    }
+
     for (int i = 0; i < paths.size(); i++)
     {
         DIR *subd = opendir(paths[i]);
@@ -391,7 +386,9 @@ void loadImages()
                 if (strstr(file, "jpg") != NULL)
                 {
                     whole_list.push_back(file);
-                    if(whole_list.size() == 1000) break;
+#ifdef SUB_DATASET
+                    if(whole_list.size() == SUB_DATASET) break;
+#endif
                 }
             }
         }
