@@ -121,8 +121,7 @@ void *ThreadProcessFunction(void *param) {
         if(frmDataType == IMAGE_DETECT) {
             vector<uchar> imgdata(frmdata, frmdata + frmSize);
             Mat img_scene = imdecode(imgdata, CV_LOAD_IMAGE_GRAYSCALE);
-            //Mat detect = img_scene(Rect(50, 20, 380, 230));
-            Mat detect = img_scene(Rect(80, 20, 800, 500));
+            Mat detect = img_scene(Rect(RECO_W_OFFSET, RECO_H_OFFSET, 800, 500));
             markerDetected = query(detect, marker);
         }
 
@@ -179,7 +178,7 @@ void *ThreadAnnotationFunction(void *socket) {
 
         char* annotation = 0;
         int length;
-        char *fileName;
+        const char *fileName;
         if(recognizedMarkerID < onlineAnnotations.size())
             fileName = onlineAnnotations[recognizedMarkerID];
         else

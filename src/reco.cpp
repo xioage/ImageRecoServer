@@ -252,7 +252,7 @@ void test()
         float homography[9];
         int numMatches;
         FindHomography(trainData[i], homography, &numMatches, 10000, 0.00f, 0.80f, 5.0);
-        int numFit = ImproveHomography(trainData[i], homography, 5, 0.00f, 0.80f, 3.0);
+        int numFit = ImproveHomography(trainData[i], homography, 5, 0.00f, 0.40f, 2.0);
         //cout << "Matching features: " << numFit << " " << numMatches << endl;
 
         finish = wallclock();
@@ -304,7 +304,7 @@ bool query(Mat queryImage, recognizedMarker &marker)
         FreeSiftData(sData);
 #endif
        
-        if(ratio > 10) {
+        if(ratio > 5) {
             Mat H(3, 3, CV_32FC1, homography);
 
             vector<Point2f> obj_corners(4), scene_corners(4);
@@ -325,8 +325,8 @@ bool query(Mat queryImage, recognizedMarker &marker)
             marker.width.i = image.cols;
 
             for (int i = 0; i < 4; i++) {
-                marker.corners[i].x = scene_corners[i].x + 50;
-                marker.corners[i].y = scene_corners[i].y + 20;
+                marker.corners[i].x = scene_corners[i].x + RECO_W_OFFSET;
+                marker.corners[i].y = scene_corners[i].y + RECO_H_OFFSET;
             }
             marker.markername = "gpu_recognized_image.";
 
