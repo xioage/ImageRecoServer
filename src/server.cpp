@@ -18,7 +18,7 @@
 #define PORT 51717
 #define PACKET_SIZE 60000
 #define RES_SIZE 512
-#define TRAIN
+//#define TRAIN
 
 using namespace std;
 using namespace cv;
@@ -268,7 +268,7 @@ int main(int argc, char *argv[])
     }
 
     parseCMD(argv);
-    loadOnline();
+    //loadOnline();
     loadImages(onlineImages);
 #ifdef TRAIN
     trainParams();
@@ -277,7 +277,7 @@ int main(int argc, char *argv[])
 #endif
     encodeDatabase(); 
     test();
-    runServer();
+    //runServer();
 
     freeParams();
     return 0;

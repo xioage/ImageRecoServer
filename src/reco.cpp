@@ -30,7 +30,8 @@ using namespace cv;
 #define DST_DIM 80
 #define NUM_HASH_TABLES 20
 #define NUM_HASH_BITS 24
-#define SUB_DATASET 110
+//#define SUB_DATASET 110
+#define SUB_DATASET 1000
 //#define FEATURE_CHECK
 //#define MATCH_ONE_ONLY
 //#define TEST
