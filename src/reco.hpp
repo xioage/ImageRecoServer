@@ -10,6 +10,7 @@
 
 #define RECO_W_OFFSET 80
 #define RECO_H_OFFSET 20
+#define RANDOMCHANGE
 
 union charint {
     char b[4];
