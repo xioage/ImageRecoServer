@@ -268,7 +268,7 @@ int main(int argc, char *argv[])
     }
 
     parseCMD(argv);
-    //loadOnline();
+    loadOnline();
     loadImages(onlineImages);
 #ifdef TRAIN
     trainParams();
@@ -277,7 +277,7 @@ int main(int argc, char *argv[])
 #endif
     encodeDatabase(); 
     test();
-    //runServer();
+    runServer();
 
     freeParams();
     return 0;
