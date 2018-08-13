@@ -205,9 +205,15 @@ void test()
     int correct = 0;
     double start, finish, duration;
     double t_s, t_f, t_d;
-    SiftData tData[100];
+    SiftData tData[103];
     vector<float> test;
     vector<char *> test_list;
+
+#if 1
+    test_list.push_back("data/demo/test/aquaman.jpg");
+    test_list.push_back("data/demo/test/fantastic.jpg");
+    test_list.push_back("data/demo/test/smallfoot.jpg");
+#endif
 
     const char *test_path = "data/crop";
     DIR *d = opendir(test_path);
