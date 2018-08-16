@@ -15,7 +15,6 @@
 #define FEATURES 1
 #define IMAGE_DETECT 2
 #define BOUNDARY 3
-#define PORT 51717
 #define PACKET_SIZE 60000
 #define RES_SIZE 512
 //#define TRAIN
@@ -202,7 +201,7 @@ void *ThreadAnnotationFunction(void *socket) {
     }
 }
 
-void runServer() {
+void runServer(int port) {
     pthread_t senderThread, receiverThread, processThread, annotationThread;
     int ret1, ret2, ret3, ret4;
     char buffer[PACKET_SIZE];
@@ -213,7 +212,7 @@ void runServer() {
     memset((char*)&localAddr, 0, sizeof(localAddr));
     localAddr.sin_family = AF_INET;
     localAddr.sin_addr.s_addr = htonl(INADDR_ANY);
-    localAddr.sin_port = htons(PORT);
+    localAddr.sin_port = htons(port);
 
     if ((sockTCP = socket(AF_INET, SOCK_STREAM, 0)) < 0) {
         cout<<"ERROR opening tcp socket"<<endl;
@@ -236,12 +235,12 @@ void runServer() {
     ret1 = pthread_create(&receiverThread, NULL, ThreadReceiverFunction, (void *)&sockUDP);
     ret2 = pthread_create(&processThread, NULL, ThreadProcessFunction, NULL);
     ret3 = pthread_create(&senderThread, NULL, ThreadSenderFunction, (void *)&sockUDP);
-    ret3 = pthread_create(&annotationThread, NULL, ThreadAnnotationFunction, (void *)&sockTCP);
+    //ret3 = pthread_create(&annotationThread, NULL, ThreadAnnotationFunction, (void *)&sockTCP);
 
     pthread_join(receiverThread, NULL);
     pthread_join(processThread, NULL);
     pthread_join(senderThread, NULL);
-    pthread_join(annotationThread, NULL);
+    //pthread_join(annotationThread, NULL);
 }
 
 void loadOnline() 
@@ -262,12 +261,12 @@ void loadOnline()
 
 int main(int argc, char *argv[])
 {
-    if (argc < 3) {
-        cout << "Usage: " << argv[0] << " size[s/m/l] NN#[1/2/3/4/5]" << endl;
+    if (argc < 4) {
+        cout << "Usage: " << argv[0] << " size[s/m/l] NN#[1/2/3/4/5] port" << endl;
         return 1;
     }
 
-    parseCMD(argv);
+    int port = parseCMD(argv);
     loadOnline();
     loadImages(onlineImages);
 #ifdef TRAIN
@@ -277,7 +276,7 @@ int main(int argc, char *argv[])
 #endif
     encodeDatabase(); 
     test();
-    runServer();
+    runServer(port);
 
     freeParams();
     return 0;

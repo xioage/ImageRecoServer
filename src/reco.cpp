@@ -5,6 +5,7 @@
 #include <iterator>
 #include <dirent.h>
 #include <cstring>
+#include <cstdlib>
 #include <sys/time.h>
 
 #include "cudaImage.h"
@@ -157,13 +158,16 @@ void onlineProcessing(Mat image, SiftData &siftData, vector<float> &enc_vec, boo
   free(siftframe);
 }
 
-void parseCMD(char *argv[]) 
+int parseCMD(char *argv[]) 
 {
     if (argv[1][0] == 's') querysizefactor = 4;
     else if (argv[1][0] == 'm') querysizefactor = 2;
     else querysizefactor = 1;
     nn_num = argv[2][0] - '0';
     if (nn_num < 1 || nn_num > 5) nn_num = 5;
+    int portNum = strtol(argv[3], NULL, 10);
+
+    return portNum;
 }
 
 void encodeDatabase()

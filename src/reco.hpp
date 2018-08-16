@@ -43,7 +43,7 @@ struct recognizedMarker {
 };
 
 double wallclock();
-void parseCMD(char *argv[]);
+int parseCMD(char *argv[]);
 void loadImages(std::vector<char *> onlineImages); 
 void trainParams(); 
 void loadParams();
