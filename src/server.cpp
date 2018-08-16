@@ -214,6 +214,7 @@ void runServer(int port) {
     localAddr.sin_addr.s_addr = htonl(INADDR_ANY);
     localAddr.sin_port = htons(port);
 
+#ifdef ANNOTATION
     if ((sockTCP = socket(AF_INET, SOCK_STREAM, 0)) < 0) {
         cout<<"ERROR opening tcp socket"<<endl;
         exit(1);
@@ -222,6 +223,7 @@ void runServer(int port) {
         cout<<"ERROR on tcp binding"<<endl;
         exit(1);
     }
+#endif
     if((sockUDP = socket(AF_INET, SOCK_DGRAM, 0)) < 0) {
         cout<<"ERROR opening udp socket"<<endl;
         exit(1);
@@ -235,12 +237,16 @@ void runServer(int port) {
     ret1 = pthread_create(&receiverThread, NULL, ThreadReceiverFunction, (void *)&sockUDP);
     ret2 = pthread_create(&processThread, NULL, ThreadProcessFunction, NULL);
     ret3 = pthread_create(&senderThread, NULL, ThreadSenderFunction, (void *)&sockUDP);
-    //ret3 = pthread_create(&annotationThread, NULL, ThreadAnnotationFunction, (void *)&sockTCP);
+#ifdef ANNOTATION
+    ret3 = pthread_create(&annotationThread, NULL, ThreadAnnotationFunction, (void *)&sockTCP);
+#endif
 
     pthread_join(receiverThread, NULL);
     pthread_join(processThread, NULL);
     pthread_join(senderThread, NULL);
-    //pthread_join(annotationThread, NULL);
+#ifdef ANNOTATION
+    pthread_join(annotationThread, NULL);
+#endif
 }
 
 void loadOnline() 
