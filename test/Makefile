@@ -16,10 +16,7 @@ all: build
 build: server
 
 server: server.cpp
-	$(GCC) $(CCFLAGS) $(INCLUDES) -o $@ -c $<
-
-server: AppDecGL.o Utils.o
-	$(GCC) $(CCFLAGS) -o $@ $^ $(LDFLAGS)
+	g++ --std=c++11 -o server server.cpp -lpthread
 
 clean:
-	rm -rf server ColorSpace.o FoV.o Utils.o AppDecGL.o Resize.o ReShape.o NvDecoder.o NvEncoder.o NvEncoderCuda.o
+	rm -rf server

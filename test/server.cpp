@@ -24,18 +24,16 @@ socklen_t addrlen = sizeof(localAddr);
 
 void *ThreadReceiverFunction(void *socket) {
     cout<<"Receiver Thread Created!"<<endl;
-    char tmp[4];
     char buffer[RES_SIZE];
     int sock = *((int*)socket);
 
     while (1) {
-        memset(buffer, 0, sizeof(buffer));
-        recvfrom(sock, buffer, PACKET_SIZE, 0, (struct sockaddr *)&remoteAddr[0], &addrlen);
-
-        memcpy(tmp, &(buffer[8]), 4);
-        int markerNum = *(int*)tmp;
-
-        cout<<"result received with "<<markerNum<<" markers"<<endl;
+        for(int i = 0; i < 5; i++) {
+            memset(buffer, 0, sizeof(buffer));
+            recvfrom(sock, buffer, PACKET_SIZE, 0, (struct sockaddr *)&remoteAddr[0], &addrlen);
+            int markerNum = *(int*)&(buffer[8]);
+            cout<<"result received with "<<markerNum<<" markers"<<endl;
+        }
     }
 }
 
@@ -48,11 +46,13 @@ void *ThreadSenderFunction(void *socket) {
     in.read(buffer, 48713);
     in.close();
 
-    while (1) {
+    for(int test = 0; test < 60 * 8; test++) {
         this_thread::sleep_for(chrono::milliseconds(1000));
 
-        sendto(sock, buffer, 48713, 0, (struct sockaddr *)&remoteAddr[0], addrlen);
-        cout<<"request sent"<<endl;
+        for(int i = 0; i < 5; i++) {
+            sendto(sock, buffer, 48713, 0, (struct sockaddr *)&remoteAddr[i], addrlen);
+            cout<<"request sent to container "<<i<<endl;
+        }
     }    
 }
 
@@ -66,7 +66,7 @@ int main(int argc, char *argv[]) {
     localAddr.sin_port = htons(51710);
 
     struct hostent *hp;
-    hp = gethostbyname("127.0.0.1");
+    hp = gethostbyname("192.168.50.223");
     for(int i = 0; i < 5; i++) {
         memset((char*)&remoteAddr[i], 0, sizeof(remoteAddr[i]));
         remoteAddr[i].sin_family = AF_INET;
