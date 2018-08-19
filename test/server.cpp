@@ -3,6 +3,7 @@
 #include <cstring>
 #include <sys/socket.h>
 #include <sys/types.h>
+#include <sys/time.h>
 #include <netdb.h>
 #include <netinet/in.h>
 #include <unistd.h>
@@ -17,6 +18,15 @@
 
 using namespace std;
 
+double ts[5], te[5], tt[5];
+
+double wallclock (void)
+{
+  struct timeval tv;
+  gettimeofday(&tv, NULL);
+  return (double)tv.tv_sec + (double)tv.tv_usec / 1000000.0;
+}
+
 void ThreadReceiverFunction(int sock, int i) {
     cout<<"Receiver Thread0 Created!"<<endl;
     char buffer[RES_SIZE];
@@ -27,7 +37,9 @@ void ThreadReceiverFunction(int sock, int i) {
             recvfrom(sock, buffer, PACKET_SIZE, 0, NULL, NULL);
             int markerNum = *(int*)&(buffer[8]);
             resCount += markerNum;
-            cout<<"result "<<i<<" received with "<<markerNum<<" markers, in total "<<resCount<<endl;
+            te[i] = wallclock();
+            tt[i] += te[i] - ts[i];
+            cout<<"result "<<i<<" received with "<<markerNum<<" markers, in total "<<resCount<<" "<<tt[i]<<endl;
     }
 }
 
@@ -39,12 +51,13 @@ void ThreadSenderFunction(int *sock, struct sockaddr_in *remoteAddr) {
     in.read(buffer, 48713);
     in.close();
 
-    for(int test = 0; test < 60 * 8; test++) {
-        this_thread::sleep_for(chrono::milliseconds(60000));
+    for(int test = 0; test < 1000; test++) {
+        this_thread::sleep_for(chrono::milliseconds(200));
 
         for(int i = 0; i < 5; i++) {
             sendto(sock[i], buffer, 48713, 0, (struct sockaddr *)&remoteAddr[i], sizeof(remoteAddr[i]));
             cout<<"request sent to container "<<i<<endl;
+            ts[i] = wallclock();
         }
     }    
 }
