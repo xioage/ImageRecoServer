@@ -28,23 +28,25 @@ double wallclock (void)
 }
 
 void ThreadReceiverFunction(int sock, int i) {
-    cout<<"Receiver Thread0 Created!"<<endl;
+    cout<<"Receiver Thread "<<i<<" Created!"<<endl;
     char buffer[RES_SIZE];
     int resCount = 0;
+    int markerCount = 0; 
 
     while (1) {
             memset(buffer, 0, sizeof(buffer));
             recvfrom(sock, buffer, PACKET_SIZE, 0, NULL, NULL);
             int markerNum = *(int*)&(buffer[8]);
-            resCount += markerNum;
+            markerCount += markerNum;
+            resCount++; 
             te[i] = wallclock();
             tt[i] += te[i] - ts[i];
-            cout<<"result "<<i<<" received with "<<markerNum<<" markers, in total "<<resCount<<" "<<tt[i]<<endl;
+            cout<<"stream "<<i<<" received with "<<markerNum<<" markers, in total "<<markerCount<<"/"<<resCount<<" "<<tt[i]<<endl;
     }
 }
 
-void ThreadSenderFunction(int *sock, struct sockaddr_in *remoteAddr) {
-    cout << "Sender Thread Created!" << endl;
+void ThreadSenderFunction(int *sock, struct sockaddr_in *remoteAddr, int i) {
+    cout<<"Sender Thread "<<i<<" Created!"<<endl;
     char buffer[PACKET_SIZE];
 
     ifstream in("request", ios::in | ios::binary);
@@ -54,11 +56,9 @@ void ThreadSenderFunction(int *sock, struct sockaddr_in *remoteAddr) {
     for(int test = 0; test < 1000; test++) {
         this_thread::sleep_for(chrono::milliseconds(200));
 
-        for(int i = 0; i < 5; i++) {
-            sendto(sock[i], buffer, 48713, 0, (struct sockaddr *)&remoteAddr[i], sizeof(remoteAddr[i]));
-            cout<<"request sent to container "<<i<<endl;
-            ts[i] = wallclock();
-        }
+        sendto(sock[i], buffer, 48713, 0, (struct sockaddr *)&remoteAddr[i], sizeof(remoteAddr[i]));
+        cout<<"request sent to container "<<i<<endl;
+        ts[i] = wallclock();
     }    
 }
 
@@ -66,6 +66,8 @@ int main(int argc, char *argv[]) {
     struct sockaddr_in localAddr[5];
     struct sockaddr_in remoteAddr[5];
     int sockUDP[5];
+    thread senderThread[5]; 
+    thread receiverThread[5];
 
     for(int i = 0; i < 5; i++) {
         memset((char*)&localAddr[i], 0, sizeof(localAddr[i]));
@@ -85,7 +87,7 @@ int main(int argc, char *argv[]) {
     }
 
     struct hostent *hp;
-    hp = gethostbyname("127.0.0.1");
+    hp = gethostbyname("192.168.50.223");
     for(int i = 0; i < 5; i++) {
         memset((char*)&remoteAddr[i], 0, sizeof(remoteAddr[i]));
         remoteAddr[i].sin_family = AF_INET;
@@ -94,12 +96,13 @@ int main(int argc, char *argv[]) {
         memcpy((void*)&remoteAddr[i].sin_addr, hp->h_addr_list[0], hp->h_length);
     }
 
-    thread receiverThread[5];
-    for(int i = 0; i < 5; i++) 
+    for(int i = 0; i < 5; i++) { 
         receiverThread[i] = thread(ThreadReceiverFunction, sockUDP[i], i);
-    thread senderThread(ThreadSenderFunction, sockUDP, remoteAddr);
+        senderThread[i] = thread(ThreadSenderFunction, sockUDP, remoteAddr, i);
+    }
 
-    for(int i = 0; i < 5; i++) 
+    for(int i = 0; i < 5; i++) {
         receiverThread[i].join();
-    senderThread.join();
+        senderThread[i].join();
+    }
 }
