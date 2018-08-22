@@ -31,8 +31,8 @@ using namespace cv;
 #define DST_DIM 80
 #define NUM_HASH_TABLES 20
 #define NUM_HASH_BITS 24
-//#define SUB_DATASET 110
-#define SUB_DATASET 1000
+#define SUB_DATASET 110
+//#define SUB_DATASET 1000
 //#define FEATURE_CHECK
 //#define MATCH_ONE_ONLY
 //#define TEST
@@ -306,9 +306,10 @@ bool query(Mat queryImage, recognizedMarker &marker)
         sift_gpu(image, &a, &b, sData, w, h, true, true);
 #endif
     
+	cout << "features num: " << sData.numPts << " " << tData.numPts << endl;
         MatchSiftData(sData, tData);
-        FindHomography(sData, homography, &numMatches, 10000, 0.00f, 0.80f, 5.0);
-        int numFit = ImproveHomography(sData, homography, 5, 0.00f, 0.80f, 3.0);
+        FindHomography(sData, homography, &numMatches, 10000, 0.00f, 0.95f, 10.0);
+        int numFit = ImproveHomography(sData, homography, 5, 0.00f, 0.95f, 10.0);
         double ratio = 100.0f*numFit/min(sData.numPts, tData.numPts);
         cout << "Matching features: " << numFit << " " << numMatches << " " << ratio << "% " << endl;
 #ifndef TEST
@@ -409,7 +410,6 @@ void loadImages(vector<char *> onlineImages)
     closedir(d);
 }
 
-#if 1
 void trainParams() {
     int numData;
     int dimension = DST_DIM + 2;
@@ -593,7 +593,6 @@ void trainParams() {
     out5.write((char *)projectionCenter, sizeof(float) * 128);
     out5.close();
 }
-#endif
 
 void loadParams() 
 {

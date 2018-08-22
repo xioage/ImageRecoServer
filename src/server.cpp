@@ -120,8 +120,8 @@ void *ThreadProcessFunction(void *param) {
         if(frmDataType == IMAGE_DETECT) {
             vector<uchar> imgdata(frmdata, frmdata + frmSize);
             Mat img_scene = imdecode(imgdata, CV_LOAD_IMAGE_GRAYSCALE);
-            Mat detect = img_scene(Rect(RECO_W_OFFSET, RECO_H_OFFSET, 800, 500));
-            markerDetected = query(detect, marker);
+            //Mat detect = img_scene(Rect(RECO_W_OFFSET, RECO_H_OFFSET, 800, 500));
+            markerDetected = query(img_scene, marker);
         }
 
         resBuffer curRes;
@@ -159,6 +159,26 @@ void *ThreadProcessFunction(void *param) {
         }
 
         results.push(curRes);
+    }
+}
+
+void *ThreadTestFunction(void *param) {
+    cout<<"Process Test Created!"<<endl;
+    recognizedMarker marker;
+    bool markerDetected = false;
+
+    for(int i = 0; i < 7; i++) {
+	string path = "/home/xioage/Desktop/test/"+to_string(i)+".jpg";
+	Mat img_scene = imread(path);
+	
+	resize(img_scene, img_scene, Size(320, 540), 0, 0);
+	cvtColor(img_scene, img_scene, CV_RGB2GRAY);
+        markerDetected = query(img_scene, marker);
+
+        if(markerDetected) 
+	    cout<<"recognized===============================================================>"<<endl;
+        else 
+            cout<<"nothing recognized=======================================================>"<<endl;
     }
 }
 
@@ -202,8 +222,7 @@ void *ThreadAnnotationFunction(void *socket) {
 }
 
 void runServer(int port) {
-    pthread_t senderThread, receiverThread, processThread, annotationThread;
-    int ret1, ret2, ret3, ret4;
+    pthread_t senderThread, receiverThread, processThread, testThread, annotationThread;
     char buffer[PACKET_SIZE];
     char fileid[4];
     int status = 0;
@@ -234,16 +253,18 @@ void runServer(int port) {
     }
     cout << endl << "========server started, waiting for clients==========" << endl;
 
-    ret1 = pthread_create(&receiverThread, NULL, ThreadReceiverFunction, (void *)&sockUDP);
-    ret2 = pthread_create(&processThread, NULL, ThreadProcessFunction, NULL);
-    ret3 = pthread_create(&senderThread, NULL, ThreadSenderFunction, (void *)&sockUDP);
+    pthread_create(&receiverThread, NULL, ThreadReceiverFunction, (void *)&sockUDP);
+    pthread_create(&processThread, NULL, ThreadProcessFunction, NULL);
+    pthread_create(&senderThread, NULL, ThreadSenderFunction, (void *)&sockUDP);
+    //pthread_create(&testThread, NULL, ThreadTestFunction, NULL); 
 #ifdef ANNOTATION
-    ret3 = pthread_create(&annotationThread, NULL, ThreadAnnotationFunction, (void *)&sockTCP);
+    pthread_create(&annotationThread, NULL, ThreadAnnotationFunction, (void *)&sockTCP);
 #endif
 
     pthread_join(receiverThread, NULL);
     pthread_join(processThread, NULL);
     pthread_join(senderThread, NULL);
+    //pthread_join(testThread, NULL);
 #ifdef ANNOTATION
     pthread_join(annotationThread, NULL);
 #endif
