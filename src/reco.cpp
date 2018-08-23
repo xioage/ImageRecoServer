@@ -308,8 +308,8 @@ bool query(Mat queryImage, recognizedMarker &marker)
     
 	cout << "features num: " << sData.numPts << " " << tData.numPts << endl;
         MatchSiftData(sData, tData);
-        FindHomography(sData, homography, &numMatches, 10000, 0.00f, 0.95f, 5.0);
-        int numFit = ImproveHomography(sData, homography, 5, 0.00f, 0.95f, 3.0);
+        FindHomography(sData, homography, &numMatches, 10000, 0.00f, 0.85f, 5.0);
+        int numFit = ImproveHomography(sData, homography, 5, 0.00f, 0.80f, 2.0);
         double ratio = 100.0f*numFit/min(sData.numPts, tData.numPts);
         cout << "Matching features: " << numFit << " " << numMatches << " " << ratio << "% " << endl;
 #ifndef TEST
