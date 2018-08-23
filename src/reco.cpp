@@ -316,7 +316,7 @@ bool query(Mat queryImage, recognizedMarker &marker)
         FreeSiftData(sData);
 #endif
        
-        if(ratio > 5) {
+        if(ratio > 10) {
             Mat H(3, 3, CV_32FC1, homography);
 
             vector<Point2f> obj_corners(4), scene_corners(4);
