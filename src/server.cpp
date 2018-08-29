@@ -18,6 +18,7 @@
 #define PACKET_SIZE 60000
 #define RES_SIZE 512
 //#define TRAIN
+//#define UDP
 
 using namespace std;
 using namespace cv;
@@ -25,6 +26,7 @@ using namespace cv;
 struct sockaddr_in localAddr;
 struct sockaddr_in remoteAddr;
 socklen_t addrlen = sizeof(remoteAddr);
+bool isClientAlive = false;
 
 queue<frameBuffer> frames;
 queue<resBuffer> results;
@@ -33,7 +35,7 @@ int recognizedMarkerID;
 vector<char *> onlineImages;
 vector<char *> onlineAnnotations;
 
-void *ThreadReceiverFunction(void *socket) {
+void *ThreadUDPReceiverFunction(void *socket) {
     cout<<"Receiver Thread Created!"<<endl;
     char tmp[4];
     char buffer[PACKET_SIZE];
@@ -72,7 +74,7 @@ void *ThreadReceiverFunction(void *socket) {
     }
 }
 
-void *ThreadSenderFunction(void *socket) {
+void *ThreadUDPSenderFunction(void *socket) {
     cout << "Sender Thread Created!" << endl;
     char buffer[RES_SIZE];
     int sock = *((int*)socket);
@@ -96,6 +98,73 @@ void *ThreadSenderFunction(void *socket) {
         cout<<"frame "<<curRes.resID.i<<" res sent, "<<"marker#: "<<curRes.markerNum.i;
         cout<<" at "<<setprecision(15)<<wallclock()<<endl<<endl;
     }    
+}
+
+void *ThreadTCPReceiverFunction(void *socket) {
+    cout<<"Receiver Thread Created!"<<endl;
+    char tmp[4];
+    char header[12];
+    char buffer[PACKET_SIZE];
+    int sock = *((int*)socket);
+
+    while (isClientAlive) {
+        memset(buffer, 0, sizeof(buffer));
+        if(read(sock, header, 12) <= 0) {
+	    cout<<"client disconnects"<<endl;
+	    isClientAlive = false;
+	    continue;
+	}
+
+        frameBuffer curFrame;    
+        memcpy(tmp, header, 4);
+        curFrame.frmID = *(int*)tmp;        
+        memcpy(tmp, &(header[4]), 4);
+        curFrame.dataType = *(int*)tmp;
+        memcpy(tmp, &(header[8]), 4);
+        curFrame.bufferSize = *(int*)tmp;
+	
+	int size = 0;
+	while(size < curFrame.bufferSize) {
+	    size += read(sock, &(buffer[size]), curFrame.bufferSize-size);
+	}
+        cout<<"frame "<<curFrame.frmID<<" received, filesize: "<<curFrame.bufferSize<<endl;
+        cout<<" at "<<setprecision(15)<<wallclock()<<endl<<endl;
+        curFrame.buffer = new char[curFrame.bufferSize];
+        memset(curFrame.buffer, 0, curFrame.bufferSize);
+        memcpy(curFrame.buffer, buffer, curFrame.bufferSize);
+        
+        frames.push(curFrame);
+    }
+
+    cout<<"Receiver Thread finished!"<<endl;
+}
+
+void *ThreadTCPSenderFunction(void *socket) {
+    cout << "Sender Thread Created!" << endl;
+    char buffer[RES_SIZE];
+    int sock = *((int*)socket);
+
+    while (isClientAlive) {
+        if(results.empty()) {
+            this_thread::sleep_for(chrono::milliseconds(1));
+            continue;
+        }
+
+        resBuffer curRes = results.front();
+        results.pop();
+
+        memset(buffer, 0, sizeof(buffer));
+        memcpy(buffer, curRes.resID.b, 4);
+        memcpy(&(buffer[4]), curRes.resType.b, 4);
+        memcpy(&(buffer[8]), curRes.markerNum.b, 4);
+        if(curRes.markerNum.i != 0)
+            memcpy(&(buffer[12]), curRes.buffer, 100 * curRes.markerNum.i);
+        write(sock, buffer, sizeof(buffer));
+        cout<<"frame "<<curRes.resID.i<<" res sent, "<<"marker#: "<<curRes.markerNum.i;
+        cout<<" at "<<setprecision(15)<<wallclock()<<endl<<endl;
+    }    
+
+    cout<<"Sender Thread finished!"<<endl;
 }
 
 void *ThreadProcessFunction(void *param) {
@@ -226,23 +295,14 @@ void runServer(int port) {
     char buffer[PACKET_SIZE];
     char fileid[4];
     int status = 0;
-    int sockTCP, sockUDP;
+    int sockTCP, sockUDP, sockTCPCli;
 
     memset((char*)&localAddr, 0, sizeof(localAddr));
     localAddr.sin_family = AF_INET;
     localAddr.sin_addr.s_addr = htonl(INADDR_ANY);
     localAddr.sin_port = htons(port);
 
-#ifdef ANNOTATION
-    if ((sockTCP = socket(AF_INET, SOCK_STREAM, 0)) < 0) {
-        cout<<"ERROR opening tcp socket"<<endl;
-        exit(1);
-    }
-    if (bind(sockTCP, (struct sockaddr *) &localAddr, sizeof(localAddr)) < 0) {
-        cout<<"ERROR on tcp binding"<<endl;
-        exit(1);
-    }
-#endif
+#ifdef UDP
     if((sockUDP = socket(AF_INET, SOCK_DGRAM, 0)) < 0) {
         cout<<"ERROR opening udp socket"<<endl;
         exit(1);
@@ -253,20 +313,38 @@ void runServer(int port) {
     }
     cout << endl << "========server started, waiting for clients==========" << endl;
 
-    pthread_create(&receiverThread, NULL, ThreadReceiverFunction, (void *)&sockUDP);
+    pthread_create(&receiverThread, NULL, ThreadUDPReceiverFunction, (void *)&sockUDP);
+    pthread_create(&senderThread, NULL, ThreadUDPSenderFunction, (void *)&sockUDP);
     pthread_create(&processThread, NULL, ThreadProcessFunction, NULL);
-    pthread_create(&senderThread, NULL, ThreadSenderFunction, (void *)&sockUDP);
-    //pthread_create(&testThread, NULL, ThreadTestFunction, NULL); 
-#ifdef ANNOTATION
-    pthread_create(&annotationThread, NULL, ThreadAnnotationFunction, (void *)&sockTCP);
-#endif
 
     pthread_join(receiverThread, NULL);
-    pthread_join(processThread, NULL);
     pthread_join(senderThread, NULL);
-    //pthread_join(testThread, NULL);
-#ifdef ANNOTATION
-    pthread_join(annotationThread, NULL);
+    pthread_join(processThread, NULL);
+#else
+    if ((sockTCP = socket(AF_INET, SOCK_STREAM, 0)) < 0) {
+        cout<<"ERROR opening tcp socket"<<endl;
+        exit(1);
+    }
+    if (bind(sockTCP, (struct sockaddr *)&localAddr, sizeof(localAddr)) < 0) {
+        cout<<"ERROR on tcp binding"<<endl;
+        exit(1);
+    }
+    cout << endl << "========server started, waiting for clients==========" << endl;
+
+    pthread_create(&processThread, NULL, ThreadProcessFunction, NULL);
+    while(1) {
+        listen(sockTCP,5);
+        if ((sockTCPCli = accept(sockTCP, (struct sockaddr *) &remoteAddr, &addrlen)) < 0) 
+	    cout<<"error accept"<<endl;
+
+	isClientAlive = true;
+        pthread_create(&receiverThread, NULL, ThreadTCPReceiverFunction, (void *)&sockTCPCli);
+        pthread_create(&senderThread, NULL, ThreadTCPSenderFunction, (void *)&sockTCPCli);
+
+        pthread_join(receiverThread, NULL);
+        pthread_join(senderThread, NULL);
+    }
+    pthread_join(processThread, NULL);
 #endif
 }
 
