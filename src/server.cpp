@@ -381,7 +381,7 @@ int main(int argc, char *argv[])
 #endif
     encodeDatabase(); 
     test();
-    //runServer(port);
+    runServer(port);
 
     freeParams();
     return 0;
