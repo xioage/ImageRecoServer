@@ -3,6 +3,7 @@
 
 #include <sys/socket.h>
 #include <netinet/in.h>
+#include <arpa/inet.h>
 #include <unistd.h>
 #include <pthread.h>
 #include <chrono>
@@ -18,17 +19,18 @@
 #define PACKET_SIZE 60000
 #define RES_SIZE 512
 //#define TRAIN
-//#define UDP
+#define UDP
 
 using namespace std;
 using namespace cv;
 
 struct sockaddr_in localAddr;
 struct sockaddr_in remoteAddr;
+struct sockaddr_in offloadAddr;
 socklen_t addrlen = sizeof(remoteAddr);
 bool isClientAlive = false;
 
-queue<frameBuffer> frames;
+queue<frameBuffer> frames, offloadframes;
 queue<resBuffer> results;
 int recognizedMarkerID;
 
@@ -167,6 +169,65 @@ void *ThreadTCPSenderFunction(void *socket) {
     cout<<"Sender Thread finished!"<<endl;
 }
 
+
+void *ThreadTCPOffloaderFunction(void *socket) {
+    cout << "Sender Thread Created!" << endl;
+    char tmp[4];
+    char *buffer;
+    int sock = *((int*)socket);
+
+    while (isClientAlive) {
+        if(offloadframes.empty()) {
+            this_thread::sleep_for(chrono::milliseconds(1));
+            continue;
+        }
+
+        frameBuffer curFrame = offloadframes.front();
+        offloadframes.pop();
+
+        resBuffer offloadRequest; //it's not result, just utilize the structure
+        offloadRequest.resID.i = curFrame.frmID;
+        offloadRequest.resType.i = curFrame.dataType;
+        offloadRequest.markerNum.i = curFrame.bufferSize;
+        offloadRequest.buffer = curFrame.buffer;
+
+        buffer = (char *)malloc(curFrame.bufferSize+12);
+        memset(buffer, 0, sizeof(buffer));
+        memcpy(buffer, offloadRequest.resID.b, 4);
+        memcpy(&(buffer[4]), offloadRequest.resType.b, 4);
+        memcpy(&(buffer[8]), offloadRequest.markerNum.b, 4);
+        memcpy(&(buffer[12]), offloadRequest.buffer, offloadRequest.markerNum.i);
+        write(sock, buffer, sizeof(buffer));
+        free(buffer);
+        cout<<"frame "<<curFrame.frmID<<" offloaded to server"<<endl;
+
+        buffer = (char *)malloc(RES_SIZE);
+        memset(buffer, 0, sizeof(buffer));
+        if(read(sock, buffer, RES_SIZE) <= 0) {
+	    cout<<"client disconnects"<<endl;
+	    isClientAlive = false;
+	    continue;
+	}
+
+        resBuffer curRes;    
+        memcpy(tmp, buffer, 4);
+        curRes.resID.i = *(int*)tmp;        
+        memcpy(tmp, &(buffer[4]), 4);
+        curRes.resType.i = *(int*)tmp;
+        memcpy(tmp, &(buffer[8]), 4);
+        curRes.markerNum.i = *(int*)tmp;
+        curRes.buffer = (char *)malloc(RES_SIZE-12);
+        memcpy(curRes.buffer, &(buffer[12]), RES_SIZE-12);
+        free(buffer);
+
+        results.push(curRes);
+        if(curRes.markerNum.i > 0)
+            addCacheItem(curFrame, curRes);
+    }    
+
+    cout<<"Offloader Thread finished!"<<endl;
+}
+
 void *ThreadProcessFunction(void *param) {
     cout<<"Process Thread Created!"<<endl;
     recognizedMarker marker;
@@ -231,6 +292,68 @@ void *ThreadProcessFunction(void *param) {
     }
 }
 
+void *ThreadCacheSearchFunction(void *param) {
+    cout<<"Cache Search Thread Created!"<<endl;
+    recognizedMarker marker;
+    bool markerDetected = false;
+
+    while (1) {
+        if(frames.empty()) {
+            this_thread::sleep_for(chrono::milliseconds(1));
+            continue;
+        }
+
+        frameBuffer curFrame = frames.front();
+        frames.pop();
+
+        int frmID = curFrame.frmID;
+        int frmDataType = curFrame.dataType;
+        int frmSize = curFrame.bufferSize;
+        char* frmdata = curFrame.buffer;
+        
+        if(frmDataType == IMAGE_DETECT) {
+            vector<uchar> imgdata(frmdata, frmdata + frmSize);
+            Mat img_scene = imdecode(imgdata, CV_LOAD_IMAGE_GRAYSCALE);
+            markerDetected = cacheQuery(img_scene, marker);
+        }
+
+        if(markerDetected) {
+            resBuffer curRes;
+
+            charfloat p;
+            curRes.resID.i = frmID;
+            curRes.resType.i = BOUNDARY;
+            curRes.markerNum.i = 1;
+            curRes.buffer = new char[100 * curRes.markerNum.i];
+
+            int pointer = 0;
+            memcpy(&(curRes.buffer[pointer]), marker.markerID.b, 4);
+            pointer += 4;
+            memcpy(&(curRes.buffer[pointer]), marker.height.b, 4);
+            pointer += 4;
+            memcpy(&(curRes.buffer[pointer]), marker.width.b, 4);
+            pointer += 4;
+
+            for(int j = 0; j < 4; j++) {
+                p.f = marker.corners[j].x;
+                memcpy(&(curRes.buffer[pointer]), p.b, 4);
+                pointer+=4;
+                p.f = marker.corners[j].y;
+                memcpy(&(curRes.buffer[pointer]), p.b, 4);        
+                pointer+=4;            
+            }
+
+            memcpy(&(curRes.buffer[pointer]), marker.markername.data(), marker.markername.length());
+
+            recognizedMarkerID = marker.markerID.i;
+            results.push(curRes);
+        }
+        else {
+            offloadframes.push(curFrame);
+        }
+    }
+}
+
 void *ThreadTestFunction(void *param) {
     cout<<"Process Test Created!"<<endl;
     recognizedMarker marker;
@@ -290,8 +413,8 @@ void *ThreadAnnotationFunction(void *socket) {
     }
 }
 
-void runServer(int port) {
-    pthread_t senderThread, receiverThread, processThread, testThread, annotationThread;
+void runServer(int port, int mode) {
+    pthread_t senderThread, receiverThread, processThread, offloadThread, testThread, annotationThread;
     char buffer[PACKET_SIZE];
     char fileid[4];
     int status = 0;
@@ -302,50 +425,69 @@ void runServer(int port) {
     localAddr.sin_addr.s_addr = htonl(INADDR_ANY);
     localAddr.sin_port = htons(port);
 
-#ifdef UDP
-    if((sockUDP = socket(AF_INET, SOCK_DGRAM, 0)) < 0) {
-        cout<<"ERROR opening udp socket"<<endl;
-        exit(1);
-    }
-    if(bind(sockUDP, (struct sockaddr *)&localAddr, sizeof(localAddr)) < 0) {
-        cout<<"ERROR on udp binding"<<endl;
-        exit(1);
-    }
-    cout << endl << "========server started, waiting for clients==========" << endl;
+    if(mode) {
+        if ((sockTCP = socket(AF_INET, SOCK_STREAM, 0)) < 0) {
+            cout<<"ERROR opening tcp socket"<<endl;
+            exit(1);
+        }
+        if (bind(sockTCP, (struct sockaddr *)&localAddr, sizeof(localAddr)) < 0) {
+            cout<<"ERROR on tcp binding"<<endl;
+            exit(1);
+        }
+        cout << endl << "========server started, waiting for clients==========" << endl;
 
-    pthread_create(&receiverThread, NULL, ThreadUDPReceiverFunction, (void *)&sockUDP);
-    pthread_create(&senderThread, NULL, ThreadUDPSenderFunction, (void *)&sockUDP);
-    pthread_create(&processThread, NULL, ThreadProcessFunction, NULL);
+        pthread_create(&processThread, NULL, ThreadProcessFunction, NULL);
+        while(1) {
+            listen(sockTCP,5);
+            if ((sockTCPCli = accept(sockTCP, (struct sockaddr *) &remoteAddr, &addrlen)) < 0) 
+                cout<<"error accept"<<endl;
 
-    pthread_join(receiverThread, NULL);
-    pthread_join(senderThread, NULL);
-    pthread_join(processThread, NULL);
-#else
-    if ((sockTCP = socket(AF_INET, SOCK_STREAM, 0)) < 0) {
-        cout<<"ERROR opening tcp socket"<<endl;
-        exit(1);
-    }
-    if (bind(sockTCP, (struct sockaddr *)&localAddr, sizeof(localAddr)) < 0) {
-        cout<<"ERROR on tcp binding"<<endl;
-        exit(1);
-    }
-    cout << endl << "========server started, waiting for clients==========" << endl;
+            isClientAlive = true;
+            pthread_create(&receiverThread, NULL, ThreadTCPReceiverFunction, (void *)&sockTCPCli);
+            pthread_create(&senderThread, NULL, ThreadTCPSenderFunction, (void *)&sockTCPCli);
 
-    pthread_create(&processThread, NULL, ThreadProcessFunction, NULL);
-    while(1) {
-        listen(sockTCP,5);
-        if ((sockTCPCli = accept(sockTCP, (struct sockaddr *) &remoteAddr, &addrlen)) < 0) 
-	    cout<<"error accept"<<endl;
+            pthread_join(receiverThread, NULL);
+            pthread_join(senderThread, NULL);
+        }
+        pthread_join(processThread, NULL);
+    } else {
+        memset((char*)&offloadAddr, 0, sizeof(offloadAddr));
+        offloadAddr.sin_family = AF_INET;
+        offloadAddr.sin_port = htons(port);
+        if ((sockTCPCli = socket(AF_INET, SOCK_STREAM, 0)) < 0) {
+            cout<<"ERROR opening tcp socket"<<endl;
+            exit(1);
+        }
+        if(inet_pton(AF_INET, "127.0.0.1", &offloadAddr.sin_addr) <= 0) { 
+            cout<<"Invalid address/ Address not supported"<<endl; 
+            exit(1);
+        } 
+        if (connect(sockTCPCli, (struct sockaddr *)&offloadAddr, sizeof(offloadAddr)) < 0) {
+            cout<<"Connection Failed"<<endl; 
+            exit(1);
+        }
+        cout << endl << "========server connected==========" << endl;
 
-	isClientAlive = true;
-        pthread_create(&receiverThread, NULL, ThreadTCPReceiverFunction, (void *)&sockTCPCli);
-        pthread_create(&senderThread, NULL, ThreadTCPSenderFunction, (void *)&sockTCPCli);
+        if((sockUDP = socket(AF_INET, SOCK_DGRAM, 0)) < 0) {
+            cout<<"ERROR opening udp socket"<<endl;
+            exit(1);
+        }
+        if(bind(sockUDP, (struct sockaddr *)&localAddr, sizeof(localAddr)) < 0) {
+            cout<<"ERROR on udp binding"<<endl;
+            exit(1);
+        }
+        cout << endl << "========cache server started, waiting for clients==========" << endl;
+
+        pthread_create(&receiverThread, NULL, ThreadUDPReceiverFunction, (void *)&sockUDP);
+        pthread_create(&senderThread, NULL, ThreadUDPSenderFunction, (void *)&sockUDP);
+        pthread_create(&processThread, NULL, ThreadProcessFunction, NULL);
+        pthread_create(&offloadThread, NULL, ThreadTCPOffloaderFunction, (void *)&sockTCPCli);
 
         pthread_join(receiverThread, NULL);
         pthread_join(senderThread, NULL);
+        pthread_join(processThread, NULL);
+        pthread_join(offloadThread, NULL);
     }
-    pthread_join(processThread, NULL);
-#endif
 }
 
 void loadOnline() 
@@ -366,22 +508,35 @@ void loadOnline()
 
 int main(int argc, char *argv[])
 {
-    if (argc < 4) {
-        cout << "Usage: " << argv[0] << " size[s/m/l] NN#[1/2/3/4/5] port" << endl;
+    int querysizefactor, nn_num, port, mode;
+    if(argc < 5) {
+        cout << "Usage: " << argv[0] << "mode[s/c] size[s/m/l] NN#[1/2/3/4/5] port" << endl;
         return 1;
+    } else {
+        if (argv[1][0] == 's') mode = 1;
+        else mode = 0;
+        if (argv[2][0] == 's') querysizefactor = 4;
+        else if (argv[2][0] == 'm') querysizefactor = 2;
+        else querysizefactor = 1;
+        nn_num = argv[3][0] - '0';
+        if (nn_num < 1 || nn_num > 5) nn_num = 5;
+        port = strtol(argv[4], NULL, 10);
     }
 
-    int port = parseCMD(argv);
-    loadOnline();
-    loadImages(onlineImages);
+    if(mode) {
+        loadOnline();
+        loadImages(onlineImages);
 #ifdef TRAIN
-    trainParams();
+        trainParams();
 #else
-    loadParams();
+        loadParams();
 #endif
-    encodeDatabase(); 
-    test();
-    runServer(port);
+        encodeDatabase(querysizefactor, nn_num); 
+        test();
+    } else {
+        loadParams();
+    }
+    runServer(port, mode);
 
     freeParams();
     return 0;

@@ -42,13 +42,21 @@ struct recognizedMarker {
     std::string markername;
 };
 
+struct cacheItem {
+    std::vector<float> fv;
+    SiftData data;
+    frameBuffer curFrame;
+    recognizedMarker curMarker;
+};
+
 double wallclock();
-int parseCMD(char *argv[]);
 void loadImages(std::vector<char *> onlineImages); 
 void trainParams(); 
 void loadParams();
-void encodeDatabase();
+void encodeDatabase(int factor, int nn);
 void test();
 bool query(cv::Mat queryImage, recognizedMarker &marker);
+bool cacheQuery(cv::Mat queryImage, recognizedMarker &marker);
+void addCacheItem(frameBuffer curFrame, resBuffer curRes);
 void freeParams();
 #endif

@@ -44,6 +44,7 @@ vector<SiftData> trainData;
 vector<DenseVector<float>> lsh;
 unique_ptr<LSHNearestNeighborTable<DenseVector<float>>> tablet;
 unique_ptr<LSHNearestNeighborQuery<DenseVector<float>>> table;
+vector<cacheItem> cacheItems;
 
 double wallclock (void)
 {
@@ -158,20 +159,11 @@ void onlineProcessing(Mat image, SiftData &siftData, vector<float> &enc_vec, boo
   free(siftframe);
 }
 
-int parseCMD(char *argv[]) 
+void encodeDatabase(int factor, int nn)
 {
-    if (argv[1][0] == 's') querysizefactor = 4;
-    else if (argv[1][0] == 'm') querysizefactor = 2;
-    else querysizefactor = 1;
-    nn_num = argv[2][0] - '0';
-    if (nn_num < 1 || nn_num > 5) nn_num = 5;
-    int portNum = strtol(argv[3], NULL, 10);
+    querysizefactor = factor;
+    nn_num = nn;
 
-    return portNum;
-}
-
-void encodeDatabase()
-{
     gpu_copy(covariances, priors, means, NUM_CLUSTERS, DST_DIM+2);
 
     vector<float> train[whole_list.size()];
@@ -354,10 +346,112 @@ bool query(Mat queryImage, recognizedMarker &marker)
     return false;
 }
 
+bool cacheQuery(Mat queryImage, recognizedMarker &marker)
+{
+    SiftData sData, tData;
+    vector<float> test;
+    vector<int> result;
+    float homography[9];
+    int numMatches;
+
+    onlineProcessing(queryImage, tData, test, true, false);
+
+    double minDistance = 999999999;
+    int index = -1;
+    for(int idx = 0; idx < cacheItems.size(); idx++) {
+        double dis = norm(cacheItems[idx].fv, test);
+        if(dis < minDistance) {
+            minDistance = dis;
+            index = idx;
+        }
+    }
+    if(index < 0) return false;
+
+    sData = cacheItems[index].data;
+
+    cout << "features num: " << sData.numPts << " " << tData.numPts << endl;
+    MatchSiftData(sData, tData);
+    FindHomography(sData, homography, &numMatches, 10000, 0.00f, 0.85f, 5.0);
+    int numFit = ImproveHomography(sData, homography, 5, 0.00f, 0.80f, 2.0);
+    double ratio = 100.0f*numFit/min(sData.numPts, tData.numPts);
+    cout << "Matching features: " << numFit << " " << numMatches << " " << ratio << "% " << endl;
+       
+    if(ratio > 10) {
+        Mat H(3, 3, CV_32FC1, homography);
+
+        vector<Point2f> obj_corners(4), scene_corners(4);
+        for(int i = 0; i < 4; i++)
+            obj_corners.push_back(cacheItems[index].curMarker.corners[i]);
+
+        try {
+            perspectiveTransform(obj_corners, scene_corners, H);
+        } catch (Exception) {
+            cout << "cv exception" << endl;
+            return false;
+        }
+
+        marker.markerID.i = cacheItems[index].curMarker.markerID.i;
+        marker.height.i = cacheItems[index].curMarker.height.i;
+        marker.width.i = cacheItems[index].curMarker.width.i;
+
+        for (int i = 0; i < 4; i++) {
+            marker.corners[i].x = scene_corners[i].x + RECO_W_OFFSET;
+            marker.corners[i].y = scene_corners[i].y + RECO_H_OFFSET;
+        }
+        marker.markername = "gpu_recognized_image.";
+
+        FreeSiftData(tData);
+        return true; 
+    }
+
+    FreeSiftData(tData);
+    return false;
+}
+
+void addCacheItem(frameBuffer curFrame, resBuffer curRes) 
+{
+    SiftData tData;
+    vector<float> test;
+
+    vector<uchar> imagedata(curFrame.buffer, curFrame.buffer + curFrame.bufferSize);
+    Mat queryImage = imdecode(imagedata, CV_LOAD_IMAGE_GRAYSCALE);
+    onlineProcessing(queryImage, tData, test, true, false);
+
+    recognizedMarker marker;
+    int pointer = 0;
+    memcpy(marker.markerID.b, &(curRes.buffer[pointer]), 4);
+    pointer += 4;
+    memcpy(marker.height.b, &(curRes.buffer[pointer]), 4);
+    pointer += 4;
+    memcpy(marker.width.b, &(curRes.buffer[pointer]), 4);
+    pointer += 4;
+
+    charfloat p;
+    for(int j = 0; j < 4; j++) {
+        memcpy(p.b, &(curRes.buffer[pointer]), 4);
+        marker.corners[j].x = p.f;
+        pointer+=4;
+        memcpy(p.b, &(curRes.buffer[pointer]), 4);
+        marker.corners[j].y = p.f;
+        pointer+=4;
+    }
+
+    char name[40];
+    memcpy(name, &(curRes.buffer[pointer]), 40);
+    marker.markername = name;
+
+    cacheItem newItem;
+    newItem.fv = test;
+    newItem.data = tData;
+    newItem.curFrame = curFrame;
+    newItem.curMarker = marker;
+    cacheItems.push_back(newItem);
+}
+
 bool mycompare(char* x, char* y) 
 {
-  if(strcmp(x, y)<=0) return 1;
-  else return 0;
+    if(strcmp(x, y)<=0) return 1;
+    else return 0;
 }
 
 void loadImages(vector<char *> onlineImages) 
