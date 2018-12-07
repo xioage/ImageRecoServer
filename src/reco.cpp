@@ -35,7 +35,7 @@ using namespace cv;
 //#define SUB_DATASET 1000
 //#define FEATURE_CHECK
 //#define MATCH_ONE_ONLY
-//#define TEST
+#define TEST
 
 int querysizefactor, nn_num;
 float *means, *covariances, *priors, *projectionCenter, *projection;
@@ -50,6 +50,7 @@ double wallclock (void)
 {
   struct timeval tv;
   gettimeofday(&tv, NULL);
+  int msec = tv.tv_usec / 1000;
   return (double)tv.tv_sec + (double)tv.tv_usec / 1000000.0;
 }
 
@@ -288,6 +289,8 @@ bool query(Mat queryImage, recognizedMarker &marker)
         cout << "testing " << result[idx] << endl;
 
 #ifdef TEST
+        //Mat image(741, 500, CV_8UC1);
+        Mat image = imread(whole_list[result[idx]], CV_LOAD_IMAGE_COLOR);
         if(result[idx] >= 100) break;
         SiftData sData = trainData[result[idx]];
 #else
@@ -335,6 +338,7 @@ bool query(Mat queryImage, recognizedMarker &marker)
             marker.markername = "gpu_recognized_image.";
 
             FreeSiftData(tData);
+        cout<<"after matching "<<wallclock()<<endl;
             return true; 
         }
 #ifdef MATCH_ONE_ONLY
@@ -354,6 +358,8 @@ bool cacheQuery(Mat queryImage, recognizedMarker &marker)
     float homography[9];
     int numMatches;
 
+    if(cacheItems.size() == 0) return false;
+
     onlineProcessing(queryImage, tData, test, true, false);
 
     double minDistance = 999999999;
@@ -365,21 +371,21 @@ bool cacheQuery(Mat queryImage, recognizedMarker &marker)
             index = idx;
         }
     }
-    if(index < 0) return false;
-
     sData = cacheItems[index].data;
-
+    cout << "=====================time before matching: " << wallclock() << endl;
+    
     cout << "features num: " << sData.numPts << " " << tData.numPts << endl;
     MatchSiftData(sData, tData);
     FindHomography(sData, homography, &numMatches, 10000, 0.00f, 0.85f, 5.0);
     int numFit = ImproveHomography(sData, homography, 5, 0.00f, 0.80f, 2.0);
     double ratio = 100.0f*numFit/min(sData.numPts, tData.numPts);
     cout << "Matching features: " << numFit << " " << numMatches << " " << ratio << "% " << endl;
+    FreeSiftData(tData);
        
     if(ratio > 10) {
         Mat H(3, 3, CV_32FC1, homography);
 
-        vector<Point2f> obj_corners(4), scene_corners(4);
+        vector<Point2f> obj_corners, scene_corners(4);
         for(int i = 0; i < 4; i++)
             obj_corners.push_back(cacheItems[index].curMarker.corners[i]);
 
@@ -400,12 +406,10 @@ bool cacheQuery(Mat queryImage, recognizedMarker &marker)
         }
         marker.markername = "gpu_recognized_image.";
 
-        FreeSiftData(tData);
         return true; 
+    } else {
+        return false;
     }
-
-    FreeSiftData(tData);
-    return false;
 }
 
 void addCacheItem(frameBuffer curFrame, resBuffer curRes) 
@@ -446,6 +450,7 @@ void addCacheItem(frameBuffer curFrame, resBuffer curRes)
     newItem.curFrame = curFrame;
     newItem.curMarker = marker;
     cacheItems.push_back(newItem);
+    cout<<"cache item inserted at "<<wallclock()<<endl<<endl;
 }
 
 bool mycompare(char* x, char* y) 

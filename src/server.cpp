@@ -129,7 +129,7 @@ void *ThreadTCPReceiverFunction(void *socket) {
 	while(size < curFrame.bufferSize) {
 	    size += read(sock, &(buffer[size]), curFrame.bufferSize-size);
 	}
-        cout<<"frame "<<curFrame.frmID<<" received, filesize: "<<curFrame.bufferSize<<endl;
+        cout<<"frame "<<curFrame.frmID<<" received, filesize: "<<curFrame.bufferSize;
         cout<<" at "<<setprecision(15)<<wallclock()<<endl<<endl;
         curFrame.buffer = new char[curFrame.bufferSize];
         memset(curFrame.buffer, 0, curFrame.bufferSize);
@@ -169,65 +169,6 @@ void *ThreadTCPSenderFunction(void *socket) {
     cout<<"Sender Thread finished!"<<endl;
 }
 
-
-void *ThreadTCPOffloaderFunction(void *socket) {
-    cout << "Sender Thread Created!" << endl;
-    char tmp[4];
-    char *buffer;
-    int sock = *((int*)socket);
-
-    while (isClientAlive) {
-        if(offloadframes.empty()) {
-            this_thread::sleep_for(chrono::milliseconds(1));
-            continue;
-        }
-
-        frameBuffer curFrame = offloadframes.front();
-        offloadframes.pop();
-
-        resBuffer offloadRequest; //it's not result, just utilize the structure
-        offloadRequest.resID.i = curFrame.frmID;
-        offloadRequest.resType.i = curFrame.dataType;
-        offloadRequest.markerNum.i = curFrame.bufferSize;
-        offloadRequest.buffer = curFrame.buffer;
-
-        buffer = (char *)malloc(curFrame.bufferSize+12);
-        memset(buffer, 0, sizeof(buffer));
-        memcpy(buffer, offloadRequest.resID.b, 4);
-        memcpy(&(buffer[4]), offloadRequest.resType.b, 4);
-        memcpy(&(buffer[8]), offloadRequest.markerNum.b, 4);
-        memcpy(&(buffer[12]), offloadRequest.buffer, offloadRequest.markerNum.i);
-        write(sock, buffer, sizeof(buffer));
-        free(buffer);
-        cout<<"frame "<<curFrame.frmID<<" offloaded to server"<<endl;
-
-        buffer = (char *)malloc(RES_SIZE);
-        memset(buffer, 0, sizeof(buffer));
-        if(read(sock, buffer, RES_SIZE) <= 0) {
-	    cout<<"client disconnects"<<endl;
-	    isClientAlive = false;
-	    continue;
-	}
-
-        resBuffer curRes;    
-        memcpy(tmp, buffer, 4);
-        curRes.resID.i = *(int*)tmp;        
-        memcpy(tmp, &(buffer[4]), 4);
-        curRes.resType.i = *(int*)tmp;
-        memcpy(tmp, &(buffer[8]), 4);
-        curRes.markerNum.i = *(int*)tmp;
-        curRes.buffer = (char *)malloc(RES_SIZE-12);
-        memcpy(curRes.buffer, &(buffer[12]), RES_SIZE-12);
-        free(buffer);
-
-        results.push(curRes);
-        if(curRes.markerNum.i > 0)
-            addCacheItem(curFrame, curRes);
-    }    
-
-    cout<<"Offloader Thread finished!"<<endl;
-}
-
 void *ThreadProcessFunction(void *param) {
     cout<<"Process Thread Created!"<<endl;
     recognizedMarker marker;
@@ -250,8 +191,8 @@ void *ThreadProcessFunction(void *param) {
         if(frmDataType == IMAGE_DETECT) {
             vector<uchar> imgdata(frmdata, frmdata + frmSize);
             Mat img_scene = imdecode(imgdata, CV_LOAD_IMAGE_GRAYSCALE);
-            //Mat detect = img_scene(Rect(RECO_W_OFFSET, RECO_H_OFFSET, 800, 500));
-            markerDetected = query(img_scene, marker);
+            Mat detect = img_scene(Rect(RECO_W_OFFSET, RECO_H_OFFSET, 160, 270));
+            markerDetected = query(detect, marker);
         }
 
         resBuffer curRes;
@@ -292,6 +233,68 @@ void *ThreadProcessFunction(void *param) {
     }
 }
 
+void *ThreadTCPOffloaderFunction(void *socket) {
+    cout << "Offloader Thread Created!" << endl;
+    char tmp[4];
+    char *requestbuffer;
+    char *resultbuffer;
+    int sock = *((int*)socket);
+
+    while (isClientAlive) {
+        if(offloadframes.empty()) {
+            this_thread::sleep_for(chrono::milliseconds(1));
+            continue;
+        }
+
+        frameBuffer curFrame = offloadframes.front();
+        offloadframes.pop();
+
+        resBuffer offloadRequest; //it's not result, just utilize the structure
+        offloadRequest.resID.i = curFrame.frmID;
+        offloadRequest.resType.i = curFrame.dataType;
+        offloadRequest.markerNum.i = curFrame.bufferSize;
+        offloadRequest.buffer = curFrame.buffer;
+
+        requestbuffer = (char *)malloc(curFrame.bufferSize+12);
+        memset(requestbuffer, 0, curFrame.bufferSize+12);
+        memcpy(requestbuffer, offloadRequest.resID.b, 4);
+        memcpy(&(requestbuffer[4]), offloadRequest.resType.b, 4);
+        memcpy(&(requestbuffer[8]), offloadRequest.markerNum.b, 4);
+        memcpy(&(requestbuffer[12]), offloadRequest.buffer, offloadRequest.markerNum.i);
+        cout<<"frame "<<curFrame.frmID<<" offloaded to server at "<<wallclock()<<endl;
+        this_thread::sleep_for(chrono::milliseconds(49)); //latency penalty
+        write(sock, requestbuffer, curFrame.bufferSize+12);
+        free(requestbuffer);
+
+        resultbuffer = (char *)malloc(RES_SIZE);
+        memset(resultbuffer, 0, RES_SIZE);
+        if(read(sock, resultbuffer, RES_SIZE) <= 0) {
+	    cout<<"recognition server disconnects"<<endl;
+	    isClientAlive = false;
+	    continue;
+	}
+        this_thread::sleep_for(chrono::milliseconds(19)); //latency penalty
+        cout<<"frame "<<curFrame.frmID<<" res received from server at "<<wallclock()<<endl;
+
+        resBuffer curRes;    
+        memcpy(tmp, resultbuffer, 4);
+        curRes.resID.i = *(int*)tmp;        
+        memcpy(tmp, &(resultbuffer[4]), 4);
+        curRes.resType.i = *(int*)tmp;
+        memcpy(tmp, &(resultbuffer[8]), 4);
+        curRes.markerNum.i = *(int*)tmp;
+        curRes.buffer = (char *)malloc(RES_SIZE-12);
+        memcpy(curRes.buffer, &(resultbuffer[12]), RES_SIZE-12);
+        free(resultbuffer);
+
+        results.push(curRes);
+        if(curRes.markerNum.i > 0)
+            addCacheItem(curFrame, curRes);
+    }    
+
+    cout<<"Offloader Thread finished!"<<endl;
+}
+
 void *ThreadCacheSearchFunction(void *param) {
     cout<<"Cache Search Thread Created!"<<endl;
     recognizedMarker marker;
@@ -314,7 +317,9 @@ void *ThreadCacheSearchFunction(void *param) {
         if(frmDataType == IMAGE_DETECT) {
             vector<uchar> imgdata(frmdata, frmdata + frmSize);
             Mat img_scene = imdecode(imgdata, CV_LOAD_IMAGE_GRAYSCALE);
-            markerDetected = cacheQuery(img_scene, marker);
+            //imwrite("query.jpg",img_scene);
+            Mat detect = img_scene(Rect(RECO_W_OFFSET, RECO_H_OFFSET, 160, 270));
+            markerDetected = cacheQuery(detect, marker);
         }
 
         if(markerDetected) {
@@ -347,8 +352,7 @@ void *ThreadCacheSearchFunction(void *param) {
 
             recognizedMarkerID = marker.markerID.i;
             results.push(curRes);
-        }
-        else {
+        } else {
             offloadframes.push(curFrame);
         }
     }
@@ -478,9 +482,10 @@ void runServer(int port, int mode) {
         }
         cout << endl << "========cache server started, waiting for clients==========" << endl;
 
+        isClientAlive = true;
         pthread_create(&receiverThread, NULL, ThreadUDPReceiverFunction, (void *)&sockUDP);
         pthread_create(&senderThread, NULL, ThreadUDPSenderFunction, (void *)&sockUDP);
-        pthread_create(&processThread, NULL, ThreadProcessFunction, NULL);
+        pthread_create(&processThread, NULL, ThreadCacheSearchFunction, NULL);
         pthread_create(&offloadThread, NULL, ThreadTCPOffloaderFunction, (void *)&sockTCPCli);
 
         pthread_join(receiverThread, NULL);
@@ -534,7 +539,11 @@ int main(int argc, char *argv[])
         encodeDatabase(querysizefactor, nn_num); 
         test();
     } else {
+        loadOnline();
+        loadImages(onlineImages);
         loadParams();
+        encodeDatabase(querysizefactor, nn_num); 
+        test();
     }
     runServer(port, mode);
 
