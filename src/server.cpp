@@ -262,7 +262,6 @@ void *ThreadTCPOffloaderFunction(void *socket) {
         memcpy(&(requestbuffer[8]), offloadRequest.markerNum.b, 4);
         memcpy(&(requestbuffer[12]), offloadRequest.buffer, offloadRequest.markerNum.i);
         cout<<"frame "<<curFrame.frmID<<" offloaded to server at "<<wallclock()<<endl;
-        this_thread::sleep_for(chrono::milliseconds(49)); //latency penalty
         write(sock, requestbuffer, curFrame.bufferSize+12);
         free(requestbuffer);
 
@@ -273,7 +272,6 @@ void *ThreadTCPOffloaderFunction(void *socket) {
 	    isClientAlive = false;
 	    continue;
 	}
-        this_thread::sleep_for(chrono::milliseconds(19)); //latency penalty
         cout<<"frame "<<curFrame.frmID<<" res received from server at "<<wallclock()<<endl;
 
         resBuffer curRes;    
@@ -317,7 +315,7 @@ void *ThreadCacheSearchFunction(void *param) {
         if(frmDataType == IMAGE_DETECT) {
             vector<uchar> imgdata(frmdata, frmdata + frmSize);
             Mat img_scene = imdecode(imgdata, CV_LOAD_IMAGE_GRAYSCALE);
-            //imwrite("query.jpg",img_scene);
+            imwrite("query.jpg",img_scene);
             Mat detect = img_scene(Rect(RECO_W_OFFSET, RECO_H_OFFSET, 160, 270));
             markerDetected = cacheQuery(detect, marker);
         }
@@ -541,9 +539,7 @@ int main(int argc, char *argv[])
     } else {
         loadOnline();
         loadImages(onlineImages);
-        loadParams();
-        encodeDatabase(querysizefactor, nn_num); 
-        test();
+        trainCacheParams();
     }
     runServer(port, mode);
 

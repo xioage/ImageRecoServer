@@ -52,6 +52,7 @@ struct cacheItem {
 double wallclock();
 void loadImages(std::vector<char *> onlineImages); 
 void trainParams(); 
+void trainCacheParams(); 
 void loadParams();
 void encodeDatabase(int factor, int nn);
 void test();
