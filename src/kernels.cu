@@ -8,7 +8,8 @@
 #define TILE 4
 #define THREADS_S 128
 
-#include "/usr/local/cuda/samples/common/inc/helper_math.h"
+//#include "/usr/local/cuda/samples/common/inc/helper_math.h"
+#include "helper_math.h"
 //#define VL_INFINITY_D 0x7FF0000000000000ui64
 #define VL_MAX(x,y) (((x)>(y))?(x):(y))
 
