@@ -541,7 +541,7 @@ int main(int argc, char *argv[])
         loadImages(onlineImages);
         trainCacheParams();
     }
-    runServer(port, mode);
+    //runServer(port, mode);
 
     freeParams();
     return 0;

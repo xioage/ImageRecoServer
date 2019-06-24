@@ -60,4 +60,5 @@ bool query(cv::Mat queryImage, recognizedMarker &marker);
 bool cacheQuery(cv::Mat queryImage, recognizedMarker &marker);
 void addCacheItem(frameBuffer curFrame, resBuffer curRes);
 void freeParams();
+void scalabilityTest();
 #endif

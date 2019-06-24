@@ -7,6 +7,11 @@
 #include <cstring>
 #include <cstdlib>
 #include <sys/time.h>
+#include <thread>
+#include <algorithm>
+#include <chrono>
+#include <random>
+#include <atomic>
 
 #include "cudaImage.h"
 #include "cuda_files.h"
@@ -34,8 +39,8 @@ using namespace cv;
 #define SUB_DATASET 110
 //#define SUB_DATASET 1000
 //#define FEATURE_CHECK
-//#define MATCH_ONE_ONLY
-//#define TEST
+#define MATCH_ONE_ONLY
+#define TEST
 
 int querysizefactor, nn_num;
 float *means, *covariances, *priors, *projectionCenter, *projection;
@@ -45,6 +50,7 @@ vector<DenseVector<float>> lsh;
 unique_ptr<LSHNearestNeighborTable<DenseVector<float>>> tablet;
 unique_ptr<LSHNearestNeighborQuery<DenseVector<float>>> table;
 vector<cacheItem> cacheItems;
+atomic<int> totalTime;
 
 double wallclock (void)
 {
@@ -214,7 +220,7 @@ void encodeDatabase(int factor, int nn)
         Mat image = imread(whole_list[i], CV_LOAD_IMAGE_COLOR);
 #ifdef TEST
         onlineProcessing(image, sData, train[i], true, true);
-        if (i < 100) trainData.push_back(sData);
+        if (i < 20) trainData.push_back(sData);
         else FreeSiftData(sData);
 #else 
         onlineProcessing(image, sData, train[i], false, true);
@@ -267,7 +273,8 @@ void test()
     closedir(d);
 
     t_s = wallclock();
-    for (int i = 0; i < test_list.size(); i++) {
+    //for (int i = 0; i < test_list.size(); i++) {
+    for (int i = 0; i < 20; i++) {
         start = wallclock();
 
         cout << endl << test_list[i] << endl;
@@ -325,7 +332,7 @@ void test()
         cout << "query time: " << duration << endl << endl;
     }
     t_f = wallclock();
-    t_d = (double)(t_f - t_s)/103.0;
+    t_d = (double)(t_f - t_s)/20.0;
     cout << "correct: " <<correct << " in average time: " << t_d << endl;
 }
 
@@ -397,7 +404,7 @@ bool query(Mat queryImage, recognizedMarker &marker)
             marker.markername = "gpu_recognized_image.";
 
             FreeSiftData(tData);
-        cout<<"after matching "<<wallclock()<<endl;
+            cout<<"after matching "<<wallclock()<<endl;
             return true; 
         }
 #ifdef MATCH_ONE_ONLY
@@ -523,6 +530,7 @@ void loadImages(vector<char *> onlineImages)
     gpu_init();
 
     const char *home = "data/bk_train"; 
+    //const char *home = "/home/symlab/Downloads/dataset/paintings/shell"; 
     DIR *d = opendir(home);
     struct dirent *cur_dir;  
     vector<char *> paths;
@@ -564,6 +572,7 @@ void loadImages(vector<char *> onlineImages)
         }
         closedir(subd);
     }
+    //sort(whole_list.begin(), whole_list.end(), mycompare);
     cout << endl << "---------------------in total " << whole_list.size() << " images------------------------" << endl << endl;
     closedir(d);
 }
@@ -577,10 +586,7 @@ void trainParams() {
     float *final_res = (float *)malloc(ROWS * whole_list.size() * 128 * sizeof(float));
     float *final_frame = (float *)malloc(ROWS * whole_list.size() * 128 * sizeof(float));
     Mat training_descriptors(0, 128, CV_32FC1);
-    //////////////////train encoder ////////////////
-    //////// STEP 0: obtain sample image descriptors
-    set<int>::iterator iter;
-    double start_time = wallclock();
+    //////////////////train encoder //////////////// //////// STEP 0: obtain sample image descriptors set<int>::iterator iter; double start_time = wallclock();
 
     for (int i = 0; i != whole_list.size(); ++i)
     {
@@ -728,7 +734,7 @@ void trainParams() {
     means = (TYPE *)vl_gmm_get_means(gmm);
     covariances = (TYPE *)vl_gmm_get_covariances(gmm);
     cout << "End of encoder " << endl;
-    cout << "Training time " << wallclock() - start_time << endl;
+    //cout << "Training time " << wallclock() - start_time << endl;
     ///////////////END train encoer//////////
 
     ofstream out1("params/priors", ios::out | ios::binary);
@@ -925,3 +931,85 @@ void freeParams()
     free(means);
     free(covariances);
 }
+
+#define REQUEST 512
+void distribution(int *order) {
+    const int nstars = REQUEST;   // maximum number of stars to distribute
+
+    std::default_random_engine generator;
+    std::poisson_distribution<int> distribution(24.5);
+
+    int p[50]={};
+
+    for (int i=0; i<nstars; ++i) {
+        int number = distribution(generator);
+        if (number<50) ++p[number];
+    }
+    for(int i = 0; i < 50; i++)
+        cout<<p[i]<<" ";
+    cout<<endl<<endl;
+
+    int index = 0;
+    for(int i = 0; i < 50; i++) {
+        for(int j = 0; j < p[i]; j++) {
+            order[index++] = i;
+        }
+    }
+
+    for(int i = 0; i < REQUEST; i++)
+        cout<<order[i]<<" ";
+    cout<<endl<<endl;
+
+    random_shuffle(order, order+REQUEST);
+    for(int i = 0; i < REQUEST; i++)
+        cout<<order[i]<<" ";
+    cout<<endl<<endl;
+}
+
+void ThreadQueryFunction() {
+    Mat image = imread("/home/symlab/Downloads/dataset/paintings/eval2/20190609_183259.jpg", CV_LOAD_IMAGE_GRAYSCALE);
+    recognizedMarker marker;
+
+    for(int i = 0; i < 10; i++) {
+        double t0 = wallclock();
+        query(image, marker);
+        //this_thread::sleep_for(chrono::milliseconds(10));
+        double t1 = wallclock();
+        int mills = (t1 - t0) * 1000;
+        totalTime += mills;
+        this_thread::sleep_for(chrono::milliseconds(1000-mills));
+    }
+}
+
+void scalabilityTest() {
+    thread handlerThread[REQUEST];
+    int order[REQUEST] = {0};
+    distribution(order);
+
+    for(int loop = 0; loop < 10; loop++) {
+        totalTime = 0;
+        int requestNum = pow(2, loop);
+        int requestTable[50] = {0};
+        int threadIndex = 0;
+
+        for(int i = 0; i < requestNum; i++)
+            requestTable[order[i]]++;
+
+        for(int i = 0; i < 50; i++) {
+            int curRequest = requestTable[i];
+
+            for(int j = 0; j < curRequest; j++) {
+                handlerThread[threadIndex++] = thread(ThreadQueryFunction);
+            }
+            this_thread::sleep_for(chrono::milliseconds(20));
+        }
+
+        for(int i = 0; i < threadIndex; i++)
+            handlerThread[i].join();
+
+	cout<<endl<<"==================================================================="<<endl;
+        cout<<"average for loop "<<loop<<": "<<totalTime/10.0/threadIndex<<" with thread #: "<<threadIndex<<endl;
+	cout<<"==================================================================="<<endl<<endl;
+    }
+}
+
