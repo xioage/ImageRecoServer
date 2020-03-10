@@ -246,7 +246,7 @@ void test()
 {
     double dist;
     int correct = 0;
-    double start, finish, duration;
+    double start, finish, duration, total;
     double t_s, t_f, t_d;
     SiftData tData[103];
     vector<float> test;
@@ -272,7 +272,7 @@ void test()
     cout << endl << "-------------testing " << test_list.size() << " images---------------" <<endl << endl;
     closedir(d);
 
-    t_s = wallclock();
+    total = 0;
     //for (int i = 0; i < test_list.size(); i++) {
     for (int i = 0; i < 20; i++) {
         start = wallclock();
@@ -329,11 +329,11 @@ void test()
 
         finish = wallclock();
         duration = (double)(finish - start);
+	total += duration;
         cout << "query time: " << duration << endl << endl;
+        //this_thread::sleep_for(chrono::milliseconds(900));
     }
-    t_f = wallclock();
-    t_d = (double)(t_f - t_s)/20.0;
-    cout << "correct: " <<correct << " in average time: " << t_d << endl;
+    cout << "correct: " <<correct << " in average time: " << total/20.0 << endl;
 }
 
 bool query(Mat queryImage, recognizedMarker &marker)
