@@ -273,8 +273,7 @@ void test()
     closedir(d);
 
     total = 0;
-    //for (int i = 0; i < test_list.size(); i++) {
-    for (int i = 0; i < 20; i++) {
+    for (int i = 0; i < test_list.size(); i++) {
         start = wallclock();
 
         cout << endl << test_list[i] << endl;
@@ -331,9 +330,104 @@ void test()
         duration = (double)(finish - start);
 	total += duration;
         cout << "query time: " << duration << endl << endl;
-        //this_thread::sleep_for(chrono::milliseconds(900));
     }
-    cout << "correct: " <<correct << " in average time: " << total/20.0 << endl;
+    cout << "correct: " <<correct << " in average time: " << total/test_list.size() << endl;
+}
+
+void testEverySecond(int queryNum)
+{
+    double dist;
+    int correct = 0;
+    double start, finish, duration, total;
+    double t_s, t_f, t_d;
+    SiftData tData[103];
+    vector<float> test;
+    vector<char *> test_list;
+
+#if 1
+    test_list.push_back("data/demo/test/aquaman.jpg");
+    test_list.push_back("data/demo/test/fantastic.jpg");
+    test_list.push_back("data/demo/test/smallfoot.jpg");
+#endif
+
+    const char *test_path = "data/crop";
+    DIR *d = opendir(test_path);
+    struct dirent *cur_dir;
+    while ((cur_dir = readdir(d)) != NULL) {
+        if ((strcmp(cur_dir->d_name, ".") != 0) && (strcmp(cur_dir->d_name, "..") != 0)) {
+            char *file = new char[256];
+            sprintf(file, "%s/%s", test_path, cur_dir->d_name);
+            if (strstr(file, "jpg") != NULL)
+                test_list.push_back(file);
+        }
+    }
+    cout << endl << "-------------testing " << test_list.size() << " images---------------" <<endl << endl;
+    closedir(d);
+
+    total = 0;
+    for (int i = 0; i < 10; i++) {
+        start = wallclock();
+	for(int q = 0; q < queryNum; q++) {
+            cout << endl << test_list[i] << endl;
+            Mat image = imread(test_list[i], CV_LOAD_IMAGE_COLOR);
+            onlineProcessing(image, tData[i], test, true, true);
+            vector<int> result;
+            DenseVector<float> t(SIZE);
+            for(int j = 0; j < SIZE; j++) t[j] = test[j];
+            table->find_k_nearest_neighbors(t, nn_num, &result);
+
+            int flag = 0;
+            for(int idx = 0; idx < result.size(); idx++) {
+                cout << result[idx] << " ";
+                if(result[idx] == i) {
+                    correct++;
+                    flag = 1;
+                    cout << "!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!>>" << endl;
+                    break;
+                }
+            } 
+
+#ifdef TEST 
+            if(flag) {
+                MatchSiftData(trainData[i], tData[i]);
+                float homography[9];
+                int numMatches;
+                FindHomography(trainData[i], homography, &numMatches, 10000, 0.00f, 0.85f, 5.0);
+                int numFit = ImproveHomography(trainData[i], homography, 5, 0.00f, 0.80f, 2.0);
+                //cout << "Matching features: " << numFit << " " << numMatches << endl;
+                double ratio = 100.0f*numFit/min(trainData[i].numPts, tData[i].numPts);
+                cout << "Matching features: " << numFit << " " << numMatches << " " << ratio << "% " << endl;
+
+                if(ratio > 10) {
+                    Mat H(3, 3, CV_32FC1, homography);
+    
+                    vector<Point2f> obj_corners(4), scene_corners(4);
+                    obj_corners[0] = cvPoint(0, 0);
+                    obj_corners[1] = cvPoint(330, 0);
+                    obj_corners[2] = cvPoint(330, 500);
+                    obj_corners[3] = cvPoint(0, 500);
+
+                    try {
+                        perspectiveTransform(obj_corners, scene_corners, H);
+                    } catch (Exception) {
+                        cout << "cv exception" << endl;
+                        continue;
+                    }
+                }
+            }
+#endif
+            FreeSiftData(tData[i]);
+
+            finish = wallclock();
+            duration = (double)(finish - start);
+	    total += duration;
+	}
+	finish = wallclock();
+	duration = (double)(finish - start);
+	int timeUsed = duration * 1000;
+        if(timeUsed < 1000) this_thread::sleep_for(chrono::milliseconds(1000 - timeUsed));
+    }
+    cout << endl << "correct: " <<correct << " in average time: " << total/10.0 << endl;
 }
 
 bool query(Mat queryImage, recognizedMarker &marker)

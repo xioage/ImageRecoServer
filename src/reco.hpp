@@ -56,6 +56,7 @@ void trainCacheParams();
 void loadParams();
 void encodeDatabase(int factor, int nn);
 void test();
+void testEverySecond(int queryNum);
 bool query(cv::Mat queryImage, recognizedMarker &marker);
 bool cacheQuery(cv::Mat queryImage, recognizedMarker &marker);
 void addCacheItem(frameBuffer curFrame, resBuffer curRes);

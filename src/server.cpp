@@ -511,19 +511,24 @@ void loadOnline()
 
 int main(int argc, char *argv[])
 {
-    int querysizefactor, nn_num, port, mode;
+    int querysizefactor, nn_num, port, mode, queryNum;
     if(argc < 5) {
-        cout << "Usage: " << argv[0] << "mode[s/c] size[s/m/l] NN#[1/2/3/4/5] port" << endl;
+        cout << "Usage: " << argv[0] << "mode[s/c] size[s/m/l] NN#[1/2/3/4/5] port queryNum" << endl;
         return 1;
     } else {
         if (argv[1][0] == 's') mode = 1;
         else mode = 0;
+
         if (argv[2][0] == 's') querysizefactor = 4;
         else if (argv[2][0] == 'm') querysizefactor = 2;
         else querysizefactor = 1;
+
         nn_num = argv[3][0] - '0';
         if (nn_num < 1 || nn_num > 5) nn_num = 5;
+
         port = strtol(argv[4], NULL, 10);
+
+	queryNum = argv[5][0] - '0';
     }
 
     if(mode) {
@@ -535,7 +540,8 @@ int main(int argc, char *argv[])
         loadParams();
 #endif
         encodeDatabase(querysizefactor, nn_num); 
-        test();
+        //test();
+        testEverySecond(queryNum);
     } else {
         loadOnline();
         loadImages(onlineImages);

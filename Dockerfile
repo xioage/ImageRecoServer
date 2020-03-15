@@ -20,5 +20,6 @@ ENV mode s
 ENV size l
 ENV nn_num 5
 ENV port 51717
+ENV queryNum 1
 
-CMD ["sh", "-c", "./gpu_fv ${mode} ${size} ${nn_num} ${port}"]
+CMD ["sh", "-c", "./gpu_fv ${mode} ${size} ${nn_num} ${port} ${queryNum}"]
