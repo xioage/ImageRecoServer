@@ -387,7 +387,7 @@ void testEverySecond(int queryNum)
                 }
             } 
 
-#ifdef TEST 
+#if 0 
             if(flag) {
                 MatchSiftData(trainData[i], tData[i]);
                 float homography[9];
@@ -427,7 +427,7 @@ void testEverySecond(int queryNum)
 	int timeUsed = duration * 1000;
         if(timeUsed < 1000) this_thread::sleep_for(chrono::milliseconds(1000 - timeUsed));
     }
-    cout << endl << "correct: " <<correct << " in average time: " << total/10.0 << endl;
+    cout << endl << "correct: " <<correct << " in average time: " << endl << total/10.0 << endl;
 }
 
 bool query(Mat queryImage, recognizedMarker &marker)
