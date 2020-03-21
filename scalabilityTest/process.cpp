@@ -10,8 +10,7 @@
 
 using namespace std;
 
-#define MAXPROCESS 10
-
+int maxProcessNum; 
 string server = "./gpu_fv s l 5 51717 ";
 string queryNum;
 string output = " > scalabilityTest/";
@@ -19,7 +18,7 @@ string fileName;
 string suffix = ".txt &";
 string tail = "tail -n 1 scalabilityTest/";
 string attach = ".txt >> scalabilityTest/";
-string suffix2 = ".txt";
+string suffix2 = ".res";
 
 string exec(const char* cmd) {
     array<char, 128> buffer;
@@ -48,10 +47,10 @@ string composeCmd2(int u) {
 
 double processResult(int u) {
     string line;
-    string fileName = "scalabilityTest/" + to_string(u) + ".txt";
+    string fileName = "scalabilityTest/" + to_string(u) + ".res";
     ifstream file(fileName);
 
-    int fileLength = u > MAXPROCESS ? MAXPROCESS : u;
+    int fileLength = u > maxProcessNum ? maxProcessNum : u;
     double total = 0;
     for(int row = 0; row != fileLength; ++row) {
         getline(file, line);
@@ -65,13 +64,22 @@ double processResult(int u) {
     return average;
 }
 
-int main() {
+int main(int argc, char *argv[]) {
+    if(argc < 2) {
+	cout << "Usage: " <<argv[0] << " maxProcessNum" <<endl;
+	return 1;
+    } else {
+	maxProcessNum = stoi(argv[1]);
+	cout << "max process num set to " << maxProcessNum << endl;
+    }
     string cmd;
 
     exec("rm scalabilityTest/*.txt");
+    exec("rm scalabilityTest/*.res");
 
-    for(int u = 1; u < 20; u+= 4) {
-	if(u < MAXPROCESS) {
+    int u = 1;
+    while(u < 250) {
+	if(u < maxProcessNum) {
 	    for(int i = 0; i < u; i++) {
 	        queryNum = to_string(1);
 	        fileName = to_string(u * 100 + i);
@@ -79,7 +87,7 @@ int main() {
                 exec(cmd.c_str());
 	    } 
 	    
-	    this_thread::sleep_for(chrono::seconds(30));
+	    this_thread::sleep_for(chrono::seconds(50));
             
 	    for(int i = 0; i < u; i++) {
 	        fileName = to_string(u * 100 + i);
@@ -88,9 +96,9 @@ int main() {
 	    }
 	}
 	else {
-	    int baseNum = u / MAXPROCESS;
-	    int extraNum = u % MAXPROCESS;
-	    for(int i = 0; i < MAXPROCESS; i++) {
+	    int baseNum = u / maxProcessNum;
+	    int extraNum = u % maxProcessNum;
+	    for(int i = 0; i < maxProcessNum; i++) {
 		if(i < extraNum) queryNum = to_string(baseNum+1);
 		else             queryNum = to_string(baseNum);
 	        fileName = to_string(u * 100 + i);
@@ -98,9 +106,9 @@ int main() {
                 exec(cmd.c_str());
 	    }
 
-	    this_thread::sleep_for(chrono::seconds(30));
+	    this_thread::sleep_for(chrono::seconds(50));
 
-	    for(int i = 0; i < MAXPROCESS; i++) {
+	    for(int i = 0; i < maxProcessNum; i++) {
 	        fileName = to_string(u * 100 + i);
 		cmd = composeCmd2(u);
 		exec(cmd.c_str());
@@ -108,6 +116,8 @@ int main() {
 	}
 
 	processResult(u);
+
+	u += 4;
     }
     return 0;
 }
