@@ -60,4 +60,5 @@ If you find our work useful, please cite one of the followings:
   author={Wenxiao Zhang and Bo Han and Pan Hui and Vijay  Gopalakrishnan and Eric Zavesky and Feng Qian},
   booktitle={Proceedings of International Workshop on Mobile Computing Systems and Applications (HotMobile)},
   year={2018}
+}
 ```
