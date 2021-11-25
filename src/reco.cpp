@@ -387,7 +387,7 @@ void testEverySecond(int queryNum)
                 }
             } 
 
-#if 0 
+#if 1 
             if(flag) {
                 MatchSiftData(trainData[i], tData[i]);
                 float homography[9];
@@ -396,7 +396,7 @@ void testEverySecond(int queryNum)
                 int numFit = ImproveHomography(trainData[i], homography, 5, 0.00f, 0.80f, 2.0);
                 //cout << "Matching features: " << numFit << " " << numMatches << endl;
                 double ratio = 100.0f*numFit/min(trainData[i].numPts, tData[i].numPts);
-                cout << "Matching features: " << numFit << " " << numMatches << " " << ratio << "% " << endl;
+                //cout << "Matching features: " << numFit << " " << numMatches << " " << ratio << "% " << endl;
 
                 if(ratio > 10) {
                     Mat H(3, 3, CV_32FC1, homography);

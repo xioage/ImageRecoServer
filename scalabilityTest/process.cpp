@@ -77,9 +77,9 @@ int main(int argc, char *argv[]) {
     exec("rm scalabilityTest/*.txt");
     exec("rm scalabilityTest/*.res");
 
-    int u = 1;
-    while(u < 250) {
-	if(u < maxProcessNum) {
+    int u = 37;
+    while(u <= maxProcessNum) {
+	if(u <= maxProcessNum) {
 	    for(int i = 0; i < u; i++) {
 	        queryNum = to_string(1);
 	        fileName = to_string(u * 100 + i);

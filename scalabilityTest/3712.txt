@@ -1,0 +1,3060 @@
+online image: data/demo/aquaman.jpg
+online image: data/demo/fantastic.jpg
+online image: data/demo/smallfoot.jpg
+
+---------------------in total 110 images------------------------
+
+Image size = (300,445)
+Download time =               0.14 ms
+GPU time : 0.24 ms + 0.06 ms + 0.07 ms = 0.37 ms
+           0.01 ms / DoG,  0.0184 ms / Sift,  #Sift = 4
+ExtractSift time total =      0.40 ms
+
+GPU time : 1.59 ms + 0.51 ms + 0.28 ms = 2.38 ms
+           0.10 ms / DoG,  0.0121 ms / Sift,  #Sift = 23
+ExtractSift time total =      2.83 ms
+
+GPU time : 0.41 ms + 1.07 ms + 0.35 ms = 1.83 ms
+           0.21 ms / DoG,  0.0030 ms / Sift,  #Sift = 117
+ExtractSift time total =      4.73 ms
+
+GPU time : 0.36 ms + 0.91 ms + 0.31 ms = 1.58 ms
+           0.18 ms / DoG,  0.0009 ms / Sift,  #Sift = 334
+ExtractSift time total =      6.37 ms
+
+GPU time : 0.44 ms + 0.67 ms + 0.38 ms = 1.50 ms
+           0.13 ms / DoG,  0.0007 ms / Sift,  #Sift = 522
+ExtractSift time total =      8.06 ms
+
+sift res 1000 with time: 0.0240951
+pca encoding time: 0.887593
+fisher encoding time: 0.00217509
+Image size = (300,445)
+Download time =               0.14 ms
+GPU time : 0.04 ms + 0.13 ms + 0.06 ms = 0.23 ms
+           0.03 ms / DoG,  0.0125 ms / Sift,  #Sift = 5
+ExtractSift time total =      0.29 ms
+
+GPU time : 0.22 ms + 0.26 ms + 0.27 ms = 0.75 ms
+           0.05 ms / DoG,  0.0119 ms / Sift,  #Sift = 23
+ExtractSift time total =      1.22 ms
+
+GPU time : 0.10 ms + 0.88 ms + 0.12 ms = 1.10 ms
+           0.18 ms / DoG,  0.0014 ms / Sift,  #Sift = 92
+ExtractSift time total =      2.46 ms
+
+GPU time : 0.03 ms + 0.34 ms + 0.07 ms = 0.44 ms
+           0.07 ms / DoG,  0.0002 ms / Sift,  #Sift = 309
+ExtractSift time total =      3.11 ms
+
+GPU time : 0.17 ms + 0.45 ms + 1.37 ms = 1.99 ms
+           0.09 ms / DoG,  0.0024 ms / Sift,  #Sift = 571
+ExtractSift time total =      5.32 ms
+
+sift res 1000 with time: 0.0458882
+pca encoding time: 0.0761578
+fisher encoding time: 0.00211096
+Image size = (300,445)
+Download time =               0.45 ms
+GPU time : 0.28 ms + 1.10 ms + 0.35 ms = 1.72 ms
+           0.22 ms / DoG,  0.0314 ms / Sift,  #Sift = 11
+ExtractSift time total =      1.76 ms
+
+GPU time : 0.53 ms + 0.71 ms + 4.00 ms = 5.24 ms
+           0.14 ms / DoG,  0.0834 ms / Sift,  #Sift = 48
+ExtractSift time total =      7.28 ms
+
+GPU time : 0.21 ms + 1.31 ms + 0.35 ms = 1.87 ms
+           0.26 ms / DoG,  0.0022 ms / Sift,  #Sift = 157
+ExtractSift time total =      9.38 ms
+
+GPU time : 0.03 ms + 0.19 ms + 0.08 ms = 0.30 ms
+           0.04 ms / DoG,  0.0002 ms / Sift,  #Sift = 465
+ExtractSift time total =      9.97 ms
+
+GPU time : 0.03 ms + 0.31 ms + 0.08 ms = 0.41 ms
+           0.06 ms / DoG,  0.0002 ms / Sift,  #Sift = 319
+ExtractSift time total =      10.70 ms
+
+sift res 1000 with time: 0.0636859
+pca encoding time: 0.0383351
+fisher encoding time: 0.00346494
+Image size = (332,475)
+Download time =               0.15 ms
+GPU time : 0.61 ms + 2.83 ms + 0.48 ms = 3.92 ms
+           0.57 ms / DoG,  0.0298 ms / Sift,  #Sift = 16
+ExtractSift time total =      3.94 ms
+
+GPU time : 0.52 ms + 1.43 ms + 0.47 ms = 2.42 ms
+           0.29 ms / DoG,  0.0087 ms / Sift,  #Sift = 54
+ExtractSift time total =      6.66 ms
+
+GPU time : 0.34 ms + 1.13 ms + 0.24 ms = 1.71 ms
+           0.23 ms / DoG,  0.0019 ms / Sift,  #Sift = 124
+ExtractSift time total =      8.79 ms
+
+GPU time : 0.09 ms + 0.63 ms + 0.06 ms = 0.78 ms
+           0.13 ms / DoG,  0.0004 ms / Sift,  #Sift = 158
+ExtractSift time total =      11.07 ms
+
+GPU time : 0.09 ms + 0.19 ms + 0.07 ms = 0.35 ms
+           0.04 ms / DoG,  0.0002 ms / Sift,  #Sift = 293
+ExtractSift time total =      11.70 ms
+
+sift res 645 with time: 0.041785
+pca encoding time: 0.046659
+fisher encoding time: 0.00525999
+Image size = (311,475)
+Download time =               0.16 ms
+GPU time : 1.86 ms + 0.82 ms + 4.54 ms = 7.22 ms
+           0.16 ms / DoG,  0.6491 ms / Sift,  #Sift = 7
+ExtractSift time total =      7.28 ms
+
+GPU time : 0.24 ms + 0.94 ms + 0.18 ms = 1.36 ms
+           0.19 ms / DoG,  0.0043 ms / Sift,  #Sift = 42
+ExtractSift time total =      8.83 ms
+
+GPU time : 0.19 ms + 0.36 ms + 0.17 ms = 0.72 ms
+           0.07 ms / DoG,  0.0020 ms / Sift,  #Sift = 87
+ExtractSift time total =      9.79 ms
+
+GPU time : 0.02 ms + 0.11 ms + 0.06 ms = 0.20 ms
+           0.02 ms / DoG,  0.0003 ms / Sift,  #Sift = 217
+ExtractSift time total =      10.17 ms
+
+GPU time : 0.02 ms + 0.16 ms + 0.08 ms = 0.27 ms
+           0.03 ms / DoG,  0.0002 ms / Sift,  #Sift = 435
+ExtractSift time total =      10.61 ms
+
+sift res 788 with time: 0.0501769
+pca encoding time: 0.0759139
+fisher encoding time: 0.00344396
+Image size = (320,500)
+Download time =               0.26 ms
+GPU time : 0.24 ms + 1.09 ms + 0.19 ms = 1.51 ms
+           0.22 ms / DoG,  0.0206 ms / Sift,  #Sift = 9
+ExtractSift time total =      1.57 ms
+
+GPU time : 0.23 ms + 1.75 ms + 0.17 ms = 2.16 ms
+           0.35 ms / DoG,  0.0062 ms / Sift,  #Sift = 28
+ExtractSift time total =      3.90 ms
+
+GPU time : 0.23 ms + 0.37 ms + 0.20 ms = 0.81 ms
+           0.07 ms / DoG,  0.0027 ms / Sift,  #Sift = 75
+ExtractSift time total =      4.88 ms
+
+GPU time : 0.24 ms + 0.45 ms + 0.21 ms = 0.90 ms
+           0.09 ms / DoG,  0.0008 ms / Sift,  #Sift = 260
+ExtractSift time total =      6.01 ms
+
+GPU time : 0.02 ms + 0.21 ms + 0.09 ms = 0.32 ms
+           0.04 ms / DoG,  0.0002 ms / Sift,  #Sift = 394
+ExtractSift time total =      6.58 ms
+
+sift res 766 with time: 0.0823531
+pca encoding time: 0.069864
+fisher encoding time: 0.0438499
+Image size = (355,500)
+Download time =               0.21 ms
+GPU time : 0.10 ms + 0.05 ms + 0.13 ms = 0.29 ms
+           0.01 ms / DoG,  0.0096 ms / Sift,  #Sift = 14
+ExtractSift time total =      0.33 ms
+
+GPU time : 0.23 ms + 1.85 ms + 0.25 ms = 2.33 ms
+           0.37 ms / DoG,  0.0071 ms / Sift,  #Sift = 35
+ExtractSift time total =      2.74 ms
+
+GPU time : 0.24 ms + 0.44 ms + 0.18 ms = 0.86 ms
+           0.09 ms / DoG,  0.0017 ms / Sift,  #Sift = 104
+ExtractSift time total =      3.67 ms
+
+GPU time : 0.16 ms + 0.47 ms + 0.19 ms = 0.82 ms
+           0.09 ms / DoG,  0.0008 ms / Sift,  #Sift = 247
+ExtractSift time total =      4.54 ms
+
+GPU time : 0.16 ms + 0.56 ms + 0.23 ms = 0.94 ms
+           0.11 ms / DoG,  0.0005 ms / Sift,  #Sift = 468
+ExtractSift time total =      5.61 ms
+
+sift res 868 with time: 0.0668778
+pca encoding time: 0.0344541
+fisher encoding time: 0.00465894
+Image size = (334,500)
+Download time =               0.18 ms
+GPU time : 0.02 ms + 0.06 ms + 0.06 ms = 0.15 ms
+           0.01 ms / DoG,  0.0093 ms / Sift,  #Sift = 6
+ExtractSift time total =      0.17 ms
+
+GPU time : 0.02 ms + 0.06 ms + 0.04 ms = 0.12 ms
+           0.01 ms / DoG,  0.0014 ms / Sift,  #Sift = 30
+ExtractSift time total =      0.35 ms
+
+GPU time : 0.02 ms + 0.07 ms + 0.06 ms = 0.15 ms
+           0.01 ms / DoG,  0.0005 ms / Sift,  #Sift = 118
+ExtractSift time total =      0.55 ms
+
+GPU time : 0.02 ms + 0.08 ms + 0.07 ms = 0.18 ms
+           0.02 ms / DoG,  0.0002 ms / Sift,  #Sift = 366
+ExtractSift time total =      0.78 ms
+
+GPU time : 0.02 ms + 0.17 ms + 0.08 ms = 0.28 ms
+           0.03 ms / DoG,  0.0002 ms / Sift,  #Sift = 480
+ExtractSift time total =      2.37 ms
+
+sift res 1000 with time: 0.0463309
+pca encoding time: 0.0916071
+fisher encoding time: 0.0055449
+Image size = (323,475)
+Download time =               0.16 ms
+GPU time : 0.28 ms + 0.60 ms + 0.26 ms = 1.13 ms
+           0.12 ms / DoG,  0.0284 ms / Sift,  #Sift = 9
+ExtractSift time total =      1.16 ms
+
+GPU time : 0.29 ms + 0.56 ms + 0.33 ms = 1.18 ms
+           0.11 ms / DoG,  0.0111 ms / Sift,  #Sift = 30
+ExtractSift time total =      2.52 ms
+
+GPU time : 0.27 ms + 0.59 ms + 0.46 ms = 1.32 ms
+           0.12 ms / DoG,  0.0032 ms / Sift,  #Sift = 146
+ExtractSift time total =      4.19 ms
+
+GPU time : 3.27 ms + 2.36 ms + 0.71 ms = 6.35 ms
+           0.47 ms / DoG,  0.0025 ms / Sift,  #Sift = 290
+ExtractSift time total =      12.40 ms
+
+GPU time : 0.41 ms + 1.53 ms + 0.53 ms = 2.48 ms
+           0.31 ms / DoG,  0.0014 ms / Sift,  #Sift = 387
+ExtractSift time total =      16.58 ms
+
+sift res 862 with time: 0.0979362
+pca encoding time: 0.0434079
+fisher encoding time: 0.0120139
+Image size = (315,475)
+Download time =               0.36 ms
+GPU time : 0.62 ms + 1.40 ms + 0.62 ms = 2.64 ms
+           0.28 ms / DoG,  0.1549 ms / Sift,  #Sift = 4
+ExtractSift time total =      2.68 ms
+
+GPU time : 0.61 ms + 1.29 ms + 0.59 ms = 2.49 ms
+           0.26 ms / DoG,  0.0349 ms / Sift,  #Sift = 17
+ExtractSift time total =      5.50 ms
+
+GPU time : 0.80 ms + 1.56 ms + 0.59 ms = 2.95 ms
+           0.31 ms / DoG,  0.0085 ms / Sift,  #Sift = 69
+ExtractSift time total =      8.82 ms
+
+GPU time : 0.60 ms + 3.28 ms + 0.66 ms = 4.53 ms
+           0.66 ms / DoG,  0.0015 ms / Sift,  #Sift = 424
+ExtractSift time total =      13.76 ms
+
+GPU time : 0.03 ms + 0.44 ms + 0.08 ms = 0.55 ms
+           0.09 ms / DoG,  0.0002 ms / Sift,  #Sift = 486
+ExtractSift time total =      14.76 ms
+
+sift res 1000 with time: 0.057955
+pca encoding time: 0.11973
+fisher encoding time: 0.00233603
+Image size = (332,500)
+Download time =               0.17 ms
+GPU time : 0.75 ms + 1.71 ms + 0.65 ms = 3.12 ms
+           0.34 ms / DoG,  0.6513 ms / Sift,  #Sift = 1
+ExtractSift time total =      3.17 ms
+
+GPU time : 0.53 ms + 7.29 ms + 0.02 ms = 7.84 ms
+           1.46 ms / DoG,  inf ms / Sift,  #Sift = 0
+ExtractSift time total =      11.56 ms
+
+GPU time : 11.70 ms + 1.43 ms + 0.26 ms = 13.39 ms
+           0.29 ms / DoG,  0.0430 ms / Sift,  #Sift = 6
+ExtractSift time total =      25.51 ms
+
+GPU time : 0.48 ms + 1.00 ms + 0.38 ms = 1.85 ms
+           0.20 ms / DoG,  0.0032 ms / Sift,  #Sift = 119
+ExtractSift time total =      27.92 ms
+
+GPU time : 0.36 ms + 1.21 ms + 0.35 ms = 1.91 ms
+           0.24 ms / DoG,  0.0016 ms / Sift,  #Sift = 215
+ExtractSift time total =      30.20 ms
+
+sift res 341 with time: 0.0813451
+pca encoding time: 0.0315781
+fisher encoding time: 0.002244
+Image size = (350,500)
+Download time =               0.40 ms
+GPU time : 0.33 ms + 0.79 ms + 0.37 ms = 1.49 ms
+           0.16 ms / DoG,  0.0929 ms / Sift,  #Sift = 4
+ExtractSift time total =      1.52 ms
+
+GPU time : 0.29 ms + 0.76 ms + 0.37 ms = 1.42 ms
+           0.15 ms / DoG,  0.0059 ms / Sift,  #Sift = 63
+ExtractSift time total =      3.15 ms
+
+GPU time : 0.26 ms + 0.58 ms + 0.30 ms = 1.14 ms
+           0.12 ms / DoG,  0.0017 ms / Sift,  #Sift = 180
+ExtractSift time total =      4.53 ms
+
+GPU time : 0.39 ms + 0.84 ms + 0.46 ms = 1.69 ms
+           0.17 ms / DoG,  0.0017 ms / Sift,  #Sift = 268
+ExtractSift time total =      6.63 ms
+
+GPU time : 0.21 ms + 0.86 ms + 0.37 ms = 1.44 ms
+           0.17 ms / DoG,  0.0009 ms / Sift,  #Sift = 395
+ExtractSift time total =      9.90 ms
+
+sift res 910 with time: 0.079242
+pca encoding time: 0.0511551
+fisher encoding time: 0.00441909
+Image size = (326,500)
+Download time =               0.15 ms
+GPU time : 1.94 ms + 0.81 ms + 1.69 ms = 4.44 ms
+           0.16 ms / DoG,  0.1883 ms / Sift,  #Sift = 9
+ExtractSift time total =      4.48 ms
+
+GPU time : 0.45 ms + 2.92 ms + 1.89 ms = 5.26 ms
+           0.58 ms / DoG,  0.0498 ms / Sift,  #Sift = 38
+ExtractSift time total =      9.96 ms
+
+GPU time : 0.32 ms + 0.84 ms + 1.79 ms = 2.96 ms
+           0.17 ms / DoG,  0.0110 ms / Sift,  #Sift = 163
+ExtractSift time total =      13.23 ms
+
+GPU time : 0.56 ms + 1.16 ms + 0.44 ms = 2.16 ms
+           0.23 ms / DoG,  0.0013 ms / Sift,  #Sift = 330
+ExtractSift time total =      15.83 ms
+
+GPU time : 0.30 ms + 1.09 ms + 0.33 ms = 1.72 ms
+           0.22 ms / DoG,  0.0007 ms / Sift,  #Sift = 460
+ExtractSift time total =      19.43 ms
+
+sift res 1000 with time: 0.0503981
+pca encoding time: 0.045661
+fisher encoding time: 0.00271201
+Image size = (322,500)
+Download time =               0.22 ms
+GPU time : 1.44 ms + 3.95 ms + 0.38 ms = 5.76 ms
+           0.79 ms / DoG,  0.0251 ms / Sift,  #Sift = 15
+ExtractSift time total =      5.80 ms
+
+GPU time : 0.18 ms + 0.49 ms + 0.20 ms = 0.87 ms
+           0.10 ms / DoG,  0.0043 ms / Sift,  #Sift = 46
+ExtractSift time total =      6.88 ms
+
+GPU time : 0.37 ms + 0.75 ms + 0.31 ms = 1.44 ms
+           0.15 ms / DoG,  0.0017 ms / Sift,  #Sift = 181
+ExtractSift time total =      8.61 ms
+
+GPU time : 0.55 ms + 1.09 ms + 0.49 ms = 2.13 ms
+           0.22 ms / DoG,  0.0013 ms / Sift,  #Sift = 370
+ExtractSift time total =      11.06 ms
+
+GPU time : 0.34 ms + 0.91 ms + 0.31 ms = 1.55 ms
+           0.18 ms / DoG,  0.0008 ms / Sift,  #Sift = 388
+ExtractSift time total =      18.46 ms
+
+sift res 1000 with time: 0.057605
+pca encoding time: 0.0849051
+fisher encoding time: 0.00369096
+Image size = (315,475)
+Download time =               0.16 ms
+GPU time : 0.39 ms + 3.95 ms + 0.41 ms = 4.74 ms
+           0.79 ms / DoG,  0.0340 ms / Sift,  #Sift = 12
+ExtractSift time total =      4.78 ms
+
+GPU time : 0.39 ms + 0.83 ms + 0.44 ms = 1.66 ms
+           0.17 ms / DoG,  0.0107 ms / Sift,  #Sift = 41
+ExtractSift time total =      6.75 ms
+
+GPU time : 0.25 ms + 0.93 ms + 0.28 ms = 1.46 ms
+           0.19 ms / DoG,  0.0027 ms / Sift,  #Sift = 103
+ExtractSift time total =      8.56 ms
+
+GPU time : 0.30 ms + 0.64 ms + 0.35 ms = 1.29 ms
+           0.13 ms / DoG,  0.0019 ms / Sift,  #Sift = 180
+ExtractSift time total =      10.35 ms
+
+GPU time : 0.35 ms + 0.95 ms + 1.60 ms = 2.91 ms
+           0.19 ms / DoG,  0.0055 ms / Sift,  #Sift = 291
+ExtractSift time total =      15.28 ms
+
+sift res 627 with time: 0.088599
+pca encoding time: 0.0623121
+fisher encoding time: 0.00322294
+Image size = (318,500)
+Download time =               0.14 ms
+GPU time : 0.46 ms + 1.72 ms + 0.37 ms = 2.55 ms
+           0.34 ms / DoG,  0.0263 ms / Sift,  #Sift = 14
+ExtractSift time total =      2.58 ms
+
+GPU time : 0.28 ms + 0.36 ms + 0.18 ms = 0.82 ms
+           0.07 ms / DoG,  0.0025 ms / Sift,  #Sift = 75
+ExtractSift time total =      3.78 ms
+
+GPU time : 0.30 ms + 0.62 ms + 0.27 ms = 1.19 ms
+           0.12 ms / DoG,  0.0012 ms / Sift,  #Sift = 226
+ExtractSift time total =      5.54 ms
+
+GPU time : 2.31 ms + 2.17 ms + 4.50 ms = 8.97 ms
+           0.43 ms / DoG,  0.0066 ms / Sift,  #Sift = 685
+ExtractSift time total =      14.84 ms
+
+GPU time : 0.10 ms + 1.28 ms + 0.24 ms = 1.62 ms
+           0.26 ms / DoG,  -0.0301 ms / Sift,  #Sift = -8
+ExtractSift time total =      16.84 ms
+
+sift res 1000 with time: 0.0557699
+pca encoding time: 0.0657969
+fisher encoding time: 0.00384808
+Image size = (340,500)
+Download time =               0.16 ms
+GPU time : 0.36 ms + 1.89 ms + 0.30 ms = 2.55 ms
+           0.38 ms / DoG,  0.0270 ms / Sift,  #Sift = 11
+ExtractSift time total =      2.59 ms
+
+GPU time : 0.38 ms + 0.64 ms + 0.26 ms = 1.28 ms
+           0.13 ms / DoG,  0.0061 ms / Sift,  #Sift = 43
+ExtractSift time total =      4.23 ms
+
+GPU time : 0.28 ms + 2.28 ms + 0.43 ms = 3.00 ms
+           0.46 ms / DoG,  0.0035 ms / Sift,  #Sift = 123
+ExtractSift time total =      7.67 ms
+
+GPU time : 0.25 ms + 0.56 ms + 0.37 ms = 1.19 ms
+           0.11 ms / DoG,  0.0008 ms / Sift,  #Sift = 478
+ExtractSift time total =      10.79 ms
+
+GPU time : 0.89 ms + 1.14 ms + 0.75 ms = 2.78 ms
+           0.23 ms / DoG,  0.0022 ms / Sift,  #Sift = 345
+ExtractSift time total =      13.95 ms
+
+sift res 1000 with time: 0.0704138
+pca encoding time: 0.107827
+fisher encoding time: 0.00278211
+Image size = (314,475)
+Download time =               0.57 ms
+GPU time : 0.17 ms + 0.44 ms + 0.18 ms = 0.79 ms
+           0.09 ms / DoG,  0.0160 ms / Sift,  #Sift = 11
+ExtractSift time total =      0.82 ms
+
+GPU time : 0.18 ms + 0.35 ms + 0.23 ms = 0.76 ms
+           0.07 ms / DoG,  0.0067 ms / Sift,  #Sift = 34
+ExtractSift time total =      1.72 ms
+
+GPU time : 0.18 ms + 0.37 ms + 0.18 ms = 0.73 ms
+           0.07 ms / DoG,  0.0017 ms / Sift,  #Sift = 109
+ExtractSift time total =      2.59 ms
+
+GPU time : 0.03 ms + 0.28 ms + 0.07 ms = 0.38 ms
+           0.06 ms / DoG,  0.0003 ms / Sift,  #Sift = 267
+ExtractSift time total =      3.20 ms
+
+GPU time : 0.03 ms + 0.17 ms + 0.08 ms = 0.27 ms
+           0.03 ms / DoG,  0.0002 ms / Sift,  #Sift = 341
+ExtractSift time total =      3.80 ms
+
+sift res 762 with time: 0.0841961
+pca encoding time: 0.0654891
+fisher encoding time: 0.00632191
+Image size = (306,475)
+Download time =               0.23 ms
+GPU time : 0.41 ms + 2.75 ms + 0.45 ms = 3.60 ms
+           0.55 ms / DoG,  0.2237 ms / Sift,  #Sift = 2
+ExtractSift time total =      3.63 ms
+
+GPU time : 0.31 ms + 0.78 ms + 0.36 ms = 1.44 ms
+           0.16 ms / DoG,  0.0717 ms / Sift,  #Sift = 5
+ExtractSift time total =      6.91 ms
+
+GPU time : 0.67 ms + 1.36 ms + 1.89 ms = 3.92 ms
+           0.27 ms / DoG,  0.0571 ms / Sift,  #Sift = 33
+ExtractSift time total =      11.20 ms
+
+GPU time : 0.81 ms + 2.70 ms + 0.85 ms = 4.36 ms
+           0.54 ms / DoG,  0.0045 ms / Sift,  #Sift = 189
+ExtractSift time total =      16.18 ms
+
+GPU time : 0.67 ms + 4.45 ms + 0.62 ms = 5.74 ms
+           0.89 ms / DoG,  0.0011 ms / Sift,  #Sift = 555
+ExtractSift time total =      23.93 ms
+
+sift res 784 with time: 0.076153
+pca encoding time: 0.0320492
+fisher encoding time: 0.00524092
+Image size = (356,475)
+Download time =               0.17 ms
+GPU time : 0.10 ms + 0.49 ms + 0.21 ms = 0.80 ms
+           0.10 ms / DoG,  0.0111 ms / Sift,  #Sift = 19
+ExtractSift time total =      0.82 ms
+
+GPU time : 0.03 ms + 0.06 ms + 0.05 ms = 0.14 ms
+           0.01 ms / DoG,  0.0009 ms / Sift,  #Sift = 60
+ExtractSift time total =      1.16 ms
+
+GPU time : 0.03 ms + 0.07 ms + 0.07 ms = 0.16 ms
+           0.01 ms / DoG,  0.0003 ms / Sift,  #Sift = 244
+ExtractSift time total =      1.45 ms
+
+GPU time : 0.02 ms + 0.10 ms + 0.09 ms = 0.21 ms
+           0.02 ms / DoG,  0.0002 ms / Sift,  #Sift = 559
+ExtractSift time total =      1.82 ms
+
+GPU time : 0.03 ms + 0.17 ms + 0.06 ms = 0.26 ms
+           0.03 ms / DoG,  0.0005 ms / Sift,  #Sift = 118
+ExtractSift time total =      2.22 ms
+
+sift res 1000 with time: 0.0481019
+pca encoding time: 0.106974
+fisher encoding time: 0.00636888
+Image size = (305,475)
+Download time =               0.16 ms
+GPU time : 0.02 ms + 0.07 ms + 0.06 ms = 0.15 ms
+           0.01 ms / DoG,  0.0066 ms / Sift,  #Sift = 9
+ExtractSift time total =      0.18 ms
+
+GPU time : 0.03 ms + 0.06 ms + 0.05 ms = 0.14 ms
+           0.01 ms / DoG,  0.0010 ms / Sift,  #Sift = 47
+ExtractSift time total =      0.44 ms
+
+GPU time : 0.03 ms + 0.07 ms + 0.06 ms = 0.16 ms
+           0.01 ms / DoG,  0.0003 ms / Sift,  #Sift = 174
+ExtractSift time total =      0.66 ms
+
+GPU time : 0.03 ms + 0.13 ms + 0.08 ms = 0.24 ms
+           0.03 ms / DoG,  0.0002 ms / Sift,  #Sift = 417
+ExtractSift time total =      0.96 ms
+
+GPU time : 0.04 ms + 0.17 ms + 0.08 ms = 0.29 ms
+           0.03 ms / DoG,  0.0002 ms / Sift,  #Sift = 353
+ExtractSift time total =      1.40 ms
+
+sift res 1000 with time: 0.0805092
+pca encoding time: 0.0540979
+fisher encoding time: 0.00744009
+Image size = (325,500)
+Download time =               0.17 ms
+GPU time : 0.31 ms + 0.86 ms + 0.38 ms = 1.55 ms
+           0.17 ms / DoG,  0.0289 ms / Sift,  #Sift = 13
+ExtractSift time total =      1.58 ms
+
+GPU time : 0.33 ms + 0.89 ms + 0.41 ms = 1.63 ms
+           0.18 ms / DoG,  0.0121 ms / Sift,  #Sift = 34
+ExtractSift time total =      3.56 ms
+
+GPU time : 0.24 ms + 0.75 ms + 0.28 ms = 1.28 ms
+           0.15 ms / DoG,  0.0026 ms / Sift,  #Sift = 111
+ExtractSift time total =      5.21 ms
+
+GPU time : 0.27 ms + 0.77 ms + 0.36 ms = 1.40 ms
+           0.15 ms / DoG,  0.0009 ms / Sift,  #Sift = 395
+ExtractSift time total =      6.85 ms
+
+GPU time : 0.24 ms + 0.95 ms + 0.39 ms = 1.57 ms
+           0.19 ms / DoG,  0.0009 ms / Sift,  #Sift = 447
+ExtractSift time total =      8.66 ms
+
+sift res 1000 with time: 0.085911
+pca encoding time: 0.049134
+fisher encoding time: 0.00504613
+Image size = (349,500)
+Download time =               0.19 ms
+GPU time : 0.88 ms + 1.93 ms + 0.96 ms = 3.77 ms
+           0.39 ms / DoG,  0.3195 ms / Sift,  #Sift = 3
+ExtractSift time total =      3.82 ms
+
+GPU time : 0.71 ms + 2.07 ms + 0.83 ms = 3.61 ms
+           0.41 ms / DoG,  0.1651 ms / Sift,  #Sift = 5
+ExtractSift time total =      7.98 ms
+
+GPU time : 0.61 ms + 6.69 ms + 0.52 ms = 7.82 ms
+           1.34 ms / DoG,  0.0075 ms / Sift,  #Sift = 70
+ExtractSift time total =      16.36 ms
+
+GPU time : 0.49 ms + 1.05 ms + 0.57 ms = 2.12 ms
+           0.21 ms / DoG,  0.0022 ms / Sift,  #Sift = 255
+ExtractSift time total =      23.59 ms
+
+GPU time : 2.46 ms + 1.45 ms + 0.33 ms = 4.24 ms
+           0.29 ms / DoG,  0.0007 ms / Sift,  #Sift = 486
+ExtractSift time total =      29.86 ms
+
+sift res 819 with time: 0.0983431
+pca encoding time: 0.0505021
+fisher encoding time: 0.00158119
+Image size = (371,475)
+Download time =               0.17 ms
+GPU time : 0.16 ms + 0.42 ms + 0.18 ms = 0.76 ms
+           0.08 ms / DoG,  0.0131 ms / Sift,  #Sift = 14
+ExtractSift time total =      0.79 ms
+
+GPU time : 0.20 ms + 3.84 ms + 0.27 ms = 4.31 ms
+           0.77 ms / DoG,  0.0041 ms / Sift,  #Sift = 65
+ExtractSift time total =      5.22 ms
+
+GPU time : 0.03 ms + 0.09 ms + 0.07 ms = 0.19 ms
+           0.02 ms / DoG,  0.0003 ms / Sift,  #Sift = 201
+ExtractSift time total =      5.54 ms
+
+GPU time : 0.03 ms + 0.08 ms + 0.09 ms = 0.20 ms
+           0.02 ms / DoG,  0.0001 ms / Sift,  #Sift = 588
+ExtractSift time total =      5.90 ms
+
+GPU time : 0.03 ms + 0.18 ms + 0.05 ms = 0.26 ms
+           0.04 ms / DoG,  0.0004 ms / Sift,  #Sift = 132
+ExtractSift time total =      6.33 ms
+
+sift res 1000 with time: 0.0867729
+pca encoding time: 0.047709
+fisher encoding time: 0.00337696
+Image size = (324,500)
+Download time =               0.18 ms
+GPU time : 0.41 ms + 1.11 ms + 0.41 ms = 1.94 ms
+           0.22 ms / DoG,  0.0243 ms / Sift,  #Sift = 17
+ExtractSift time total =      1.97 ms
+
+GPU time : 0.43 ms + 0.82 ms + 0.34 ms = 1.59 ms
+           0.16 ms / DoG,  0.0083 ms / Sift,  #Sift = 41
+ExtractSift time total =      4.02 ms
+
+GPU time : 0.32 ms + 1.12 ms + 0.36 ms = 1.80 ms
+           0.22 ms / DoG,  0.0029 ms / Sift,  #Sift = 125
+ExtractSift time total =      5.99 ms
+
+GPU time : 0.34 ms + 0.90 ms + 0.42 ms = 1.66 ms
+           0.18 ms / DoG,  0.0013 ms / Sift,  #Sift = 318
+ExtractSift time total =      8.01 ms
+
+GPU time : 0.87 ms + 1.73 ms + 0.91 ms = 3.51 ms
+           0.35 ms / DoG,  0.0019 ms / Sift,  #Sift = 470
+ExtractSift time total =      11.95 ms
+
+sift res 971 with time: 0.108919
+pca encoding time: 0.0480962
+fisher encoding time: 0.003407
+Image size = (381,500)
+Download time =               0.20 ms
+GPU time : 0.36 ms + 0.85 ms + 0.39 ms = 1.60 ms
+           0.17 ms / DoG,  0.0243 ms / Sift,  #Sift = 16
+ExtractSift time total =      1.64 ms
+
+GPU time : 0.36 ms + 0.83 ms + 0.34 ms = 1.53 ms
+           0.17 ms / DoG,  0.0060 ms / Sift,  #Sift = 57
+ExtractSift time total =      3.40 ms
+
+GPU time : 0.69 ms + 3.87 ms + 0.50 ms = 5.06 ms
+           0.77 ms / DoG,  0.0032 ms / Sift,  #Sift = 156
+ExtractSift time total =      8.74 ms
+
+GPU time : 2.27 ms + 1.06 ms + 2.00 ms = 5.33 ms
+           0.21 ms / DoG,  0.0048 ms / Sift,  #Sift = 418
+ExtractSift time total =      14.41 ms
+
+GPU time : 0.57 ms + 5.05 ms + 0.56 ms = 6.18 ms
+           1.01 ms / DoG,  0.0016 ms / Sift,  #Sift = 353
+ExtractSift time total =      22.06 ms
+
+sift res 1000 with time: 0.0899091
+pca encoding time: 0.0471199
+fisher encoding time: 0.00649405
+Image size = (290,475)
+Download time =               0.14 ms
+GPU time : 0.50 ms + 0.72 ms + 0.86 ms = 2.08 ms
+           0.14 ms / DoG,  0.0719 ms / Sift,  #Sift = 12
+ExtractSift time total =      2.12 ms
+
+GPU time : 0.40 ms + 0.77 ms + 0.40 ms = 1.56 ms
+           0.15 ms / DoG,  0.0085 ms / Sift,  #Sift = 47
+ExtractSift time total =      3.87 ms
+
+GPU time : 0.44 ms + 0.99 ms + 0.46 ms = 1.89 ms
+           0.20 ms / DoG,  0.0030 ms / Sift,  #Sift = 155
+ExtractSift time total =      6.03 ms
+
+GPU time : 0.59 ms + 1.03 ms + 0.52 ms = 2.14 ms
+           0.21 ms / DoG,  0.0008 ms / Sift,  #Sift = 619
+ExtractSift time total =      8.42 ms
+
+GPU time : 0.62 ms + 6.08 ms + 2.84 ms = 9.54 ms
+           1.22 ms / DoG,  0.0170 ms / Sift,  #Sift = 167
+ExtractSift time total =      18.17 ms
+
+sift res 1000 with time: 0.0828731
+pca encoding time: 0.0477059
+fisher encoding time: 0.00237894
+Image size = (310,420)
+Download time =               0.13 ms
+GPU time : 0.02 ms + 0.16 ms + 0.05 ms = 0.23 ms
+           0.03 ms / DoG,  0.0080 ms / Sift,  #Sift = 6
+ExtractSift time total =      0.26 ms
+
+GPU time : 0.03 ms + 0.14 ms + 0.23 ms = 0.40 ms
+           0.03 ms / DoG,  0.0083 ms / Sift,  #Sift = 28
+ExtractSift time total =      0.73 ms
+
+GPU time : 0.22 ms + 6.78 ms + 0.32 ms = 7.32 ms
+           1.36 ms / DoG,  0.0019 ms / Sift,  #Sift = 168
+ExtractSift time total =      8.14 ms
+
+GPU time : 0.79 ms + 4.76 ms + 0.86 ms = 6.41 ms
+           0.95 ms / DoG,  0.0012 ms / Sift,  #Sift = 712
+ExtractSift time total =      14.64 ms
+
+GPU time : 2.36 ms + 1.91 ms + 2.35 ms = 6.62 ms
+           0.38 ms / DoG,  0.0273 ms / Sift,  #Sift = 86
+ExtractSift time total =      21.45 ms
+
+sift res 1000 with time: 0.095825
+pca encoding time: 0.046221
+fisher encoding time: 0.00185919
+Image size = (377,500)
+Download time =               0.19 ms
+GPU time : 0.03 ms + 1.08 ms + 0.06 ms = 1.17 ms
+           0.22 ms / DoG,  0.0584 ms / Sift,  #Sift = 1
+ExtractSift time total =      1.22 ms
+
+GPU time : 0.03 ms + 0.15 ms + 0.06 ms = 0.24 ms
+           0.03 ms / DoG,  0.0047 ms / Sift,  #Sift = 12
+ExtractSift time total =      1.54 ms
+
+GPU time : 0.91 ms + 1.10 ms + 3.82 ms = 5.83 ms
+           0.22 ms / DoG,  0.0979 ms / Sift,  #Sift = 39
+ExtractSift time total =      7.53 ms
+
+GPU time : 0.73 ms + 2.20 ms + 0.84 ms = 3.78 ms
+           0.44 ms / DoG,  0.0056 ms / Sift,  #Sift = 151
+ExtractSift time total =      11.56 ms
+
+GPU time : 1.05 ms + 4.80 ms + 3.76 ms = 9.61 ms
+           0.96 ms / DoG,  0.0135 ms / Sift,  #Sift = 278
+ExtractSift time total =      21.45 ms
+
+sift res 481 with time: 0.111291
+pca encoding time: 0.045814
+fisher encoding time: 0.00210381
+Image size = (310,475)
+Download time =               0.17 ms
+GPU time : 1.02 ms + 2.78 ms + 1.23 ms = 5.03 ms
+           0.56 ms / DoG,  0.1027 ms / Sift,  #Sift = 12
+ExtractSift time total =      5.08 ms
+
+GPU time : 2.35 ms + 3.84 ms + 0.97 ms = 7.16 ms
+           0.77 ms / DoG,  0.0696 ms / Sift,  #Sift = 14
+ExtractSift time total =      12.58 ms
+
+GPU time : 1.09 ms + 2.47 ms + 1.11 ms = 4.67 ms
+           0.49 ms / DoG,  0.0139 ms / Sift,  #Sift = 80
+ExtractSift time total =      17.63 ms
+
+GPU time : 1.13 ms + 2.52 ms + 1.12 ms = 4.76 ms
+           0.50 ms / DoG,  0.0043 ms / Sift,  #Sift = 257
+ExtractSift time total =      22.89 ms
+
+GPU time : 3.75 ms + 2.71 ms + 1.25 ms = 7.72 ms
+           0.54 ms / DoG,  0.0020 ms / Sift,  #Sift = 637
+ExtractSift time total =      33.93 ms
+
+sift res 1000 with time: 0.132791
+pca encoding time: 0.0434659
+fisher encoding time: 0.00539494
+Image size = (319,500)
+Download time =               0.16 ms
+GPU time : 0.96 ms + 6.24 ms + 5.12 ms = 12.33 ms
+           1.25 ms / DoG,  0.6403 ms / Sift,  #Sift = 8
+ExtractSift time total =      12.37 ms
+
+GPU time : 4.70 ms + 3.10 ms + 0.96 ms = 8.76 ms
+           0.62 ms / DoG,  0.0742 ms / Sift,  #Sift = 13
+ExtractSift time total =      22.93 ms
+
+GPU time : 1.14 ms + 2.62 ms + 2.47 ms = 6.24 ms
+           0.52 ms / DoG,  0.0284 ms / Sift,  #Sift = 87
+ExtractSift time total =      31.15 ms
+
+GPU time : 1.26 ms + 2.73 ms + 1.21 ms = 5.20 ms
+           0.55 ms / DoG,  0.0039 ms / Sift,  #Sift = 308
+ExtractSift time total =      39.44 ms
+
+GPU time : 1.03 ms + 2.97 ms + 2.46 ms = 6.45 ms
+           0.59 ms / DoG,  0.0042 ms / Sift,  #Sift = 584
+ExtractSift time total =      46.18 ms
+
+sift res 1000 with time: 0.129115
+pca encoding time: 0.0147529
+fisher encoding time: 0.00982499
+Image size = (316,500)
+Download time =               1.57 ms
+GPU time : 0.52 ms + 2.69 ms + 0.02 ms = 3.23 ms
+ExtractSift time total =      3.27 ms
+
+GPU time : 3.66 ms + 2.52 ms + 12.70 ms = 18.88 ms
+           0.50 ms / DoG,  4.2336 ms / Sift,  #Sift = 3
+ExtractSift time total =      22.61 ms
+
+GPU time : 0.93 ms + 4.24 ms + 0.95 ms = 6.12 ms
+           0.85 ms / DoG,  0.0432 ms / Sift,  #Sift = 22
+ExtractSift time total =      29.19 ms
+
+GPU time : 0.72 ms + 5.89 ms + 0.74 ms = 7.34 ms
+           1.18 ms / DoG,  0.0047 ms / Sift,  #Sift = 157
+ExtractSift time total =      37.02 ms
+
+GPU time : 0.49 ms + 1.76 ms + 0.59 ms = 2.85 ms
+           0.35 ms / DoG,  0.0020 ms / Sift,  #Sift = 301
+ExtractSift time total =      44.30 ms
+
+sift res 483 with time: 0.127761
+pca encoding time: 0.0230949
+fisher encoding time: 0.0154738
+Image size = (318,475)
+Download time =               0.25 ms
+GPU time : 1.15 ms + 2.51 ms + 1.11 ms = 4.78 ms
+           0.50 ms / DoG,  0.0696 ms / Sift,  #Sift = 16
+ExtractSift time total =      4.82 ms
+
+GPU time : 1.40 ms + 2.70 ms + 1.26 ms = 5.36 ms
+           0.54 ms / DoG,  0.0293 ms / Sift,  #Sift = 43
+ExtractSift time total =      19.23 ms
+
+GPU time : 1.19 ms + 4.21 ms + 13.90 ms = 19.30 ms
+           0.84 ms / DoG,  0.1349 ms / Sift,  #Sift = 103
+ExtractSift time total =      39.18 ms
+
+GPU time : 0.85 ms + 5.10 ms + 0.88 ms = 6.84 ms
+           1.02 ms / DoG,  0.0045 ms / Sift,  #Sift = 198
+ExtractSift time total =      46.61 ms
+
+GPU time : 1.66 ms + 4.47 ms + 0.30 ms = 6.42 ms
+           0.89 ms / DoG,  0.0009 ms / Sift,  #Sift = 345
+ExtractSift time total =      54.94 ms
+
+sift res 705 with time: 0.1238
+pca encoding time: 0.0380099
+fisher encoding time: 0.00288582
+Image size = (383,475)
+Download time =               0.19 ms
+GPU time : 1.20 ms + 2.71 ms + 1.36 ms = 5.27 ms
+           0.54 ms / DoG,  0.0975 ms / Sift,  #Sift = 14
+ExtractSift time total =      5.31 ms
+
+GPU time : 1.13 ms + 2.87 ms + 5.38 ms = 9.38 ms
+           0.57 ms / DoG,  0.1121 ms / Sift,  #Sift = 48
+ExtractSift time total =      15.27 ms
+
+GPU time : 0.55 ms + 3.77 ms + 1.49 ms = 5.82 ms
+           0.75 ms / DoG,  0.0112 ms / Sift,  #Sift = 133
+ExtractSift time total =      21.74 ms
+
+GPU time : 0.48 ms + 1.31 ms + 0.57 ms = 2.36 ms
+           0.26 ms / DoG,  0.0015 ms / Sift,  #Sift = 393
+ExtractSift time total =      25.98 ms
+
+GPU time : 0.73 ms + 1.14 ms + 0.89 ms = 2.76 ms
+           0.23 ms / DoG,  0.0022 ms / Sift,  #Sift = 412
+ExtractSift time total =      29.38 ms
+
+sift res 1000 with time: 0.110359
+pca encoding time: 0.035084
+fisher encoding time: 0.00446796
+Image size = (340,500)
+Download time =               0.18 ms
+GPU time : 5.81 ms + 7.86 ms + 2.36 ms = 16.02 ms
+           1.57 ms / DoG,  0.1685 ms / Sift,  #Sift = 14
+ExtractSift time total =      31.90 ms
+
+GPU time : 2.11 ms + 3.48 ms + 2.25 ms = 7.85 ms
+           0.70 ms / DoG,  0.0536 ms / Sift,  #Sift = 42
+ExtractSift time total =      40.22 ms
+
+GPU time : 0.40 ms + 1.20 ms + 0.59 ms = 2.19 ms
+           0.24 ms / DoG,  0.0035 ms / Sift,  #Sift = 171
+ExtractSift time total =      42.90 ms
+
+GPU time : 0.31 ms + 4.02 ms + 0.33 ms = 4.66 ms
+           0.80 ms / DoG,  0.0010 ms / Sift,  #Sift = 318
+ExtractSift time total =      48.06 ms
+
+GPU time : 2.18 ms + 1.12 ms + 0.54 ms = 3.84 ms
+           0.22 ms / DoG,  0.0012 ms / Sift,  #Sift = 455
+ExtractSift time total =      54.87 ms
+
+sift res 1000 with time: 0.130501
+pca encoding time: 0.0446012
+fisher encoding time: 0.00412488
+Image size = (321,475)
+Download time =               0.15 ms
+GPU time : 0.99 ms + 2.30 ms + 2.23 ms = 5.52 ms
+           0.46 ms / DoG,  0.2793 ms / Sift,  #Sift = 8
+ExtractSift time total =      5.57 ms
+
+GPU time : 1.03 ms + 2.35 ms + 1.05 ms = 4.43 ms
+           0.47 ms / DoG,  0.0197 ms / Sift,  #Sift = 53
+ExtractSift time total =      10.53 ms
+
+GPU time : 1.11 ms + 5.38 ms + 1.11 ms = 7.59 ms
+           1.08 ms / DoG,  0.0063 ms / Sift,  #Sift = 177
+ExtractSift time total =      18.70 ms
+
+GPU time : 1.20 ms + 8.31 ms + 1.36 ms = 10.86 ms
+           1.66 ms / DoG,  0.0030 ms / Sift,  #Sift = 459
+ExtractSift time total =      30.14 ms
+
+GPU time : 0.92 ms + 2.80 ms + 1.19 ms = 4.90 ms
+           0.56 ms / DoG,  0.0039 ms / Sift,  #Sift = 303
+ExtractSift time total =      36.91 ms
+
+sift res 1000 with time: 0.112384
+pca encoding time: 0.035852
+fisher encoding time: 0.00268197
+Image size = (308,500)
+Download time =               0.32 ms
+GPU time : 3.69 ms + 1.35 ms + 1.14 ms = 6.18 ms
+           0.27 ms / DoG,  0.2275 ms / Sift,  #Sift = 5
+ExtractSift time total =      6.22 ms
+
+GPU time : 2.19 ms + 2.04 ms + 1.10 ms = 5.33 ms
+           0.41 ms / DoG,  0.0458 ms / Sift,  #Sift = 24
+ExtractSift time total =      11.93 ms
+
+GPU time : 0.98 ms + 2.30 ms + 1.03 ms = 4.32 ms
+           0.46 ms / DoG,  0.0108 ms / Sift,  #Sift = 96
+ExtractSift time total =      17.97 ms
+
+GPU time : 1.22 ms + 5.15 ms + 1.33 ms = 7.71 ms
+           1.03 ms / DoG,  0.0049 ms / Sift,  #Sift = 269
+ExtractSift time total =      26.19 ms
+
+GPU time : 1.11 ms + 3.21 ms + 1.30 ms = 5.62 ms
+           0.64 ms / DoG,  0.0021 ms / Sift,  #Sift = 606
+ExtractSift time total =      33.62 ms
+
+sift res 1000 with time: 0.116477
+pca encoding time: 0.0438089
+fisher encoding time: 0.0121641
+Image size = (321,500)
+Download time =               0.23 ms
+GPU time : 1.12 ms + 3.05 ms + 1.26 ms = 5.42 ms
+           0.61 ms / DoG,  0.0966 ms / Sift,  #Sift = 13
+ExtractSift time total =      5.46 ms
+
+GPU time : 0.76 ms + 2.55 ms + 0.82 ms = 4.13 ms
+           0.51 ms / DoG,  0.0171 ms / Sift,  #Sift = 48
+ExtractSift time total =      10.21 ms
+
+GPU time : 1.05 ms + 1.65 ms + 4.92 ms = 7.63 ms
+           0.33 ms / DoG,  0.0373 ms / Sift,  #Sift = 132
+ExtractSift time total =      22.74 ms
+
+GPU time : 1.28 ms + 2.73 ms + 1.17 ms = 5.19 ms
+           0.55 ms / DoG,  0.0036 ms / Sift,  #Sift = 326
+ExtractSift time total =      28.49 ms
+
+GPU time : 12.73 ms + 2.64 ms + 5.10 ms = 20.47 ms
+           0.53 ms / DoG,  0.0106 ms / Sift,  #Sift = 481
+ExtractSift time total =      49.48 ms
+
+sift res 1000 with time: 0.115296
+pca encoding time: 0.0569041
+fisher encoding time: 0.00788307
+Image size = (336,500)
+Download time =               0.20 ms
+GPU time : 1.73 ms + 0.85 ms + 0.43 ms = 3.01 ms
+           0.17 ms / DoG,  0.0534 ms / Sift,  #Sift = 8
+ExtractSift time total =      3.04 ms
+
+GPU time : 0.35 ms + 0.76 ms + 0.35 ms = 1.46 ms
+           0.15 ms / DoG,  0.0119 ms / Sift,  #Sift = 29
+ExtractSift time total =      4.80 ms
+
+GPU time : 0.36 ms + 0.79 ms + 0.36 ms = 1.51 ms
+           0.16 ms / DoG,  0.0030 ms / Sift,  #Sift = 121
+ExtractSift time total =      6.56 ms
+
+GPU time : 0.29 ms + 0.85 ms + 0.30 ms = 1.44 ms
+           0.17 ms / DoG,  0.0008 ms / Sift,  #Sift = 353
+ExtractSift time total =      8.26 ms
+
+GPU time : 0.09 ms + 0.89 ms + 0.19 ms = 1.17 ms
+           0.18 ms / DoG,  0.0004 ms / Sift,  #Sift = 489
+ExtractSift time total =      9.63 ms
+
+sift res 1000 with time: 0.098958
+pca encoding time: 0.056251
+fisher encoding time: 0.00500798
+Image size = (333,475)
+Download time =               0.17 ms
+GPU time : 0.45 ms + 0.68 ms + 0.30 ms = 1.43 ms
+           0.14 ms / DoG,  0.0271 ms / Sift,  #Sift = 11
+ExtractSift time total =      1.46 ms
+
+GPU time : 0.12 ms + 0.89 ms + 0.07 ms = 1.08 ms
+           0.18 ms / DoG,  0.0019 ms / Sift,  #Sift = 37
+ExtractSift time total =      2.80 ms
+
+GPU time : 0.17 ms + 0.33 ms + 0.19 ms = 0.69 ms
+           0.07 ms / DoG,  0.0013 ms / Sift,  #Sift = 140
+ExtractSift time total =      3.70 ms
+
+GPU time : 0.27 ms + 0.40 ms + 0.43 ms = 1.10 ms
+           0.08 ms / DoG,  0.0016 ms / Sift,  #Sift = 271
+ExtractSift time total =      5.02 ms
+
+GPU time : 0.31 ms + 0.86 ms + 0.46 ms = 1.63 ms
+           0.17 ms / DoG,  0.0011 ms / Sift,  #Sift = 431
+ExtractSift time total =      6.87 ms
+
+sift res 890 with time: 0.08689
+pca encoding time: 0.031342
+fisher encoding time: 0.0096662
+Image size = (306,475)
+Download time =               0.15 ms
+GPU time : 3.20 ms + 0.95 ms + 0.46 ms = 4.61 ms
+           0.19 ms / DoG,  0.0355 ms / Sift,  #Sift = 13
+ExtractSift time total =      4.65 ms
+
+GPU time : 0.86 ms + 6.28 ms + 2.25 ms = 9.40 ms
+           1.26 ms / DoG,  0.0626 ms / Sift,  #Sift = 36
+ExtractSift time total =      14.51 ms
+
+GPU time : 1.02 ms + 2.95 ms + 1.03 ms = 4.99 ms
+           0.59 ms / DoG,  0.0092 ms / Sift,  #Sift = 112
+ExtractSift time total =      21.34 ms
+
+GPU time : 1.07 ms + 2.60 ms + 1.05 ms = 4.72 ms
+           0.52 ms / DoG,  0.0041 ms / Sift,  #Sift = 254
+ExtractSift time total =      32.81 ms
+
+GPU time : 0.93 ms + 4.22 ms + 4.46 ms = 9.62 ms
+           0.84 ms / DoG,  0.0114 ms / Sift,  #Sift = 390
+ExtractSift time total =      44.10 ms
+
+sift res 805 with time: 0.112604
+pca encoding time: 0.0327129
+fisher encoding time: 0.0100751
+Image size = (334,475)
+Download time =               0.16 ms
+GPU time : 0.41 ms + 1.06 ms + 0.54 ms = 2.01 ms
+           0.21 ms / DoG,  0.0388 ms / Sift,  #Sift = 14
+ExtractSift time total =      2.06 ms
+
+GPU time : 7.23 ms + 2.68 ms + 0.83 ms = 10.75 ms
+           0.54 ms / DoG,  0.0136 ms / Sift,  #Sift = 61
+ExtractSift time total =      13.18 ms
+
+GPU time : 6.52 ms + 5.95 ms + 0.84 ms = 13.31 ms
+           1.19 ms / DoG,  0.0032 ms / Sift,  #Sift = 265
+ExtractSift time total =      26.96 ms
+
+GPU time : 0.76 ms + 2.09 ms + 1.00 ms = 3.85 ms
+           0.42 ms / DoG,  0.0015 ms / Sift,  #Sift = 660
+ExtractSift time total =      31.24 ms
+
+GPU time : 0.43 ms + 2.23 ms + 0.02 ms = 2.68 ms
+           0.45 ms / DoG,  -0.0001 ms / Sift,  #Sift = -340
+ExtractSift time total =      34.39 ms
+
+sift res 1000 with time: 0.114939
+pca encoding time: 0.030829
+fisher encoding time: 0.00607395
+Image size = (330,500)
+Download time =               0.17 ms
+GPU time : 0.29 ms + 0.75 ms + 0.28 ms = 1.32 ms
+           0.15 ms / DoG,  0.0939 ms / Sift,  #Sift = 3
+ExtractSift time total =      1.36 ms
+
+GPU time : 0.52 ms + 0.62 ms + 2.14 ms = 3.28 ms
+           0.12 ms / DoG,  0.0690 ms / Sift,  #Sift = 31
+ExtractSift time total =      5.22 ms
+
+GPU time : 0.69 ms + 1.73 ms + 0.77 ms = 3.18 ms
+           0.35 ms / DoG,  0.0073 ms / Sift,  #Sift = 105
+ExtractSift time total =      12.65 ms
+
+GPU time : 0.99 ms + 4.57 ms + 3.58 ms = 9.14 ms
+           0.91 ms / DoG,  0.0114 ms / Sift,  #Sift = 314
+ExtractSift time total =      22.45 ms
+
+GPU time : 0.73 ms + 5.00 ms + 0.83 ms = 6.56 ms
+           1.00 ms / DoG,  0.0020 ms / Sift,  #Sift = 421
+ExtractSift time total =      32.10 ms
+
+sift res 874 with time: 0.103836
+pca encoding time: 0.0286601
+fisher encoding time: 0.00910211
+Image size = (135,200)
+Download time =               0.04 ms
+GPU time : 0.09 ms + 0.41 ms + 0.01 ms = 0.52 ms
+ExtractSift time total =      0.54 ms
+
+GPU time : 0.30 ms + 0.25 ms + 0.29 ms = 0.84 ms
+           0.05 ms / DoG,  0.1428 ms / Sift,  #Sift = 2
+ExtractSift time total =      1.58 ms
+
+GPU time : 0.16 ms + 0.33 ms + 0.17 ms = 0.67 ms
+           0.07 ms / DoG,  0.0140 ms / Sift,  #Sift = 12
+ExtractSift time total =      2.40 ms
+
+GPU time : 0.53 ms + 0.54 ms + 0.46 ms = 1.53 ms
+           0.11 ms / DoG,  0.0045 ms / Sift,  #Sift = 103
+ExtractSift time total =      4.17 ms
+
+GPU time : 0.71 ms + 1.58 ms + 0.37 ms = 2.66 ms
+           0.32 ms / DoG,  0.0008 ms / Sift,  #Sift = 482
+ExtractSift time total =      7.01 ms
+
+sift res 599 with time: 0.062109
+pca encoding time: 0.0576339
+fisher encoding time: 0.00282598
+Image size = (362,475)
+Download time =               0.16 ms
+GPU time : 0.02 ms + 0.05 ms + 0.08 ms = 0.15 ms
+           0.01 ms / DoG,  0.0064 ms / Sift,  #Sift = 13
+ExtractSift time total =      0.17 ms
+
+GPU time : 0.03 ms + 0.06 ms + 0.08 ms = 0.17 ms
+           0.01 ms / DoG,  0.0016 ms / Sift,  #Sift = 47
+ExtractSift time total =      0.39 ms
+
+GPU time : 0.02 ms + 0.11 ms + 0.11 ms = 0.23 ms
+           0.02 ms / DoG,  0.0008 ms / Sift,  #Sift = 130
+ExtractSift time total =      0.67 ms
+
+GPU time : 0.09 ms + 0.10 ms + 0.07 ms = 0.25 ms
+           0.02 ms / DoG,  0.0003 ms / Sift,  #Sift = 255
+ExtractSift time total =      0.97 ms
+
+GPU time : 0.19 ms + 0.30 ms + 0.09 ms = 0.57 ms
+           0.06 ms / DoG,  0.0002 ms / Sift,  #Sift = 476
+ExtractSift time total =      1.60 ms
+
+sift res 921 with time: 0.102882
+pca encoding time: 0.0794771
+fisher encoding time: 0.00219107
+Image size = (311,475)
+Download time =               0.26 ms
+GPU time : 0.10 ms + 0.14 ms + 0.05 ms = 0.28 ms
+           0.03 ms / DoG,  0.0038 ms / Sift,  #Sift = 12
+ExtractSift time total =      0.31 ms
+
+GPU time : 0.13 ms + 0.13 ms + 0.05 ms = 0.31 ms
+           0.03 ms / DoG,  0.0013 ms / Sift,  #Sift = 41
+ExtractSift time total =      0.67 ms
+
+GPU time : 0.02 ms + 0.06 ms + 0.05 ms = 0.13 ms
+           0.01 ms / DoG,  0.0003 ms / Sift,  #Sift = 168
+ExtractSift time total =      0.84 ms
+
+GPU time : 0.16 ms + 0.08 ms + 0.07 ms = 0.31 ms
+           0.02 ms / DoG,  0.0001 ms / Sift,  #Sift = 468
+ExtractSift time total =      1.35 ms
+
+GPU time : 0.53 ms + 0.81 ms + 0.42 ms = 1.76 ms
+           0.16 ms / DoG,  0.0014 ms / Sift,  #Sift = 311
+ExtractSift time total =      3.41 ms
+
+sift res 1000 with time: 0.112946
+pca encoding time: 0.0716929
+fisher encoding time: 0.00296998
+Image size = (359,500)
+Download time =               0.21 ms
+GPU time : 0.47 ms + 0.78 ms + 0.58 ms = 1.82 ms
+           0.16 ms / DoG,  0.0303 ms / Sift,  #Sift = 19
+ExtractSift time total =      1.87 ms
+
+GPU time : 0.64 ms + 1.88 ms + 0.64 ms = 3.17 ms
+           0.38 ms / DoG,  0.0091 ms / Sift,  #Sift = 71
+ExtractSift time total =      5.25 ms
+
+GPU time : 0.27 ms + 0.79 ms + 0.27 ms = 1.32 ms
+           0.16 ms / DoG,  0.0014 ms / Sift,  #Sift = 193
+ExtractSift time total =      7.04 ms
+
+GPU time : 0.18 ms + 0.42 ms + 0.21 ms = 0.81 ms
+           0.08 ms / DoG,  0.0004 ms / Sift,  #Sift = 565
+ExtractSift time total =      8.55 ms
+
+GPU time : 0.23 ms + 0.48 ms + 0.28 ms = 0.99 ms
+           0.10 ms / DoG,  0.0018 ms / Sift,  #Sift = 152
+ExtractSift time total =      13.72 ms
+
+sift res 1000 with time: 0.146238
+pca encoding time: 0.0447481
+fisher encoding time: 0.00790691
+Image size = (322,475)
+Download time =               0.17 ms
+GPU time : 0.37 ms + 6.14 ms + 0.46 ms = 6.97 ms
+           1.23 ms / DoG,  0.1142 ms / Sift,  #Sift = 4
+ExtractSift time total =      7.02 ms
+
+GPU time : 3.36 ms + 8.25 ms + 0.83 ms = 12.44 ms
+           1.65 ms / DoG,  0.0231 ms / Sift,  #Sift = 36
+ExtractSift time total =      19.87 ms
+
+GPU time : 0.97 ms + 2.40 ms + 0.90 ms = 4.27 ms
+           0.48 ms / DoG,  0.0068 ms / Sift,  #Sift = 133
+ExtractSift time total =      24.51 ms
+
+GPU time : 1.07 ms + 2.51 ms + 0.98 ms = 4.56 ms
+           0.50 ms / DoG,  0.0028 ms / Sift,  #Sift = 354
+ExtractSift time total =      29.33 ms
+
+GPU time : 3.70 ms + 2.88 ms + 0.97 ms = 7.55 ms
+           0.58 ms / DoG,  0.0021 ms / Sift,  #Sift = 473
+ExtractSift time total =      37.19 ms
+
+sift res 1000 with time: 0.14097
+pca encoding time: 0.027987
+fisher encoding time: 0.00582099
+Image size = (361,475)
+Download time =               0.17 ms
+GPU time : 0.88 ms + 1.84 ms + 6.41 ms = 9.13 ms
+           0.37 ms / DoG,  2.1378 ms / Sift,  #Sift = 3
+ExtractSift time total =      9.18 ms
+
+GPU time : 0.83 ms + 6.26 ms + 0.97 ms = 8.06 ms
+           1.25 ms / DoG,  0.0442 ms / Sift,  #Sift = 22
+ExtractSift time total =      17.66 ms
+
+GPU time : 3.63 ms + 7.61 ms + 0.98 ms = 12.22 ms
+           1.52 ms / DoG,  0.0140 ms / Sift,  #Sift = 70
+ExtractSift time total =      30.29 ms
+
+GPU time : 1.08 ms + 2.26 ms + 3.82 ms = 7.15 ms
+           0.45 ms / DoG,  0.0254 ms / Sift,  #Sift = 150
+ExtractSift time total =      37.94 ms
+
+GPU time : 1.13 ms + 5.47 ms + 1.01 ms = 7.60 ms
+           1.09 ms / DoG,  0.0031 ms / Sift,  #Sift = 328
+ExtractSift time total =      46.56 ms
+
+sift res 573 with time: 0.123443
+pca encoding time: 0.0295799
+fisher encoding time: 0.00538492
+Image size = (325,475)
+Download time =               0.15 ms
+GPU time : 1.09 ms + 2.23 ms + 1.07 ms = 4.39 ms
+           0.45 ms / DoG,  0.0977 ms / Sift,  #Sift = 11
+ExtractSift time total =      4.42 ms
+
+GPU time : 0.84 ms + 2.36 ms + 4.87 ms = 8.07 ms
+           0.47 ms / DoG,  0.1218 ms / Sift,  #Sift = 40
+ExtractSift time total =      13.06 ms
+
+GPU time : 1.04 ms + 8.49 ms + 2.36 ms = 11.89 ms
+           1.70 ms / DoG,  0.0182 ms / Sift,  #Sift = 130
+ExtractSift time total =      25.43 ms
+
+GPU time : 1.56 ms + 2.78 ms + 0.62 ms = 4.96 ms
+           0.56 ms / DoG,  0.0023 ms / Sift,  #Sift = 275
+ExtractSift time total =      31.01 ms
+
+GPU time : 3.79 ms + 0.84 ms + 0.21 ms = 4.84 ms
+           0.17 ms / DoG,  0.0005 ms / Sift,  #Sift = 412
+ExtractSift time total =      36.45 ms
+
+sift res 868 with time: 0.107735
+pca encoding time: 0.043824
+fisher encoding time: 0.00278497
+Image size = (336,500)
+Download time =               0.16 ms
+GPU time : 1.01 ms + 3.76 ms + 1.04 ms = 5.82 ms
+           0.75 ms / DoG,  0.0948 ms / Sift,  #Sift = 11
+ExtractSift time total =      5.85 ms
+
+GPU time : 1.06 ms + 1.91 ms + 1.17 ms = 4.15 ms
+           0.38 ms / DoG,  0.0192 ms / Sift,  #Sift = 61
+ExtractSift time total =      11.49 ms
+
+GPU time : 0.88 ms + 2.30 ms + 0.77 ms = 3.96 ms
+           0.46 ms / DoG,  0.0033 ms / Sift,  #Sift = 233
+ExtractSift time total =      19.67 ms
+
+GPU time : 0.51 ms + 1.24 ms + 0.55 ms = 2.29 ms
+           0.25 ms / DoG,  0.0016 ms / Sift,  #Sift = 334
+ExtractSift time total =      22.48 ms
+
+GPU time : 0.57 ms + 1.49 ms + 0.66 ms = 2.73 ms
+           0.30 ms / DoG,  0.0018 ms / Sift,  #Sift = 361
+ExtractSift time total =      25.79 ms
+
+sift res 1000 with time: 0.107092
+pca encoding time: 0.0402331
+fisher encoding time: 0.00752497
+Image size = (378,475)
+Download time =               0.20 ms
+GPU time : 1.03 ms + 4.38 ms + 1.02 ms = 6.43 ms
+           0.88 ms / DoG,  0.0849 ms / Sift,  #Sift = 12
+ExtractSift time total =      6.47 ms
+
+GPU time : 0.62 ms + 7.99 ms + 0.50 ms = 9.12 ms
+           1.60 ms / DoG,  0.0084 ms / Sift,  #Sift = 60
+ExtractSift time total =      16.15 ms
+
+GPU time : 0.67 ms + 1.30 ms + 0.40 ms = 2.36 ms
+           0.26 ms / DoG,  0.0024 ms / Sift,  #Sift = 165
+ExtractSift time total =      19.19 ms
+
+GPU time : 0.03 ms + 1.06 ms + 0.06 ms = 1.15 ms
+           0.21 ms / DoG,  0.0003 ms / Sift,  #Sift = 216
+ExtractSift time total =      22.29 ms
+
+GPU time : 1.50 ms + 0.18 ms + 0.08 ms = 1.76 ms
+           0.04 ms / DoG,  0.0002 ms / Sift,  #Sift = 400
+ExtractSift time total =      28.55 ms
+
+sift res 853 with time: 0.0968239
+pca encoding time: 0.0495601
+fisher encoding time: 0.0110559
+Image size = (333,500)
+Download time =               0.18 ms
+GPU time : 0.82 ms + 3.25 ms + 0.79 ms = 4.86 ms
+           0.65 ms / DoG,  0.0991 ms / Sift,  #Sift = 8
+ExtractSift time total =      4.92 ms
+
+GPU time : 0.91 ms + 1.91 ms + 0.86 ms = 3.68 ms
+           0.38 ms / DoG,  0.0188 ms / Sift,  #Sift = 46
+ExtractSift time total =      9.00 ms
+
+GPU time : 0.63 ms + 1.29 ms + 0.64 ms = 2.55 ms
+           0.26 ms / DoG,  0.0056 ms / Sift,  #Sift = 114
+ExtractSift time total =      11.94 ms
+
+GPU time : 0.86 ms + 1.93 ms + 0.80 ms = 3.59 ms
+           0.39 ms / DoG,  0.0032 ms / Sift,  #Sift = 249
+ExtractSift time total =      15.94 ms
+
+GPU time : 0.48 ms + 1.40 ms + 0.51 ms = 2.39 ms
+           0.28 ms / DoG,  0.0018 ms / Sift,  #Sift = 279
+ExtractSift time total =      18.83 ms
+
+sift res 696 with time: 0.075408
+pca encoding time: 0.0543489
+fisher encoding time: 0.00458503
+Image size = (294,475)
+Download time =               0.16 ms
+GPU time : 0.02 ms + 0.06 ms + 0.05 ms = 0.13 ms
+           0.01 ms / DoG,  0.0054 ms / Sift,  #Sift = 10
+ExtractSift time total =      0.15 ms
+
+GPU time : 0.02 ms + 0.06 ms + 0.04 ms = 0.12 ms
+           0.01 ms / DoG,  0.0011 ms / Sift,  #Sift = 41
+ExtractSift time total =      0.32 ms
+
+GPU time : 0.02 ms + 0.07 ms + 0.06 ms = 0.15 ms
+           0.01 ms / DoG,  0.0005 ms / Sift,  #Sift = 127
+ExtractSift time total =      0.51 ms
+
+GPU time : 0.02 ms + 0.07 ms + 0.07 ms = 0.16 ms
+           0.01 ms / DoG,  0.0001 ms / Sift,  #Sift = 492
+ExtractSift time total =      0.72 ms
+
+GPU time : 0.02 ms + 0.15 ms + 0.07 ms = 0.24 ms
+           0.03 ms / DoG,  0.0002 ms / Sift,  #Sift = 330
+ExtractSift time total =      1.02 ms
+
+sift res 1000 with time: 0.0766609
+pca encoding time: 0.045795
+fisher encoding time: 0.00372505
+Image size = (303,475)
+Download time =               0.15 ms
+GPU time : 0.27 ms + 0.99 ms + 0.35 ms = 1.60 ms
+           0.20 ms / DoG,  0.0216 ms / Sift,  #Sift = 16
+ExtractSift time total =      1.84 ms
+
+GPU time : 3.01 ms + 0.59 ms + 0.27 ms = 3.88 ms
+           0.12 ms / DoG,  0.0045 ms / Sift,  #Sift = 61
+ExtractSift time total =      6.04 ms
+
+GPU time : 0.02 ms + 4.03 ms + 0.06 ms = 4.11 ms
+           0.81 ms / DoG,  0.0004 ms / Sift,  #Sift = 172
+ExtractSift time total =      10.60 ms
+
+GPU time : 0.03 ms + 0.08 ms + 0.08 ms = 0.19 ms
+           0.02 ms / DoG,  0.0002 ms / Sift,  #Sift = 494
+ExtractSift time total =      11.11 ms
+
+GPU time : 0.02 ms + 0.16 ms + 0.07 ms = 0.26 ms
+           0.03 ms / DoG,  0.0003 ms / Sift,  #Sift = 257
+ExtractSift time total =      11.80 ms
+
+sift res 1000 with time: 0.0929301
+pca encoding time: 0.0551002
+fisher encoding time: 0.00452995
+Image size = (301,475)
+Download time =               0.14 ms
+GPU time : 1.47 ms + 0.55 ms + 1.74 ms = 3.76 ms
+           0.11 ms / DoG,  0.1335 ms / Sift,  #Sift = 13
+ExtractSift time total =      3.78 ms
+
+GPU time : 0.09 ms + 0.45 ms + 0.05 ms = 0.59 ms
+           0.09 ms / DoG,  0.0014 ms / Sift,  #Sift = 36
+ExtractSift time total =      4.50 ms
+
+GPU time : 0.02 ms + 0.07 ms + 0.06 ms = 0.15 ms
+           0.01 ms / DoG,  0.0004 ms / Sift,  #Sift = 148
+ExtractSift time total =      4.77 ms
+
+GPU time : 0.02 ms + 0.08 ms + 0.07 ms = 0.18 ms
+           0.02 ms / DoG,  0.0003 ms / Sift,  #Sift = 275
+ExtractSift time total =      6.46 ms
+
+GPU time : 0.03 ms + 0.19 ms + 0.09 ms = 0.31 ms
+           0.04 ms / DoG,  0.0002 ms / Sift,  #Sift = 453
+ExtractSift time total =      6.90 ms
+
+sift res 925 with time: 0.0755341
+pca encoding time: 0.052474
+fisher encoding time: 0.00394797
+Image size = (310,475)
+Download time =               0.21 ms
+GPU time : 0.54 ms + 1.78 ms + 0.49 ms = 2.80 ms
+           0.36 ms / DoG,  0.0607 ms / Sift,  #Sift = 8
+ExtractSift time total =      2.83 ms
+
+GPU time : 2.03 ms + 1.70 ms + 2.05 ms = 5.78 ms
+           0.34 ms / DoG,  0.1137 ms / Sift,  #Sift = 18
+ExtractSift time total =      12.89 ms
+
+GPU time : 0.17 ms + 0.38 ms + 0.22 ms = 0.77 ms
+           0.08 ms / DoG,  0.0026 ms / Sift,  #Sift = 85
+ExtractSift time total =      14.27 ms
+
+GPU time : 0.24 ms + 0.49 ms + 0.36 ms = 1.09 ms
+           0.10 ms / DoG,  0.0016 ms / Sift,  #Sift = 224
+ExtractSift time total =      15.81 ms
+
+GPU time : 0.16 ms + 0.59 ms + 0.26 ms = 1.00 ms
+           0.12 ms / DoG,  0.0004 ms / Sift,  #Sift = 665
+ExtractSift time total =      17.36 ms
+
+sift res 1000 with time: 0.0903339
+pca encoding time: 0.0504339
+fisher encoding time: 0.00389409
+Image size = (406,500)
+Download time =               0.23 ms
+GPU time : 0.41 ms + 1.28 ms + 0.37 ms = 2.06 ms
+           0.26 ms / DoG,  0.0233 ms / Sift,  #Sift = 16
+ExtractSift time total =      6.10 ms
+
+GPU time : 0.03 ms + 0.40 ms + 0.06 ms = 0.48 ms
+           0.08 ms / DoG,  0.0011 ms / Sift,  #Sift = 53
+ExtractSift time total =      6.98 ms
+
+GPU time : 0.02 ms + 0.07 ms + 0.06 ms = 0.15 ms
+           0.01 ms / DoG,  0.0004 ms / Sift,  #Sift = 154
+ExtractSift time total =      7.63 ms
+
+GPU time : 0.02 ms + 0.10 ms + 0.09 ms = 0.21 ms
+           0.02 ms / DoG,  0.0001 ms / Sift,  #Sift = 643
+ExtractSift time total =      9.78 ms
+
+GPU time : 0.02 ms + 0.19 ms + 0.06 ms = 0.27 ms
+           0.04 ms / DoG,  0.0004 ms / Sift,  #Sift = 134
+ExtractSift time total =      10.69 ms
+
+sift res 1000 with time: 0.0959351
+pca encoding time: 0.117747
+fisher encoding time: 0.00455809
+Image size = (390,500)
+Download time =               1.15 ms
+GPU time : 0.49 ms + 1.20 ms + 0.54 ms = 2.24 ms
+           0.24 ms / DoG,  0.0908 ms / Sift,  #Sift = 6
+ExtractSift time total =      2.27 ms
+
+GPU time : 0.50 ms + 1.15 ms + 0.53 ms = 2.19 ms
+           0.23 ms / DoG,  0.0355 ms / Sift,  #Sift = 15
+ExtractSift time total =      4.79 ms
+
+GPU time : 0.98 ms + 3.59 ms + 1.11 ms = 5.67 ms
+           0.72 ms / DoG,  0.0161 ms / Sift,  #Sift = 69
+ExtractSift time total =      10.82 ms
+
+GPU time : 0.70 ms + 2.17 ms + 1.07 ms = 3.94 ms
+           0.43 ms / DoG,  0.0039 ms / Sift,  #Sift = 273
+ExtractSift time total =      15.21 ms
+
+GPU time : 2.44 ms + 2.90 ms + 1.22 ms = 6.56 ms
+           0.58 ms / DoG,  0.0027 ms / Sift,  #Sift = 448
+ExtractSift time total =      22.38 ms
+
+sift res 811 with time: 0.116323
+pca encoding time: 0.0752552
+fisher encoding time: 0.00462294
+Image size = (302,500)
+Download time =               0.16 ms
+GPU time : 2.94 ms + 0.90 ms + 0.62 ms = 4.46 ms
+           0.18 ms / DoG,  0.1243 ms / Sift,  #Sift = 5
+ExtractSift time total =      4.50 ms
+
+GPU time : 1.88 ms + 0.76 ms + 0.46 ms = 3.10 ms
+           0.15 ms / DoG,  0.0208 ms / Sift,  #Sift = 22
+ExtractSift time total =      7.85 ms
+
+GPU time : 0.76 ms + 3.40 ms + 0.78 ms = 4.94 ms
+           0.68 ms / DoG,  0.0084 ms / Sift,  #Sift = 93
+ExtractSift time total =      13.93 ms
+
+GPU time : 0.52 ms + 1.24 ms + 0.66 ms = 2.41 ms
+           0.25 ms / DoG,  0.0035 ms / Sift,  #Sift = 189
+ExtractSift time total =      17.91 ms
+
+GPU time : 0.78 ms + 1.56 ms + 0.85 ms = 3.18 ms
+           0.31 ms / DoG,  0.0026 ms / Sift,  #Sift = 325
+ExtractSift time total =      21.38 ms
+
+sift res 634 with time: 0.097158
+pca encoding time: 0.0445471
+fisher encoding time: 0.00850987
+Image size = (331,500)
+Download time =               0.18 ms
+GPU time : 0.70 ms + 1.07 ms + 11.51 ms = 13.28 ms
+           0.21 ms / DoG,  0.9595 ms / Sift,  #Sift = 12
+ExtractSift time total =      13.33 ms
+
+GPU time : 0.55 ms + 2.85 ms + 0.36 ms = 3.76 ms
+           0.57 ms / DoG,  0.0093 ms / Sift,  #Sift = 39
+ExtractSift time total =      17.26 ms
+
+GPU time : 0.47 ms + 0.87 ms + 0.35 ms = 1.69 ms
+           0.17 ms / DoG,  0.0031 ms / Sift,  #Sift = 112
+ExtractSift time total =      19.12 ms
+
+GPU time : 0.34 ms + 3.86 ms + 0.53 ms = 4.72 ms
+           0.77 ms / DoG,  0.0015 ms / Sift,  #Sift = 345
+ExtractSift time total =      24.09 ms
+
+GPU time : 0.39 ms + 0.93 ms + 0.37 ms = 1.69 ms
+           0.19 ms / DoG,  0.0008 ms / Sift,  #Sift = 492
+ExtractSift time total =      26.04 ms
+
+sift res 1000 with time: 0.112789
+pca encoding time: 0.041878
+fisher encoding time: 0.00640011
+Image size = (312,500)
+Download time =               0.15 ms
+GPU time : 0.62 ms + 4.49 ms + 0.61 ms = 5.72 ms
+           0.90 ms / DoG,  0.0380 ms / Sift,  #Sift = 16
+ExtractSift time total =      5.77 ms
+
+GPU time : 0.82 ms + 1.42 ms + 3.34 ms = 5.59 ms
+           0.28 ms / DoG,  0.0727 ms / Sift,  #Sift = 46
+ExtractSift time total =      11.78 ms
+
+GPU time : 0.92 ms + 4.94 ms + 0.91 ms = 6.78 ms
+           0.99 ms / DoG,  0.0074 ms / Sift,  #Sift = 123
+ExtractSift time total =      18.88 ms
+
+GPU time : 0.68 ms + 1.69 ms + 0.69 ms = 3.07 ms
+           0.34 ms / DoG,  0.0020 ms / Sift,  #Sift = 345
+ExtractSift time total =      22.50 ms
+
+GPU time : 0.82 ms + 1.91 ms + 0.89 ms = 3.61 ms
+           0.38 ms / DoG,  0.0019 ms / Sift,  #Sift = 470
+ExtractSift time total =      26.65 ms
+
+sift res 1000 with time: 0.0924869
+pca encoding time: 0.0357599
+fisher encoding time: 0.00551105
+Image size = (332,475)
+Download time =               0.18 ms
+GPU time : 0.35 ms + 0.79 ms + 0.36 ms = 1.50 ms
+           0.16 ms / DoG,  0.0911 ms / Sift,  #Sift = 4
+ExtractSift time total =      1.53 ms
+
+GPU time : 0.43 ms + 0.76 ms + 0.39 ms = 1.58 ms
+           0.15 ms / DoG,  0.0084 ms / Sift,  #Sift = 47
+ExtractSift time total =      3.33 ms
+
+GPU time : 0.36 ms + 0.77 ms + 0.43 ms = 1.56 ms
+           0.15 ms / DoG,  0.0021 ms / Sift,  #Sift = 204
+ExtractSift time total =      5.13 ms
+
+GPU time : 0.43 ms + 0.61 ms + 0.34 ms = 1.38 ms
+           0.12 ms / DoG,  0.0010 ms / Sift,  #Sift = 339
+ExtractSift time total =      6.75 ms
+
+GPU time : 0.10 ms + 0.76 ms + 0.24 ms = 1.10 ms
+           0.15 ms / DoG,  0.0006 ms / Sift,  #Sift = 406
+ExtractSift time total =      8.03 ms
+
+sift res 1000 with time: 0.0713902
+pca encoding time: 0.0411491
+fisher encoding time: 0.00574303
+Image size = (442,500)
+Download time =               0.26 ms
+GPU time : 0.84 ms + 2.51 ms + 0.95 ms = 4.30 ms
+           0.50 ms / DoG,  0.0862 ms / Sift,  #Sift = 11
+ExtractSift time total =      4.34 ms
+
+GPU time : 0.81 ms + 3.69 ms + 0.95 ms = 5.45 ms
+           0.74 ms / DoG,  0.0085 ms / Sift,  #Sift = 111
+ExtractSift time total =      10.25 ms
+
+GPU time : 0.79 ms + 3.52 ms + 0.70 ms = 5.01 ms
+           0.70 ms / DoG,  0.0018 ms / Sift,  #Sift = 380
+ExtractSift time total =      15.82 ms
+
+GPU time : 0.50 ms + 2.87 ms + 0.35 ms = 3.72 ms
+           0.57 ms / DoG,  0.0007 ms / Sift,  #Sift = 498
+ExtractSift time total =      20.05 ms
+
+GPU time : 1.46 ms + 0.92 ms + 0.02 ms = 2.39 ms
+           0.18 ms / DoG,  -0.0000 ms / Sift,  #Sift = -857
+ExtractSift time total =      23.00 ms
+
+sift res 1000 with time: 0.08357
+pca encoding time: 0.091933
+fisher encoding time: 0.00378394
+Image size = (313,500)
+Download time =               0.15 ms
+GPU time : 0.26 ms + 1.48 ms + 0.02 ms = 1.76 ms
+ExtractSift time total =      1.80 ms
+
+GPU time : 0.38 ms + 2.68 ms + 0.49 ms = 3.54 ms
+           0.54 ms / DoG,  0.4895 ms / Sift,  #Sift = 1
+ExtractSift time total =      5.73 ms
+
+GPU time : 0.27 ms + 0.51 ms + 0.26 ms = 1.04 ms
+           0.10 ms / DoG,  0.0073 ms / Sift,  #Sift = 36
+ExtractSift time total =      7.17 ms
+
+GPU time : 0.49 ms + 1.04 ms + 0.45 ms = 1.98 ms
+           0.21 ms / DoG,  0.0030 ms / Sift,  #Sift = 149
+ExtractSift time total =      9.61 ms
+
+GPU time : 4.38 ms + 2.23 ms + 0.62 ms = 7.24 ms
+           0.45 ms / DoG,  0.0013 ms / Sift,  #Sift = 480
+ExtractSift time total =      20.12 ms
+
+sift res 666 with time: 0.0866079
+pca encoding time: 0.039696
+fisher encoding time: 0.00527096
+Image size = (348,500)
+Download time =               0.22 ms
+GPU time : 0.46 ms + 1.24 ms + 0.51 ms = 2.21 ms
+           0.25 ms / DoG,  0.0847 ms / Sift,  #Sift = 6
+ExtractSift time total =      2.26 ms
+
+GPU time : 0.61 ms + 2.89 ms + 0.64 ms = 4.14 ms
+           0.58 ms / DoG,  0.0213 ms / Sift,  #Sift = 30
+ExtractSift time total =      6.73 ms
+
+GPU time : 0.77 ms + 1.81 ms + 0.82 ms = 3.39 ms
+           0.36 ms / DoG,  0.0058 ms / Sift,  #Sift = 141
+ExtractSift time total =      10.46 ms
+
+GPU time : 0.47 ms + 3.27 ms + 0.71 ms = 4.45 ms
+           0.65 ms / DoG,  0.0017 ms / Sift,  #Sift = 413
+ExtractSift time total =      15.45 ms
+
+GPU time : 0.42 ms + 1.79 ms + 0.60 ms = 2.82 ms
+           0.36 ms / DoG,  0.0015 ms / Sift,  #Sift = 410
+ExtractSift time total =      18.83 ms
+
+sift res 1000 with time: 0.104133
+pca encoding time: 0.060008
+fisher encoding time: 0.00561905
+Image size = (309,500)
+Download time =               0.16 ms
+GPU time : 0.18 ms + 0.72 ms + 0.29 ms = 1.19 ms
+           0.14 ms / DoG,  0.0244 ms / Sift,  #Sift = 12
+ExtractSift time total =      1.22 ms
+
+GPU time : 0.96 ms + 1.26 ms + 0.74 ms = 2.96 ms
+           0.25 ms / DoG,  0.0134 ms / Sift,  #Sift = 55
+ExtractSift time total =      4.38 ms
+
+GPU time : 0.58 ms + 2.87 ms + 0.64 ms = 4.09 ms
+           0.57 ms / DoG,  0.0037 ms / Sift,  #Sift = 174
+ExtractSift time total =      8.70 ms
+
+GPU time : 0.62 ms + 1.57 ms + 0.64 ms = 2.83 ms
+           0.31 ms / DoG,  0.0016 ms / Sift,  #Sift = 408
+ExtractSift time total =      11.73 ms
+
+GPU time : 0.51 ms + 3.13 ms + 0.69 ms = 4.33 ms
+           0.63 ms / DoG,  0.0020 ms / Sift,  #Sift = 351
+ExtractSift time total =      16.26 ms
+
+sift res 1000 with time: 0.097518
+pca encoding time: 0.052572
+fisher encoding time: 0.00374103
+Image size = (322,475)
+Download time =               0.14 ms
+GPU time : 0.03 ms + 0.07 ms + 0.05 ms = 0.14 ms
+           0.01 ms / DoG,  0.0037 ms / Sift,  #Sift = 13
+ExtractSift time total =      0.17 ms
+
+GPU time : 0.03 ms + 0.06 ms + 0.05 ms = 0.14 ms
+           0.01 ms / DoG,  0.0011 ms / Sift,  #Sift = 51
+ExtractSift time total =      0.37 ms
+
+GPU time : 0.03 ms + 0.07 ms + 0.06 ms = 0.16 ms
+           0.01 ms / DoG,  0.0004 ms / Sift,  #Sift = 130
+ExtractSift time total =      0.59 ms
+
+GPU time : 0.03 ms + 0.08 ms + 0.07 ms = 0.18 ms
+           0.02 ms / DoG,  0.0003 ms / Sift,  #Sift = 265
+ExtractSift time total =      0.84 ms
+
+GPU time : 0.03 ms + 0.17 ms + 1.73 ms = 1.92 ms
+           0.03 ms / DoG,  0.0032 ms / Sift,  #Sift = 541
+ExtractSift time total =      2.83 ms
+
+sift res 1000 with time: 0.077709
+pca encoding time: 0.0559969
+fisher encoding time: 0.00551295
+Image size = (354,500)
+Download time =               0.17 ms
+GPU time : 1.06 ms + 2.37 ms + 0.96 ms = 4.40 ms
+           0.47 ms / DoG,  0.1201 ms / Sift,  #Sift = 8
+ExtractSift time total =      4.44 ms
+
+GPU time : 0.77 ms + 1.82 ms + 2.18 ms = 4.77 ms
+           0.36 ms / DoG,  0.0397 ms / Sift,  #Sift = 55
+ExtractSift time total =      9.82 ms
+
+GPU time : 0.09 ms + 8.63 ms + 0.23 ms = 8.95 ms
+           1.73 ms / DoG,  0.0013 ms / Sift,  #Sift = 177
+ExtractSift time total =      19.28 ms
+
+GPU time : 0.02 ms + 0.28 ms + 0.08 ms = 0.38 ms
+           0.06 ms / DoG,  0.0002 ms / Sift,  #Sift = 342
+ExtractSift time total =      20.11 ms
+
+GPU time : 0.03 ms + 0.18 ms + 0.08 ms = 0.29 ms
+           0.04 ms / DoG,  0.0002 ms / Sift,  #Sift = 418
+ExtractSift time total =      20.98 ms
+
+sift res 1000 with time: 0.0875719
+pca encoding time: 0.060338
+fisher encoding time: 0.0054419
+Image size = (364,500)
+Download time =               0.17 ms
+GPU time : 0.37 ms + 0.88 ms + 0.30 ms = 1.55 ms
+           0.18 ms / DoG,  0.0201 ms / Sift,  #Sift = 15
+ExtractSift time total =      1.59 ms
+
+GPU time : 0.29 ms + 3.99 ms + 0.25 ms = 4.53 ms
+           0.80 ms / DoG,  0.0065 ms / Sift,  #Sift = 39
+ExtractSift time total =      6.33 ms
+
+GPU time : 0.03 ms + 0.49 ms + 0.06 ms = 0.57 ms
+           0.10 ms / DoG,  0.0003 ms / Sift,  #Sift = 195
+ExtractSift time total =      7.18 ms
+
+GPU time : 0.04 ms + 0.11 ms + 0.11 ms = 0.26 ms
+           0.02 ms / DoG,  0.0002 ms / Sift,  #Sift = 467
+ExtractSift time total =      7.64 ms
+
+GPU time : 0.02 ms + 0.32 ms + 0.07 ms = 0.41 ms
+           0.06 ms / DoG,  0.0003 ms / Sift,  #Sift = 284
+ExtractSift time total =      8.29 ms
+
+sift res 1000 with time: 0.0778158
+pca encoding time: 0.0520859
+fisher encoding time: 0.00342584
+Image size = (306,475)
+Download time =               1.23 ms
+GPU time : 0.39 ms + 0.87 ms + 0.57 ms = 1.83 ms
+           0.17 ms / DoG,  0.1894 ms / Sift,  #Sift = 3
+ExtractSift time total =      1.86 ms
+
+GPU time : 0.29 ms + 5.18 ms + 0.24 ms = 5.71 ms
+           1.04 ms / DoG,  0.0113 ms / Sift,  #Sift = 21
+ExtractSift time total =      7.74 ms
+
+GPU time : 0.30 ms + 0.41 ms + 0.18 ms = 0.89 ms
+           0.08 ms / DoG,  0.0034 ms / Sift,  #Sift = 52
+ExtractSift time total =      8.84 ms
+
+GPU time : 0.57 ms + 1.37 ms + 0.36 ms = 2.30 ms
+           0.27 ms / DoG,  0.0026 ms / Sift,  #Sift = 139
+ExtractSift time total =      11.36 ms
+
+GPU time : 0.25 ms + 0.84 ms + 0.29 ms = 1.37 ms
+           0.17 ms / DoG,  0.0009 ms / Sift,  #Sift = 315
+ExtractSift time total =      13.01 ms
+
+sift res 530 with time: 0.116845
+pca encoding time: 0.0397449
+fisher encoding time: 0.00169802
+Image size = (336,475)
+Download time =               0.15 ms
+GPU time : 0.25 ms + 1.12 ms + 0.30 ms = 1.68 ms
+           0.22 ms / DoG,  0.0433 ms / Sift,  #Sift = 7
+ExtractSift time total =      1.70 ms
+
+GPU time : 0.39 ms + 0.66 ms + 0.36 ms = 1.41 ms
+           0.13 ms / DoG,  0.0099 ms / Sift,  #Sift = 36
+ExtractSift time total =      3.43 ms
+
+GPU time : 0.61 ms + 0.96 ms + 0.36 ms = 1.93 ms
+           0.19 ms / DoG,  0.0042 ms / Sift,  #Sift = 87
+ExtractSift time total =      5.65 ms
+
+GPU time : 0.34 ms + 5.65 ms + 0.36 ms = 6.34 ms
+           1.13 ms / DoG,  0.0011 ms / Sift,  #Sift = 326
+ExtractSift time total =      12.45 ms
+
+GPU time : 0.36 ms + 1.13 ms + 0.39 ms = 1.88 ms
+           0.23 ms / DoG,  0.0007 ms / Sift,  #Sift = 544
+ExtractSift time total =      14.84 ms
+
+sift res 1000 with time: 0.0892391
+pca encoding time: 0.0497251
+fisher encoding time: 0.00534105
+Image size = (333,500)
+Download time =               0.17 ms
+GPU time : 0.48 ms + 1.67 ms + 0.56 ms = 2.70 ms
+           0.33 ms / DoG,  0.1403 ms / Sift,  #Sift = 4
+ExtractSift time total =      2.73 ms
+
+GPU time : 0.77 ms + 1.21 ms + 3.29 ms = 5.27 ms
+           0.24 ms / DoG,  0.1134 ms / Sift,  #Sift = 29
+ExtractSift time total =      8.34 ms
+
+GPU time : 0.39 ms + 3.11 ms + 0.41 ms = 3.91 ms
+           0.62 ms / DoG,  0.0046 ms / Sift,  #Sift = 90
+ExtractSift time total =      12.71 ms
+
+GPU time : 0.46 ms + 2.46 ms + 3.27 ms = 6.19 ms
+           0.49 ms / DoG,  0.0156 ms / Sift,  #Sift = 209
+ExtractSift time total =      19.40 ms
+
+GPU time : 0.38 ms + 1.21 ms + 0.54 ms = 2.14 ms
+           0.24 ms / DoG,  0.0014 ms / Sift,  #Sift = 380
+ExtractSift time total =      22.02 ms
+
+sift res 712 with time: 0.112542
+pca encoding time: 0.0436358
+fisher encoding time: 0.00697803
+Image size = (316,500)
+Download time =               0.16 ms
+GPU time : 3.64 ms + 1.79 ms + 2.53 ms = 7.96 ms
+           0.36 ms / DoG,  0.2809 ms / Sift,  #Sift = 9
+ExtractSift time total =      7.99 ms
+
+GPU time : 0.61 ms + 1.82 ms + 0.67 ms = 3.10 ms
+           0.36 ms / DoG,  0.0159 ms / Sift,  #Sift = 42
+ExtractSift time total =      11.27 ms
+
+GPU time : 0.93 ms + 2.34 ms + 0.95 ms = 4.22 ms
+           0.47 ms / DoG,  0.0093 ms / Sift,  #Sift = 102
+ExtractSift time total =      15.63 ms
+
+GPU time : 0.91 ms + 2.48 ms + 1.04 ms = 4.43 ms
+           0.50 ms / DoG,  0.0048 ms / Sift,  #Sift = 219
+ExtractSift time total =      20.26 ms
+
+GPU time : 0.89 ms + 9.24 ms + 1.05 ms = 11.18 ms
+           1.85 ms / DoG,  0.0031 ms / Sift,  #Sift = 340
+ExtractSift time total =      31.74 ms
+
+sift res 712 with time: 0.102201
+pca encoding time: 0.0368309
+fisher encoding time: 0.00980306
+Image size = (335,500)
+Download time =               0.21 ms
+GPU time : 1.79 ms + 0.09 ms + 0.49 ms = 2.36 ms
+           0.02 ms / DoG,  0.0543 ms / Sift,  #Sift = 9
+ExtractSift time total =      2.40 ms
+
+GPU time : 0.72 ms + 2.18 ms + 0.75 ms = 3.65 ms
+           0.44 ms / DoG,  0.0171 ms / Sift,  #Sift = 44
+ExtractSift time total =      6.11 ms
+
+GPU time : 0.76 ms + 1.89 ms + 0.76 ms = 3.41 ms
+           0.38 ms / DoG,  0.0055 ms / Sift,  #Sift = 138
+ExtractSift time total =      9.60 ms
+
+GPU time : 0.90 ms + 2.51 ms + 0.85 ms = 4.25 ms
+           0.50 ms / DoG,  0.0033 ms / Sift,  #Sift = 254
+ExtractSift time total =      13.96 ms
+
+GPU time : 3.68 ms + 3.89 ms + 7.34 ms = 14.91 ms
+           0.78 ms / DoG,  0.0178 ms / Sift,  #Sift = 413
+ExtractSift time total =      28.97 ms
+
+sift res 858 with time: 0.092742
+pca encoding time: 0.044802
+fisher encoding time: 0.00650096
+Image size = (314,475)
+Download time =               0.17 ms
+GPU time : 0.33 ms + 0.84 ms + 0.35 ms = 1.53 ms
+           0.17 ms / DoG,  0.0268 ms / Sift,  #Sift = 13
+ExtractSift time total =      1.55 ms
+
+GPU time : 0.44 ms + 0.83 ms + 0.50 ms = 1.77 ms
+           0.17 ms / DoG,  0.0095 ms / Sift,  #Sift = 53
+ExtractSift time total =      3.54 ms
+
+GPU time : 0.60 ms + 7.51 ms + 0.41 ms = 8.52 ms
+           1.50 ms / DoG,  0.0017 ms / Sift,  #Sift = 247
+ExtractSift time total =      12.34 ms
+
+GPU time : 0.25 ms + 0.66 ms + 0.34 ms = 1.24 ms
+           0.13 ms / DoG,  0.0005 ms / Sift,  #Sift = 687
+ExtractSift time total =      13.98 ms
+
+GPU time : 0.14 ms + 0.89 ms + 0.02 ms = 1.05 ms
+           0.18 ms / DoG,  -0.0011 ms / Sift,  #Sift = -17
+ExtractSift time total =      15.44 ms
+
+sift res 1000 with time: 0.104596
+pca encoding time: 0.034903
+fisher encoding time: 0.00391698
+Image size = (428,500)
+Download time =               0.24 ms
+GPU time : 0.64 ms + 1.63 ms + 0.65 ms = 2.92 ms
+           0.33 ms / DoG,  0.0433 ms / Sift,  #Sift = 15
+ExtractSift time total =      2.96 ms
+
+GPU time : 0.88 ms + 2.47 ms + 0.86 ms = 4.22 ms
+           0.49 ms / DoG,  0.0151 ms / Sift,  #Sift = 57
+ExtractSift time total =      10.24 ms
+
+GPU time : 0.59 ms + 0.97 ms + 0.58 ms = 2.14 ms
+           0.19 ms / DoG,  0.0034 ms / Sift,  #Sift = 172
+ExtractSift time total =      12.97 ms
+
+GPU time : 0.94 ms + 2.32 ms + 1.09 ms = 4.35 ms
+           0.46 ms / DoG,  0.0035 ms / Sift,  #Sift = 314
+ExtractSift time total =      17.70 ms
+
+GPU time : 1.20 ms + 2.72 ms + 1.11 ms = 5.03 ms
+           0.54 ms / DoG,  0.0025 ms / Sift,  #Sift = 442
+ExtractSift time total =      23.30 ms
+
+sift res 1000 with time: 0.115287
+pca encoding time: 0.0947878
+fisher encoding time: 0.00262308
+Image size = (318,500)
+Download time =               0.15 ms
+GPU time : 0.15 ms + 0.50 ms + 0.41 ms = 1.07 ms
+           0.10 ms / DoG,  0.0415 ms / Sift,  #Sift = 10
+ExtractSift time total =      1.11 ms
+
+GPU time : 0.32 ms + 0.50 ms + 0.20 ms = 1.02 ms
+           0.10 ms / DoG,  0.0051 ms / Sift,  #Sift = 39
+ExtractSift time total =      2.26 ms
+
+GPU time : 0.28 ms + 0.57 ms + 0.33 ms = 1.17 ms
+           0.11 ms / DoG,  0.0032 ms / Sift,  #Sift = 101
+ExtractSift time total =      3.57 ms
+
+GPU time : 4.54 ms + 1.64 ms + 3.74 ms = 9.91 ms
+           0.33 ms / DoG,  0.0107 ms / Sift,  #Sift = 350
+ExtractSift time total =      13.63 ms
+
+GPU time : 0.28 ms + 3.79 ms + 0.33 ms = 4.40 ms
+           0.76 ms / DoG,  0.0007 ms / Sift,  #Sift = 495
+ExtractSift time total =      18.19 ms
+
+sift res 995 with time: 0.117334
+pca encoding time: 0.046169
+fisher encoding time: 0.010262
+Image size = (315,475)
+Download time =               0.16 ms
+GPU time : 0.97 ms + 6.95 ms + 0.90 ms = 8.82 ms
+           1.39 ms / DoG,  0.0747 ms / Sift,  #Sift = 12
+ExtractSift time total =      8.87 ms
+
+GPU time : 0.86 ms + 4.73 ms + 0.86 ms = 6.46 ms
+           0.95 ms / DoG,  0.0215 ms / Sift,  #Sift = 40
+ExtractSift time total =      15.74 ms
+
+GPU time : 2.31 ms + 2.20 ms + 1.03 ms = 5.54 ms
+           0.44 ms / DoG,  0.0073 ms / Sift,  #Sift = 142
+ExtractSift time total =      21.63 ms
+
+GPU time : 3.70 ms + 2.11 ms + 1.00 ms = 6.81 ms
+           0.42 ms / DoG,  0.0036 ms / Sift,  #Sift = 280
+ExtractSift time total =      28.82 ms
+
+GPU time : 0.97 ms + 2.27 ms + 0.91 ms = 4.15 ms
+           0.45 ms / DoG,  0.0024 ms / Sift,  #Sift = 382
+ExtractSift time total =      33.43 ms
+
+sift res 856 with time: 0.114345
+pca encoding time: 0.0391099
+fisher encoding time: 0.00796294
+Image size = (316,500)
+Download time =               0.16 ms
+GPU time : 2.25 ms + 2.23 ms + 3.51 ms = 7.99 ms
+           0.45 ms / DoG,  0.7014 ms / Sift,  #Sift = 5
+ExtractSift time total =      8.01 ms
+
+GPU time : 0.86 ms + 2.22 ms + 0.83 ms = 3.90 ms
+           0.44 ms / DoG,  0.0285 ms / Sift,  #Sift = 29
+ExtractSift time total =      12.09 ms
+
+GPU time : 0.98 ms + 15.22 ms + 2.36 ms = 18.56 ms
+           3.04 ms / DoG,  0.0268 ms / Sift,  #Sift = 88
+ExtractSift time total =      30.95 ms
+
+GPU time : 1.04 ms + 5.96 ms + 1.12 ms = 8.12 ms
+           1.19 ms / DoG,  0.0031 ms / Sift,  #Sift = 366
+ExtractSift time total =      39.27 ms
+
+GPU time : 1.22 ms + 3.50 ms + 0.94 ms = 5.67 ms
+           0.70 ms / DoG,  0.0018 ms / Sift,  #Sift = 512
+ExtractSift time total =      45.16 ms
+
+sift res 1000 with time: 0.104632
+pca encoding time: 0.024514
+fisher encoding time: 0.00849295
+Image size = (374,500)
+Download time =               0.18 ms
+GPU time : 3.53 ms + 8.48 ms + 7.30 ms = 19.31 ms
+           1.70 ms / DoG,  0.6636 ms / Sift,  #Sift = 11
+ExtractSift time total =      19.35 ms
+
+GPU time : 1.01 ms + 1.99 ms + 2.28 ms = 5.28 ms
+           0.40 ms / DoG,  0.0529 ms / Sift,  #Sift = 43
+ExtractSift time total =      25.05 ms
+
+GPU time : 0.92 ms + 2.20 ms + 0.86 ms = 3.98 ms
+           0.44 ms / DoG,  0.0053 ms / Sift,  #Sift = 162
+ExtractSift time total =      29.47 ms
+
+GPU time : 1.12 ms + 5.04 ms + 2.38 ms = 8.54 ms
+           1.01 ms / DoG,  0.0061 ms / Sift,  #Sift = 387
+ExtractSift time total =      38.33 ms
+
+GPU time : 0.78 ms + 2.44 ms + 0.85 ms = 4.07 ms
+           0.49 ms / DoG,  0.0021 ms / Sift,  #Sift = 397
+ExtractSift time total =      42.70 ms
+
+sift res 1000 with time: 0.109335
+pca encoding time: 0.0297291
+fisher encoding time: 0.00503588
+Image size = (324,500)
+Download time =               5.99 ms
+GPU time : 0.40 ms + 6.80 ms + 0.45 ms = 7.65 ms
+           1.36 ms / DoG,  0.0250 ms / Sift,  #Sift = 18
+ExtractSift time total =      7.68 ms
+
+GPU time : 0.31 ms + 0.96 ms + 0.31 ms = 1.59 ms
+           0.19 ms / DoG,  0.0043 ms / Sift,  #Sift = 72
+ExtractSift time total =      9.51 ms
+
+GPU time : 0.40 ms + 0.57 ms + 0.36 ms = 1.33 ms
+           0.11 ms / DoG,  0.0026 ms / Sift,  #Sift = 136
+ExtractSift time total =      11.10 ms
+
+GPU time : 1.78 ms + 1.01 ms + 0.45 ms = 3.24 ms
+           0.20 ms / DoG,  0.0025 ms / Sift,  #Sift = 177
+ExtractSift time total =      14.50 ms
+
+GPU time : 0.42 ms + 6.36 ms + 0.39 ms = 7.18 ms
+           1.27 ms / DoG,  0.0009 ms / Sift,  #Sift = 424
+ExtractSift time total =      21.83 ms
+
+sift res 827 with time: 0.0895979
+pca encoding time: 0.0498691
+fisher encoding time: 0.00701904
+Image size = (333,500)
+Download time =               0.18 ms
+GPU time : 0.48 ms + 1.62 ms + 0.49 ms = 2.58 ms
+           0.32 ms / DoG,  0.0693 ms / Sift,  #Sift = 7
+ExtractSift time total =      2.62 ms
+
+GPU time : 0.30 ms + 1.33 ms + 0.39 ms = 2.03 ms
+           0.27 ms / DoG,  0.0098 ms / Sift,  #Sift = 40
+ExtractSift time total =      6.30 ms
+
+GPU time : 0.27 ms + 0.68 ms + 0.30 ms = 1.25 ms
+           0.14 ms / DoG,  0.0033 ms / Sift,  #Sift = 91
+ExtractSift time total =      7.96 ms
+
+GPU time : 0.29 ms + 0.54 ms + 0.20 ms = 1.04 ms
+           0.11 ms / DoG,  0.0009 ms / Sift,  #Sift = 229
+ExtractSift time total =      9.51 ms
+
+GPU time : 0.48 ms + 0.54 ms + 4.38 ms = 5.40 ms
+           0.11 ms / DoG,  0.0092 ms / Sift,  #Sift = 477
+ExtractSift time total =      17.89 ms
+
+sift res 844 with time: 0.074676
+pca encoding time: 0.0406249
+fisher encoding time: 0.00404406
+Image size = (311,475)
+Download time =               0.15 ms
+GPU time : 1.02 ms + 2.50 ms + 1.00 ms = 4.52 ms
+           0.50 ms / DoG,  0.1254 ms / Sift,  #Sift = 8
+ExtractSift time total =      4.56 ms
+
+GPU time : 1.10 ms + 2.28 ms + 0.90 ms = 4.28 ms
+           0.46 ms / DoG,  0.0231 ms / Sift,  #Sift = 39
+ExtractSift time total =      9.45 ms
+
+GPU time : 1.07 ms + 3.79 ms + 1.08 ms = 5.95 ms
+           0.76 ms / DoG,  0.0126 ms / Sift,  #Sift = 86
+ExtractSift time total =      16.03 ms
+
+GPU time : 4.38 ms + 4.72 ms + 0.73 ms = 9.82 ms
+           0.94 ms / DoG,  0.0030 ms / Sift,  #Sift = 245
+ExtractSift time total =      26.45 ms
+
+GPU time : 0.48 ms + 1.60 ms + 0.66 ms = 2.74 ms
+           0.32 ms / DoG,  0.0015 ms / Sift,  #Sift = 454
+ExtractSift time total =      32.30 ms
+
+sift res 832 with time: 0.0909579
+pca encoding time: 0.0325351
+fisher encoding time: 0.00778508
+Image size = (317,475)
+Download time =               0.14 ms
+GPU time : 1.74 ms + 4.16 ms + 0.24 ms = 6.15 ms
+           0.83 ms / DoG,  0.0303 ms / Sift,  #Sift = 8
+ExtractSift time total =      6.19 ms
+
+GPU time : 0.81 ms + 6.12 ms + 0.86 ms = 7.79 ms
+           1.22 ms / DoG,  0.0227 ms / Sift,  #Sift = 38
+ExtractSift time total =      16.03 ms
+
+GPU time : 0.56 ms + 1.84 ms + 0.51 ms = 2.91 ms
+           0.37 ms / DoG,  0.0045 ms / Sift,  #Sift = 112
+ExtractSift time total =      20.99 ms
+
+GPU time : 0.57 ms + 4.55 ms + 0.63 ms = 5.74 ms
+           0.91 ms / DoG,  0.0019 ms / Sift,  #Sift = 324
+ExtractSift time total =      27.33 ms
+
+GPU time : 0.59 ms + 1.48 ms + 0.53 ms = 2.60 ms
+           0.30 ms / DoG,  0.0010 ms / Sift,  #Sift = 518
+ExtractSift time total =      31.85 ms
+
+sift res 1000 with time: 0.101201
+pca encoding time: 0.052983
+fisher encoding time: 0.0036869
+Image size = (386,475)
+Download time =               0.23 ms
+GPU time : 0.53 ms + 1.99 ms + 0.63 ms = 3.14 ms
+           0.40 ms / DoG,  0.0523 ms / Sift,  #Sift = 12
+ExtractSift time total =      3.18 ms
+
+GPU time : 0.83 ms + 1.89 ms + 0.80 ms = 3.53 ms
+           0.38 ms / DoG,  0.0144 ms / Sift,  #Sift = 56
+ExtractSift time total =      7.25 ms
+
+GPU time : 0.87 ms + 2.09 ms + 0.82 ms = 3.78 ms
+           0.42 ms / DoG,  0.0034 ms / Sift,  #Sift = 242
+ExtractSift time total =      11.53 ms
+
+GPU time : 0.50 ms + 1.68 ms + 0.52 ms = 2.69 ms
+           0.34 ms / DoG,  0.0008 ms / Sift,  #Sift = 643
+ExtractSift time total =      14.79 ms
+
+GPU time : 0.59 ms + 1.65 ms + 0.69 ms = 2.93 ms
+           0.33 ms / DoG,  0.0147 ms / Sift,  #Sift = 47
+ExtractSift time total =      18.46 ms
+
+sift res 1000 with time: 0.093189
+pca encoding time: 0.100382
+fisher encoding time: 0.00369382
+Image size = (295,475)
+Download time =               0.13 ms
+GPU time : 0.48 ms + 0.90 ms + 0.59 ms = 1.97 ms
+           0.18 ms / DoG,  0.0537 ms / Sift,  #Sift = 11
+ExtractSift time total =      2.03 ms
+
+GPU time : 1.06 ms + 3.41 ms + 0.40 ms = 4.86 ms
+           0.68 ms / DoG,  0.0111 ms / Sift,  #Sift = 36
+ExtractSift time total =      8.96 ms
+
+GPU time : 0.22 ms + 5.21 ms + 0.25 ms = 5.67 ms
+           1.04 ms / DoG,  0.0025 ms / Sift,  #Sift = 99
+ExtractSift time total =      14.83 ms
+
+GPU time : 0.74 ms + 6.75 ms + 2.06 ms = 9.54 ms
+           1.35 ms / DoG,  0.0068 ms / Sift,  #Sift = 301
+ExtractSift time total =      24.66 ms
+
+GPU time : 2.15 ms + 4.43 ms + 2.21 ms = 8.78 ms
+           0.89 ms / DoG,  0.0040 ms / Sift,  #Sift = 553
+ExtractSift time total =      33.64 ms
+
+sift res 1000 with time: 0.139101
+pca encoding time: 0.046627
+fisher encoding time: 0.005023
+Image size = (317,475)
+Download time =               0.18 ms
+GPU time : 0.85 ms + 4.85 ms + 0.75 ms = 6.45 ms
+           0.97 ms / DoG,  0.0577 ms / Sift,  #Sift = 13
+ExtractSift time total =      6.49 ms
+
+GPU time : 0.57 ms + 1.37 ms + 0.64 ms = 2.59 ms
+           0.27 ms / DoG,  0.0100 ms / Sift,  #Sift = 64
+ExtractSift time total =      9.28 ms
+
+GPU time : 0.63 ms + 1.64 ms + 0.66 ms = 2.92 ms
+           0.33 ms / DoG,  0.0034 ms / Sift,  #Sift = 194
+ExtractSift time total =      12.53 ms
+
+GPU time : 0.53 ms + 1.44 ms + 0.53 ms = 2.50 ms
+           0.29 ms / DoG,  0.0011 ms / Sift,  #Sift = 459
+ExtractSift time total =      15.59 ms
+
+GPU time : 8.35 ms + 4.85 ms + 3.30 ms = 16.51 ms
+           0.97 ms / DoG,  0.0122 ms / Sift,  #Sift = 270
+ExtractSift time total =      35.33 ms
+
+sift res 1000 with time: 0.0940058
+pca encoding time: 0.0414319
+fisher encoding time: 0.00636506
+Image size = (350,475)
+Download time =               0.17 ms
+GPU time : 0.81 ms + 2.11 ms + 0.77 ms = 3.69 ms
+           0.42 ms / DoG,  0.1278 ms / Sift,  #Sift = 6
+ExtractSift time total =      3.73 ms
+
+GPU time : 0.47 ms + 1.65 ms + 0.46 ms = 2.58 ms
+           0.33 ms / DoG,  0.0183 ms / Sift,  #Sift = 25
+ExtractSift time total =      6.76 ms
+
+GPU time : 2.10 ms + 1.30 ms + 0.48 ms = 3.88 ms
+           0.26 ms / DoG,  0.0060 ms / Sift,  #Sift = 80
+ExtractSift time total =      11.10 ms
+
+GPU time : 0.18 ms + 0.44 ms + 0.28 ms = 0.90 ms
+           0.09 ms / DoG,  0.0017 ms / Sift,  #Sift = 166
+ExtractSift time total =      12.51 ms
+
+GPU time : 0.44 ms + 0.84 ms + 1.70 ms = 2.98 ms
+           0.17 ms / DoG,  0.0059 ms / Sift,  #Sift = 286
+ExtractSift time total =      17.19 ms
+
+sift res 563 with time: 0.0840249
+pca encoding time: 0.0398831
+fisher encoding time: 0.00492382
+Image size = (308,475)
+Download time =               0.16 ms
+GPU time : 0.72 ms + 1.96 ms + 0.68 ms = 3.35 ms
+           0.39 ms / DoG,  0.0751 ms / Sift,  #Sift = 9
+ExtractSift time total =      3.38 ms
+
+GPU time : 0.96 ms + 1.66 ms + 3.60 ms = 6.22 ms
+           0.33 ms / DoG,  0.1058 ms / Sift,  #Sift = 34
+ExtractSift time total =      10.25 ms
+
+GPU time : 1.01 ms + 3.62 ms + 2.60 ms = 7.23 ms
+           0.72 ms / DoG,  0.0222 ms / Sift,  #Sift = 117
+ExtractSift time total =      20.51 ms
+
+GPU time : 0.80 ms + 2.27 ms + 0.82 ms = 3.88 ms
+           0.45 ms / DoG,  0.0035 ms / Sift,  #Sift = 236
+ExtractSift time total =      24.88 ms
+
+GPU time : 0.55 ms + 2.05 ms + 0.65 ms = 3.25 ms
+           0.41 ms / DoG,  0.0018 ms / Sift,  #Sift = 359
+ExtractSift time total =      28.68 ms
+
+sift res 755 with time: 0.114494
+pca encoding time: 0.041152
+fisher encoding time: 0.00482583
+Image size = (347,500)
+Download time =               0.18 ms
+GPU time : 1.16 ms + 4.87 ms + 1.11 ms = 7.14 ms
+           0.97 ms / DoG,  0.2780 ms / Sift,  #Sift = 4
+ExtractSift time total =      7.19 ms
+
+GPU time : 1.08 ms + 5.13 ms + 1.06 ms = 7.27 ms
+           1.03 ms / DoG,  0.0587 ms / Sift,  #Sift = 18
+ExtractSift time total =      15.10 ms
+
+GPU time : 2.23 ms + 4.88 ms + 2.33 ms = 9.44 ms
+           0.98 ms / DoG,  0.0213 ms / Sift,  #Sift = 109
+ExtractSift time total =      25.12 ms
+
+GPU time : 0.95 ms + 2.21 ms + 0.96 ms = 4.12 ms
+           0.44 ms / DoG,  0.0039 ms / Sift,  #Sift = 245
+ExtractSift time total =      29.84 ms
+
+GPU time : 3.55 ms + 2.51 ms + 0.76 ms = 6.82 ms
+           0.50 ms / DoG,  0.0015 ms / Sift,  #Sift = 514
+ExtractSift time total =      37.35 ms
+
+sift res 890 with time: 0.108647
+pca encoding time: 0.041003
+fisher encoding time: 0.00297785
+Image size = (341,475)
+Download time =               0.41 ms
+GPU time : 0.54 ms + 1.43 ms + 0.55 ms = 2.53 ms
+           0.29 ms / DoG,  0.0425 ms / Sift,  #Sift = 13
+ExtractSift time total =      2.57 ms
+
+GPU time : 0.55 ms + 6.27 ms + 0.57 ms = 7.39 ms
+           1.25 ms / DoG,  0.0190 ms / Sift,  #Sift = 30
+ExtractSift time total =      10.31 ms
+
+GPU time : 1.02 ms + 2.56 ms + 0.99 ms = 4.57 ms
+           0.51 ms / DoG,  0.0068 ms / Sift,  #Sift = 145
+ExtractSift time total =      15.24 ms
+
+GPU time : 1.12 ms + 2.46 ms + 1.04 ms = 4.63 ms
+           0.49 ms / DoG,  0.0030 ms / Sift,  #Sift = 351
+ExtractSift time total =      20.27 ms
+
+GPU time : 2.09 ms + 7.89 ms + 0.79 ms = 10.77 ms
+           1.58 ms / DoG,  0.0017 ms / Sift,  #Sift = 461
+ExtractSift time total =      31.50 ms
+
+sift res 1000 with time: 0.0965891
+pca encoding time: 0.0409431
+fisher encoding time: 0.00234699
+Image size = (315,475)
+Download time =               0.24 ms
+GPU time : 0.58 ms + 1.83 ms + 0.46 ms = 2.87 ms
+           0.37 ms / DoG,  0.0420 ms / Sift,  #Sift = 11
+ExtractSift time total =      2.90 ms
+
+GPU time : 0.56 ms + 1.60 ms + 0.72 ms = 2.89 ms
+           0.32 ms / DoG,  0.0207 ms / Sift,  #Sift = 35
+ExtractSift time total =      6.18 ms
+
+GPU time : 0.32 ms + 1.11 ms + 0.40 ms = 1.84 ms
+           0.22 ms / DoG,  0.0059 ms / Sift,  #Sift = 68
+ExtractSift time total =      8.39 ms
+
+GPU time : 3.64 ms + 4.19 ms + 0.93 ms = 8.76 ms
+           0.84 ms / DoG,  0.0062 ms / Sift,  #Sift = 150
+ExtractSift time total =      17.56 ms
+
+GPU time : 0.72 ms + 7.88 ms + 0.79 ms = 9.39 ms
+           1.58 ms / DoG,  0.0034 ms / Sift,  #Sift = 229
+ExtractSift time total =      27.45 ms
+
+sift res 493 with time: 0.097862
+pca encoding time: 0.03034
+fisher encoding time: 0.00687099
+Image size = (325,500)
+Download time =               0.17 ms
+GPU time : 0.87 ms + 2.20 ms + 2.23 ms = 5.30 ms
+           0.44 ms / DoG,  0.2230 ms / Sift,  #Sift = 10
+ExtractSift time total =      5.34 ms
+
+GPU time : 1.09 ms + 7.76 ms + 2.45 ms = 11.30 ms
+           1.55 ms / DoG,  0.0701 ms / Sift,  #Sift = 35
+ExtractSift time total =      18.56 ms
+
+GPU time : 3.71 ms + 6.15 ms + 2.55 ms = 12.40 ms
+           1.23 ms / DoG,  0.0214 ms / Sift,  #Sift = 119
+ExtractSift time total =      31.50 ms
+
+GPU time : 0.89 ms + 2.55 ms + 0.81 ms = 4.25 ms
+           0.51 ms / DoG,  0.0025 ms / Sift,  #Sift = 329
+ExtractSift time total =      36.28 ms
+
+GPU time : 0.82 ms + 1.58 ms + 0.83 ms = 3.23 ms
+           0.32 ms / DoG,  0.0016 ms / Sift,  #Sift = 507
+ExtractSift time total =      41.42 ms
+
+sift res 1000 with time: 0.118476
+pca encoding time: 0.018827
+fisher encoding time: 0.014745
+Image size = (315,500)
+Download time =               0.37 ms
+GPU time : 0.59 ms + 1.21 ms + 0.56 ms = 2.36 ms
+           0.24 ms / DoG,  0.0511 ms / Sift,  #Sift = 11
+ExtractSift time total =      2.39 ms
+
+GPU time : 0.90 ms + 1.64 ms + 0.83 ms = 3.37 ms
+           0.33 ms / DoG,  0.0208 ms / Sift,  #Sift = 40
+ExtractSift time total =      6.18 ms
+
+GPU time : 0.88 ms + 1.99 ms + 11.29 ms = 14.16 ms
+           0.40 ms / DoG,  0.0868 ms / Sift,  #Sift = 130
+ExtractSift time total =      20.73 ms
+
+GPU time : 0.76 ms + 2.33 ms + 0.78 ms = 3.88 ms
+           0.47 ms / DoG,  0.0022 ms / Sift,  #Sift = 359
+ExtractSift time total =      26.59 ms
+
+GPU time : 0.81 ms + 1.68 ms + 0.92 ms = 3.40 ms
+           0.34 ms / DoG,  0.0020 ms / Sift,  #Sift = 460
+ExtractSift time total =      30.51 ms
+
+sift res 1000 with time: 0.120919
+pca encoding time: 0.022933
+fisher encoding time: 0.00410795
+Image size = (299,475)
+Download time =               0.14 ms
+GPU time : 0.87 ms + 4.38 ms + 0.83 ms = 6.08 ms
+           0.88 ms / DoG,  0.0754 ms / Sift,  #Sift = 11
+ExtractSift time total =      6.12 ms
+
+GPU time : 2.14 ms + 1.76 ms + 2.10 ms = 6.00 ms
+           0.35 ms / DoG,  0.0700 ms / Sift,  #Sift = 30
+ExtractSift time total =      12.63 ms
+
+GPU time : 0.98 ms + 5.91 ms + 3.31 ms = 10.21 ms
+           1.18 ms / DoG,  0.0349 ms / Sift,  #Sift = 95
+ExtractSift time total =      29.41 ms
+
+GPU time : 0.77 ms + 1.93 ms + 0.75 ms = 3.46 ms
+           0.39 ms / DoG,  0.0032 ms / Sift,  #Sift = 236
+ExtractSift time total =      36.19 ms
+
+GPU time : 10.34 ms + 2.40 ms + 2.45 ms = 15.20 ms
+           0.48 ms / DoG,  0.0063 ms / Sift,  #Sift = 389
+ExtractSift time total =      51.95 ms
+
+sift res 761 with time: 0.124009
+pca encoding time: 0.042093
+fisher encoding time: 0.013576
+Image size = (315,475)
+Download time =               0.18 ms
+GPU time : 0.94 ms + 4.92 ms + 1.11 ms = 6.97 ms
+           0.98 ms / DoG,  0.1013 ms / Sift,  #Sift = 11
+ExtractSift time total =      7.02 ms
+
+GPU time : 0.89 ms + 4.95 ms + 1.04 ms = 6.88 ms
+           0.99 ms / DoG,  0.0370 ms / Sift,  #Sift = 28
+ExtractSift time total =      14.59 ms
+
+GPU time : 1.01 ms + 2.53 ms + 1.09 ms = 4.63 ms
+           0.51 ms / DoG,  0.0145 ms / Sift,  #Sift = 75
+ExtractSift time total =      19.79 ms
+
+GPU time : 0.98 ms + 2.61 ms + 1.29 ms = 4.88 ms
+           0.52 ms / DoG,  0.0039 ms / Sift,  #Sift = 328
+ExtractSift time total =      25.30 ms
+
+GPU time : 6.86 ms + 3.02 ms + 0.98 ms = 10.86 ms
+           0.60 ms / DoG,  0.0017 ms / Sift,  #Sift = 558
+ExtractSift time total =      36.84 ms
+
+sift res 1000 with time: 0.108834
+pca encoding time: 0.0339491
+fisher encoding time: 0.00268602
+Image size = (319,500)
+Download time =               0.16 ms
+GPU time : 0.95 ms + 6.21 ms + 2.39 ms = 9.55 ms
+           1.24 ms / DoG,  0.2172 ms / Sift,  #Sift = 11
+ExtractSift time total =      9.58 ms
+
+GPU time : 0.50 ms + 1.87 ms + 0.48 ms = 2.85 ms
+           0.37 ms / DoG,  0.0145 ms / Sift,  #Sift = 33
+ExtractSift time total =      12.93 ms
+
+GPU time : 0.62 ms + 1.42 ms + 0.57 ms = 2.61 ms
+           0.28 ms / DoG,  0.0059 ms / Sift,  #Sift = 97
+ExtractSift time total =      16.10 ms
+
+GPU time : 1.01 ms + 1.74 ms + 0.80 ms = 3.55 ms
+           0.35 ms / DoG,  0.0024 ms / Sift,  #Sift = 341
+ExtractSift time total =      20.16 ms
+
+GPU time : 0.67 ms + 2.57 ms + 0.59 ms = 3.82 ms
+           0.51 ms / DoG,  0.0011 ms / Sift,  #Sift = 518
+ExtractSift time total =      25.73 ms
+
+sift res 1000 with time: 0.106458
+pca encoding time: 0.0269408
+fisher encoding time: 0.00537992
+Image size = (321,475)
+Download time =               0.16 ms
+GPU time : 0.97 ms + 2.51 ms + 0.91 ms = 4.40 ms
+           0.50 ms / DoG,  0.0571 ms / Sift,  #Sift = 16
+ExtractSift time total =      4.42 ms
+
+GPU time : 1.06 ms + 2.30 ms + 0.98 ms = 4.34 ms
+           0.46 ms / DoG,  0.0233 ms / Sift,  #Sift = 42
+ExtractSift time total =      10.63 ms
+
+GPU time : 1.12 ms + 2.58 ms + 0.99 ms = 4.68 ms
+           0.52 ms / DoG,  0.0060 ms / Sift,  #Sift = 166
+ExtractSift time total =      15.94 ms
+
+GPU time : 6.83 ms + 2.64 ms + 1.12 ms = 10.59 ms
+           0.53 ms / DoG,  0.0020 ms / Sift,  #Sift = 549
+ExtractSift time total =      27.17 ms
+
+GPU time : 2.28 ms + 3.05 ms + 2.08 ms = 7.41 ms
+           0.61 ms / DoG,  0.0091 ms / Sift,  #Sift = 227
+ExtractSift time total =      37.53 ms
+
+sift res 1000 with time: 0.0971539
+pca encoding time: 0.0295401
+fisher encoding time: 0.00541997
+Image size = (400,500)
+Download time =               0.21 ms
+GPU time : 0.86 ms + 2.10 ms + 0.92 ms = 3.88 ms
+           0.42 ms / DoG,  0.0657 ms / Sift,  #Sift = 14
+ExtractSift time total =      3.93 ms
+
+GPU time : 0.93 ms + 2.00 ms + 0.95 ms = 3.87 ms
+           0.40 ms / DoG,  0.0198 ms / Sift,  #Sift = 48
+ExtractSift time total =      8.39 ms
+
+GPU time : 1.06 ms + 2.36 ms + 1.22 ms = 4.64 ms
+           0.47 ms / DoG,  0.0078 ms / Sift,  #Sift = 158
+ExtractSift time total =      13.70 ms
+
+GPU time : 1.19 ms + 2.85 ms + 1.15 ms = 5.19 ms
+           0.57 ms / DoG,  0.0029 ms / Sift,  #Sift = 396
+ExtractSift time total =      19.47 ms
+
+GPU time : 2.33 ms + 5.58 ms + 2.52 ms = 10.43 ms
+           1.12 ms / DoG,  0.0066 ms / Sift,  #Sift = 384
+ExtractSift time total =      30.47 ms
+
+sift res 1000 with time: 0.0978498
+pca encoding time: 0.0855861
+fisher encoding time: 0.00477695
+Image size = (324,500)
+Download time =               0.14 ms
+GPU time : 0.04 ms + 0.06 ms + 0.07 ms = 0.16 ms
+           0.01 ms / DoG,  0.0042 ms / Sift,  #Sift = 16
+ExtractSift time total =      0.20 ms
+
+GPU time : 0.02 ms + 0.06 ms + 0.04 ms = 0.13 ms
+           0.01 ms / DoG,  0.0015 ms / Sift,  #Sift = 29
+ExtractSift time total =      0.38 ms
+
+GPU time : 0.41 ms + 0.57 ms + 0.40 ms = 1.39 ms
+           0.11 ms / DoG,  0.0049 ms / Sift,  #Sift = 82
+ExtractSift time total =      1.83 ms
+
+GPU time : 0.37 ms + 0.80 ms + 0.31 ms = 1.48 ms
+           0.16 ms / DoG,  0.0019 ms / Sift,  #Sift = 162
+ExtractSift time total =      3.36 ms
+
+GPU time : 1.70 ms + 0.84 ms + 1.55 ms = 4.08 ms
+           0.17 ms / DoG,  0.0051 ms / Sift,  #Sift = 304
+ExtractSift time total =      7.50 ms
+
+sift res 593 with time: 0.079845
+pca encoding time: 0.054466
+fisher encoding time: 0.00456595
+Image size = (367,475)
+Download time =               0.18 ms
+GPU time : 0.17 ms + 2.18 ms + 0.19 ms = 2.53 ms
+           0.44 ms / DoG,  0.0621 ms / Sift,  #Sift = 3
+ExtractSift time total =      2.56 ms
+
+GPU time : 0.41 ms + 0.58 ms + 0.42 ms = 1.42 ms
+           0.12 ms / DoG,  0.0530 ms / Sift,  #Sift = 8
+ExtractSift time total =      4.14 ms
+
+GPU time : 0.18 ms + 0.66 ms + 0.19 ms = 1.03 ms
+           0.13 ms / DoG,  0.0031 ms / Sift,  #Sift = 60
+ExtractSift time total =      5.36 ms
+
+GPU time : 0.27 ms + 0.47 ms + 0.26 ms = 1.00 ms
+           0.09 ms / DoG,  0.0035 ms / Sift,  #Sift = 74
+ExtractSift time total =      6.56 ms
+
+GPU time : 0.87 ms + 1.31 ms + 5.16 ms = 7.34 ms
+           0.26 ms / DoG,  0.0232 ms / Sift,  #Sift = 223
+ExtractSift time total =      14.11 ms
+
+sift res 368 with time: 0.072057
+pca encoding time: 0.053211
+fisher encoding time: 0.00134611
+Image size = (320,500)
+Download time =               0.16 ms
+GPU time : 0.54 ms + 0.88 ms + 0.41 ms = 1.82 ms
+           0.18 ms / DoG,  0.0239 ms / Sift,  #Sift = 17
+ExtractSift time total =      1.87 ms
+
+GPU time : 1.90 ms + 1.22 ms + 0.54 ms = 3.66 ms
+           0.24 ms / DoG,  0.0109 ms / Sift,  #Sift = 50
+ExtractSift time total =      5.77 ms
+
+GPU time : 0.14 ms + 0.42 ms + 0.23 ms = 0.80 ms
+           0.08 ms / DoG,  0.0017 ms / Sift,  #Sift = 135
+ExtractSift time total =      6.96 ms
+
+GPU time : 0.29 ms + 0.66 ms + 0.26 ms = 1.21 ms
+           0.13 ms / DoG,  0.0004 ms / Sift,  #Sift = 580
+ExtractSift time total =      8.38 ms
+
+GPU time : 3.13 ms + 6.41 ms + 0.56 ms = 10.10 ms
+           1.28 ms / DoG,  0.0026 ms / Sift,  #Sift = 218
+ExtractSift time total =      18.75 ms
+
+sift res 1000 with time: 0.0851159
+pca encoding time: 0.0462658
+fisher encoding time: 0.00445485
+Image size = (390,500)
+Download time =               0.21 ms
+GPU time : 0.75 ms + 3.18 ms + 0.72 ms = 4.65 ms
+           0.64 ms / DoG,  0.0425 ms / Sift,  #Sift = 17
+ExtractSift time total =      4.69 ms
+
+GPU time : 0.87 ms + 1.75 ms + 0.66 ms = 3.28 ms
+           0.35 ms / DoG,  0.0110 ms / Sift,  #Sift = 60
+ExtractSift time total =      8.42 ms
+
+GPU time : 0.80 ms + 5.11 ms + 3.50 ms = 9.41 ms
+           1.02 ms / DoG,  0.0147 ms / Sift,  #Sift = 238
+ExtractSift time total =      18.23 ms
+
+GPU time : 1.09 ms + 6.60 ms + 0.96 ms = 8.65 ms
+           1.32 ms / DoG,  0.0014 ms / Sift,  #Sift = 685
+ExtractSift time total =      27.31 ms
+
+GPU time : 0.59 ms + 3.97 ms + 0.02 ms = 4.59 ms
+           0.79 ms / DoG,  -0.0005 ms / Sift,  #Sift = -43
+ExtractSift time total =      32.44 ms
+
+sift res 1000 with time: 0.099004
+pca encoding time: 0.0902281
+fisher encoding time: 0.00397682
+Image size = (375,500)
+Download time =               0.19 ms
+GPU time : 0.03 ms + 0.22 ms + 0.05 ms = 0.30 ms
+           0.04 ms / DoG,  0.0132 ms / Sift,  #Sift = 4
+ExtractSift time total =      0.32 ms
+
+GPU time : 0.04 ms + 0.05 ms + 0.04 ms = 0.13 ms
+           0.01 ms / DoG,  0.0035 ms / Sift,  #Sift = 12
+ExtractSift time total =      0.51 ms
+
+GPU time : 0.34 ms + 3.92 ms + 0.33 ms = 4.60 ms
+           0.78 ms / DoG,  0.0072 ms / Sift,  #Sift = 46
+ExtractSift time total =      5.17 ms
+
+GPU time : 0.30 ms + 0.83 ms + 0.34 ms = 1.47 ms
+           0.17 ms / DoG,  0.0019 ms / Sift,  #Sift = 178
+ExtractSift time total =      6.82 ms
+
+GPU time : 0.23 ms + 0.79 ms + 0.32 ms = 1.35 ms
+           0.16 ms / DoG,  0.0004 ms / Sift,  #Sift = 760
+ExtractSift time total =      9.83 ms
+
+sift res 1000 with time: 0.0784609
+pca encoding time: 0.04866
+fisher encoding time: 0.00479507
+Image size = (390,500)
+Download time =               0.24 ms
+GPU time : 0.39 ms + 4.24 ms + 0.45 ms = 5.08 ms
+           0.85 ms / DoG,  0.4516 ms / Sift,  #Sift = 1
+ExtractSift time total =      5.11 ms
+
+GPU time : 0.24 ms + 0.79 ms + 0.25 ms = 1.28 ms
+           0.16 ms / DoG,  0.0415 ms / Sift,  #Sift = 6
+ExtractSift time total =      6.84 ms
+
+GPU time : 0.26 ms + 0.60 ms + 0.26 ms = 1.12 ms
+           0.12 ms / DoG,  0.0040 ms / Sift,  #Sift = 64
+ExtractSift time total =      8.25 ms
+
+GPU time : 0.32 ms + 1.01 ms + 0.37 ms = 1.70 ms
+           0.20 ms / DoG,  0.0010 ms / Sift,  #Sift = 379
+ExtractSift time total =      10.15 ms
+
+GPU time : 6.61 ms + 1.18 ms + 0.50 ms = 8.30 ms
+           0.24 ms / DoG,  0.0009 ms / Sift,  #Sift = 550
+ExtractSift time total =      18.69 ms
+
+sift res 1000 with time: 0.077142
+pca encoding time: 0.0792358
+fisher encoding time: 0.00349784
+Image size = (396,500)
+Download time =               0.82 ms
+GPU time : 0.16 ms + 0.52 ms + 0.19 ms = 0.87 ms
+           0.10 ms / DoG,  0.0089 ms / Sift,  #Sift = 21
+ExtractSift time total =      0.89 ms
+
+GPU time : 0.17 ms + 1.62 ms + 0.18 ms = 1.97 ms
+           0.32 ms / DoG,  0.0024 ms / Sift,  #Sift = 75
+ExtractSift time total =      3.00 ms
+
+GPU time : 0.17 ms + 0.36 ms + 0.21 ms = 0.74 ms
+           0.07 ms / DoG,  0.0009 ms / Sift,  #Sift = 248
+ExtractSift time total =      4.01 ms
+
+GPU time : 0.23 ms + 0.47 ms + 0.21 ms = 0.90 ms
+           0.09 ms / DoG,  0.0005 ms / Sift,  #Sift = 417
+ExtractSift time total =      5.18 ms
+
+GPU time : 0.03 ms + 0.22 ms + 0.07 ms = 0.32 ms
+           0.04 ms / DoG,  0.0003 ms / Sift,  #Sift = 239
+ExtractSift time total =      5.75 ms
+
+sift res 1000 with time: 0.067436
+pca encoding time: 0.0664139
+fisher encoding time: 0.00448704
+Image size = (350,500)
+Download time =               0.19 ms
+GPU time : 0.66 ms + 0.64 ms + 0.43 ms = 1.73 ms
+           0.13 ms / DoG,  0.2140 ms / Sift,  #Sift = 2
+ExtractSift time total =      1.77 ms
+
+GPU time : 0.30 ms + 0.56 ms + 0.27 ms = 1.13 ms
+           0.11 ms / DoG,  0.0225 ms / Sift,  #Sift = 12
+ExtractSift time total =      3.16 ms
+
+GPU time : 0.74 ms + 6.21 ms + 1.96 ms = 8.91 ms
+           1.24 ms / DoG,  0.0251 ms / Sift,  #Sift = 78
+ExtractSift time total =      12.28 ms
+
+GPU time : 2.02 ms + 5.31 ms + 0.79 ms = 8.13 ms
+           1.06 ms / DoG,  0.0025 ms / Sift,  #Sift = 321
+ExtractSift time total =      20.68 ms
+
+GPU time : 0.44 ms + 1.36 ms + 0.52 ms = 2.32 ms
+           0.27 ms / DoG,  0.0009 ms / Sift,  #Sift = 587
+ExtractSift time total =      23.25 ms
+
+sift res 1000 with time: 0.100884
+pca encoding time: 0.0183849
+fisher encoding time: 0.00376296
+Image size = (333,500)
+Download time =               0.16 ms
+GPU time : 2.15 ms + 0.72 ms + 0.31 ms = 3.19 ms
+           0.14 ms / DoG,  0.0449 ms / Sift,  #Sift = 7
+ExtractSift time total =      3.22 ms
+
+GPU time : 0.65 ms + 3.81 ms + 0.57 ms = 5.02 ms
+           0.76 ms / DoG,  0.0218 ms / Sift,  #Sift = 26
+ExtractSift time total =      8.43 ms
+
+GPU time : 0.50 ms + 1.45 ms + 0.58 ms = 2.53 ms
+           0.29 ms / DoG,  0.0071 ms / Sift,  #Sift = 82
+ExtractSift time total =      11.16 ms
+
+GPU time : 0.51 ms + 0.85 ms + 0.51 ms = 1.88 ms
+           0.17 ms / DoG,  0.0014 ms / Sift,  #Sift = 357
+ExtractSift time total =      13.39 ms
+
+GPU time : 0.45 ms + 1.45 ms + 0.46 ms = 2.36 ms
+           0.29 ms / DoG,  0.0009 ms / Sift,  #Sift = 528
+ExtractSift time total =      16.16 ms
+
+sift res 1000 with time: 0.083097
+pca encoding time: 0.0364292
+fisher encoding time: 0.00202203
+Image size = (312,500)
+Download time =               0.16 ms
+GPU time : 0.20 ms + 1.33 ms + 0.35 ms = 1.89 ms
+           0.27 ms / DoG,  0.0440 ms / Sift,  #Sift = 8
+ExtractSift time total =      1.92 ms
+
+GPU time : 0.03 ms + 0.06 ms + 0.05 ms = 0.14 ms
+           0.01 ms / DoG,  0.0016 ms / Sift,  #Sift = 34
+ExtractSift time total =      2.40 ms
+
+GPU time : 0.04 ms + 0.07 ms + 0.06 ms = 0.17 ms
+           0.01 ms / DoG,  0.0006 ms / Sift,  #Sift = 104
+ExtractSift time total =      2.81 ms
+
+GPU time : 0.03 ms + 0.13 ms + 0.07 ms = 0.23 ms
+           0.03 ms / DoG,  0.0003 ms / Sift,  #Sift = 269
+ExtractSift time total =      3.30 ms
+
+GPU time : 0.03 ms + 0.16 ms + 0.09 ms = 0.28 ms
+           0.03 ms / DoG,  0.0002 ms / Sift,  #Sift = 585
+ExtractSift time total =      3.78 ms
+
+sift res 1000 with time: 0.0702229
+pca encoding time: 0.0328989
+fisher encoding time: 0.00724101
+lsh tables preparing done
+
+-------------testing 103 images---------------
+
+
+data/demo/test/aquaman.jpg
+Image size = (540,720)
+Download time =               0.44 ms
+GPU time : 0.96 ms + 2.19 ms + 0.79 ms = 3.95 ms
+           0.44 ms / DoG,  0.0360 ms / Sift,  #Sift = 22
+ExtractSift time total =      3.99 ms
+
+GPU time : 0.60 ms + 1.97 ms + 0.67 ms = 3.24 ms
+           0.39 ms / DoG,  0.0066 ms / Sift,  #Sift = 101
+ExtractSift time total =      7.74 ms
+
+GPU time : 0.53 ms + 1.05 ms + 0.48 ms = 2.06 ms
+           0.21 ms / DoG,  0.0020 ms / Sift,  #Sift = 237
+ExtractSift time total =      10.25 ms
+
+GPU time : 0.66 ms + 1.36 ms + 0.54 ms = 2.56 ms
+           0.27 ms / DoG,  0.0008 ms / Sift,  #Sift = 640
+ExtractSift time total =      13.35 ms
+
+GPU time : 0.31 ms + 7.33 ms + 0.02 ms = 7.66 ms
+           1.47 ms / DoG,  -0.0001 ms / Sift,  #Sift = -166
+ExtractSift time total =      21.54 ms
+
+sift res 1000 with time: 0.0677769
+pca encoding time: 0.066287
+fisher encoding time: 0.012212
+0 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!>>
+MatchSiftData time =          25.44 ms
+FindHomography time =         2.80 ms
+
+data/demo/test/fantastic.jpg
+Image size = (540,720)
+Download time =               0.53 ms
+GPU time : 0.08 ms + 0.20 ms + 0.12 ms = 0.41 ms
+           0.04 ms / DoG,  0.0054 ms / Sift,  #Sift = 23
+ExtractSift time total =      0.51 ms
+
+GPU time : 0.08 ms + 0.21 ms + 0.11 ms = 0.40 ms
+           0.04 ms / DoG,  0.0021 ms / Sift,  #Sift = 55
+ExtractSift time total =      1.11 ms
+
+GPU time : 0.08 ms + 0.20 ms + 0.11 ms = 0.39 ms
+           0.04 ms / DoG,  0.0006 ms / Sift,  #Sift = 179
+ExtractSift time total =      1.66 ms
+
+GPU time : 0.08 ms + 0.25 ms + 0.16 ms = 0.49 ms
+           0.05 ms / DoG,  0.0003 ms / Sift,  #Sift = 555
+ExtractSift time total =      2.31 ms
+
+GPU time : 0.08 ms + 0.44 ms + 0.14 ms = 0.66 ms
+           0.09 ms / DoG,  0.0007 ms / Sift,  #Sift = 188
+ExtractSift time total =      3.16 ms
+
+sift res 1000 with time: 0.00995493
+pca encoding time: 0.00353789
+fisher encoding time: 0.00238085
+1 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!>>
+MatchSiftData time =          4.32 ms
+FindHomography time =         5.11 ms
+
+data/demo/test/smallfoot.jpg
+Image size = (540,720)
+Download time =               0.36 ms
+GPU time : 0.04 ms + 0.08 ms + 0.06 ms = 0.18 ms
+           0.02 ms / DoG,  0.0020 ms / Sift,  #Sift = 29
+ExtractSift time total =      0.22 ms
+
+GPU time : 0.03 ms + 0.08 ms + 0.06 ms = 0.17 ms
+           0.02 ms / DoG,  0.0005 ms / Sift,  #Sift = 117
+ExtractSift time total =      0.47 ms
+
+GPU time : 0.03 ms + 0.10 ms + 0.08 ms = 0.21 ms
+           0.02 ms / DoG,  0.0002 ms / Sift,  #Sift = 331
+ExtractSift time total =      0.74 ms
+
+GPU time : 0.03 ms + 0.14 ms + 0.08 ms = 0.25 ms
+           0.03 ms / DoG,  0.0002 ms / Sift,  #Sift = 523
+ExtractSift time total =      1.05 ms
+
+GPU time : 0.02 ms + 0.31 ms + 0.01 ms = 0.35 ms
+           0.06 ms / DoG,  -0.0000 ms / Sift,  #Sift = -433
+ExtractSift time total =      1.48 ms
+
+sift res 1000 with time: 0.00318408
+pca encoding time: 0.00125504
+fisher encoding time: 0.00157499
+2 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!>>
+MatchSiftData time =          0.92 ms
+FindHomography time =         2.43 ms
+
+data/crop/027.jpg
+Image size = (400,530)
+Download time =               0.24 ms
+GPU time : 0.04 ms + 0.09 ms + 0.06 ms = 0.19 ms
+           0.02 ms / DoG,  0.0040 ms / Sift,  #Sift = 15
+ExtractSift time total =      0.23 ms
+
+GPU time : 0.04 ms + 0.08 ms + 0.06 ms = 0.17 ms
+           0.02 ms / DoG,  0.0010 ms / Sift,  #Sift = 59
+ExtractSift time total =      0.48 ms
+
+GPU time : 0.03 ms + 0.09 ms + 0.06 ms = 0.18 ms
+           0.02 ms / DoG,  0.0004 ms / Sift,  #Sift = 138
+ExtractSift time total =      0.72 ms
+
+GPU time : 0.03 ms + 0.10 ms + 0.06 ms = 0.18 ms
+           0.02 ms / DoG,  0.0003 ms / Sift,  #Sift = 169
+ExtractSift time total =      0.95 ms
+
+GPU time : 0.03 ms + 0.76 ms + 0.07 ms = 0.85 ms
+           0.15 ms / DoG,  0.0003 ms / Sift,  #Sift = 217
+ExtractSift time total =      1.87 ms
+
+sift res 598 with time: 0.0036881
+pca encoding time: 0.00090003
+fisher encoding time: 0.00303888
+3 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!>>
+MatchSiftData time =          1.86 ms
+FindHomography time =         2.17 ms
+
+data/crop/034.jpg
+Image size = (400,530)
+Download time =               0.24 ms
+GPU time : 0.05 ms + 0.08 ms + 0.08 ms = 0.21 ms
+           0.02 ms / DoG,  0.0058 ms / Sift,  #Sift = 14
+ExtractSift time total =      0.26 ms
+
+GPU time : 0.03 ms + 0.07 ms + 0.05 ms = 0.15 ms
+           0.01 ms / DoG,  0.0009 ms / Sift,  #Sift = 53
+ExtractSift time total =      0.47 ms
+
+GPU time : 0.03 ms + 0.07 ms + 0.06 ms = 0.16 ms
+           0.01 ms / DoG,  0.0005 ms / Sift,  #Sift = 110
+ExtractSift time total =      0.69 ms
+
+GPU time : 0.03 ms + 0.10 ms + 0.06 ms = 0.18 ms
+           0.02 ms / DoG,  0.0004 ms / Sift,  #Sift = 139
+ExtractSift time total =      0.93 ms
+
+GPU time : 0.02 ms + 0.21 ms + 0.06 ms = 0.29 ms
+           0.04 ms / DoG,  0.0003 ms / Sift,  #Sift = 178
+ExtractSift time total =      1.37 ms
+
+sift res 494 with time: 0.00326204
+pca encoding time: 0.000925064
+fisher encoding time: 0.00356483
+4 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!>>
+MatchSiftData time =          1.37 ms
+FindHomography time =         2.29 ms
+
+data/crop/095.jpg
+Image size = (400,530)
+Download time =               0.24 ms
+GPU time : 0.04 ms + 0.08 ms + 0.06 ms = 0.18 ms
+           0.02 ms / DoG,  0.0036 ms / Sift,  #Sift = 16
+ExtractSift time total =      0.23 ms
+
+GPU time : 0.03 ms + 0.59 ms + 0.06 ms = 0.68 ms
+           0.12 ms / DoG,  0.0011 ms / Sift,  #Sift = 51
+ExtractSift time total =      0.99 ms
+
+GPU time : 0.04 ms + 0.09 ms + 0.07 ms = 0.19 ms
+           0.02 ms / DoG,  0.0006 ms / Sift,  #Sift = 102
+ExtractSift time total =      1.25 ms
+
+GPU time : 0.03 ms + 0.11 ms + 0.06 ms = 0.20 ms
+           0.02 ms / DoG,  0.0003 ms / Sift,  #Sift = 197
+ExtractSift time total =      1.51 ms
+
+GPU time : 0.03 ms + 0.20 ms + 0.07 ms = 0.31 ms
+           0.04 ms / DoG,  0.0003 ms / Sift,  #Sift = 274
+ExtractSift time total =      1.88 ms
+
+sift res 640 with time: 0.003057
+pca encoding time: 0.000818014
+fisher encoding time: 0.00145507
+5 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!>>
+MatchSiftData time =          0.78 ms
+FindHomography time =         1.70 ms
+
+data/crop/064.jpg
+Image size = (400,530)
+Download time =               0.24 ms
+GPU time : 0.04 ms + 0.09 ms + 0.06 ms = 0.19 ms
+           0.02 ms / DoG,  0.0049 ms / Sift,  #Sift = 12
+ExtractSift time total =      0.23 ms
+
+GPU time : 0.04 ms + 0.08 ms + 0.05 ms = 0.17 ms
+           0.02 ms / DoG,  0.0009 ms / Sift,  #Sift = 63
+ExtractSift time total =      0.47 ms
+
+GPU time : 0.04 ms + 0.08 ms + 0.06 ms = 0.18 ms
+           0.02 ms / DoG,  0.0004 ms / Sift,  #Sift = 133
+ExtractSift time total =      0.72 ms
+
+GPU time : 0.03 ms + 0.12 ms + 0.08 ms = 0.24 ms
+           0.02 ms / DoG,  0.0003 ms / Sift,  #Sift = 273
+ExtractSift time total =      1.04 ms
+
+GPU time : 0.03 ms + 0.22 ms + 0.68 ms = 0.93 ms
+           0.04 ms / DoG,  0.0016 ms / Sift,  #Sift = 433
+ExtractSift time total =      2.04 ms
+
+sift res 914 with time: 0.00332212
+pca encoding time: 0.00113392
+fisher encoding time: 0.00314093
+6 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!>>
+MatchSiftData time =          0.75 ms
+FindHomography time =         2.83 ms
+
+data/crop/093.jpg
+Image size = (400,530)
+Download time =               0.26 ms
+GPU time : 0.05 ms + 0.09 ms + 0.06 ms = 0.20 ms
+           0.02 ms / DoG,  0.0041 ms / Sift,  #Sift = 15
+ExtractSift time total =      0.24 ms
+
+GPU time : 0.04 ms + 0.09 ms + 0.06 ms = 0.18 ms
+           0.02 ms / DoG,  0.0014 ms / Sift,  #Sift = 41
+ExtractSift time total =      0.50 ms
+
+GPU time : 0.04 ms + 0.09 ms + 0.06 ms = 0.18 ms
+           0.02 ms / DoG,  0.0006 ms / Sift,  #Sift = 105
+ExtractSift time total =      0.77 ms
+
+GPU time : 0.04 ms + 0.11 ms + 0.07 ms = 0.23 ms
+           0.02 ms / DoG,  0.0003 ms / Sift,  #Sift = 269
+ExtractSift time total =      1.07 ms
+
+GPU time : 0.04 ms + 0.70 ms + 0.08 ms = 0.83 ms
+           0.14 ms / DoG,  0.0002 ms / Sift,  #Sift = 358
+ExtractSift time total =      1.99 ms
+
+sift res 788 with time: 0.00333977
+pca encoding time: 0.00153184
+fisher encoding time: 0.00151491
+7 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!>>
+MatchSiftData time =          0.92 ms
+FindHomography time =         1.80 ms
+
+data/crop/016.jpg
+Image size = (400,530)
+Download time =               0.25 ms
+GPU time : 0.04 ms + 0.09 ms + 0.06 ms = 0.19 ms
+           0.02 ms / DoG,  0.0041 ms / Sift,  #Sift = 15
+ExtractSift time total =      0.23 ms
+
+GPU time : 0.03 ms + 0.06 ms + 0.06 ms = 0.15 ms
+           0.01 ms / DoG,  0.0012 ms / Sift,  #Sift = 48
+ExtractSift time total =      0.44 ms
+
+GPU time : 0.03 ms + 0.07 ms + 0.06 ms = 0.16 ms
+           0.01 ms / DoG,  0.0005 ms / Sift,  #Sift = 125
+ExtractSift time total =      0.66 ms
+
+GPU time : 0.02 ms + 0.10 ms + 0.06 ms = 0.18 ms
+           0.02 ms / DoG,  0.0003 ms / Sift,  #Sift = 182
+ExtractSift time total =      0.91 ms
+
+GPU time : 0.02 ms + 0.20 ms + 0.06 ms = 0.29 ms
+           0.04 ms / DoG,  0.0003 ms / Sift,  #Sift = 209
+ExtractSift time total =      1.26 ms
+
+sift res 579 with time: 0.00256681
+pca encoding time: 0.00080514
+fisher encoding time: 0.00144291
+8 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!>>
+MatchSiftData time =          0.92 ms
+FindHomography time =         2.87 ms
+
+data/crop/029.jpg
+Image size = (400,530)
+Download time =               0.21 ms
+GPU time : 0.02 ms + 0.64 ms + 0.05 ms = 0.70 ms
+           0.13 ms / DoG,  0.0048 ms / Sift,  #Sift = 10
+ExtractSift time total =      0.72 ms
+
+GPU time : 0.02 ms + 0.04 ms + 0.04 ms = 0.11 ms
+           0.01 ms / DoG,  0.0014 ms / Sift,  #Sift = 29
+ExtractSift time total =      1.01 ms
+
+GPU time : 0.02 ms + 0.06 ms + 0.04 ms = 0.12 ms
+           0.01 ms / DoG,  0.0004 ms / Sift,  #Sift = 116
+ExtractSift time total =      1.24 ms
+
+GPU time : 0.02 ms + 0.08 ms + 0.07 ms = 0.17 ms
+           0.02 ms / DoG,  0.0002 ms / Sift,  #Sift = 283
+ExtractSift time total =      1.58 ms
+
+GPU time : 0.03 ms + 0.42 ms + 0.07 ms = 0.52 ms
+           0.08 ms / DoG,  0.0003 ms / Sift,  #Sift = 189
+ExtractSift time total =      2.23 ms
+
+sift res 627 with time: 0.0244489
+pca encoding time: 0.00098896
+fisher encoding time: 0.00293183
+9 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!>>
+MatchSiftData time =          1.03 ms
+FindHomography time =         1.22 ms
+
+correct: 10 in average time: 
+0.0460772

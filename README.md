@@ -42,3 +42,22 @@ $ ./gpu_fv size[s/m/l] NN#[1/2/3/4/5]
   - `params` , PCA and GMM parameters
 
 Modify `main.cpp` for any tests and developments. The compiling and running logic is controlled with MACRO in `main.cpp`.
+
+### Citing
+
+If you find our work useful, please cite one of the followings:
+
+```sh
+@inproceedings{zhang2018jaguar,
+  title={{Jaguar: Low Latency Mobile Augmented Reality with Flexible Tracking}},
+  author={Wenxiao Zhang and Bo Han and Pan Hui},
+  booktitle={Proceedings of ACM Multimedia},
+  year={2018}  
+}
+
+@inproceedings{zhang2018cars,
+  title={{CARS: Collaborative Augmented Reality for Socialization}},
+  author={Wenxiao Zhang and Bo Han and Pan Hui and Vijay  Gopalakrishnan and Eric Zavesky and Feng Qian},
+  booktitle={Proceedings of International Workshop on Mobile Computing Systems and Applications (HotMobile)},
+  year={2018}
+```
